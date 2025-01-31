@@ -1,0 +1,43 @@
+const athletes = [
+  {
+    firstName: "John",
+    lastName: "Doe",
+    achievements: ["Won Boston Marathon 2019", "Won New York Marathon 2020"],
+    sportDiscipline: "Running",
+    birthday: "01.01.1991",
+    club: "Marathon Club",
+    interests: ["Running", "Nutrition", "Travel"],
+    profession: "Professional Athlete",
+    hobby: "Photography",
+    portraitImageURL: "",
+    actionImageURL: "",
+  },
+  {
+    firstName: "Jane",
+    lastName: "Smith",
+    achievements: ["Gold Medal in 100m Freestyle - Olympics 2016", "Gold Medal in 200m Freestyle - Olympics 2020"],
+    sportDiscipline: "Swimming",
+    birthday: "15.05.1988",
+    club: "Olympic Swim Club",
+    interests: ["Swimming", "Yoga", "Reading"],
+    profession: "Professional Swimmer",
+    hobby: "Cooking",
+    portraitImageURL: "",
+    actionImageURL: "",
+  },
+  {
+    firstName: "Michael",
+    lastName: "Johnson",
+    achievements: ["World Record in 400m - 1999", "Gold Medal in 400m - Olympics 2000"],
+    sportDiscipline: "Track and Field",
+    birthday: "20.09.1985",
+    club: "Track Stars Club",
+    interests: ["Track and Field", "Coaching", "Fitness"],
+    profession: "Track Coach",
+    hobby: "Cycling",
+    portraitImageURL: "",
+    actionImageURL: "",
+  },
+];
+
+export default athletes;

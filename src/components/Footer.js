@@ -16,16 +16,16 @@ const Footer = () => {
                         <div className="box-border border-b-4 border-blue-900 p-8 bg-gray-200 text-gray-600 text-center rounded-lg xl:w-80 mx-auto">
                             <h3 className="font-bold text-4xl mb-4">MLD</h3>
                             <div className='text-md font-medium text-gray-600'>
-                                <h5>Molad e Konsult</h5>
-                                <p>Ilo Awela,</p>
-                                <p>Ota,</p>
-                                <p>Ogun State.</p>
+                                <h5>Stephan Peplies</h5>
+                                <p>My Street</p>
+                                <p>12345</p>
+                                <p>Stadt</p>
                             </div>
                         </div>
                     </div>
 
                     {/* 2nd block */}
-                    <div className="col-span-6 md:col-span-6 lg:col-span-1 ml-7 mx-auto">
+                    {/* <div className="col-span-6 md:col-span-6 lg:col-span-1 ml-7 mx-auto">
                         <h6 className="text-[#013289] text-xl font-bold mb-4">LINKS</h6>
                         <ul className="text-md">
                         <li className="mb-2">
@@ -38,35 +38,35 @@ const Footer = () => {
                             <HashLink to="#" className="text-[#013289] hover:text-gray-900 hover:tracking-wider transition duration-250 ease-in-out">Contact</HashLink>
                         </li>                            
                         </ul>
-                    </div>
+                    </div> */}
 
                     {/* 3rd block */}
                     <div className="col-span-6 md:col-span-6 lg:col-span-4 mx-auto">
-                        <h6 className="text-[#013289] text-xl font-bold mb-4">OUR SERVICES</h6>
+                        <h6 className="text-[#013289] text-xl font-bold mb-4">LEISTUNGEN</h6>
                         <ul className="text-md">
                         <li className="mb-2">
-                            <Link to="#" className="text-[#013289] hover:text-gray-900 hover:tracking-wider transition duration-250 ease-in-out">Web Development</Link>
+                            <Link to="#" className="text-[#013289] hover:text-gray-900 hover:underline transition duration-250 ease-in-out">Leistungen für Atlethen</Link>
                         </li>
                         <li className="mb-2">
-                            <Link to="#" className="text-[#013289] hover:text-gray-900 hover:tracking-wider transition duration-250 ease-in-out">Mobile App Development</Link>
+                            <Link to="#" className="text-[#013289] hover:text-gray-900 hover:underline transition duration-250 ease-in-out">Leistungen für Unternehmen</Link>
                         </li>
-                        <li className="mb-2">
+                        {/* <li className="mb-2">
                             <Link to="#" className="text-[#013289] hover:text-gray-900 hover:tracking-wider transition duration-250 ease-in-out">Domain and Hosting</Link>
                         </li>
                         <li className="mb-2">
                             <Link to="#" className="text-[#013289] hover:text-gray-900 hover:tracking-wider transition duration-250 ease-in-out">General IT Consultations</Link>
-                        </li>
+                        </li> */}
                         </ul>
                     </div>
 
                     {/* 4th block */}
                     <div className="col-span-12 text-center mx-auto lg:col-span-3 font-bold uppercase text-blue-900">
-                        <div className="text-xl mb-6">
+                        <div className="text-xl mb-1">
                             Social Media Links.
                         </div>
 
                                 <div className="text-md font-medium mb-6">
-                                    Follow us on social media.
+                                    Folge uns
                                 </div>
                         <div className="mx-auto text-center mt-2">
                                 <ul className="flex justify-center mb-4 md:mb-0">
@@ -98,7 +98,7 @@ const Footer = () => {
                         to="#"
                         className=" hover:text-gray-900"
                     >
-                        Molad e Konsult
+                        peplies consult - Sports Marketing Consultants
                     </HashLink>. All rights reserved.
                     </div>
                 </div>

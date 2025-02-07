@@ -17,13 +17,13 @@ const Athletes = (props) => {
     return (
         <>
             <NavBar />
-            <div className="container mx-auto p-4 mt-20">
+            <div className="container mx-auto p-4 my-20 lg:my-40">
                 <h1 className="text-3xl font-bold text-center mb-8">Unsere Athleten</h1>
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-8">
                     {athletes.map((athlete, index) => (
                         <div 
                             key={index} 
-                            className="card bg-white shadow-md rounded-lg overflow-hidden cursor-pointer" 
+                            className="card bg-white shadow-md rounded-lg overflow-hidden cursor-pointer transition-transform duration-300 ease-in-out transform hover:scale-105" 
                             onClick={() => handleCardClick(athlete)}
                         >
                             <img 

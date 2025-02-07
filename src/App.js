@@ -5,7 +5,7 @@ import './index.css';
 import {
   BrowserRouter as Router,
   Routes,
-  Route
+  Route,
 } from 'react-router-dom';
 // All pages
 import Home from './pages/Home';
@@ -35,7 +35,7 @@ function App() {
 
   return (
     <>
-      <Router>
+      <Router future={{ v7_relativeSplatPath: true }}>
         <ScrollToTop>
           <Routes>
             <Route path="/" element={<Home />} />

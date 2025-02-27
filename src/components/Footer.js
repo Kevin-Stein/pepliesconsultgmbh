@@ -28,7 +28,8 @@ const Footer = ({ language }) => {
               <ul className="text-md">
                 <li className="mb-2">
                   <HashLink
-                    smooth to="#about"
+                    smooth
+                    to="#about"
                     className="text-[#013289] hover:text-gray-900 hover:tracking-wider transition duration-250 ease-in-out"
                   >
                     {language === "de" ? "Über uns" : "About"}
@@ -36,7 +37,8 @@ const Footer = ({ language }) => {
                 </li>
                 <li className="mb-2">
                   <HashLink
-                    smooth to="#services"
+                    smooth
+                    to="#services"
                     className="text-[#013289] hover:text-gray-900 hover:tracking-wider transition duration-250 ease-in-out"
                   >
                     {language === "de" ? "Leistungen" : "Services"}
@@ -49,6 +51,14 @@ const Footer = ({ language }) => {
                   >
                     {language === "de" ? "Kontakt" : "Contact"}
                   </HashLink>
+                </li>
+                <li className="mb-2">
+                  <Link
+                    to="/legal-notice"
+                    className="text-[#013289] hover:text-gray-900 hover:tracking-wider transition duration-250 ease-in-out"
+                  >
+                    {language === "de" ? "Impressum" : "Legal Notice"}
+                  </Link>
                 </li>
               </ul>
             </div>

@@ -4,10 +4,12 @@ import Footer from "../components/Footer";
 import Hero from "../components/Hero";
 import Intro from "../components/Intro";
 import Services from "../components/Services";
+import CookieBanner from "../components/CookieBanner";
 
 const Home = ({ language }) => {
   return (
     <>
+    <CookieBanner language={language} />
       <Hero language={language} />
       <Intro language={language} />
       <Services language={language}/>

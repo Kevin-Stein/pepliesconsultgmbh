@@ -24,3 +24,20 @@ body {
 }
 
 
+.carousel-track {
+  width: 200%;
+  animation: slide 40s linear infinite;
+}
+
+.carousel-track:hover {
+  animation-play-state: paused;
+}
+
+@keyframes slide {
+  0% {
+    left: 0;
+  }
+  100% {
+    left: -100%;
+  }
+}

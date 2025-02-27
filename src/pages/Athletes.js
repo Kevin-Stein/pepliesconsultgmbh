@@ -1,6 +1,6 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
-import NavBar from "../components/Navbar/NavBar";
+
 import Footer from "../components/Footer";
 import { useDocTitle } from "../components/CustomHook";
 import athletes from "../lib/athletes";

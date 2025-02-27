@@ -21,7 +21,7 @@ const Intro = ({ language }) => {
             <img alt="card img" className="rounded-t float-right lg:w-2/3 self-center" src={img} />
           </div>
           <div
-            className="flex-col my-4 text-center lg:text-left lg:my-0 lg:justify-end w-full lg:w-2/3 pr-40"
+            className="flex-col my-4 text-center lg:text-left lg:my-0 lg:justify-end w-full lg:w-2/3 lg:pr-40 px-5"
             data-aos="zoom-in"
             data-aos-delay="500"
           >

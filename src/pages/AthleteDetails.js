@@ -1,6 +1,5 @@
 import React from "react";
 import { useParams } from "react-router-dom";
-import NavBar from "../components/Navbar/NavBar";
 import Footer from "../components/Footer";
 import athletes from "../lib/athletes";
 import { useDocTitle } from "../components/CustomHook";
@@ -18,14 +17,15 @@ const AthleteDetails = ({ language }) => {
 
   return (
     <>
-      <div className="container mx-auto px-20 m-40">
+      <div className="container max-w-4xl mx-auto my-40">
         <div className="card bg-white overflow-hidden flex flex-col md:flex-row">
           <img
             src={athlete.portraitImageURL || placeholderPortrait}
             alt={`${athlete.firstName} ${athlete.lastName}`}
-            className="w-full md:w-1/3 object-cover"
+            className="w-full lg:w-1/2 h-100 object-cover"
+            style={{ height: "400px" }}
           />
-          <div className="p-4 md:w-2/3 flex flex-col justify-center text-right gap-4">
+          <div className="p-4 md:w-1/2 flex flex-col justify-center text-right gap-3">
             <h2 className="text-xl font-bold">
               {athlete.firstName} {athlete.lastName}
             </h2>
@@ -49,9 +49,9 @@ const AthleteDetails = ({ language }) => {
             </p>
           </div>
         </div>
-        <div className="card bg-white shadow-md overflow-hidden flex flex-col md:flex-row mt-8">
-          <div className="p-4 md:w-2/3 flex flex-col justify-center">
-            <p className="text-gray-700">
+        <div className="card bg-white shadow-md overflow-hidden flex flex-col justify-between md:flex-row">
+          <div className="p-4 w-full md:w-1/2 flex flex-col">
+            <p className="text-gray-700 text-xl">
               <strong>{language === "de" ? "Erfolge:" : "Achievements:"}</strong>
             </p>
             <ul className="list-disc list-inside text-gray-700">
@@ -63,7 +63,8 @@ const AthleteDetails = ({ language }) => {
           <img
             src={athlete.actionImageURL || placeholderAction}
             alt={`${athlete.firstName} ${athlete.lastName} action`}
-            className="w-full md:w-1/3 object-cover"
+            className="w-full lg:w-1/2 h-100 object-cover"
+            style={{ height: "400px" }}
           />
         </div>
       </div>

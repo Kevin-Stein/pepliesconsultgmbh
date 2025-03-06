@@ -30,7 +30,7 @@ const Athletes = ({ language }) => {
               <img
                 src={athlete.portraitImageURL || placeholderPortrait}
                 alt={`${athlete.firstName} ${athlete.lastName}`}
-                className="w-full object-cover"
+                className=" object-fit w-full"
               />
               <div className="p-4 mt-3">
                 <h2 className="text-xl font-bold">

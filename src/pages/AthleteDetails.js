@@ -49,7 +49,7 @@ const AthleteDetails = ({ language }) => {
             </p>
           </div>
         </div>
-        <div className="card bg-white shadow-md overflow-hidden flex flex-col justify-between md:flex-row">
+        <div className="card bg-white shadow-xl overflow-hidden flex flex-col justify-between md:flex-row rounded-b-xl">
           <div className="p-4 w-full md:w-1/2 flex flex-col">
             <p className="text-gray-700 text-xl">
               <strong>{language === "de" ? "Erfolge:" : "Achievements:"}</strong>

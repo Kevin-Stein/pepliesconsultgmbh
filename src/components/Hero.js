@@ -19,7 +19,7 @@ const Hero = ({ language }) => {
 
   return (
     <>
-      <div className="hero relative h-[800px]" id="hero">
+      <div className="hero relative lg:h-[800px]" id="hero">
         <div className="absolute inset-0 w-full h-full overflow-hidden">
           <video
             key={currentVideo}

@@ -21,7 +21,7 @@ const NavBar = ({ language, toggleLanguage }) => {
   return (
     <nav
       className={`fixed top-0 w-full z-30 transition-all duration-300 ease-in-out mb-16 bg-white ${
-        !top ? "opacity-100 shadow-lg" : "opacity-70"
+        !top ? "opacity-100 shadow-lg" : "opacity-50"
       }`}
     >
       <div className="flex flex-row justify-between items-center px-2 py-4 mx-4">

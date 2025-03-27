@@ -3,7 +3,7 @@ import { useDocTitle } from "../components/CustomHook";
 
 const Contact = ({ language }) => {
   useDocTitle("peplies consult - Send us a message");
- return (
+  return (
     <>
       <div id="contact" className="flex justify-center items-center mt-16 h-[65vh] bg-white py-12 lg:py-24 ">
         <div className="w-full lg:-mt-96 lg:w-2/6 px-8 py-6 mx-6  bg-blue-900 rounded-2xl">

@@ -5,7 +5,9 @@ const LegalNotice = ({ language }) => {
   return (
     <>
       <div className="container mx-auto p-4 my-20 lg:my-40">
-        <h1 className="text-3xl font-bold text-center mb-8">{language === "de" ? "Impressum" : "Legal Notice"}</h1>
+        <h1 className="text-3xl font-bold text-center mb-8 text-blue-900">
+          {language === "de" ? "Impressum" : "Legal Notice"}
+        </h1>
         <div className="text-lg text-center">
           <p>
             {language === "de"

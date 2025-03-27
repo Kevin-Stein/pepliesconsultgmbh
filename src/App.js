@@ -9,6 +9,8 @@ import Contact from "./pages/Contact";
 import Athletes from "./pages/Athletes";
 import AthleteDetails from "./pages/AthleteDetails";
 import LegalNotice from "./pages/LegalNotice";
+import Portfolio from "./components/Portfolio";
+import AthleteServices from "./pages/AthleteServices";
 
 import NavBar from "./components/Navbar/NavBar";
 
@@ -49,6 +51,8 @@ function App() {
             <Route path="/athletes" element={<Athletes language={language} />} />
             <Route path="/athletes/:athleteName" element={<AthleteDetails language={language} />} />
             <Route path="/legal-notice" element={<LegalNotice language={language} />} />
+            <Route path="/portfolio" element={<Portfolio language={language} />} />
+            <Route path="/services/athletes" element={<AthleteServices language={language} />} />
           </Routes>
         </ScrollToTop>
       </Router>

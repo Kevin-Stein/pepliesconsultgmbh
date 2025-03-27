@@ -7,14 +7,14 @@ const Services = ({ language }) => {
     <div id="services" className="bg-gray-100 py-12 ">
       <section data-aos="zoom-in-down">
         <div className="my-4 py-4">
-          <h2 className="my-2 text-center text-3xl text-blue-900 uppercase font-bold">
+          <h2 className="my-2 text-center text-2xl md:text-3xl text-blue-900 uppercase font-bold">
             {language === "de" ? "Leistungen" : "Services"}
           </h2>
 
           <div className="flex justify-center">
             <div className="w-24 border-b-4 border-blue-900"></div>
           </div>
-          <h2 className="mt-4 mx-12 text-center text-xl lg:text-2xl font-semibold text-blue-900">
+          <h2 className="mt-4 mx-12 text-center text-lg md:text-2xl font-semibold text-blue-900">
             {language === "de" ? "Unsere Leistungen im Überblick." : "Our Services at a Glance."}
           </h2>
         </div>
@@ -28,10 +28,10 @@ const Services = ({ language }) => {
                   className="rounded-t group-hover:scale-[1.15] transition duration-1000 ease-in-out"
                   src={img}
                 />
-                <h2 className="font-semibold my-4 text-2xl text-center">
+                <h2 className="font-semibold my-4 text-xl md:text-2xl text-center">
                   {language === "de" ? "Leistungen für Athleten" : "Services for Athletes"}
                 </h2>
-                <p className="text-md font-medium">
+                <p className="text-sm md:text-md font-medium">
                   {language === "de"
                     ? "Lorem Ipsum ist einfach Dummy-Text der Druck- und Satzindustrie. Lorem Ipsum ist seit den 1500er Jahren der Standard-Dummy-Text der Branche."
                     : "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s."}
@@ -46,10 +46,10 @@ const Services = ({ language }) => {
                   className="rounded-t group-hover:scale-[1.15] transition duration-1000 ease-in-out"
                   src={img2}
                 />
-                <h2 className="font-semibold my-4 text-2xl text-center">
+                <h2 className="font-semibold my-4 text-xl md:text-2xl text-center">
                   {language === "de" ? "Leistungen für Unternehmen" : "Services for Companies"}
                 </h2>
-                <p className="text-md font-medium">
+                <p className="text-sm md:text-md font-medium">
                   {language === "de"
                     ? "Lorem Ipsum ist einfach Dummy-Text der Druck- und Satzindustrie. Lorem Ipsum ist seit den 1500er Jahren der Standard-Dummy-Text der Branche."
                     : "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s."}

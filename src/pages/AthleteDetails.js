@@ -26,7 +26,7 @@ const AthleteDetails = ({ language }) => {
             style={{ height: "400px" }}
           />
           <div className="p-4 md:w-1/2 flex flex-col justify-center text-right gap-3">
-            <h2 className="text-xl font-bold">
+            <h2 className="text-xl font-bold text-blue-900">
               {athlete.firstName} {athlete.lastName}
             </h2>
             <p className="text-gray-700">
@@ -52,7 +52,7 @@ const AthleteDetails = ({ language }) => {
         <div className="card bg-white shadow-xl overflow-hidden flex flex-col justify-between md:flex-row rounded-b-xl">
           <div className="p-4 w-full md:w-1/2 flex flex-col">
             <p className="text-gray-700 text-xl">
-              <strong>{language === "de" ? "Erfolge:" : "Achievements:"}</strong>
+              <strong className="text-blue-900">{language === "de" ? "Erfolge:" : "Achievements:"}</strong>
             </p>
             <ul className="list-disc list-inside text-gray-700">
               {athlete.achievements.map((achievement, index) => (

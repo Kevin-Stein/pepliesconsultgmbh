@@ -46,15 +46,17 @@ const NavBar = ({ language, toggleLanguage }) => {
             </svg>
           </button>
           <div className="hidden space-x-6 lg:inline-block p-5">
-            <NavLinks language={language} toggleLanguage={toggleLanguage} />
+            <NavLinks language={language} toggleLanguage={toggleLanguage} setIsOpen={setIsOpen} />
           </div>
           <div
-            className={`fixed transition-transform duration-300 ease-in-out flex justify-center left-0 w-full h-auto rounded-md p-24 bg-white lg:hidden shadow-xl top-14 ${
-              isOpen ? "block" : "hidden"
+            className={`fixed transition-all duration-300 ease-in-out flex left-0 w-full h-auto rounded-md p-24 bg-white lg:hidden shadow-xl top-14 z-50 transform ${
+              isOpen ? "translate-y-0 opacity-100" : "-translate-y-4 opacity-0 pointer-events-none"
             }`}
           >
-            <div className="flex flex-col space-y-6">
-              <NavLinks language={language} toggleLanguage={toggleLanguage} />
+            <div className="flex flex-col space-y-6 w-full">
+              <div className="flex flex-col items-start space-y-6">
+                <NavLinks language={language} toggleLanguage={toggleLanguage} setIsOpen={setIsOpen} />
+              </div>
             </div>
           </div>
         </div>

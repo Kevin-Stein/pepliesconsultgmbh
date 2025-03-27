@@ -35,21 +35,21 @@ const Hero = ({ language }) => {
           <div className="absolute inset-0 bg-black bg-opacity-10"></div>
         </div>
         <div className="relative z-10 text-center px-4" data-aos="zoom-in">
-          <h1 className="mb-5 text-2xl md:text-5xl font-bold text-white">
+          <h1 className="mb-5 text-2xl md:text-5xl mt-20 font-bold text-white leading-relaxed">
             {language === "de" ? (
               <>
                 WILLKOMMEN
-                <br />
+                <br/>
                 bei der
-                <br />
+                <br/>
                 <span className="text-white">peplies consult GmbH</span>
               </>
             ) : (
               <>
                 WELCOME
-                <br />
+                <br/>
                 to the
-                <br />
+                <br/>
                 <span className="text-white">peplies consult GmbH</span>
               </>
             )}

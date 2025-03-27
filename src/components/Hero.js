@@ -39,8 +39,8 @@ const Hero = ({ language }) => {
             <div className="w-full flex flex-col justify-center items-center" data-aos="zoom-in" data-aos-delay="200">
               <h1 className="mb-5 text-2xl md:text-5xl font-bold text-white">
                 {language === "de"
-                  ? "WILLKOMMEN bei peplies consult - Sports Marketing Consultants"
-                  : "WELCOME to peplies consult - Sports Marketing Consultants"}
+                  ? "WILLKOMMEN bei peplies consult GmbH - Sports Marketing Consultants"
+                  : "WELCOME to peplies consult GmbH - Sports Marketing Consultants"}
               </h1>
 
               <div className="my-8 space-x-0 md:space-x-2 md:mb-8 content-center">

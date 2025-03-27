@@ -32,7 +32,7 @@ const Hero = ({ language }) => {
           >
             <source src={videos[currentVideo]} type="video/mp4" />
           </video>
-          <div className="absolute inset-0 bg-black bg-opacity-50"></div>
+          <div className="absolute inset-0 bg-black bg-opacity-10"></div>
         </div>
         <div className="relative z-10 text-center px-4" data-aos="zoom-in">
           <h1 className="mb-5 text-2xl md:text-5xl font-bold text-white">
@@ -40,13 +40,17 @@ const Hero = ({ language }) => {
               <>
                 WILLKOMMEN
                 <br />
-                bei der <span className="text-blue-900">peplies consult GmbH</span>
+                bei der
+                <br />
+                <span className="text-white">peplies consult GmbH</span>
               </>
             ) : (
               <>
                 WELCOME
                 <br />
-                to the <span className="text-blue-900">peplies consult GmbH</span>
+                to the
+                <br />
+                <span className="text-white">peplies consult GmbH</span>
               </>
             )}
           </h1>

@@ -19,7 +19,7 @@ const Hero = ({ language }) => {
 
   return (
     <>
-      <div className="hero relative lg:h-[800px] flex items-center justify-center" id="hero">
+      <div className="hero relative h-[400px] lg:h-[800px] flex items-center justify-center" id="hero">
         <div className="absolute inset-0 w-full h-full overflow-hidden">
           <video
             key={currentVideo}
@@ -36,9 +36,19 @@ const Hero = ({ language }) => {
         </div>
         <div className="relative z-10 text-center px-4" data-aos="zoom-in">
           <h1 className="mb-5 text-2xl md:text-5xl font-bold text-white">
-            {language === "de"
-              ? "WILLKOMMEN bei peplies consult GmbH - Sports Marketing Consultants"
-              : "WELCOME to peplies consult GmbH - Sports Marketing Consultants"}
+            {language === "de" ? (
+              <>
+                WILLKOMMEN
+                <br />
+                bei der <span className="text-blue-900">peplies consult GmbH</span>
+              </>
+            ) : (
+              <>
+                WELCOME
+                <br />
+                to the <span className="text-blue-900">peplies consult GmbH</span>
+              </>
+            )}
           </h1>
 
           <div className="my-8">

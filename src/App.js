@@ -41,22 +41,24 @@ function App() {
   useDocTitle("peplies consult - Sports Marketing Consultants");
 
   return (
-    <>
+    <div className="min-h-screen flex flex-col">
       <Router future={{ v7_relativeSplatPath: true }}>
         <ScrollToTop>
           <NavBar language={language} toggleLanguage={toggleLanguage} />
-          <Routes>
-            <Route path="/" element={<Home language={language} />} />
-            <Route path="/contact" element={<Contact language={language} />} />
-            <Route path="/athletes" element={<Athletes language={language} />} />
-            <Route path="/athletes/:athleteName" element={<AthleteDetails language={language} />} />
-            <Route path="/legal-notice" element={<LegalNotice language={language} />} />
-            <Route path="/portfolio" element={<Portfolio language={language} />} />
-            <Route path="/services/athletes" element={<AthleteServices language={language} />} />
-          </Routes>
+          <main className="flex-grow">
+            <Routes>
+              <Route path="/" element={<Home language={language} />} />
+              <Route path="/contact" element={<Contact language={language} />} />
+              <Route path="/athletes" element={<Athletes language={language} />} />
+              <Route path="/athletes/:athleteName" element={<AthleteDetails language={language} />} />
+              <Route path="/legal-notice" element={<LegalNotice language={language} />} />
+              <Route path="/portfolio" element={<Portfolio language={language} />} />
+              <Route path="/services/athletes" element={<AthleteServices language={language} />} />
+            </Routes>
+          </main>
         </ScrollToTop>
       </Router>
-    </>
+    </div>
   );
 }
 

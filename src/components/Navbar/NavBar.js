@@ -5,6 +5,7 @@ import { HashLink } from "react-router-hash-link";
 const NavBar = ({ language, toggleLanguage }) => {
   const [top, setTop] = useState(!window.scrollY);
   const [isOpen, setIsOpen] = useState(false);
+  const [showNav, setShowNav] = useState(false);
 
   function handleClick() {
     setIsOpen(!isOpen);
@@ -14,14 +15,26 @@ const NavBar = ({ language, toggleLanguage }) => {
     const scrollHandler = () => {
       window.scrollY > 20 ? setTop(false) : setTop(true);
     };
+
+    const mouseMoveHandler = (e) => {
+      const windowHeight = window.innerHeight;
+      const threshold = windowHeight / 3;
+      setShowNav(e.clientY <= threshold);
+    };
+
     window.addEventListener("scroll", scrollHandler);
-    return () => window.removeEventListener("scroll", scrollHandler);
-  }, [top]);
+    window.addEventListener("mousemove", mouseMoveHandler);
+
+    return () => {
+      window.removeEventListener("scroll", scrollHandler);
+      window.removeEventListener("mousemove", mouseMoveHandler);
+    };
+  }, []);
 
   return (
     <nav
       className={`fixed top-0 w-full z-30 transition-all duration-300 ease-in-out mb-16 bg-white ${
-        !top ? "opacity-100 shadow-lg" : "opacity-50"
+        !top || showNav ? "translate-y-0 shadow-lg" : "-translate-y-full"
       }`}
     >
       <div className="flex flex-row justify-between items-center px-2 py-4 mx-4">

@@ -19,7 +19,7 @@ const Hero = ({ language }) => {
 
   return (
     <>
-      <div className="hero relative lg:h-[800px]" id="hero">
+      <div className="hero relative lg:h-[800px] flex items-center justify-center" id="hero">
         <div className="absolute inset-0 w-full h-full overflow-hidden">
           <video
             key={currentVideo}
@@ -34,24 +34,20 @@ const Hero = ({ language }) => {
           </video>
           <div className="absolute inset-0 bg-black bg-opacity-50"></div>
         </div>
-        <div className="m-auto  overflow-hidden mx-4 p-2 md:p-12 relative z-10" data-aos="zoom-in">
-          <div id="hero" className="flex flex-col lg:flex-row lg:p-36 pt-20 justify-center items-center text-center">
-            <div className="w-full flex flex-col justify-center items-center" data-aos="zoom-in" data-aos-delay="200">
-              <h1 className="mb-5 text-2xl md:text-5xl font-bold text-white">
-                {language === "de"
-                  ? "WILLKOMMEN bei peplies consult GmbH - Sports Marketing Consultants"
-                  : "WELCOME to peplies consult GmbH - Sports Marketing Consultants"}
-              </h1>
+        <div className="relative z-10 text-center px-4" data-aos="zoom-in">
+          <h1 className="mb-5 text-2xl md:text-5xl font-bold text-white">
+            {language === "de"
+              ? "WILLKOMMEN bei peplies consult GmbH - Sports Marketing Consultants"
+              : "WELCOME to peplies consult GmbH - Sports Marketing Consultants"}
+          </h1>
 
-              <div className="my-8 space-x-0 md:space-x-2 md:mb-8 content-center">
-                <HashLink
-                  className="text-white bg-blue-900 hover:bg-blue-800 inline-flex items-center justify-center w-auto px-6 py-3 shadow-xl rounded-xl"
-                  to="/athletes"
-                >
-                  {language === "de" ? "Unsere Athleten" : "Our Athletes"}
-                </HashLink>
-              </div>
-            </div>
+          <div className="my-8">
+            <HashLink
+              className="text-white bg-blue-900 hover:bg-blue-800 inline-flex items-center justify-center px-6 py-3 shadow-xl rounded-xl"
+              to="/athletes"
+            >
+              {language === "de" ? "Unsere Athleten" : "Our Athletes"}
+            </HashLink>
           </div>
         </div>
       </div>

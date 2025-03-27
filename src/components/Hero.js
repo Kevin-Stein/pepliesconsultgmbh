@@ -34,7 +34,7 @@ const Hero = ({ language }) => {
           </video>
           <div className="absolute inset-0 bg-black bg-opacity-50"></div>
         </div>
-        <div className="m-auto overflow-hidden mx-4 mt-8 lg:mt-4 p-2 md:p-12 relative z-10" data-aos="zoom-in">
+        <div className="m-auto overflow-hidden mx-4 p-2 md:p-12 relative z-10" data-aos="zoom-in">
           <div id="hero" className="flex flex-col lg:flex-row lg:p-36 pt-20 justify-center items-center text-center">
             <div className="w-full flex flex-col justify-center items-center" data-aos="zoom-in" data-aos-delay="200">
               <h1 className="mb-5 text-2xl md:text-5xl font-bold text-white">

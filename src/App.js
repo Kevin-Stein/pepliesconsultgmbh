@@ -11,6 +11,7 @@ import AthleteDetails from "./pages/AthleteDetails";
 import LegalNotice from "./pages/LegalNotice";
 import Portfolio from "./components/Portfolio";
 import AthleteServices from "./pages/AthleteServices";
+import Press from "./pages/Press";
 import Footer from "./components/Footer";
 
 import NavBar from "./components/Navbar/NavBar";
@@ -55,6 +56,7 @@ function App() {
               <Route path="/legal-notice" element={<LegalNotice language={language} />} />
               <Route path="/portfolio" element={<Portfolio language={language} />} />
               <Route path="/services/athletes" element={<AthleteServices language={language} />} />
+              <Route path="/press" element={<Press language={language} />} />
             </Routes>
           </main>
           <Footer language={language} />

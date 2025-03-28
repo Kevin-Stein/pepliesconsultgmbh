@@ -7,8 +7,7 @@ const Footer = ({ language }) => {
   return (
     <footer className="mt-auto">
       <div className="footer relative max-w-full mx-auto px-2 sm:px-6 border-t border-b py-4 sm:py-8">
-        <div className="absolute inset-0 ">
-          <img src={backgroundFooter} alt="Footer background" className="w-full h-full object-cover" />
+        <div className="absolute inset-0 bg-gray-100">
         </div>
         {/* Top area: Blocks */}
         <div className="relative z-10 grid sm:grid-cols-12 gap-3 sm:gap-5 py-4 sm:py-8 md:py-12  lg:ml-11">

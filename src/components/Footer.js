@@ -1,13 +1,17 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { HashLink } from "react-router-hash-link";
+import backgroundFooter from "../images/background_footer02.jpg";
 
 const Footer = ({ language }) => {
   return (
     <footer className="mt-auto">
-      <div className="footer max-w-full mx-auto px-2 sm:px-6 bg-gray-100 border-t border-b py-4 sm:py-8">
+      <div className="footer relative max-w-full mx-auto px-2 sm:px-6 border-t border-b py-4 sm:py-8">
+        <div className="absolute inset-0 ">
+          <img src={backgroundFooter} alt="Footer background" className="w-full h-full object-cover" />
+        </div>
         {/* Top area: Blocks */}
-        <div className="grid sm:grid-cols-12 gap-3 sm:gap-5 py-4 sm:py-8 md:py-12 border-t border-gray-200 lg:ml-11">
+        <div className="relative z-10 grid sm:grid-cols-12 gap-3 sm:gap-5 py-4 sm:py-8 md:py-12  lg:ml-11">
           {/* 1st block */}
           <div className="col-span-12 lg:col-span-4">
             <div className="box-border border-b-4 border-blue-900 p-4 sm:p-8 bg-gray-200 text-gray-600 text-center rounded-lg xl:w-80 mx-auto">
@@ -23,7 +27,7 @@ const Footer = ({ language }) => {
 
           {/* 2nd block */}
           <div className="col-span-6 md:col-span-6 lg:col-span-1 ml-4 sm:ml-7 mx-auto">
-            <h6 className="text-[#013289] text-lg sm:text-xl font-bold mb-2 sm:mb-4">
+            <h6 className="text-blue-900 text-lg sm:text-xl font-bold mb-2 sm:mb-4">
               {language === "de" ? "LINKS" : "LINKS"}
             </h6>
             <ul className="text-sm sm:text-md">
@@ -31,7 +35,7 @@ const Footer = ({ language }) => {
                 <HashLink
                   smooth
                   to="#about"
-                  className="text-[#013289] hover:text-gray-900 hover:tracking-wider transition duration-250 ease-in-out"
+                  className="text-blue-900 hover:text-gray-900 hover:tracking-wider transition duration-250 ease-in-out"
                 >
                   {language === "de" ? "Über uns" : "About"}
                 </HashLink>
@@ -40,7 +44,7 @@ const Footer = ({ language }) => {
                 <HashLink
                   smooth
                   to="#services"
-                  className="text-[#013289] hover:text-gray-900 hover:tracking-wider transition duration-250 ease-in-out"
+                  className="text-blue-900 hover:text-gray-900 hover:tracking-wider transition duration-250 ease-in-out"
                 >
                   {language === "de" ? "Leistungen" : "Services"}
                 </HashLink>
@@ -48,7 +52,7 @@ const Footer = ({ language }) => {
               <li className="mb-1 sm:mb-2">
                 <HashLink
                   to="#"
-                  className="text-[#013289] hover:text-gray-900 hover:tracking-wider transition duration-250 ease-in-out"
+                  className="text-blue-900 hover:text-gray-900 hover:tracking-wider transition duration-250 ease-in-out"
                 >
                   {language === "de" ? "Kontakt" : "Contact"}
                 </HashLink>
@@ -56,7 +60,7 @@ const Footer = ({ language }) => {
               <li className="mb-1 sm:mb-2">
                 <Link
                   to="/legal-notice"
-                  className="text-[#013289] hover:text-gray-900 hover:tracking-wider transition duration-250 ease-in-out"
+                  className="text-blue-900 hover:text-gray-900 hover:tracking-wider transition duration-250 ease-in-out"
                 >
                   {language === "de" ? "Impressum" : "Legal Notice"}
                 </Link>
@@ -66,14 +70,14 @@ const Footer = ({ language }) => {
 
           {/* 3rd block */}
           <div className="col-span-6 md:col-span-6 lg:col-span-4 mx-auto">
-            <h6 className="text-[#013289] text-lg sm:text-xl font-bold mb-2 sm:mb-4">
+            <h6 className="text-blue-900 text-lg sm:text-xl font-bold mb-2 sm:mb-4">
               {language === "de" ? "LEISTUNGEN" : "SERVICES"}
             </h6>
             <ul className="text-sm sm:text-md">
               <li className="mb-1 sm:mb-2">
                 <Link
                   to="#"
-                  className="text-[#013289] hover:text-gray-900 hover:underline transition duration-250 ease-in-out"
+                  className="text-blue-900 hover:text-gray-900 hover:underline transition duration-250 ease-in-out"
                 >
                   {language === "de" ? "Leistungen für Athleten" : "Services for Athletes"}
                 </Link>
@@ -81,7 +85,7 @@ const Footer = ({ language }) => {
               <li className="mb-1 sm:mb-2">
                 <Link
                   to="#"
-                  className="text-[#013289] hover:text-gray-900 hover:underline transition duration-250 ease-in-out"
+                    className="text-blue-900 hover:text-gray-900 hover:underline transition duration-250 ease-in-out"
                 >
                   {language === "de" ? "Leistungen für Unternehmen" : "Services for Companies"}
                 </Link>

@@ -1,27 +1,28 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useCallback } from "react";
 import NavLinks from "./NavLinks";
 import { HashLink } from "react-router-hash-link";
+import logo from "../../images/pepliesconsult_logo_black.svg";
 
 const NavBar = ({ language, toggleLanguage }) => {
   const [top, setTop] = useState(!window.scrollY);
   const [isOpen, setIsOpen] = useState(false);
   const [showNav, setShowNav] = useState(false);
 
-  function handleClick() {
+  const handleClick = useCallback(() => {
     setIsOpen(!isOpen);
-  }
+  }, [isOpen]);
+
+  const scrollHandler = useCallback(() => {
+    setTop(window.scrollY <= 20);
+  }, []);
+
+  const mouseMoveHandler = useCallback((e) => {
+    const windowHeight = window.innerHeight;
+    const threshold = windowHeight / 3;
+    setShowNav(e.clientY <= threshold);
+  }, []);
 
   useEffect(() => {
-    const scrollHandler = () => {
-      window.scrollY > 20 ? setTop(false) : setTop(true);
-    };
-
-    const mouseMoveHandler = (e) => {
-      const windowHeight = window.innerHeight;
-      const threshold = windowHeight / 3;
-      setShowNav(e.clientY <= threshold);
-    };
-
     window.addEventListener("scroll", scrollHandler);
     window.addEventListener("mousemove", mouseMoveHandler);
 
@@ -29,7 +30,7 @@ const NavBar = ({ language, toggleLanguage }) => {
       window.removeEventListener("scroll", scrollHandler);
       window.removeEventListener("mousemove", mouseMoveHandler);
     };
-  }, []);
+  }, [scrollHandler, mouseMoveHandler]);
 
   return (
     <nav
@@ -40,7 +41,11 @@ const NavBar = ({ language, toggleLanguage }) => {
       <div className="flex flex-row justify-between items-center px-2 py-4 mx-4">
         <div className="flex flex-row justify-center md:mx-12 items-center text-center font-semibold">
           <HashLink smooth to="/#hero">
-            <h1 className="font-extrabold text-2xl text-blue-900">peplies consult</h1>
+            <img
+              src={logo}
+              alt="peplies consult"
+              className="sm:h-16 h-12 w-auto [filter:brightness(0)_saturate(100%)_invert(13%)_sepia(97%)_saturate(1000%)_hue-rotate(214deg)_brightness(97%)_contrast(97%)]"
+            />
           </HashLink>
         </div>
         <div className="group flex flex-col items-center">

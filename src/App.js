@@ -11,6 +11,7 @@ import AthleteDetails from "./pages/AthleteDetails";
 import LegalNotice from "./pages/LegalNotice";
 import Portfolio from "./components/Portfolio";
 import AthleteServices from "./pages/AthleteServices";
+import Footer from "./components/Footer";
 
 import NavBar from "./components/Navbar/NavBar";
 
@@ -41,8 +42,8 @@ function App() {
   useDocTitle("peplies consult - Sports Marketing Consultants");
 
   return (
-    <div className="min-h-screen flex flex-col">
-      <Router future={{ v7_relativeSplatPath: true }}>
+    <Router future={{ v7_relativeSplatPath: true }}>
+      <div className="flex flex-col min-h-screen">
         <ScrollToTop>
           <NavBar language={language} toggleLanguage={toggleLanguage} />
           <main className="flex-grow">
@@ -56,9 +57,10 @@ function App() {
               <Route path="/services/athletes" element={<AthleteServices language={language} />} />
             </Routes>
           </main>
+          <Footer language={language} />
         </ScrollToTop>
-      </Router>
-    </div>
+      </div>
+    </Router>
   );
 }
 

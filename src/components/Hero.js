@@ -1,8 +1,12 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { HashLink } from "react-router-hash-link";
+import logo from "../images/pepliesconsult_logo_black.svg";
 
 const Hero = ({ language }) => {
   const [currentVideo, setCurrentVideo] = useState(0);
+  const intervalRef = useRef(null);
+  const videoRef = useRef(null);
+
   const videos = [
     "https://res.cloudinary.com/dbpoconup/video/upload/v1743086097/1587215_4k_Skiing_3840x2160_gog0nk.mp4",
     "https://res.cloudinary.com/dbpoconup/video/upload/v1743086096/5401296_Coll_wavebreak_People_3840x2160_wqpjne.mp4",
@@ -10,11 +14,21 @@ const Hero = ({ language }) => {
   ];
 
   useEffect(() => {
-    const interval = setInterval(() => {
+    // Set up interval for video rotation
+    intervalRef.current = setInterval(() => {
       setCurrentVideo((prevVideo) => (prevVideo + 1) % videos.length);
-    }, 8000); // Switch every 8 seconds
+    }, 8000);
 
-    return () => clearInterval(interval);
+    // Cleanup function
+    return () => {
+      if (intervalRef.current) {
+        clearInterval(intervalRef.current);
+      }
+      if (videoRef.current) {
+        videoRef.current.pause();
+        videoRef.current.src = "";
+      }
+    };
   }, []);
 
   return (
@@ -22,6 +36,7 @@ const Hero = ({ language }) => {
       <div className="hero relative h-[400px] lg:h-[800px] flex items-center justify-center" id="hero">
         <div className="absolute inset-0 w-full h-full overflow-hidden">
           <video
+            ref={videoRef}
             key={currentVideo}
             autoPlay
             loop
@@ -39,23 +54,30 @@ const Hero = ({ language }) => {
             {language === "de" ? (
               <>
                 WILLKOMMEN
-                <br/>
-                bei der
-                <br/>
-                <span className="text-white">peplies consult GmbH</span>
+                <br />
+                <span className="sm:mt-8 block">bei der</span>
+                <img
+                  src={logo}
+                  alt="peplies consult"
+                  className="sm:h-48 h-24 w-auto mx-auto sm:mt-8 [filter:brightness(0)_saturate(100%)_invert(100%)]"
+                />
               </>
             ) : (
               <>
                 WELCOME
-                <br/>
-                to the
-                <br/>
-                <span className="text-white">peplies consult GmbH</span>
+                <br />
+                <span className="sm:mt-8 block">to the</span>
+                
+                <img
+                  src={logo}
+                  alt="peplies consult"
+                  className="sm:h-48 h-24 w-auto mx-auto sm:mt-8 [filter:brightness(0)_saturate(100%)_invert(100%)]"
+                />
               </>
             )}
           </h1>
 
-          <div className="my-8">
+          <div className="sm:my-8">
             <HashLink
               className="text-white bg-blue-900 hover:bg-blue-800 inline-flex items-center justify-center px-6 py-3 shadow-xl rounded-xl"
               to="/athletes"

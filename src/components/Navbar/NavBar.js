@@ -75,7 +75,7 @@ const NavBar = ({ language, toggleLanguage }) => {
           >
             <div className="flex flex-col space-y-6 w-full">
               <div className="flex flex-col items-start space-y-6">
-                <NavLinks language={language} toggleLanguage={toggleLanguage} setIsOpen={setIsOpen} />
+                <NavLinks language={language} toggleLanguage={toggleLanguage} setIsOpen={setIsOpen} isMobile={true} />
               </div>
             </div>
           </div>

@@ -12,6 +12,7 @@ import LegalNotice from "./pages/LegalNotice";
 import Portfolio from "./components/Portfolio";
 import AthleteServices from "./pages/AthleteServices";
 import Press from "./pages/Press";
+import TvCommercials from "./pages/TvCommercials";
 import Footer from "./components/Footer";
 
 import NavBar from "./components/Navbar/NavBar";
@@ -57,6 +58,7 @@ function App() {
               <Route path="/portfolio" element={<Portfolio language={language} />} />
               <Route path="/services/athletes" element={<AthleteServices language={language} />} />
               <Route path="/press" element={<Press language={language} />} />
+              <Route path="/campaigns/tv-spots" element={<TvCommercials language={language} />} />
             </Routes>
           </main>
           <Footer language={language} />

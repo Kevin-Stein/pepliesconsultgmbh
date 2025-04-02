@@ -13,7 +13,10 @@ const ScrollToTop = ({ children }) => {
   }, []);
 
   useEffect(() => {
-    scrollToTop();
+    // Only scroll to top if the pathname is not /athletes
+    if (location.pathname !== "/athletes") {
+      scrollToTop();
+    }
   }, [location, scrollToTop]);
 
   return <>{children}</>;

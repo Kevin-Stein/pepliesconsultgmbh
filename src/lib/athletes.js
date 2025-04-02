@@ -12,6 +12,7 @@ const athletes = [
     hobby: "",
     portraitImageURL: "",
     actionImageURL: "",
+    signatureImageURL: "",
   },
   {
     firstName: "Adrian",
@@ -25,6 +26,7 @@ const athletes = [
     hobby: "",
     portraitImageURL: "",
     actionImageURL: "",
+    signatureImageURL: "",
   },
   {
     firstName: "Alina",
@@ -38,6 +40,7 @@ const athletes = [
     hobby: "",
     portraitImageURL: "",
     actionImageURL: "",
+    signatureImageURL: "",
   },
   {
     firstName: "Alma",
@@ -51,6 +54,7 @@ const athletes = [
     hobby: "",
     portraitImageURL: "",
     actionImageURL: "",
+    signatureImageURL: "",
   },
   {
     firstName: "Anna",
@@ -64,6 +68,7 @@ const athletes = [
     hobby: "",
     portraitImageURL: "",
     actionImageURL: "",
+    signatureImageURL: "",
   },
   {
     firstName: "Anna-Fay",
@@ -77,6 +82,7 @@ const athletes = [
     hobby: "",
     portraitImageURL: "",
     actionImageURL: "",
+    signatureImageURL: "",
   },
   {
     firstName: "Bernd",
@@ -90,6 +96,7 @@ const athletes = [
     hobby: "",
     portraitImageURL: "",
     actionImageURL: "",
+    signatureImageURL: "",
   },
   {
     firstName: "Cindy",
@@ -103,6 +110,7 @@ const athletes = [
     hobby: "",
     portraitImageURL: "",
     actionImageURL: "",
+    signatureImageURL: "",
   },
   {
     firstName: "David",
@@ -116,6 +124,7 @@ const athletes = [
     hobby: "",
     portraitImageURL: "",
     actionImageURL: "",
+    signatureImageURL: "",
   },
   {
     firstName: "Emely",
@@ -129,6 +138,7 @@ const athletes = [
     hobby: "",
     portraitImageURL: "",
     actionImageURL: "",
+    signatureImageURL: "",
   },
   {
     firstName: "Emely",
@@ -142,6 +152,7 @@ const athletes = [
     hobby: "",
     portraitImageURL: "",
     actionImageURL: "",
+    signatureImageURL: "",
   },
   {
     firstName: "Eric",
@@ -155,6 +166,7 @@ const athletes = [
     hobby: "",
     portraitImageURL: "",
     actionImageURL: "",
+    signatureImageURL: "",
   },
   {
     firstName: "Felix",
@@ -168,6 +180,7 @@ const athletes = [
     hobby: "",
     portraitImageURL: "",
     actionImageURL: "",
+    signatureImageURL: "",
   },
   {
     firstName: "Janina",
@@ -181,6 +194,7 @@ const athletes = [
     hobby: "",
     portraitImageURL: "",
     actionImageURL: "",
+    signatureImageURL: "",
   },
   {
     firstName: "Jenny",
@@ -194,6 +208,7 @@ const athletes = [
     hobby: "",
     portraitImageURL: "",
     actionImageURL: "",
+    signatureImageURL: "",
   },
   {
     firstName: "Josephine",
@@ -207,6 +222,7 @@ const athletes = [
     hobby: "",
     portraitImageURL: "",
     actionImageURL: "",
+    signatureImageURL: "",
   },
   {
     firstName: "Julia",
@@ -220,6 +236,7 @@ const athletes = [
     hobby: "",
     portraitImageURL: "",
     actionImageURL: "",
+    signatureImageURL: "",
   },
   {
     firstName: "Julian",
@@ -233,6 +250,7 @@ const athletes = [
     hobby: "",
     portraitImageURL: "",
     actionImageURL: "",
+    signatureImageURL: "",
   },
   {
     firstName: "Julijan",
@@ -247,6 +265,7 @@ const athletes = [
     portraitImageURL:
       "https://res.cloudinary.com/dbpoconup/image/upload/w_1000,ar_1:1,c_fill,g_auto,e_art:hokusai/v1740658928/Smid_Julijan_portrait_ibtlcs.jpg",
     actionImageURL: "https://res.cloudinary.com/dbpoconup/image/upload/v1740658928/Smid_Julijan_action_w2nuyl.jpg",
+    signatureImageURL: "",
   },
   {
     firstName: "Justin",
@@ -260,6 +279,7 @@ const athletes = [
     hobby: "",
     portraitImageURL: "",
     actionImageURL: "",
+    signatureImageURL: "",
   },
   {
     firstName: "Karl",
@@ -273,6 +293,7 @@ const athletes = [
     hobby: "",
     portraitImageURL: "",
     actionImageURL: "",
+    signatureImageURL: "",
   },
   {
     firstName: "Lara",
@@ -287,6 +308,7 @@ const athletes = [
     portraitImageURL:
       "https://res.cloudinary.com/dbpoconup/image/upload/w_1000,ar_1:1,c_fill,g_auto,/v1740660815/Malisner_lara_portrait_angepasst_inreco.jpg",
     actionImageURL: "https://res.cloudinary.com/dbpoconup/image/upload/v1740658934/Malisner_Lara_action_wj7vcc.jpg",
+    signatureImageURL: "",
   },
   {
     firstName: "Lara",
@@ -300,6 +322,7 @@ const athletes = [
     hobby: "",
     portraitImageURL: "",
     actionImageURL: "",
+    signatureImageURL: "",
   },
   {
     firstName: "Lia",
@@ -313,6 +336,7 @@ const athletes = [
     hobby: "Schwimmen, Volleyball",
     portraitImageURL: "https://res.cloudinary.com/dbpoconup/image/upload/v1740658921/Boehme_Lia_portrait_d5ncp0.jpg",
     actionImageURL: "https://res.cloudinary.com/dbpoconup/image/upload/v1740658922/Boehme_Lia_action_jy2x0c.jpg",
+    signatureImageURL: "",
   },
   {
     firstName: "Luisa",
@@ -326,6 +350,7 @@ const athletes = [
     hobby: "",
     portraitImageURL: "",
     actionImageURL: "",
+    signatureImageURL: "",
   },
   {
     firstName: "Maria",
@@ -339,6 +364,7 @@ const athletes = [
     hobby: "",
     portraitImageURL: "",
     actionImageURL: "",
+    signatureImageURL: "",
   },
   {
     firstName: "Martin",
@@ -352,6 +378,7 @@ const athletes = [
     hobby: "",
     portraitImageURL: "",
     actionImageURL: "",
+    signatureImageURL: "",
   },
   {
     firstName: "Martina",
@@ -365,6 +392,7 @@ const athletes = [
     hobby: "",
     portraitImageURL: "",
     actionImageURL: "",
+    signatureImageURL: "",
   },
   {
     firstName: "Pauline",
@@ -378,6 +406,7 @@ const athletes = [
     hobby: "",
     portraitImageURL: "",
     actionImageURL: "",
+    signatureImageURL: "",
   },
   {
     firstName: "Ramona",
@@ -391,6 +420,7 @@ const athletes = [
     hobby: "",
     portraitImageURL: "",
     actionImageURL: "",
+    signatureImageURL: "",
   },
   {
     firstName: "Ronja",
@@ -404,6 +434,7 @@ const athletes = [
     hobby: "",
     portraitImageURL: "",
     actionImageURL: "",
+    signatureImageURL: "",
   },
   {
     firstName: "Simon",
@@ -417,6 +448,7 @@ const athletes = [
     hobby: "",
     portraitImageURL: "",
     actionImageURL: "",
+    signatureImageURL: "",
   },
   {
     firstName: "Tristan",
@@ -430,6 +462,7 @@ const athletes = [
     hobby: "",
     portraitImageURL: "",
     actionImageURL: "",
+    signatureImageURL: "",
   },
   {
     firstName: "Wendelin",
@@ -443,6 +476,7 @@ const athletes = [
     hobby: "",
     portraitImageURL: "",
     actionImageURL: "",
+    signatureImageURL: "",
   },
   // Former Athletes
   {
@@ -458,6 +492,7 @@ const athletes = [
     portraitImageURL: "",
     actionImageURL: "",
     isFormer: true,
+    signatureImageURL: "",
   },
   {
     firstName: "Anja",
@@ -472,6 +507,7 @@ const athletes = [
     portraitImageURL: "",
     actionImageURL: "",
     isFormer: true,
+    signatureImageURL: "",
   },
   {
     firstName: "Björn",
@@ -486,6 +522,7 @@ const athletes = [
     portraitImageURL: "",
     actionImageURL: "",
     isFormer: true,
+    signatureImageURL: "",
   },
   {
     firstName: "Julia",
@@ -500,6 +537,7 @@ const athletes = [
     portraitImageURL: "",
     actionImageURL: "",
     isFormer: true,
+    signatureImageURL: "",
   },
   {
     firstName: "Kirsten",
@@ -514,6 +552,7 @@ const athletes = [
     portraitImageURL: "",
     actionImageURL: "",
     isFormer: true,
+    signatureImageURL: "",
   },
   {
     firstName: "Lars",
@@ -528,6 +567,7 @@ const athletes = [
     portraitImageURL: "",
     actionImageURL: "",
     isFormer: true,
+    signatureImageURL: "",
   },
   {
     firstName: "Lucie",
@@ -542,6 +582,7 @@ const athletes = [
     portraitImageURL: "",
     actionImageURL: "",
     isFormer: true,
+    signatureImageURL: "",
   },
   {
     firstName: "Magdalena",
@@ -556,6 +597,7 @@ const athletes = [
     portraitImageURL: "",
     actionImageURL: "",
     isFormer: true,
+    signatureImageURL: "",
   },
   {
     firstName: "Mandy",
@@ -570,6 +612,7 @@ const athletes = [
     portraitImageURL: "",
     actionImageURL: "",
     isFormer: true,
+    signatureImageURL: "",
   },
   {
     firstName: "Martina",
@@ -584,6 +627,7 @@ const athletes = [
     portraitImageURL: "",
     actionImageURL: "",
     isFormer: true,
+    signatureImageURL: "",
   },
   {
     firstName: "Martina",
@@ -598,6 +642,7 @@ const athletes = [
     portraitImageURL: "",
     actionImageURL: "",
     isFormer: true,
+    signatureImageURL: "",
   },
   {
     firstName: "Red Bull",
@@ -612,6 +657,7 @@ const athletes = [
     portraitImageURL: "",
     actionImageURL: "",
     isFormer: true,
+    signatureImageURL: "",
   },
   {
     firstName: "Sven",
@@ -626,6 +672,7 @@ const athletes = [
     portraitImageURL: "",
     actionImageURL: "",
     isFormer: true,
+    signatureImageURL: "",
   },
   {
     firstName: "Sven-Göran",
@@ -640,6 +687,7 @@ const athletes = [
     portraitImageURL: "",
     actionImageURL: "",
     isFormer: true,
+    signatureImageURL: "",
   },
   {
     firstName: "Tennis Academy",
@@ -654,6 +702,7 @@ const athletes = [
     portraitImageURL: "",
     actionImageURL: "",
     isFormer: true,
+    signatureImageURL: "",
   },
 ];
 

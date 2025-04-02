@@ -1,10 +1,9 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 
-import Footer from "../components/Footer";
 import { useDocTitle } from "../components/CustomHook";
 import athletes from "../lib/athletes";
-import placeholderPortrait from "../images/athletes/athlet_portrait.jpg";
+import placeholderPortrait from "../images/athletes/portrait_placeholder.jpg";
 
 const Athletes = ({ language }) => {
   useDocTitle("peplies consult - Sports Marketing Consultants");

@@ -1,10 +1,10 @@
 import React from "react";
 import { useParams } from "react-router-dom";
-import Footer from "../components/Footer";
+
 import athletes from "../lib/athletes";
 import { useDocTitle } from "../components/CustomHook";
-import placeholderPortrait from "../images/athletes/athlet_portrait.jpg";
-import placeholderAction from "../images/athletes/athlet_action.jpg";
+import placeholderPortrait from "../images/athletes/portrait_placeholder.jpg";
+import placeholderAction from "../images/athletes/portrait_placeholder.jpg";
 
 const AthleteDetails = ({ language }) => {
   useDocTitle("peplies consult - Sports Marketing Consultants");
@@ -68,7 +68,6 @@ const AthleteDetails = ({ language }) => {
           />
         </div>
       </div>
-     
     </>
   );
 };

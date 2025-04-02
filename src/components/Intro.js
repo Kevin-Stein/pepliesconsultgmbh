@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 
 const Intro = ({ language }) => {
   return (
-    <div className="bg-white pb-6 sm:pb-24 min-h-[100px] sm:min-h-[200px] flex items-center">
+    <div id="about" className="bg-white pb-6 sm:pb-24 min-h-[100px] sm:min-h-[200px] flex items-center">
       <div className="container mx-auto px-2 sm:px-12">
         <div className="relative overflow-hidden">
           <div className="absolute inset-0 flex items-start justify-center opacity-40">

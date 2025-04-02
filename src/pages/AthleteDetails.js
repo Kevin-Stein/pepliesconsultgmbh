@@ -68,7 +68,7 @@ const AthleteDetails = ({ language }) => {
           />
         </div>
       </div>
-      <Footer language={language} />
+     
     </>
   );
 };

@@ -4,49 +4,76 @@ import logo from "../images/pepliesconsult_logo_black.svg";
 
 const Hero = ({ language }) => {
   const [currentVideo, setCurrentVideo] = useState(0);
-  const intervalRef = useRef(null);
-  const videoRef = useRef(null);
+  const videoRefs = useRef([]);
 
   const videos = [
-    "https://res.cloudinary.com/dbpoconup/video/upload/v1743086097/1587215_4k_Skiing_3840x2160_gog0nk.mp4",
-    "https://res.cloudinary.com/dbpoconup/video/upload/v1743086096/5401296_Coll_wavebreak_People_3840x2160_wqpjne.mp4",
+    "https://res.cloudinary.com/dbpoconup/video/upload/v1743604395/tennis_txbxgw.mov",
+    "https://res.cloudinary.com/dbpoconup/video/upload/v1743604394/reiten_a1mytn.mov",
+    "https://res.cloudinary.com/dbpoconup/video/upload/v1743604393/tischtennis_pjg5s4.mov",
+    "https://res.cloudinary.com/dbpoconup/video/upload/v1743604391/ski_alpin_r9hwpr.mov",
     "https://res.cloudinary.com/dbpoconup/video/upload/v1743089133/0_Woman_Runner_3840x2160_odahxf.mp4",
   ];
 
-  useEffect(() => {
-    // Set up interval for video rotation
-    intervalRef.current = setInterval(() => {
-      setCurrentVideo((prevVideo) => (prevVideo + 1) % videos.length);
-    }, 8000);
+  const playVideo = async (index) => {
+    const video = videoRefs.current[index];
+    if (!video) return;
 
-    // Cleanup function
-    return () => {
-      if (intervalRef.current) {
-        clearInterval(intervalRef.current);
-      }
-      if (videoRef.current) {
-        videoRef.current.pause();
-        videoRef.current.src = "";
-      }
+    try {
+      video.currentTime = 0;
+      await video.play();
+    } catch (error) {
+      console.error(`Error playing video ${index}:`, error);
+      // Move to next video on error
+      const nextIndex = (index + 1) % videos.length;
+      setCurrentVideo(nextIndex);
+    }
+  };
+
+  useEffect(() => {
+    const handleVideoEnd = () => {
+      const nextIndex = (currentVideo + 1) % videos.length;
+      setCurrentVideo(nextIndex);
     };
-  }, []);
+
+    // Add ended event listener to current video
+    const currentVideoElement = videoRefs.current[currentVideo];
+    if (currentVideoElement) {
+      currentVideoElement.addEventListener("ended", handleVideoEnd);
+      playVideo(currentVideo);
+    }
+
+    // Cleanup
+    return () => {
+      if (currentVideoElement) {
+        currentVideoElement.removeEventListener("ended", handleVideoEnd);
+      }
+      // Stop all videos
+      videoRefs.current.forEach((video) => {
+        if (video) {
+          video.pause();
+          video.currentTime = 0;
+        }
+      });
+    };
+  }, [currentVideo, videos.length]);
 
   return (
     <>
       <div className="hero relative h-[400px] lg:h-[800px] flex items-center justify-center" id="hero">
         <div className="absolute inset-0 w-full h-full overflow-hidden">
-          <video
-            ref={videoRef}
-            key={currentVideo}
-            autoPlay
-            loop
-            muted
-            playsInline
-            className="w-full h-full object-cover object-top transition-opacity duration-1000"
-            style={{ opacity: 1 }}
-          >
-            <source src={videos[currentVideo]} type="video/mp4" />
-          </video>
+          {videos.map((video, index) => (
+            <video
+              key={video}
+              ref={(el) => (videoRefs.current[index] = el)}
+              src={video}
+              muted
+              playsInline
+              preload="auto"
+              className={`absolute inset-0 w-full h-full object-cover object-top transition-opacity duration-1000 ease-in-out brightness-60 ${
+                index === currentVideo ? "opacity-100" : "opacity-0"
+              }`}
+            />
+          ))}
           <div className="absolute inset-0 bg-black bg-opacity-10"></div>
         </div>
         <div className="relative z-10 text-center px-4" data-aos="zoom-in">
@@ -67,7 +94,6 @@ const Hero = ({ language }) => {
                 WELCOME
                 <br />
                 <span className="sm:mt-8 block">to the</span>
-                
                 <img
                   src={logo}
                   alt="peplies consult"

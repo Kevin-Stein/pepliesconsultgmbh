@@ -1,10 +1,12 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useEffect, useRef, useContext } from "react";
 import { HashLink } from "react-router-hash-link";
 import logo from "../images/pepliesconsult_logo_black.svg";
+import { AuthContext } from "../App";
 
 const Hero = ({ language }) => {
   const [currentVideo, setCurrentVideo] = useState(0);
   const videoRefs = useRef([]);
+  const { isAuthenticated } = useContext(AuthContext);
 
   const videos = [
     "https://res.cloudinary.com/dbpoconup/video/upload/v1743604395/tennis_txbxgw.mov",
@@ -78,38 +80,22 @@ const Hero = ({ language }) => {
         </div>
         <div className="relative z-10 text-center px-4" data-aos="zoom-in">
           <h1 className="mb-5 text-2xl md:text-5xl mt-20 font-bold text-white leading-relaxed">
-            {language === "de" ? (
-              <>
-                WILLKOMMEN
-                <br />
-                <span className="sm:mt-8 block">bei der</span>
-                <img
-                  src={logo}
-                  alt="peplies consult"
-                  className="sm:h-48 h-24 w-auto mx-auto sm:mt-8 [filter:brightness(0)_saturate(100%)_invert(100%)]"
-                />
-              </>
-            ) : (
-              <>
-                WELCOME
-                <br />
-                <span className="sm:mt-8 block">to the</span>
-                <img
-                  src={logo}
-                  alt="peplies consult"
-                  className="sm:h-48 h-24 w-auto mx-auto sm:mt-8 [filter:brightness(0)_saturate(100%)_invert(100%)]"
-                />
-              </>
-            )}
+            <img
+              src={logo}
+              alt="peplies consult"
+              className="sm:h-48 h-24 w-auto mx-auto sm:mt-8 [filter:brightness(0)_saturate(100%)_invert(100%)]"
+            />
           </h1>
 
           <div className="sm:my-8">
-            <HashLink
-              className="text-white bg-blue-900 hover:bg-blue-800 inline-flex items-center justify-center px-6 py-3 shadow-xl rounded-xl"
-              to="/athletes"
-            >
-              {language === "de" ? "Unsere Athleten" : "Our Athletes"}
-            </HashLink>
+            {isAuthenticated && (
+              <HashLink
+                className="text-white bg-blue-900 hover:bg-blue-800 inline-flex items-center justify-center px-6 py-3 shadow-xl rounded-xl"
+                to="/athletes"
+              >
+                {language === "de" ? "Unsere Athleten" : "Our Athletes"}
+              </HashLink>
+            )}
           </div>
         </div>
       </div>

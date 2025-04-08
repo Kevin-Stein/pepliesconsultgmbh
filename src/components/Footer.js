@@ -1,14 +1,16 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Link } from "react-router-dom";
 import { HashLink } from "react-router-hash-link";
 import backgroundFooter from "../images/background_footer02.jpg";
+import { AuthContext } from "../App";
 
 const Footer = ({ language }) => {
+  const { isAuthenticated } = useContext(AuthContext);
+
   return (
     <footer className="mt-auto">
       <div className="footer relative max-w-full mx-auto px-2 sm:px-6 border-t border-b py-4 sm:py-8">
-        <div className="absolute inset-0 bg-gray-100">
-        </div>
+        <div className="absolute inset-0 bg-gray-100"></div>
         {/* Top area: Blocks */}
         <div className="relative z-10 grid sm:grid-cols-12 gap-3 sm:gap-5 py-4 sm:py-8 md:py-12  lg:ml-11">
           {/* 1st block */}
@@ -73,18 +75,20 @@ const Footer = ({ language }) => {
               {language === "de" ? "LEISTUNGEN" : "SERVICES"}
             </h6>
             <ul className="text-sm sm:text-md">
-              <li className="mb-1 sm:mb-2">
-                <Link
-                  to="#"
-                  className="text-blue-900 hover:text-gray-900 hover:underline transition duration-250 ease-in-out"
-                >
-                  {language === "de" ? "Leistungen für Athleten" : "Services for Athletes"}
-                </Link>
-              </li>
-              <li className="mb-1 sm:mb-2">
-                <Link
-                  to="#"
+              {isAuthenticated && (
+                <li className="mb-1 sm:mb-2">
+                  <Link
+                    to="/services/athletes"
                     className="text-blue-900 hover:text-gray-900 hover:underline transition duration-250 ease-in-out"
+                  >
+                    {language === "de" ? "Leistungen für Athleten" : "Services for Athletes"}
+                  </Link>
+                </li>
+              )}
+              <li className="mb-1 sm:mb-2">
+                <Link
+                  to="/services/companies"
+                  className="text-blue-900 hover:text-gray-900 hover:underline transition duration-250 ease-in-out"
                 >
                   {language === "de" ? "Leistungen für Unternehmen" : "Services for Companies"}
                 </Link>

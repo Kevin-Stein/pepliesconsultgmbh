@@ -1,8 +1,7 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useEffect, useRef, useContext } from "react";
 import { HashLink } from "react-router-hash-link";
 import { Link } from "react-router-dom";
-import germanyFlag from "../../images/flags/germany.png";
-import ukFlag from "../../images/flags/united-kingdom.png";
+import { AuthContext } from "../../App";
 
 const scrollWithOffset = (el) => {
   const yCoordinate = el.getBoundingClientRect().top + window.pageYOffset;
@@ -17,6 +16,7 @@ const NavLinks = ({ language, toggleLanguage, setIsOpen, isMobile = false }) => 
   const [leistungenOpen, setLeistungenOpen] = useState(false);
   const [referenzenOpen, setReferenzenOpen] = useState(false);
   const [kampagnenOpen, setKampagnenOpen] = useState(false);
+  const { isAuthenticated } = useContext(AuthContext);
 
   const leistungenRef = useRef(null);
   const referenzenRef = useRef(null);
@@ -40,12 +40,6 @@ const NavLinks = ({ language, toggleLanguage, setIsOpen, isMobile = false }) => 
       document.removeEventListener("mousedown", handleClickOutside);
     };
   }, []);
-
-  const handleLanguageToggle = (e) => {
-    e.preventDefault();
-    e.stopPropagation();
-    toggleLanguage();
-  };
 
   const handleNavigationClick = () => {
     setIsOpen(false);
@@ -117,13 +111,15 @@ const NavLinks = ({ language, toggleLanguage, setIsOpen, isMobile = false }) => 
                   : "absolute top-full left-0 w-64 bg-white rounded-md shadow-lg py-1 z-50"
               }`}
             >
-              <Link
-                to="/services/athletes"
-                className="block px-4 py-2 font-extrabold text-gray-500 hover:text-blue-900 tracking-wider whitespace-nowrap"
-                onClick={handleNavigationClick}
-              >
-                {language === "de" ? "Leistungen für Athleten" : "Services for Athletes"} 🔒
-              </Link>
+              {isAuthenticated && (
+                <Link
+                  to="/services/athletes"
+                  className="block px-4 py-2 font-extrabold text-gray-500 hover:text-blue-900 tracking-wider whitespace-nowrap"
+                  onClick={handleNavigationClick}
+                >
+                  {language === "de" ? "Leistungen für Athleten" : "Services for Athletes"}
+                </Link>
+              )}
               <Link
                 to="/services/companies"
                 className="block px-4 py-2 font-extrabold text-gray-500 hover:text-blue-900 tracking-wider whitespace-nowrap"
@@ -162,13 +158,15 @@ const NavLinks = ({ language, toggleLanguage, setIsOpen, isMobile = false }) => 
                   : "absolute top-full left-0 w-64 bg-white rounded-md shadow-lg py-1 z-50"
               }`}
             >
-              <Link
-                to="/athletes"
-                className="block px-4 py-2 font-extrabold text-gray-500 hover:text-blue-900 tracking-wider whitespace-nowrap"
-                onClick={handleNavigationClick}
-              >
-                {language === "de" ? "Referenzen Athleten" : "Athlete References"}
-              </Link>
+              {isAuthenticated && (
+                <Link
+                  to="/athletes"
+                  className="block px-4 py-2 font-extrabold text-gray-500 hover:text-blue-900 tracking-wider whitespace-nowrap"
+                  onClick={handleNavigationClick}
+                >
+                  {language === "de" ? "Referenzen Athleten" : "Athlete References"}
+                </Link>
+              )}
               <Link
                 to="/references/companies"
                 className="block px-4 py-2 font-extrabold text-gray-500 hover:text-blue-900 tracking-wider whitespace-nowrap"
@@ -252,18 +250,6 @@ const NavLinks = ({ language, toggleLanguage, setIsOpen, isMobile = false }) => 
       >
         {language === "de" ? "Wissenschaftlicher Beirat" : "Scientific Advisory Board"}
       </Link>
-
-      <button
-        className="w-8 h-6 hover:opacity-80 transition-opacity mt-4 lg:mt-0"
-        onClick={handleLanguageToggle}
-        type="button"
-      >
-        <img
-          src={language === "de" ? ukFlag : germanyFlag}
-          alt={language === "de" ? "Switch to English" : "Switch to German"}
-          className="w-full h-full object-contain"
-        />
-      </button>
     </>
   );
 };

@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useContext } from "react";
 import NavLinks from "./NavLinks";
 import { HashLink } from "react-router-hash-link";
+import { useNavigate } from "react-router-dom";
 import logo from "../../images/pepliesconsult_logo_black.svg";
 import germanyFlag from "../../images/flags/germany.png";
 import ukFlag from "../../images/flags/united-kingdom.png";
@@ -12,6 +13,7 @@ const NavBar = ({ language, toggleLanguage }) => {
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
   const { isAuthenticated, setIsAuthenticated } = useContext(AuthContext);
+  const navigate = useNavigate();
 
   const handleClick = () => {
     setIsOpen(!isOpen);
@@ -41,6 +43,7 @@ const NavBar = ({ language, toggleLanguage }) => {
   const handleLogout = () => {
     localStorage.removeItem("isAuthenticated");
     setIsAuthenticated(false);
+    navigate("/");
   };
 
   const handleLanguageToggle = (e) => {
@@ -82,6 +85,21 @@ const NavBar = ({ language, toggleLanguage }) => {
           </div>
           <div className="hidden lg:flex items-center space-x-6 p-5">
             <NavLinks language={language} toggleLanguage={toggleLanguage} setIsOpen={setIsOpen} />
+            {isAuthenticated ? (
+              <button
+                className="px-4 font-extrabold text-gray-500 hover:text-blue-900 tracking-wider"
+                onClick={handleLogout}
+              >
+                {language === "de" ? "Abmelden" : "Logout"}
+              </button>
+            ) : (
+              <button
+                className="px-4 font-extrabold text-gray-500 hover:text-blue-900 tracking-wider"
+                onClick={toggleLoginModal}
+              >
+                {language === "de" ? "Anmelden" : "Login"}
+              </button>
+            )}
             <button
               className="w-8 h-6 hover:opacity-80 transition-opacity"
               onClick={handleLanguageToggle}
@@ -94,21 +112,6 @@ const NavBar = ({ language, toggleLanguage }) => {
                 className="w-full h-full object-contain"
               />
             </button>
-            {isAuthenticated ? (
-              <button
-                className="px-4 py-2 bg-red-600 text-white rounded-lg hover:bg-red-700 transition-colors duration-200"
-                onClick={handleLogout}
-              >
-                {language === "de" ? "Abmelden" : "Logout"}
-              </button>
-            ) : (
-              <button
-                className="px-4 py-2 bg-blue-900 text-white rounded-lg hover:bg-blue-800 transition-colors duration-200"
-                onClick={toggleLoginModal}
-              >
-                {language === "de" ? "Anmelden" : "Login"}
-              </button>
-            )}
           </div>
           <div
             className={`fixed transition-all duration-300 ease-in-out flex left-0 w-full h-auto rounded-md p-24 bg-white lg:hidden shadow-xl top-14 z-50 transform ${
@@ -119,6 +122,21 @@ const NavBar = ({ language, toggleLanguage }) => {
               <div className="flex flex-col items-start space-y-6">
                 <NavLinks language={language} toggleLanguage={toggleLanguage} setIsOpen={setIsOpen} isMobile={true} />
                 <div className="flex items-center space-x-4 w-full">
+                  {isAuthenticated ? (
+                    <button
+                      className="px-4 font-extrabold text-gray-500 hover:text-blue-900 tracking-wider"
+                      onClick={handleLogout}
+                    >
+                      {language === "de" ? "Abmelden" : "Logout"}
+                    </button>
+                  ) : (
+                    <button
+                      className="px-4 font-extrabold text-gray-500 hover:text-blue-900 tracking-wider"
+                      onClick={toggleLoginModal}
+                    >
+                      {language === "de" ? "Anmelden" : "Login"}
+                    </button>
+                  )}
                   <button
                     className="w-8 h-6 hover:opacity-80 transition-opacity"
                     onClick={handleLanguageToggle}
@@ -131,21 +149,6 @@ const NavBar = ({ language, toggleLanguage }) => {
                       className="w-full h-full object-contain"
                     />
                   </button>
-                  {isAuthenticated ? (
-                    <button
-                      className="px-4 py-2 bg-red-600 text-white rounded-lg hover:bg-red-700 transition-colors duration-200"
-                      onClick={handleLogout}
-                    >
-                      {language === "de" ? "Abmelden" : "Logout"}
-                    </button>
-                  ) : (
-                    <button
-                      className="px-4 py-2 bg-blue-900 text-white rounded-lg hover:bg-blue-800 transition-colors duration-200"
-                      onClick={toggleLoginModal}
-                    >
-                      {language === "de" ? "Anmelden" : "Login"}
-                    </button>
-                  )}
                 </div>
               </div>
             </div>

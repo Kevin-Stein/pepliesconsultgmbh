@@ -14,11 +14,13 @@ import AthleteServices from "./pages/AthleteServices";
 import Press from "./pages/Press";
 import TvCommercials from "./pages/TvCommercials";
 import Footer from "./components/Footer";
+import HallOfFame from "./pages/HallOfFame";
 
 import NavBar from "./components/Navbar/NavBar";
 
 import { useDocTitle } from "./components/CustomHook";
 import ScrollToTop from "./components/ScrollToTop";
+import CookieBanner from "./components/CookieBanner";
 
 // Create an authentication context
 export const AuthContext = React.createContext({
@@ -85,10 +87,12 @@ function App() {
                 <Route path="/services/athletes" element={<AthleteServices language={language} />} />
                 <Route path="/press" element={<Press language={language} />} />
                 <Route path="/campaigns/tv-spots" element={<TvCommercials language={language} />} />
+                <Route path="/hall-of-fame" element={<HallOfFame />} />
               </Routes>
             </main>
             <Footer language={language} />
           </ScrollToTop>
+          <CookieBanner />
         </div>
       </Router>
     </AuthContext.Provider>

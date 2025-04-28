@@ -78,15 +78,15 @@ const NavLinks = ({ language, toggleLanguage, setIsOpen, isMobile = false }) => 
   return (
     <>
       <HashLink
-        className="px-4 font-extrabold text-gray-500 hover:text-blue-900 tracking-wider"
-        to="/#about"
+        className="px-2 text-m sm:text-base font-semibold text-gray-500 hover:text-blue-900"
+        smooth to="/#intro"
         onClick={handleAboutClick}
       >
         {language === "de" ? "Über uns" : "About Us"}
       </HashLink>
 
       <Link
-        className="px-4 font-extrabold text-gray-500 hover:text-blue-900 tracking-wider"
+        className="px-2 text-m sm:text-base font-semibold text-gray-500 hover:text-blue-900"
         to="/hall-of-fame"
         onClick={handleNavigationClick}
       >
@@ -101,13 +101,13 @@ const NavLinks = ({ language, toggleLanguage, setIsOpen, isMobile = false }) => 
           onMouseLeave={!isMobile ? () => setLeistungenOpen(false) : undefined}
         >
           <HashLink
-            className="px-4 font-extrabold text-gray-500 hover:text-blue-900 tracking-wider inline-flex items-center"
+            className="px-2 text-m sm:text-base font-semibold text-gray-500 hover:text-blue-900 inline-flex items-center"
             to="/#services"
             onClick={handleServicesClick}
           >
             <span>{language === "de" ? "Leistungen" : "Services"}</span>
             {/* Arrow Icon */}
-            <svg className="ml-1 w-3 h-3 fill-current" viewBox="0 0 12 12">
+            <svg className="ml-1 w-2 h-2 sm:w-3 sm:h-3 fill-current" viewBox="0 0 12 12">
               <path d="M5.9 9.7L.5 4.2l1.4-1.4L6 7l4.1-4.2L11.5 4z" />
             </svg>
           </HashLink>
@@ -115,14 +115,14 @@ const NavLinks = ({ language, toggleLanguage, setIsOpen, isMobile = false }) => 
             <div
               className={`${
                 isMobile
-                  ? "ml-4 mt-1 space-y-1"
+                  ? "ml-2 mt-0.5 space-y-0.5"
                   : "absolute top-full left-0 w-64 bg-white rounded-md shadow-lg py-1 z-50"
               }`}
             >
               {isAuthenticated && (
                 <Link
                   to="/services/athletes"
-                  className="block px-4 py-2 font-extrabold text-gray-500 hover:text-blue-900 tracking-wider whitespace-nowrap"
+                  className="block px-2 py-0.5 text-xs sm:text-sm font-medium text-gray-500 hover:text-blue-900 whitespace-nowrap"
                   onClick={handleNavigationClick}
                 >
                   {language === "de" ? "Leistungen für Athleten" : "Services for Athletes"}
@@ -130,7 +130,7 @@ const NavLinks = ({ language, toggleLanguage, setIsOpen, isMobile = false }) => 
               )}
               <Link
                 to="/services/companies"
-                className="block px-4 py-2 font-extrabold text-gray-500 hover:text-blue-900 tracking-wider whitespace-nowrap"
+                className="block px-2 py-0.5 text-xs sm:text-sm font-medium text-gray-500 hover:text-blue-900 whitespace-nowrap"
                 onClick={handleNavigationClick}
               >
                 {language === "de" ? "Leistungen für Unternehmen" : "Services for Companies"}
@@ -148,13 +148,13 @@ const NavLinks = ({ language, toggleLanguage, setIsOpen, isMobile = false }) => 
           onMouseLeave={!isMobile ? () => setReferenzenOpen(false) : undefined}
         >
           <HashLink
-            className="px-4 font-extrabold text-gray-500 hover:text-blue-900 tracking-wider inline-flex items-center"
+            className="px-2 text-m sm:text-base font-semibold text-gray-500 hover:text-blue-900 inline-flex items-center"
             to="/#clients"
             onClick={handleReferencesClick}
           >
             <span>{language === "de" ? "Referenzen" : "References"}</span>
             {/* Arrow Icon */}
-            <svg className="ml-1 w-3 h-3 fill-current" viewBox="0 0 12 12">
+            <svg className="ml-1 w-2 h-2 sm:w-3 sm:h-3 fill-current" viewBox="0 0 12 12">
               <path d="M5.9 9.7L.5 4.2l1.4-1.4L6 7l4.1-4.2L11.5 4z" />
             </svg>
           </HashLink>
@@ -162,14 +162,14 @@ const NavLinks = ({ language, toggleLanguage, setIsOpen, isMobile = false }) => 
             <div
               className={`${
                 isMobile
-                  ? "ml-4 mt-1 space-y-1"
+                  ? "ml-2 mt-0.5 space-y-0.5"
                   : "absolute top-full left-0 w-64 bg-white rounded-md shadow-lg py-1 z-50"
               }`}
             >
               {isAuthenticated && (
                 <Link
                   to="/athletes"
-                  className="block px-4 py-2 font-extrabold text-gray-500 hover:text-blue-900 tracking-wider whitespace-nowrap"
+                  className="block px-2 py-0.5 text-xs sm:text-sm font-medium text-gray-500 hover:text-blue-900 whitespace-nowrap"
                   onClick={handleNavigationClick}
                 >
                   {language === "de" ? "Referenzen Athleten" : "Athlete References"}
@@ -177,7 +177,7 @@ const NavLinks = ({ language, toggleLanguage, setIsOpen, isMobile = false }) => 
               )}
               <Link
                 to="/references/companies"
-                className="block px-4 py-2 font-extrabold text-gray-500 hover:text-blue-900 tracking-wider whitespace-nowrap"
+                className="block px-2 py-0.5 text-xs sm:text-sm font-medium text-gray-500 hover:text-blue-900 whitespace-nowrap"
                 onClick={handleNavigationClick}
               >
                 {language === "de" ? "Referenzen Unternehmen" : "Company References"}
@@ -190,7 +190,7 @@ const NavLinks = ({ language, toggleLanguage, setIsOpen, isMobile = false }) => 
       {/* Presse Link */}
       <Link
         to="/press"
-        className="px-4 font-extrabold text-gray-500 hover:text-blue-900 tracking-wider"
+        className="px-2 text-m sm:text-base font-semibold text-gray-500 hover:text-blue-900"
         onClick={handleNavigationClick}
       >
         {language === "de" ? "Presse" : "Press"}
@@ -205,12 +205,12 @@ const NavLinks = ({ language, toggleLanguage, setIsOpen, isMobile = false }) => 
         >
           <button
             type="button"
-            className="px-4 font-extrabold text-gray-500 hover:text-blue-900 tracking-wider inline-flex items-center text-left"
+            className="px-2 text-m sm:text-base font-semibold text-gray-500 hover:text-blue-900 inline-flex items-center text-left"
             onClick={() => !isMobile && setKampagnenOpen(!kampagnenOpen)}
           >
             <span>{language === "de" ? "Kampagnen" : "Campaigns"}</span>
             {/* Arrow Icon */}
-            <svg className="ml-1 w-3 h-3 fill-current" viewBox="0 0 12 12">
+            <svg className="ml-1 w-2 h-2 sm:w-3 sm:h-3 fill-current" viewBox="0 0 12 12">
               <path d="M5.9 9.7L.5 4.2l1.4-1.4L6 7l4.1-4.2L11.5 4z" />
             </svg>
           </button>
@@ -218,20 +218,20 @@ const NavLinks = ({ language, toggleLanguage, setIsOpen, isMobile = false }) => 
             <div
               className={`${
                 isMobile
-                  ? "ml-4 mt-1 space-y-1"
+                  ? "ml-2 mt-0.5 space-y-0.5"
                   : "absolute top-full left-0 w-64 bg-white rounded-md shadow-lg py-1 z-50"
               }`}
             >
               <Link
                 to="/campaigns/pr-print-plakat"
-                className="block px-4 py-2 font-extrabold text-gray-500 hover:text-blue-900 tracking-wider whitespace-nowrap"
+                className="block px-2 py-0.5 text-xs sm:text-sm font-medium text-gray-500 hover:text-blue-900 whitespace-nowrap"
                 onClick={handleNavigationClick}
               >
                 {language === "de" ? "PR, Print, Plakat" : "PR, Print, Poster"}
               </Link>
               <Link
                 to="/campaigns/tv-spots"
-                className="block px-4 py-2 font-extrabold text-gray-500 hover:text-blue-900 tracking-wider whitespace-nowrap"
+                className="block px-2 py-0.5 text-xs sm:text-sm font-medium text-gray-500 hover:text-blue-900 whitespace-nowrap"
                 onClick={handleNavigationClick}
               >
                 {language === "de" ? "TV Werbespots" : "TV Commercials"}
@@ -244,7 +244,7 @@ const NavLinks = ({ language, toggleLanguage, setIsOpen, isMobile = false }) => 
       {/* Publikationen Link */}
       <Link
         to="/publications"
-        className="px-4 font-extrabold text-gray-500 hover:text-blue-900 tracking-wider"
+        className="px-2 text-m sm:text-base font-semibold text-gray-500 hover:text-blue-900"
         onClick={handleNavigationClick}
       >
         {language === "de" ? "Publikationen" : "Publications"}
@@ -253,7 +253,7 @@ const NavLinks = ({ language, toggleLanguage, setIsOpen, isMobile = false }) => 
       {/* Wissenschaftlicher Beirat Link */}
       <Link
         to="/scientific-advisory-board"
-        className="px-4 font-extrabold text-gray-500 hover:text-blue-900 tracking-wider"
+        className="px-2 text-m sm:text-base font-semibold text-gray-500 hover:text-blue-900"
         onClick={handleNavigationClick}
       >
         {language === "de" ? "Wissenschaftlicher Beirat" : "Scientific Advisory Board"}

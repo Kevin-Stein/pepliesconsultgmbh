@@ -60,7 +60,7 @@ const NavBar = ({ language, toggleLanguage }) => {
             <img
               src={logo}
               alt="peplies consult"
-              className="sm:h-16 h-12 w-auto [filter:brightness(0)_saturate(100%)_invert(13%)_sepia(97%)_saturate(1000%)_hue-rotate(214deg)_brightness(97%)_contrast(97%)]"
+              className="z-10 sm:h-16 h-12 w-auto [filter:brightness(0)_saturate(100%)_invert(13%)_sepia(97%)_saturate(1000%)_hue-rotate(214deg)_brightness(97%)_contrast(97%)]"
             />
           </HashLink>
         </div>
@@ -87,14 +87,14 @@ const NavBar = ({ language, toggleLanguage }) => {
             <NavLinks language={language} toggleLanguage={toggleLanguage} setIsOpen={setIsOpen} />
             {isAuthenticated ? (
               <button
-                className="px-4 font-extrabold text-gray-500 hover:text-blue-900 tracking-wider"
+                className="px-4 font-semibold text-gray-500 hover:text-blue-900 tracking-wider"
                 onClick={handleLogout}
               >
                 {language === "de" ? "Abmelden" : "Logout"}
               </button>
             ) : (
               <button
-                className="px-4 font-extrabold text-gray-500 hover:text-blue-900 tracking-wider"
+                className="px-4 font-semibold text-gray-500 hover:text-blue-900 tracking-wider"
                 onClick={toggleLoginModal}
               >
                 {language === "de" ? "Anmelden" : "Login"}
@@ -114,31 +114,31 @@ const NavBar = ({ language, toggleLanguage }) => {
             </button>
           </div>
           <div
-            className={`fixed transition-all duration-300 ease-in-out flex right-0 w-[80%] h-auto rounded-md p-12 bg-white lg:hidden shadow-xl top-14 z-50 transform ${
+            className={`fixed transition-all duration-300 ease-in-out flex right-0 w-[80%] h-auto rounded-md p-10 bg-white lg:hidden shadow-xl top-14 z-50 transform ${
               isOpen ? "translate-y-0 opacity-100" : "-translate-y-4 opacity-0 pointer-events-none"
             }`}
           >
-            <div className="flex flex-col space-y-6 w-full">
-              <div className="flex flex-col items-start space-y-6">
+            <div className="flex flex-col space-y-2 w-full">
+              <div className="flex flex-col items-start space-y-2">
                 <NavLinks language={language} toggleLanguage={toggleLanguage} setIsOpen={setIsOpen} isMobile={true} />
-                <div className="flex items-center space-x-4 w-full">
+                <div className="flex items-center space-x-2 w-full">
                   {isAuthenticated ? (
                     <button
-                      className="px-4 font-extrabold text-gray-500 hover:text-blue-900 tracking-wider"
+                      className="px-2 text-xs font-medium text-gray-500 active:text-blue-900"
                       onClick={handleLogout}
                     >
                       {language === "de" ? "Abmelden" : "Logout"}
                     </button>
                   ) : (
                     <button
-                      className="px-4 font-extrabold text-gray-500 hover:text-blue-900 tracking-wider"
+                      className="px-2 text-xs font-medium text-gray-500 active:text-blue-900"
                       onClick={toggleLoginModal}
                     >
                       {language === "de" ? "Anmelden" : "Login"}
                     </button>
                   )}
                   <button
-                    className="w-8 h-6 hover:opacity-80 transition-opacity"
+                    className="w-5 h-3.5 active:opacity-80 transition-opacity"
                     onClick={handleLanguageToggle}
                     type="button"
                     aria-label={language === "de" ? "Switch to English" : "Switch to German"}

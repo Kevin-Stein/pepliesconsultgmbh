@@ -13,7 +13,6 @@ const Hero = ({ language }) => {
     "https://res.cloudinary.com/dbpoconup/video/upload/v1743604394/reiten_a1mytn.mov",
     "https://res.cloudinary.com/dbpoconup/video/upload/v1743604393/tischtennis_pjg5s4.mov",
     "https://res.cloudinary.com/dbpoconup/video/upload/v1743604391/ski_alpin_r9hwpr.mov",
-    "https://res.cloudinary.com/dbpoconup/video/upload/v1743089133/0_Woman_Runner_3840x2160_odahxf.mp4",
   ];
 
   const playVideo = async (index) => {
@@ -61,7 +60,7 @@ const Hero = ({ language }) => {
 
   return (
     <>
-      <div className="hero relative h-[400px] lg:h-[800px] flex items-center justify-center" id="hero">
+      <div className="hero relative h-[400px] lg:h-[800px] flex flex-col items-center justify-between" id="hero">
         <div className="absolute inset-0 w-full h-full overflow-hidden">
           {videos.map((video, index) => (
             <video
@@ -77,17 +76,19 @@ const Hero = ({ language }) => {
             />
           ))}
           <div className="absolute inset-0 bg-black bg-opacity-10"></div>
+          <div className="absolute inset-0 bg-gradient-to-t from-black to-transparent opacity-70"></div>
         </div>
-        <div className="relative z-10 text-center px-4" data-aos="zoom-in">
-          <h1 className="mb-5 text-2xl md:text-5xl mt-20 font-bold text-white leading-relaxed">
+        <div className="relative z-10 text-center px-4 flex flex-col items-center justify-between h-full py-8">
+          <div className="flex-grow"></div>
+          <h1 className="mb-5 text-2xl md:text-5xl font-bold text-white leading-relaxed">
             <img
               src={logo}
               alt="peplies consult"
-              className="sm:h-48 h-24 w-auto mx-auto sm:mt-8 [filter:brightness(0)_saturate(100%)_invert(100%)]"
+              className="sm:h-48 h-24 w-auto mx-auto [filter:brightness(0)_saturate(100%)_invert(100%)]"
             />
           </h1>
 
-          <div className="sm:my-8">
+          {/* <div className="sm:my-8">
             {isAuthenticated && (
               <HashLink
                 className="text-white bg-blue-900 hover:bg-blue-800 inline-flex items-center justify-center px-6 py-3 shadow-xl rounded-xl"
@@ -96,7 +97,7 @@ const Hero = ({ language }) => {
                 {language === "de" ? "Unsere Athleten" : "Our Athletes"}
               </HashLink>
             )}
-          </div>
+          </div> */}
         </div>
       </div>
     </>

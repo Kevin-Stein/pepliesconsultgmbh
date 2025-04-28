@@ -114,7 +114,7 @@ const NavBar = ({ language, toggleLanguage }) => {
             </button>
           </div>
           <div
-            className={`fixed transition-all duration-300 ease-in-out flex left-0 w-full h-auto rounded-md p-24 bg-white lg:hidden shadow-xl top-14 z-50 transform ${
+            className={`fixed transition-all duration-300 ease-in-out flex right-0 w-[80%] h-auto rounded-md p-12 bg-white lg:hidden shadow-xl top-14 z-50 transform ${
               isOpen ? "translate-y-0 opacity-100" : "-translate-y-4 opacity-0 pointer-events-none"
             }`}
           >

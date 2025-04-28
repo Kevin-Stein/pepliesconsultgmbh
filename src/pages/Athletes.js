@@ -30,16 +30,16 @@ const Athletes = ({ language }) => {
           {sortedCurrentAthletes.map((athlete, index) => (
             <div
               key={index}
-              className="card bg-white shadow-md rounded-lg overflow-hidden cursor-pointer transition-transform duration-300 ease-in-out transform hover:scale-105"
+              className="card bg-white shadow-md rounded-lg overflow-hidden cursor-pointer transition-transform duration-300 ease-in-out transform hover:scale-105 h-[400px]"
               onClick={() => handleCardClick(athlete)}
             >
               <img
                 src={athlete.portraitImageURL || placeholderPortrait}
                 alt={`${athlete.firstName} ${athlete.lastName}`}
-                className="object-fit w-full"
+                className="object-cover w-full h-[80%]"
               />
-              <div className="p-4 mt-3">
-                <h2 className="text-xl font-bold">
+              <div className="p-4 ">
+                <h2 className="text-xl font-bold ">
                   {athlete.firstName} {athlete.lastName}
                 </h2>
               </div>

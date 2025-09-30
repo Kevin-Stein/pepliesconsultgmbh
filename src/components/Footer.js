@@ -19,9 +19,9 @@ const Footer = ({ language }) => {
               <h3 className="font-bold text-2xl sm:text-4xl mb-2 sm:mb-4">peplies consult</h3>
               <div className="text-sm sm:text-md font-medium text-gray-600">
                 <h5>Stephan Peplies</h5>
-                <p>My Street</p>
-                <p>12345</p>
-                <p>Stadt</p>
+                <p>Höhenstraße 12</p>
+                <p>65321</p>
+                <p>Heidenrod</p>
               </div>
             </div>
           </div>

@@ -3,7 +3,11 @@ const athletes = [
   {
     firstName: "Abigail",
     lastName: "Strate",
-    achievements: [],
+    achievements: [
+      "Bronzemedaillengewinnerin Mixed-Mannschaft Olympia Peking",
+      "2023/24 Gesamtweltcup Platz 11",
+      "Gesamtweltcup 2025 Platz 15",
+    ],
     sportDiscipline: "Skispringen",
     birthday: "22.02.2001",
     club: "Altius Nordic Ski Club (Calgary) ",
@@ -18,7 +22,7 @@ const athletes = [
   {
     firstName: "Adrian",
     lastName: "Tittel",
-    achievements: [],
+    achievements: ["Junioren-Weltmeister 2023", "Bronzemedaillengewinner Junioren-WM 2025 Planica"],
     sportDiscipline: "Skispringen",
     birthday: "21.02.2004",
     club: "SG Nickelhütte Aue",
@@ -32,7 +36,10 @@ const athletes = [
   {
     firstName: "Alina",
     lastName: "Nußbicker",
-    achievements: [],
+    achievements: [
+      "Goldmedaillengewinnerin Junioren-WM Biathlon-Staffel in Estland 2024",
+      "IBU Junior-Cup 2024/2025 mehrere Top-10-Platzierungen",
+    ],
     sportDiscipline: "Biathlon",
     birthday: "14.10.2004",
     club: "SV Motor Tambach-Dietharz ",
@@ -49,7 +56,10 @@ const athletes = [
   {
     firstName: "Alma",
     lastName: "Siegismund",
-    achievements: [],
+    achievements: [
+      "Zweifache Goldmedaillengewinnerin Juniorenweltmeisterschaft 2024",
+      "Junioren-Weltmeisterschaften 2025 Silbermedaille mit der Frauenstaffel",
+    ],
     sportDiscipline: "Biathlon",
     birthday: "03.09.2005",
     club: "SSV Altenberg",
@@ -64,7 +74,7 @@ const athletes = [
   {
     firstName: "Anna",
     lastName: "Hollandt",
-    achievements: [],
+    achievements: ["WM 2021 Weltmeisterin Mixed Team", "WM 2023 Weltmeisterin Team", "Gesamtweltcup 2023 Platz 18"],
     sportDiscipline: "Skispringen",
     birthday: "29.12.1996",
     club: "SC Degenfeld",
@@ -79,7 +89,10 @@ const athletes = [
   {
     firstName: "Anna-Fay",
     lastName: "Scharfenberg",
-    achievements: [],
+    achievements: [
+      "Nachwuchs-Weltmeisterschaft Kanada im Team Platz 3",
+      "Nachwuchs-Weltmeisterschaft Kanada im Einzel Platz 12",
+    ],
     sportDiscipline: "Skispringen",
     birthday: "14.04.2006",
     club: "SC Motor Zella-Mehlis",
@@ -94,13 +107,18 @@ const athletes = [
   {
     firstName: "Cindy",
     lastName: "Haasch",
-    achievements: [],
+    achievements: [
+      "Gesamtweltcup 2024/25 Platz 14",
+      "Weltmeisterschaft Oberstdorf 2022 Platz 11 im Einzel",
+      "Top-20-Platzierungen Saison 2024/25",
+      "Erster Sommer Grand Prix Gesamtwertung Platz 21",
+    ],
     sportDiscipline: "Nordische Kombination",
-    birthday: "",
-    club: "",
+    birthday: "19.04.2004",
+    club: "TSG WSC 07 Ruhla",
     interests: ["Sport"],
-    profession: "Nordische Kombiniererin",
-    hobby: "",
+    profession: "Berufssoldatin",
+    hobby: "Lesen, häkeln",
     portraitImageURL: "",
     actionImageURL: "",
     signatureImageURL: "",
@@ -108,7 +126,7 @@ const athletes = [
   {
     firstName: "David",
     lastName: "Mach",
-    achievements: [],
+    achievements: ["Continental-Cup-Sieger 2022", "Gesamtweltcup 2024/25 Platz 17"],
     sportDiscipline: "Nordische Kombination",
     birthday: "",
     club: "",
@@ -122,7 +140,13 @@ const athletes = [
   {
     firstName: "Emily",
     lastName: "Schumann",
-    achievements: [],
+    achievements: [
+      "IBU-Gesamtwertung Platz 5 2024 / in der Einzelwertung den zweiten Platz",
+      "Charlotte Gallbronner",
+      "Junioren-Europameisterin im Single-Mixed 2025",
+      "Junioren-Vizeweltmeisterin in der Staffel 2025",
+      "Sieg im Einzelrennens beim IBU Junior Cups 2024/2025 in Ridnaun",
+    ],
     sportDiscipline: "Biathlon",
     birthday: "14.11.2002",
     club: "SV Eintracht Frankenhain",
@@ -137,7 +161,7 @@ const athletes = [
   {
     firstName: "Emely",
     lastName: "Torazza",
-    achievements: [],
+    achievements: ["Zahlreiche Weltcupeinsätze", "Top-20-Platzierungen im Weltcup"],
     sportDiscipline: "Skispringen",
     birthday: "02.11.2004",
     club: "SC Oberstdorf",
@@ -151,7 +175,12 @@ const athletes = [
   {
     firstName: "Eric",
     lastName: "Frenzel",
-    achievements: [],
+    achievements: [
+      "3facher Olympiasieger 2014,2018",
+      "7facher Weltmeister 2011-2019",
+      "18 WM-Medaillen 2011-2023",
+      "5facher Gesamtweltcupsieger 2013-2017",
+    ],
     sportDiscipline: "Nordische Kombination",
     birthday: "21.11.1988",
     club: "SSV Geyer",
@@ -174,7 +203,11 @@ const athletes = [
   {
     firstName: "Felix",
     lastName: "Hoffmann",
-    achievements: [],
+    achievements: [
+      "Silber Juniorenweltmeisterschaft 2017 im Team",
+      "Deutscher Juniorenmeister 2016 in Oberhof",
+      "Vierfacher Continental-Cup-Sieger 2017,2023,2024",
+    ],
     sportDiscipline: "Skispringen",
     birthday: "14.07.1997",
     club: "SWV Goldlauter-Heidersbach",
@@ -188,7 +221,7 @@ const athletes = [
   {
     firstName: "Janina",
     lastName: "Hettich-Walz",
-    achievements: [],
+    achievements: ["Vizeweltmeisterin Staffel 2021", "Zweifache Europameisterin 2022", "Vizeweltmeisterin Einzel 2024"],
     sportDiscipline: "Biathlon",
     birthday: "",
     club: "",
@@ -204,7 +237,7 @@ const athletes = [
   {
     firstName: "Jenny",
     lastName: "Nowak",
-    achievements: [],
+    achievements: ["WM 2023 Silber Mixed Team", "Gesamtweltcup 2024/2025 Platz 8", "Juniorenweltmeisterin 2022"],
     sportDiscipline: "Nordische Kombination",
     birthday: "20.08.2002",
     club: "Skiclub Sohland 1928 e.V.",
@@ -219,7 +252,11 @@ const athletes = [
   {
     firstName: "Josephine",
     lastName: "Pagnier",
-    achievements: [],
+    achievements: [
+      "Gesamtweltcupranking 2022/23 Platz 16",
+      "Zweifache Weltcupsiegerin 2023",
+      "Gesamtweltcup 2025 Platz 23",
+    ],
     sportDiscipline: "Skispringen",
     birthday: "",
     club: "",
@@ -234,7 +271,12 @@ const athletes = [
   {
     firstName: "Julian",
     lastName: "Schmid",
-    achievements: [],
+    achievements: [
+      "Silbermedaillengewinner Olympische Spiele 2022 im Team",
+      "Zweifacher Junioren-Weltmeister 2019 in Lathi",
+      "Dreifacher Weltcupsieger 2022 und 2023",
+      "Gesamtweltcup 2024/25 Platz 4",
+    ],
     sportDiscipline: "Nordische Kombination",
     birthday: "01.09.1999",
     club: "Skiclub 1906 Oberstdorf",
@@ -248,7 +290,14 @@ const athletes = [
   {
     firstName: "Julijan",
     lastName: "Smid",
-    achievements: [],
+    achievements: [
+      "Skisprung-Junioren-Weltmeister 2023 in Whistler",
+      "Sieger der Nordischen Skispiele der OPA 2020 im Team und Einzel",
+      "Robin Kloß, Verein: SC Willingen",
+      "Continental Cup 2024 in Hinterzarten Platz 13",
+      "FIS- Junioren-Weltmeisterschaften 2025 Platz 16 im Einzel und Platz 4 im Team",
+      "Alpen Cup in Chaux-Neuve 2025 unteranderem Platz 4 und Platz 9",
+    ],
     sportDiscipline: "Skispringen",
     birthday: "12.06.2003",
     club: "SV Achomitz/SD Zahomc",
@@ -263,7 +312,7 @@ const athletes = [
   {
     firstName: "Justin",
     lastName: "Lisso",
-    achievements: [],
+    achievements: ["Heimweltcup 2021/22 in Titisee-Neustadt Platz 11 und Platz 13 im Einzel"],
     sportDiscipline: "Skispringen",
     birthday: "12.12.1999",
     club: "WSV Schmiedefeld",
@@ -277,7 +326,12 @@ const athletes = [
   {
     firstName: "Karl",
     lastName: "Geiger",
-    achievements: [],
+    achievements: [
+      "Zweiter Platz Gesamtweltcup 2021/22",
+      "Sechsfacher Weltmeister",
+      "Einmal Silber 2018 und zweimal Bronzemedaillengewinner 2022 bei Olympischen Spielen",
+      "Bronzemedaillengewinner Skiweltmeisterschaften und Gold im Mixed-Team 2023",
+    ],
     sportDiscipline: "Skispringen",
     birthday: "11.02.1993",
     club: "Skiclub Oberstdorf",
@@ -291,7 +345,11 @@ const athletes = [
   {
     firstName: "Lara",
     lastName: "Malsiner",
-    achievements: [],
+    achievements: [
+      "Gesamtweltcup 2025 Platz 16",
+      "Sommer Grand Prix Serie 2024 Gesamtsieg",
+      "Saison 2024/25 mehrere Top-10-Platzierungen",
+    ],
     sportDiscipline: "Track and Field",
     birthday: "14.04.2000",
     club: "Guardia di finanza",
@@ -306,7 +364,7 @@ const athletes = [
   {
     firstName: "Jessica",
     lastName: "Malsiner",
-    achievements: [],
+    achievements: ["Italienische Meisterin 2022 in Villach", "Mehrere Top-10-Platzierungen im Continental Cup"],
     sportDiscipline: "Skispringen",
     birthday: "23.09.2002",
     club: "Gruppo sciatori Fiamme Gialle",
@@ -322,7 +380,7 @@ const athletes = [
   {
     firstName: "Lia",
     lastName: "Böhme",
-    achievements: [],
+    achievements: ["Bronzemedaille Junioren-WM in Whistler 2023 Team"],
     sportDiscipline: "Spezialspringen",
     birthday: "16.07.2005",
     club: "VSC-Klingenthal",
@@ -336,7 +394,7 @@ const athletes = [
   {
     firstName: "Luisa",
     lastName: "Görlich",
-    achievements: [],
+    achievements: ["WM 2023 Weltmeisterin Team", "Gesamtweltcup 2023 Platz 24"],
     sportDiscipline: "Skispringen",
     birthday: "21.12.1998",
     club: "WSV 08 Lauscha",
@@ -351,7 +409,10 @@ const athletes = [
   {
     firstName: "Maria",
     lastName: "Gerboth",
-    achievements: [],
+    achievements: [
+      "Trophee de la meilleure sauteuse 2024/25 beste Springerin der Saison",
+      "Gesamtweltcup 2024/25 Platz 10",
+    ],
     sportDiscipline: "Nordische Kombination",
     birthday: "",
     club: "",
@@ -365,7 +426,11 @@ const athletes = [
   {
     firstName: "Martin",
     lastName: "Hamann",
-    achievements: [],
+    achievements: [
+      "Dreifacher Continental-Cup-Sieger im Einzel 2019 und 2020",
+      "Gesamtweltcup 2020 Platz 23",
+      "Amtierender deutscher Meister 2024",
+    ],
     sportDiscipline: "Skispringen",
     birthday: "10.04.1997",
     club: "SG Nickelhütte Aue",
@@ -380,7 +445,11 @@ const athletes = [
   {
     firstName: "Martina",
     lastName: "Ertl",
-    achievements: [],
+    achievements: [
+      "Weltmeisterin 2001,2005",
+      "Zweifache Silbermedaillengewinnerin Olympische Spiele 1994 und 1998",
+      "Zweifache Bronzemedaillengewinnerin WM 1993 und 1996",
+    ],
     sportDiscipline: "Ski Alpin",
     birthday: "",
     club: "",
@@ -408,7 +477,11 @@ const athletes = [
   {
     firstName: "Ronja",
     lastName: "Loh",
-    achievements: [],
+    achievements: [
+      "Juniorenweltmeisterin Mixed-Team 2024",
+      "Bronzemedaillengewinnerin JWM 2024",
+      "Gesamtweltcup 2024/25 Platz 22",
+    ],
     sportDiscipline: "Nordische Kombination",
     birthday: "",
     club: "",
@@ -420,9 +493,38 @@ const athletes = [
     signatureImageURL: "",
   },
   {
+    firstName: "Pia",
+    lastName: "Loh",
+    achievements: ["Nord Cup 2022 Siegerin der ersten Station", "Platz 2 im Spezialspringen Schülerklasse S14/15"],
+    sportDiscipline: "Nordische Kombination",
+    birthday: "",
+    club: "",
+    interests: ["Sport"],
+    profession: "Nordische Kombiniererin",
+    hobby: "",
+    portraitImageURL: "",
+    actionImageURL: "",
+    signatureImageURL: "",
+  },
+  {
+    firstName: "Maja",
+    lastName: "Loh",
+    achievements: ["Deutsche Jugendmeisterin 2024 Einzel", "Deutsche Jugendmeisterin 2024 Team"],
+    sportDiscipline: "Nordische Kombination",
+    birthday: "",
+    club: "",
+    interests: ["Sport"],
+    profession: "Nordische Kombiniererin",
+    hobby: "",
+    portraitImageURL: "",
+    actionImageURL: "",
+    signatureImageURL: "",
+  },
+
+  {
     firstName: "Simon",
     lastName: "Mach",
-    achievements: [],
+    achievements: ["Continental-Cup-Sieger 2024"],
     sportDiscipline: "Nordische Kombination",
     birthday: "",
     club: "",
@@ -436,7 +538,7 @@ const athletes = [
   {
     firstName: "Tristan",
     lastName: "Sommerfeldt",
-    achievements: [],
+    achievements: ["Dreifacher Juniorenweltmeister 2022, 2023, 2024 im Team"],
     sportDiscipline: "Nordische Kombination",
     birthday: "16.12.2004",
     club: "WSC Erzgebirge Oberwiesenthal",
@@ -450,7 +552,11 @@ const athletes = [
   {
     firstName: "Wendelin",
     lastName: "Thannheimer",
-    achievements: [],
+    achievements: [
+      "Zweifacher Continental-Cup-Sieger 2023",
+      "Zweifacher Continental-Cup-Sieger Team 2023",
+      "Gesamtweltcup 2024/25 Platz 11",
+    ],
     sportDiscipline: "Nordische Kombination",
     birthday: "25.11.1999",
     club: "Skiclub Oberstdorf",
@@ -466,7 +572,7 @@ const athletes = [
   {
     firstName: "Anne",
     lastName: "Häckel",
-    achievements: [],
+    achievements: ["Deutsche Jugendmeisterin Saison 2022/23", "Erster Sommer Grand Prix Gesamtwertung Platz 21"],
     sportDiscipline: "Nordische Kombination",
     birthday: "10.01.2005",
     club: "VSC Klingenthal",
@@ -481,7 +587,10 @@ const athletes = [
   {
     firstName: "Lisa Marie",
     lastName: "Spark",
-    achievements: [],
+    achievements: [
+      "Gesamtwertung IBU-Cup 2023/2024 Platz 9",
+      "Europameisterin 2023 in Lenzerheide im Einzel und Silbermedaillengewinnerin Mixed-Staffel",
+    ],
     sportDiscipline: "Biathlon",
     birthday: "07.05.2000",
     club: "SC Traunstein ",
@@ -511,7 +620,7 @@ const athletes = [
   {
     firstName: "Sophia",
     lastName: "Zitzmann",
-    achievements: [],
+    achievements: ["Vier FIS-Rennen aufs Podium 2023/24", "Nordische Kombination Herren 9 Mandate"],
     sportDiscipline: "Ski Alpin",
     birthday: "20.02.2003",
     club: "SC Gaißach",
@@ -533,7 +642,10 @@ const athletes = [
   {
     firstName: "Alex",
     lastName: "Reiter",
-    achievements: [],
+    achievements: [
+      "Bronzemedaille beim European Youth Olympic Festival im Team 2023",
+      "Junioren-Vizeweltmeister 2024 in Planica",
+    ],
     sportDiscipline: "Skispringen",
     birthday: "06.06.2006",
     club: "Skiclub Oberstdorf",
@@ -547,7 +659,10 @@ const athletes = [
   {
     firstName: "Anna",
     lastName: "Twardozs",
-    achievements: [],
+    achievements: [
+      "Fünffache Polnische Meisterin 2016, 2018, 2023, 2024, 2025",
+      "Sieg im Intercontinental Cup in Notodden 2024",
+    ],
     sportDiscipline: "Skispringen",
     birthday: "12.04.2001",
     club: "AZS AWF Katowice",
@@ -562,7 +677,7 @@ const athletes = [
   {
     firstName: "Sina",
     lastName: "Arnet",
-    achievements: [],
+    achievements: ["Zahlreiche Weltcupeinsätze"],
     sportDiscipline: "",
     birthday: "",
     club: "",
@@ -576,7 +691,7 @@ const athletes = [
   {
     firstName: "Naoki",
     lastName: "Nakamura",
-    achievements: [],
+    achievements: ["Japanischer Meister 2023 in Sapporo", "Skispringen Damen  12 Mandate"],
     sportDiscipline: "",
     birthday: "",
     club: "",
@@ -591,7 +706,7 @@ const athletes = [
   {
     firstName: "Nicole",
     lastName: "Maurer",
-    achievements: [],
+    achievements: ["Top-21-Platzierung Nordische Ski-Weltmeisterschaften 2025", "Gesamtweltcup 2024/2025 Platz 28"],
     sportDiscipline: "",
     birthday: "",
     club: "",
@@ -607,7 +722,7 @@ const athletes = [
     lastName: "Gallbronner",
     achievements: [],
     sportDiscipline: "Biathlon",
-    birthday: "25.09*.2003",
+    birthday: "25.09.2003",
     club: "",
     interests: ["Biathlon", "kochen", "backen", "Kaffee/Barista", "Handball"],
     profession: "Bundeswehrangestellte",
@@ -663,7 +778,11 @@ const athletes = [
   {
     firstName: "Julina",
     lastName: "Kreibich",
-    achievements: [],
+    achievements: [
+      "Junioren-Weltmeisterin im Team 2025",
+      "FIS -Alpencup 2024/2025 Platz 3 im Einzel",
+      "Mehrere Top-10-Platzierungen im Intercontinental Cup 2024/2025",
+    ],
     sportDiscipline: "Skispringen",
     birthday: "",
     club: "",
@@ -677,8 +796,27 @@ const athletes = [
   {
     firstName: "Richard",
     lastName: "Stenzel",
-    achievements: [],
+    achievements: [
+      "Junioren-Weltmeisterschaften 2025 Bronzemedaille im Einzel, vierter Platz im Teamsprint und Gold im Mixed-Team",
+      "Deutsche Meisterschaften 2023 und 2024 jeweils Vize-Meister Juniorenkategorie",
+      "Acht Podestplätze im Alpencup",
+      "Saison 2024/25 Weltcup in Lathi Platz 13",
+    ],
     sportDiscipline: "Nordische Kombination",
+    birthday: "",
+    club: "",
+    interests: ["Sport"],
+    profession: "",
+    hobby: "",
+    portraitImageURL: "",
+    actionImageURL: "",
+    signatureImageURL: "",
+  },
+  {
+    firstName: "Romy",
+    lastName: "Ertl",
+    achievements: ["Bronze bei den Olympischen Jugendspielen 2024", "Drei Siege in FIS-Rennen", "12 FIS-Podien"],
+    sportDiscipline: "Ski Alpin",
     birthday: "",
     club: "",
     interests: ["Sport"],

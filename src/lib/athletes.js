@@ -293,10 +293,6 @@ const athletes = [
     achievements: [
       "Skisprung-Junioren-Weltmeister 2023 in Whistler",
       "Sieger der Nordischen Skispiele der OPA 2020 im Team und Einzel",
-      "Robin Kloß, Verein: SC Willingen",
-      "Continental Cup 2024 in Hinterzarten Platz 13",
-      "FIS- Junioren-Weltmeisterschaften 2025 Platz 16 im Einzel und Platz 4 im Team",
-      "Alpen Cup in Chaux-Neuve 2025 unteranderem Platz 4 und Platz 9",
     ],
     sportDiscipline: "Skispringen",
     birthday: "12.06.2003",
@@ -605,7 +601,11 @@ const athletes = [
   {
     firstName: "Robin",
     lastName: "Kloß",
-    achievements: [],
+    achievements: [
+      "Continental Cup 2024 in Hinterzarten Platz 13",
+      "FIS- Junioren-Weltmeisterschaften 2025 Platz 16 im Einzel und Platz 4 im Team",
+      "Alpen Cup in Chaux-Neuve 2025 unteranderem Platz 4 und Platz 9",
+    ],
     sportDiscipline: "Skispringen",
     birthday: "11.06.2005",
     club: "Ski-Club Willingen",

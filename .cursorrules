@@ -44,3 +44,14 @@ Use React.memo and useMemo strategically
 Implement lazy loading for components
 Optimize bundle size
 Use efficient state management
+
+Git Commit Messages:
+
+When creating commit messages, replace German umlauts with their ASCII equivalents:
+- ä → ae
+- ö → oe
+- ü → ue
+- Ä → Ae
+- Ö → Oe
+- Ü → Ue
+Example: "Video-Positionierung angepasst" → "Video-Positionierung angepasst" (but "ä" becomes "ae" in commit messages)

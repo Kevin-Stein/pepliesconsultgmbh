@@ -12,22 +12,22 @@ const Hero = () => {
     "https://res.cloudinary.com/dbpoconup/video/upload/v1743604391/ski_alpin_r9hwpr.mov",
   ];
 
-  const playVideo = async (index) => {
-    const video = videoRefs.current[index];
-    if (!video) return;
-
-    try {
-      video.currentTime = 0;
-      await video.play();
-    } catch (error) {
-      // Silently handle video playback errors in production
-      // Move to next video on error
-      const nextIndex = (index + 1) % videos.length;
-      setCurrentVideo(nextIndex);
-    }
-  };
-
   useEffect(() => {
+    const playVideo = async (index) => {
+      const video = videoRefs.current[index];
+      if (!video) return;
+
+      try {
+        video.currentTime = 0;
+        await video.play();
+      } catch (error) {
+        // Silently handle video playback errors in production
+        // Move to next video on error
+        const nextIndex = (index + 1) % videos.length;
+        setCurrentVideo(nextIndex);
+      }
+    };
+
     const handleVideoEnd = () => {
       const nextIndex = (currentVideo + 1) % videos.length;
       setCurrentVideo(nextIndex);
@@ -42,8 +42,10 @@ const Hero = () => {
 
     // Cleanup
     return () => {
-      if (currentVideoElement) {
-        currentVideoElement.removeEventListener("ended", handleVideoEnd);
+      // Store reference to current element for cleanup
+      const videoElement = videoRefs.current[currentVideo];
+      if (videoElement) {
+        videoElement.removeEventListener("ended", handleVideoEnd);
       }
       // Stop all videos
       videoRefs.current.forEach((video) => {

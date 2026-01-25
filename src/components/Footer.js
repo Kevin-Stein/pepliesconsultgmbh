@@ -1,7 +1,6 @@
 import React, { useContext } from "react";
 import { Link } from "react-router-dom";
 import { HashLink } from "react-router-hash-link";
-import backgroundFooter from "../images/background_footer02.jpg";
 import { AuthContext } from "../App";
 
 const Footer = ({ language }) => {

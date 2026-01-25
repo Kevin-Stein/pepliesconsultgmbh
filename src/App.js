@@ -8,11 +8,17 @@ import Home from "./pages/Home";
 import Contact from "./pages/Contact";
 import Athletes from "./pages/Athletes";
 import AthleteDetails from "./pages/AthleteDetails";
+import CompanyReferences from "./pages/CompanyReferences";
+
 import LegalNotice from "./pages/LegalNotice";
 import Portfolio from "./components/Portfolio";
 import AthleteServices from "./pages/AthleteServices";
+import CompanyServices from "./pages/CompanyServices";
 import Press from "./pages/Press";
+import Publications from "./pages/Publications";
+import ScientificAdvisoryBoard from "./pages/ScientificAdvisoryBoard";
 import TvCommercials from "./pages/TvCommercials";
+import PrintCampaign from "./pages/PrintCampaign";
 import Footer from "./components/Footer";
 import HallOfFame from "./pages/HallOfFame";
 
@@ -82,11 +88,16 @@ function App() {
                 <Route path="/contact" element={<Contact language={language} />} />
                 <Route path="/athletes" element={<Athletes language={language} />} />
                 <Route path="/athletes/:athleteName" element={<AthleteDetails language={language} />} />
+                <Route path="/references/companies" element={<CompanyReferences language={language} />} />
                 <Route path="/legal-notice" element={<LegalNotice language={language} />} />
                 <Route path="/portfolio" element={<Portfolio language={language} />} />
                 <Route path="/services/athletes" element={<AthleteServices language={language} />} />
+                <Route path="/services/companies" element={<CompanyServices language={language} />} />
                 <Route path="/press" element={<Press language={language} />} />
+                <Route path="/publications" element={<Publications language={language} />} />
+                <Route path="/scientific-advisory-board" element={<ScientificAdvisoryBoard language={language} />} />
                 <Route path="/campaigns/tv-spots" element={<TvCommercials language={language} />} />
+                <Route path="/campaigns/pr-print-plakat" element={<PrintCampaign language={language} />} />
                 <Route path="/hall-of-fame" element={<HallOfFame />} />
               </Routes>
             </main>

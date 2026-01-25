@@ -1,5 +1,4 @@
 import React from "react";
-import Footer from "../components/Footer";
 import { useDocTitle } from "../components/CustomHook";
 
 const AthleteServices = ({ language }) => {
@@ -235,7 +234,6 @@ const AthleteServices = ({ language }) => {
           </p>
         </div>
       </div>
-      <Footer language={language} />
     </>
   );
 };

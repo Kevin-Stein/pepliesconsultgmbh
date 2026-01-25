@@ -227,7 +227,7 @@ const NavLinks = ({ language, toggleLanguage, setIsOpen, isMobile = false }) => 
                 className="block px-2 py-0.5 text-xs sm:text-sm font-medium text-gray-500 hover:text-blue-900 whitespace-nowrap"
                 onClick={handleNavigationClick}
               >
-                {language === "de" ? "PR, Print, Plakat" : "PR, Print, Poster"}
+                {language === "de" ? "PR | Print | Plakat" : "PR | Print | Poster"}
               </Link>
               <Link
                 to="/campaigns/tv-spots"

@@ -1,7 +1,7 @@
 import React from "react";
 import { useParams } from "react-router-dom";
 
-import athletes from "../lib/athletes";
+import { getAthletes } from "../lib/athletes";
 import { useDocTitle } from "../components/CustomHook";
 import placeholderPortrait from "../images/athletes/portrait_placeholder.jpg";
 import placeholderAction from "../images/athletes/portrait_placeholder.jpg";
@@ -9,6 +9,7 @@ import placeholderAction from "../images/athletes/portrait_placeholder.jpg";
 const AthleteDetails = ({ language }) => {
   useDocTitle("peplies consult - Sports Marketing Consultants");
   const { athleteName } = useParams();
+  const athletes = getAthletes(language);
   const athlete = athletes.find((a) => `${a.firstName}-${a.lastName}` === athleteName);
 
   if (!athlete) {

@@ -1,12 +1,9 @@
-import React, { useState, useEffect, useRef, useContext } from "react";
-import { HashLink } from "react-router-hash-link";
+import React, { useState, useEffect, useRef } from "react";
 import logo from "../images/pepliesconsult_logo_black.svg";
-import { AuthContext } from "../App";
 
-const Hero = ({ language }) => {
+const Hero = () => {
   const [currentVideo, setCurrentVideo] = useState(0);
   const videoRefs = useRef([]);
-  const { isAuthenticated } = useContext(AuthContext);
 
   const videos = [
     "https://res.cloudinary.com/dbpoconup/video/upload/v1743604395/tennis_txbxgw.mov",
@@ -23,7 +20,7 @@ const Hero = ({ language }) => {
       video.currentTime = 0;
       await video.play();
     } catch (error) {
-      console.error(`Error playing video ${index}:`, error);
+      // Silently handle video playback errors in production
       // Move to next video on error
       const nextIndex = (index + 1) % videos.length;
       setCurrentVideo(nextIndex);
@@ -87,17 +84,6 @@ const Hero = ({ language }) => {
               className="sm:h-48 h-24 w-auto mx-auto [filter:brightness(0)_saturate(100%)_invert(100%)]"
             />
           </h1>
-
-          {/* <div className="sm:my-8">
-            {isAuthenticated && (
-              <HashLink
-                className="text-white bg-blue-900 hover:bg-blue-800 inline-flex items-center justify-center px-6 py-3 shadow-xl rounded-xl"
-                to="/athletes"
-              >
-                {language === "de" ? "Unsere Athleten" : "Our Athletes"}
-              </HashLink>
-            )}
-          </div> */}
         </div>
       </div>
     </>

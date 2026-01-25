@@ -1,17 +1,39 @@
-import React from "react";
+import React, { useContext, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { useDocTitle } from "../components/CustomHook";
-import athletes from "../lib/athletes";
+import { getAthletes } from "../lib/athletes";
 import placeholderPortrait from "../images/athletes/portrait_placeholder.jpg";
+import { AuthContext } from "../App";
 
-const HallOfFame = ({ language }) => {
+const HallOfFame = ({ language = "de" }) => {
   useDocTitle("peplies consult - Hall of Fame");
   const navigate = useNavigate();
+  const { isAuthenticated } = useContext(AuthContext);
+
+  useEffect(() => {
+    // Redirect to home if not authenticated
+    if (!isAuthenticated) {
+      navigate("/");
+    }
+  }, [isAuthenticated, navigate]);
+
+  // Don't render content if not authenticated
+  if (!isAuthenticated) {
+    return (
+      <div className="container mx-auto p-4 my-20 lg:my-40 text-center">
+        <p className="text-xl text-gray-700">
+          {language === "de" ? "Bitte melden Sie sich an, um diese Seite zu sehen." : "Please log in to view this page."}
+        </p>
+      </div>
+    );
+  }
 
   const handleCardClick = (athlete) => {
     navigate(`/athletes/${athlete.firstName}-${athlete.lastName}`);
   };
 
+  // Get athletes in the specified language
+  const athletes = getAthletes(language);
   // Get only former athletes
   const formerAthletes = athletes.filter((athlete) => athlete.isFormer);
 

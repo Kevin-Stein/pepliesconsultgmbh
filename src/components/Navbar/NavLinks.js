@@ -85,13 +85,15 @@ const NavLinks = ({ language, toggleLanguage, setIsOpen, isMobile = false }) => 
         {language === "de" ? "Über uns" : "About Us"}
       </HashLink>
 
-      <Link
-        className="px-2 text-m sm:text-base font-semibold text-gray-500 hover:text-blue-900"
-        to="/hall-of-fame"
-        onClick={handleNavigationClick}
-      >
-        Hall of Fame
-      </Link>
+      {isAuthenticated && (
+        <Link
+          className="px-2 text-m sm:text-base font-semibold text-gray-500 hover:text-blue-900"
+          to="/hall-of-fame"
+          onClick={handleNavigationClick}
+        >
+          Hall of Fame
+        </Link>
+      )}
 
       {/* Leistungen Dropdown */}
       <div className={`${isMobile ? "w-full" : "relative inline-block"}`} ref={leistungenRef}>

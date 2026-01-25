@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useContext } from "react";
+import React, { useState, useContext } from "react";
 import NavLinks from "./NavLinks";
 import { HashLink } from "react-router-hash-link";
 import { useNavigate } from "react-router-dom";
@@ -27,8 +27,11 @@ const NavBar = ({ language, toggleLanguage }) => {
 
   const handleLogin = (e) => {
     e.preventDefault();
-    // Simple password check - in a real app, this would call an API
-    if (password === "pepliesgmbh") {
+    // Password check using environment variable
+    // Note: In a production app, this should be handled by a secure backend API
+    const correctPassword = process.env.REACT_APP_LOGIN_PASSWORD || "";
+    
+    if (correctPassword && password === correctPassword) {
       // Store authentication in localStorage or context
       localStorage.setItem("isAuthenticated", "true");
       setIsAuthenticated(true);

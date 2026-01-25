@@ -2,7 +2,7 @@ import React from "react";
 import { useNavigate } from "react-router-dom";
 
 import { useDocTitle } from "../components/CustomHook";
-import athletes from "../lib/athletes";
+import { getAthletes } from "../lib/athletes";
 import placeholderPortrait from "../images/athletes/portrait_placeholder.jpg";
 
 const Athletes = ({ language }) => {
@@ -13,6 +13,8 @@ const Athletes = ({ language }) => {
     navigate(`/athletes/${athlete.firstName}-${athlete.lastName}`);
   };
 
+  // Get athletes in the specified language
+  const athletes = getAthletes(language);
   // Get only current athletes
   const currentAthletes = athletes.filter((athlete) => !athlete.isFormer);
 

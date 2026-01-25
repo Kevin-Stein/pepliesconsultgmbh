@@ -98,12 +98,12 @@ function App() {
                 <Route path="/scientific-advisory-board" element={<ScientificAdvisoryBoard language={language} />} />
                 <Route path="/campaigns/tv-spots" element={<TvCommercials language={language} />} />
                 <Route path="/campaigns/pr-print-plakat" element={<PrintCampaign language={language} />} />
-                <Route path="/hall-of-fame" element={<HallOfFame />} />
+                <Route path="/hall-of-fame" element={<HallOfFame language={language} />} />
               </Routes>
             </main>
             <Footer language={language} />
           </ScrollToTop>
-          <CookieBanner />
+          <CookieBanner language={language} />
         </div>
       </Router>
     </AuthContext.Provider>

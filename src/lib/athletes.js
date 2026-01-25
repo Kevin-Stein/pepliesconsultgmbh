@@ -1055,4 +1055,114 @@ const athletes = [
   },
 ];
 
+// Translation mapping for common terms
+const translations = {
+  de: {
+    sportDisciplines: {
+      "Skispringen": "Skispringen",
+      "Biathlon": "Biathlon",
+      "Nordische Kombination": "Nordische Kombination",
+      "Ski Alpin": "Ski Alpin",
+      "Spezialspringen": "Spezialspringen",
+      "Track and Field": "Leichtathletik",
+      "Tennis": "Tennis",
+      "Fußball": "Fußball",
+      "Formel 1": "Formel 1",
+    },
+    professions: {
+      "Skispringerin": "Skispringerin",
+      "Skispringer": "Skispringer",
+      "Biathletin": "Biathletin",
+      "Nordische Kombiniererin": "Nordische Kombiniererin",
+      "Nordischer Kombinierer": "Nordischer Kombinierer",
+      "Skirennläuferin": "Skirennläuferin",
+      "Sportsoldatin": "Sportsoldatin",
+      "Sportsoldat": "Sportsoldat",
+      "Bundespolizistin": "Bundespolizistin",
+      "Polizeivollzugsbeamter": "Polizeivollzugsbeamter",
+      "Polizist": "Polizist",
+      "Polizeimeisterin": "Polizeimeisterin",
+      "Zollbeamter": "Zollbeamter",
+      "Schülerin": "Schülerin",
+      "Berufssoldatin": "Berufssoldatin",
+      "Bundestrainer Nordische Kombination": "Bundestrainer Nordische Kombination",
+      "Bundeswehrangestellte": "Bundeswehrangestellte",
+      "Tennisspielerin": "Tennisspielerin",
+      "Fußballer": "Fußballer",
+      "Fußballtrainer": "Fußballtrainer",
+      "Rennstall": "Rennstall",
+      "Tennisakademie": "Tennisakademie",
+      "Sportler": "Sportler",
+      " Student für Recht und Wirtschaft": " Student für Recht und Wirtschaft",
+    },
+  },
+  en: {
+    sportDisciplines: {
+      "Skispringen": "Ski Jumping",
+      "Biathlon": "Biathlon",
+      "Nordische Kombination": "Nordic Combined",
+      "Ski Alpin": "Alpine Skiing",
+      "Spezialspringen": "Special Jumping",
+      "Track and Field": "Track and Field",
+      "Tennis": "Tennis",
+      "Fußball": "Football",
+      "Formel 1": "Formula 1",
+    },
+    professions: {
+      "Skispringerin": "Ski Jumper",
+      "Skispringer": "Ski Jumper",
+      "Biathletin": "Biathlete",
+      "Nordische Kombiniererin": "Nordic Combined Athlete",
+      "Nordischer Kombinierer": "Nordic Combined Athlete",
+      "Skirennläuferin": "Alpine Skier",
+      "Sportsoldatin": "Professional Soldier",
+      "Sportsoldat": "Professional Soldier",
+      "Bundespolizistin": "Federal Police Officer",
+      "Polizeivollzugsbeamter": "Police Officer",
+      "Polizist": "Police Officer",
+      "Polizeimeisterin": "Police Sergeant",
+      "Zollbeamter": "Customs Officer",
+      "Schülerin": "Student",
+      "Berufssoldatin": "Professional Soldier",
+      "Bundestrainer Nordische Kombination": "National Coach Nordic Combined",
+      "Bundeswehrangestellte": "Federal Armed Forces Employee",
+      "Tennisspielerin": "Tennis Player",
+      "Fußballer": "Football Player",
+      "Fußballtrainer": "Football Coach",
+      "Rennstall": "Racing Team",
+      "Tennisakademie": "Tennis Academy",
+      "Sportler": "Athlete",
+      " Student für Recht und Wirtschaft": " Student of Law and Economics",
+    },
+  },
+};
+
+// Function to get athletes in the specified language
+export const getAthletes = (language = "de") => {
+  const lang = language === "en" ? "en" : "de";
+  const langTranslations = translations[lang];
+
+  return athletes.map((athlete) => {
+    const translated = {
+      ...athlete,
+      sportDiscipline:
+        athlete.sportDiscipline && langTranslations.sportDisciplines[athlete.sportDiscipline]
+          ? langTranslations.sportDisciplines[athlete.sportDiscipline]
+          : athlete.sportDiscipline,
+      profession:
+        athlete.profession && langTranslations.professions[athlete.profession]
+          ? langTranslations.professions[athlete.profession]
+          : athlete.profession,
+      // For achievements, interests, and hobby, we would need individual translations
+      // For now, we'll keep the German version if no translation is available
+      achievements: athlete.achievements || [],
+      interests: athlete.interests || [],
+      hobby: athlete.hobby || "",
+    };
+
+    return translated;
+  });
+};
+
+// Default export for backward compatibility
 export default athletes;

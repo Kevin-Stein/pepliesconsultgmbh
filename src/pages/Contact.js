@@ -13,8 +13,8 @@ const Contact = ({ language }) => {
                 <h2 className="text-lg sm:text-2xl font-bold mb-1 sm:mb-2">
                   {language === "de" ? "Büro Adresse" : "Office Address"}
                 </h2>
-                <p className="text-sm sm:text-base text-gray-300">My Street</p>
-                <p className="text-sm sm:text-base text-gray-300">12345 Stadt</p>
+                <p className="text-sm sm:text-base text-gray-300">Höhenstraße 12</p>
+                <p className="text-sm sm:text-base text-gray-300">65321 Heidenrod</p>
                 <p className="text-sm sm:text-base text-gray-300">Germany</p>
               </div>
             </div>

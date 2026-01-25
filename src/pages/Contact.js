@@ -27,7 +27,7 @@ const Contact = ({ language }) => {
                 <h2 className="text-lg sm:text-2xl font-bold mb-1 sm:mb-2">
                   {language === "de" ? "Rufen Sie uns an" : "Call Us"}
                 </h2>
-                <p className="text-sm sm:text-base text-gray-300">Tel: +49 (0) 6424-964560</p>
+                <p className="text-sm sm:text-base text-gray-300">Tel: +49 (0) </p>
               </div>
             </div>
 

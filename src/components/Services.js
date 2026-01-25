@@ -52,8 +52,8 @@ const Services = memo(({ language }) => {
       title: language === "de" ? "Leistungen für Unternehmen" : "Services for Companies",
       description:
         language === "de"
-          ? "Für Wirtschaftsunternehmen, die bereits Sportsponsoring betreiben, bieten wir Maßnahmen zur Analyse, Kontrolle und Optimierung ihrer Sponsoringkonzepte und der korrespondierenden Projekte sowie projektflankierende Maßnahmen an; für Wirtschaftsunternehmen, die den Eintritt in den Bereich des Sportsponsorings planen, bieten wir Marktforschung und Konzeptentwicklung an."
-          : "For companies already engaged in sports sponsorship, we offer measures for analyzing, controlling, and optimizing their sponsorship concepts and corresponding projects, as well as project-supporting measures; for companies planning to enter the field of sports sponsorship, we offer market research and concept development.",
+          ? "Für Wirtschaftsunternehmen, die bereits Sportsponsoring betreiben, bieten wir Maßnahmen zur Analyse, Kontrolle und Optimierung ihrer Sponsoringkonzepte und der korrespondierenden Projekte sowie projektflankierende Maßnahmen an; für Wirtschaftsunternehmen, die den Eintritt in den Bereich des Sportsponsorings planen, bieten wir Marktforschung und Konzeptentwicklung an. Unsere Leistungen umfassen: Sportsponsoringkonzepte, Marktforschung & Controlling, projektflankierende Maßnahmen sowie Scouting und Akquisition von Sportlern."
+          : "For companies already engaged in sports sponsorship, we offer measures for analyzing, controlling, and optimizing their sponsorship concepts and corresponding projects, as well as project-supporting measures; for companies planning to enter the field of sports sponsorship, we offer market research and concept development. Our services include: sports sponsorship concepts, market research & controlling, project-supporting measures, and scouting and acquisition of athletes.",
       image: img2,
     },
   ];

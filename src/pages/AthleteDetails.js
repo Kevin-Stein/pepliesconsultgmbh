@@ -5,6 +5,8 @@ import { getAthletes } from "../lib/athletes";
 import { useDocTitle } from "../components/CustomHook";
 import placeholderPortrait from "../images/athletes/portrait_placeholder.jpg";
 import placeholderAction from "../images/athletes/portrait_placeholder.jpg";
+import sigCindyHaasch from "../images/sig_cindy haasch.png";
+import sigAlinaNussbicker from "../images/sig_alina nussbicker.png";
 
 const AthleteDetails = ({ language }) => {
   useDocTitle("peplies consult - Sports Marketing Consultants");
@@ -19,14 +21,31 @@ const AthleteDetails = ({ language }) => {
   return (
     <>
       <div className="container max-w-4xl mx-auto my-40">
-        <div className="card bg-white overflow-hidden flex flex-col md:flex-row">
-          <img
-            src={athlete.portraitImageURL || placeholderPortrait}
-            alt={`${athlete.firstName} ${athlete.lastName}`}
-            className="w-full lg:w-1/2 h-100 object-cover"
-            style={{ height: "400px" }}
-          />
-          <div className="p-4 md:w-1/2 flex flex-col justify-center text-right gap-3">
+        <div className="card bg-white overflow-visible flex flex-col md:flex-row relative">
+          <div className="w-full lg:w-1/2 relative">
+            <img
+              src={athlete.portraitImageURL || placeholderPortrait}
+              alt={`${athlete.firstName} ${athlete.lastName}`}
+              className="w-full h-100 object-cover"
+              style={{ height: "400px" }}
+            />
+            {athlete.firstName === "Cindy" && athlete.lastName === "Haasch" && (
+              <img
+                src={sigCindyHaasch}
+                alt="Signature"
+                className="absolute bottom-0 -right-4 h-14 w-auto object-contain transform rotate-[-8deg] z-20 drop-shadow-lg"
+              />
+            )}
+            {athlete.firstName === "Alina" && athlete.lastName === "Nußbicker" && (
+              <img
+                src={sigAlinaNussbicker}
+                alt="Signature"
+                className="absolute bottom-0 right-0 h-28 w-auto object-contain transform rotate-[-8deg] z-20 drop-shadow-lg"
+                style={{ filter: "brightness(0) invert(1)" }}
+              />
+            )}
+          </div>
+          <div className="p-4 md:w-1/2 flex flex-col justify-center text-right gap-3 relative z-10">
             <h2 className="text-xl font-bold text-blue-900">
               {athlete.firstName} {athlete.lastName}
             </h2>

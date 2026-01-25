@@ -1055,7 +1055,7 @@ const athletes = [
   },
 ];
 
-// Translation mapping for common terms
+// Translation mapping for all terms
 const translations = {
   de: {
     sportDisciplines: {
@@ -1095,6 +1095,9 @@ const translations = {
       "Sportler": "Sportler",
       " Student für Recht und Wirtschaft": " Student für Recht und Wirtschaft",
     },
+    achievements: {},
+    interests: {},
+    hobbies: {},
   },
   en: {
     sportDisciplines: {
@@ -1134,6 +1137,201 @@ const translations = {
       "Sportler": "Athlete",
       " Student für Recht und Wirtschaft": " Student of Law and Economics",
     },
+    achievements: {
+      "Bronzemedaillengewinnerin Mixed-Mannschaft Olympia Peking": "Bronze medal winner Mixed Team Olympics Beijing",
+      "2023/24 Gesamtweltcup Platz 11": "2023/24 Overall World Cup 11th place",
+      "Gesamtweltcup 2025 Platz 15": "2025 Overall World Cup 15th place",
+      "Junioren-Weltmeister 2023": "Junior World Champion 2023",
+      "Bronzemedaillengewinner Junioren-WM 2025 Planica": "Bronze medal winner Junior World Championships 2025 Planica",
+      "Goldmedaillengewinnerin Junioren-WM Biathlon-Staffel in Estland 2024": "Gold medal winner Junior World Championships Biathlon Relay in Estonia 2024",
+      "IBU Junior-Cup 2024/2025 mehrere Top-10-Platzierungen": "IBU Junior Cup 2024/2025 multiple top-10 placements",
+      "Zweifache Goldmedaillengewinnerin Juniorenweltmeisterschaft 2024": "Two-time gold medal winner Junior World Championships 2024",
+      "Junioren-Weltmeisterschaften 2025 Silbermedaille mit der Frauenstaffel": "Junior World Championships 2025 silver medal with women's relay",
+      "WM 2021 Weltmeisterin Mixed Team": "2021 World Champion Mixed Team",
+      "WM 2023 Weltmeisterin Team": "2023 World Champion Team",
+      "Gesamtweltcup 2023 Platz 18": "2023 Overall World Cup 18th place",
+      "Nachwuchs-Weltmeisterschaft Kanada im Team Platz 3": "Youth World Championships Canada team 3rd place",
+      "Nachwuchs-Weltmeisterschaft Kanada im Einzel Platz 12": "Youth World Championships Canada individual 12th place",
+      "Gesamtweltcup 2024/25 Platz 14": "2024/25 Overall World Cup 14th place",
+      "Weltmeisterschaft Oberstdorf 2022 Platz 11 im Einzel": "World Championships Oberstdorf 2022 11th place individual",
+      "Top-20-Platzierungen Saison 2024/25": "Top-20 placements 2024/25 season",
+      "Erster Sommer Grand Prix Gesamtwertung Platz 21": "First Summer Grand Prix overall ranking 21st place",
+      "Continental-Cup-Sieger 2022": "Continental Cup winner 2022",
+      "Gesamtweltcup 2024/25 Platz 17": "2024/25 Overall World Cup 17th place",
+      "IBU-Gesamtwertung Platz 5 2024 / in der Einzelwertung den zweiten Platz": "IBU overall ranking 5th place 2024 / 2nd place in individual ranking",
+      "Charlotte Gallbronner": "Charlotte Gallbronner",
+      "Junioren-Europameisterin im Single-Mixed 2025": "Junior European Champion Single-Mixed 2025",
+      "Junioren-Vizeweltmeisterin in der Staffel 2025": "Junior Vice World Champion in relay 2025",
+      "Sieg im Einzelrennens beim IBU Junior Cups 2024/2025 in Ridnaun": "Victory in individual race at IBU Junior Cups 2024/2025 in Ridnaun",
+      "Zahlreiche Weltcupeinsätze": "Numerous World Cup appearances",
+      "Top-20-Platzierungen im Weltcup": "Top-20 placements in World Cup",
+      "3facher Olympiasieger 2014,2018": "3-time Olympic champion 2014, 2018",
+      "7facher Weltmeister 2011-2019": "7-time world champion 2011-2019",
+      "18 WM-Medaillen 2011-2023": "18 World Championship medals 2011-2023",
+      "5facher Gesamtweltcupsieger 2013-2017": "5-time overall World Cup winner 2013-2017",
+      "Silber Juniorenweltmeisterschaft 2017 im Team": "Silver Junior World Championships 2017 team",
+      "Deutscher Juniorenmeister 2016 in Oberhof": "German Junior Champion 2016 in Oberhof",
+      "Vierfacher Continental-Cup-Sieger 2017,2023,2024": "Four-time Continental Cup winner 2017, 2023, 2024",
+      "Vizeweltmeisterin Staffel 2021": "Vice World Champion relay 2021",
+      "Zweifache Europameisterin 2022": "Two-time European Champion 2022",
+      "Vizeweltmeisterin Einzel 2024": "Vice World Champion individual 2024",
+      "WM 2023 Silber Mixed Team": "2023 World Championships silver Mixed Team",
+      "Gesamtweltcup 2024/2025 Platz 8": "2024/2025 Overall World Cup 8th place",
+      "Juniorenweltmeisterin 2022": "Junior World Champion 2022",
+      "Gesamtweltcupranking 2022/23 Platz 16": "2022/23 Overall World Cup ranking 16th place",
+      "Zweifache Weltcupsiegerin 2023": "Two-time World Cup winner 2023",
+      "Gesamtweltcup 2025 Platz 23": "2025 Overall World Cup 23rd place",
+      "Silbermedaillengewinner Olympische Spiele 2022 im Team": "Silver medal winner Olympic Games 2022 team",
+      "Zweifacher Junioren-Weltmeister 2019 in Lathi": "Two-time Junior World Champion 2019 in Lahti",
+      "Dreifacher Weltcupsieger 2022 und 2023": "Three-time World Cup winner 2022 and 2023",
+      "Gesamtweltcup 2024/25 Platz 4": "2024/25 Overall World Cup 4th place",
+      "Skisprung-Junioren-Weltmeister 2023 in Whistler": "Ski Jumping Junior World Champion 2023 in Whistler",
+      "Sieger der Nordischen Skispiele der OPA 2020 im Team und Einzel": "Winner of Nordic Ski Games OPA 2020 team and individual",
+      "Heimweltcup 2021/22 in Titisee-Neustadt Platz 11 und Platz 13 im Einzel": "Home World Cup 2021/22 in Titisee-Neustadt 11th and 13th place individual",
+      "Zweiter Platz Gesamtweltcup 2021/22": "2nd place Overall World Cup 2021/22",
+      "Sechsfacher Weltmeister": "Six-time world champion",
+      "Einmal Silber 2018 und zweimal Bronzemedaillengewinner 2022 bei Olympischen Spielen": "One silver 2018 and two-time bronze medal winner 2022 at Olympic Games",
+      "Bronzemedaillengewinner Skiweltmeisterschaften und Gold im Mixed-Team 2023": "Bronze medal winner Ski World Championships and gold in Mixed Team 2023",
+      "Gesamtweltcup 2025 Platz 16": "2025 Overall World Cup 16th place",
+      "Sommer Grand Prix Serie 2024 Gesamtsieg": "Summer Grand Prix Series 2024 overall victory",
+      "Saison 2024/25 mehrere Top-10-Platzierungen": "2024/25 season multiple top-10 placements",
+      "Italienische Meisterin 2022 in Villach": "Italian Champion 2022 in Villach",
+      "Mehrere Top-10-Platzierungen im Continental Cup": "Multiple top-10 placements in Continental Cup",
+      "Bronzemedaille Junioren-WM in Whistler 2023 Team": "Bronze medal Junior World Championships in Whistler 2023 team",
+      "Gesamtweltcup 2023 Platz 24": "2023 Overall World Cup 24th place",
+      "Trophee de la meilleure sauteuse 2024/25 beste Springerin der Saison": "Trophy for best jumper 2024/25 best jumper of the season",
+      "Gesamtweltcup 2024/25 Platz 10": "2024/25 Overall World Cup 10th place",
+      "Dreifacher Continental-Cup-Sieger im Einzel 2019 und 2020": "Three-time Continental Cup winner individual 2019 and 2020",
+      "Gesamtweltcup 2020 Platz 23": "2020 Overall World Cup 23rd place",
+      "Amtierender deutscher Meister 2024": "Current German champion 2024",
+      "Weltmeisterin 2001,2005": "World champion 2001, 2005",
+      "Zweifache Silbermedaillengewinnerin Olympische Spiele 1994 und 1998": "Two-time silver medal winner Olympic Games 1994 and 1998",
+      "Zweifache Bronzemedaillengewinnerin WM 1993 und 1996": "Two-time bronze medal winner World Championships 1993 and 1996",
+      "Juniorenweltmeisterin Mixed-Team 2024": "Junior World Champion Mixed Team 2024",
+      "Bronzemedaillengewinnerin JWM 2024": "Bronze medal winner Junior World Championships 2024",
+      "Gesamtweltcup 2024/25 Platz 22": "2024/25 Overall World Cup 22nd place",
+      "Nord Cup 2022 Siegerin der ersten Station": "Nord Cup 2022 winner of first station",
+      "Platz 2 im Spezialspringen Schülerklasse S14/15": "2nd place in special jumping student class S14/15",
+      "Deutsche Jugendmeisterin 2024 Einzel": "German Youth Champion 2024 individual",
+      "Deutsche Jugendmeisterin 2024 Team": "German Youth Champion 2024 team",
+      "Continental-Cup-Sieger 2024": "Continental Cup winner 2024",
+      "Dreifacher Juniorenweltmeister 2022, 2023, 2024 im Team": "Three-time Junior World Champion 2022, 2023, 2024 team",
+      "Zweifacher Continental-Cup-Sieger 2023": "Two-time Continental Cup winner 2023",
+      "Zweifacher Continental-Cup-Sieger Team 2023": "Two-time Continental Cup winner team 2023",
+      "Gesamtweltcup 2024/25 Platz 11": "2024/25 Overall World Cup 11th place",
+      "Deutsche Jugendmeisterin Saison 2022/23": "German Youth Champion 2022/23 season",
+      "Gesamtwertung IBU-Cup 2023/2024 Platz 9": "IBU Cup overall ranking 2023/2024 9th place",
+      "Europameisterin 2023 in Lenzerheide im Einzel und Silbermedaillengewinnerin Mixed-Staffel": "European Champion 2023 in Lenzerheide individual and silver medal winner Mixed Relay",
+      "Continental Cup 2024 in Hinterzarten Platz 13": "Continental Cup 2024 in Hinterzarten 13th place",
+      "FIS- Junioren-Weltmeisterschaften 2025 Platz 16 im Einzel und Platz 4 im Team": "FIS Junior World Championships 2025 16th place individual and 4th place team",
+      "Alpen Cup in Chaux-Neuve 2025 unteranderem Platz 4 und Platz 9": "Alpen Cup in Chaux-Neuve 2025 including 4th and 9th place",
+      "Vier FIS-Rennen aufs Podium 2023/24": "Four FIS races on podium 2023/24",
+      "Nordische Kombination Herren 9 Mandate": "Nordic Combined men 9 mandates",
+      "Bronzemedaille beim European Youth Olympic Festival im Team 2023": "Bronze medal at European Youth Olympic Festival team 2023",
+      "Junioren-Vizeweltmeister 2024 in Planica": "Junior Vice World Champion 2024 in Planica",
+      "Fünffache Polnische Meisterin 2016, 2018, 2023, 2024, 2025": "Five-time Polish Champion 2016, 2018, 2023, 2024, 2025",
+      "Sieg im Intercontinental Cup in Notodden 2024": "Victory in Intercontinental Cup in Notodden 2024",
+      "Junioren-Weltmeisterin im Team 2025": "Junior World Champion team 2025",
+      "FIS -Alpencup 2024/2025 Platz 3 im Einzel": "FIS Alpencup 2024/2025 3rd place individual",
+      "Mehrere Top-10-Platzierungen im Intercontinental Cup 2024/2025": "Multiple top-10 placements in Intercontinental Cup 2024/2025",
+      "Junioren-Weltmeisterschaften 2025 Bronzemedaille im Einzel, vierter Platz im Teamsprint und Gold im Mixed-Team": "Junior World Championships 2025 bronze medal individual, fourth place in team sprint and gold in Mixed Team",
+      "Deutsche Meisterschaften 2023 und 2024 jeweils Vize-Meister Juniorenkategorie": "German Championships 2023 and 2024 each vice-champion junior category",
+      "Acht Podestplätze im Alpencup": "Eight podium places in Alpencup",
+      "Saison 2024/25 Weltcup in Lathi Platz 13": "2024/25 season World Cup in Lahti 13th place",
+      "Bronze bei den Olympischen Jugendspielen 2024": "Bronze at Youth Olympic Games 2024",
+      "Drei Siege in FIS-Rennen": "Three victories in FIS races",
+      "12 FIS-Podien": "12 FIS podiums",
+      "Japanischer Meister 2023 in Sapporo": "Japanese Champion 2023 in Sapporo",
+      "Skispringen Damen  12 Mandate": "Ski Jumping women 12 mandates",
+      "Top-21-Platzierung Nordische Ski-Weltmeisterschaften 2025": "Top-21 placement Nordic Ski World Championships 2025",
+      "Gesamtweltcup 2024/2025 Platz 28": "2024/2025 Overall World Cup 28th place",
+    },
+    interests: {
+      "Kunst": "Art",
+      "Design": "Design",
+      "Fotografie": "Photography",
+      "In Zukunft noch hoffentlich viele Sportliche Erfolge feiern zu dürfen": "Hopefully celebrating many athletic successes in the future",
+      "Rennrad fahren": "Road cycling",
+      "verschiedene Sportarten (Bsp. Tour de france, Leichtathletik...)": "Various sports (e.g. Tour de France, athletics...)",
+      "Mode": "Fashion",
+      "Handarbeit": "Handicrafts",
+      "Lesen": "Reading",
+      "sehr vielseitig von Politik bis hin zu fantasy Büchern kann man mich für vieles begeistern": "Very versatile, from politics to fantasy books, I can be enthusiastic about many things",
+      "alle anderen Sportarten": "All other sports",
+      "Musik": "Music",
+      "Sport": "Sports",
+      "Natur": "Nature",
+      "Technik": "Technology",
+      "Wintersport": "Winter sports",
+      "Radsport": "Cycling",
+      "Ernährung": "Nutrition",
+      "Körperoptimierung": "Body optimization",
+      "Fußball": "Football",
+      "Tennis": "Tennis",
+      "Eishockey": "Ice hockey",
+      "Handwerk": "Crafts",
+      "Landwirtschaft": "Agriculture",
+      "Wandern": "Hiking",
+      "Unterstützung des Projekts 'Eric-Frenzel -Trails'": "Support of the 'Eric-Frenzel -Trails' project",
+      "Organisieren/plann": "Organizing/planning",
+      "Sport allgemein": "Sports in general",
+      "Psychologie": "Psychology",
+      "mein Hund": "my dog",
+      "Alles was generell mit Sport zu tun hat. Seit neuestem American Football": "Everything related to sports in general. Recently American Football",
+      "Pflanzen": "Plants",
+      "Reisen": "Travel",
+      "Geografie": "Geography",
+      "Französisch": "French",
+      "Fashion": "Fashion",
+      "Fußball spielen": "Playing football",
+      "Sportliche Aktivitäten": "Athletic activities",
+      "Radfahren": "Cycling",
+      "Zeit mit Freunden verbringen": "Spending time with friends",
+      "Alles, was mit Sport zu tun hat": "Everything related to sports",
+      "Klavier spielen": "Playing piano",
+      "kochen": "Cooking",
+      "guten Kaffee trinken": "Drinking good coffee",
+      "kreativ sein": "Being creative",
+      "Golf": "Golf",
+      "Kitesurfen": "Kitesurfing",
+      "Fotoalben gestalten": "Creating photo albums",
+      "backen": "Baking",
+      "Biathlon": "Biathlon",
+      "Kaffee/Barista": "Coffee/Barista",
+      "Handball": "Handball",
+    },
+    hobbies: {
+      "Skie fahren, Mountain Biking, Laufen, surfen, malen, Guitarre spielen, Imkerei": "Skiing, mountain biking, running, surfing, painting, playing guitar, beekeeping",
+      "Zeit mit Familie und Freunden verbringen": "Spending time with family and friends",
+      "Zeit mit Familie und Freunde verbringen, Fernstudium in Sportökonomie, Biografien lesen, Konzerte besuchen,Backen ": "Spending time with family and friends, distance learning in sports economics, reading biographies, attending concerts, baking",
+      "Reisen": "Traveling",
+      "Bergtouren gehen und generell draußen Sport machen, natürlich geb ich mein Geld auch gerne für Klamotten und andere schöne Dinge aus und unternehme gerne was mit meinen Freunden und wenn die Zeit es auch erlaubt mit meiner Familie in meiner Heimat. ": "Going on mountain tours and generally doing sports outdoors, of course I also like to spend my money on clothes and other nice things and like to do things with my friends and when time allows with my family in my hometown.",
+      "Skifahren, Radfahren, Gitarre spielen ": "Skiing, cycling, playing guitar",
+      "Lesen, häkeln": "Reading, crocheting",
+      "Zeit mit der Familie, Kochen, Wandern, Basteln": "Time with family, cooking, hiking, crafting",
+      "Zeit mit der Familie und Freunden verbringen, Rennrad fahren": "Spending time with family and friends, road cycling",
+      "Tennis, Bergtouren, Rennrad fahren, Padel": "Tennis, mountain tours, road cycling, padel",
+      "Tennis, Fußball, Golf": "Tennis, football, golf",
+      "Radeln, kochen": "Cycling, cooking",
+      "Unternehmungen aller Art mit Freunden und Familie": "All kinds of activities with friends and family",
+      "Alpine skiing, ski mountaineering, hiking, baking/cooking": "Alpine skiing, ski mountaineering, hiking, baking/cooking",
+      "Ich bin gerne draußen in der Natur. Sport Allgemein.": "I like being outdoors in nature. Sports in general.",
+      "Schwimmen, Volleyball": "Swimming, volleyball",
+      "Kaffee trinken mit Freunden und Familie, Squash, an die frische Luft gehen": "Drinking coffee with friends and family, squash, going outside",
+      "Skitour/fahren, SUP, Gravelbiken, Berge, Go Kart, Kochen, Barista": "Ski touring/skiing, SUP, gravel biking, mountains, go-karting, cooking, barista",
+      "Naturerleben, Reisen, Ausgleichssportarten, Wandern, Nordic Walking, Trailrunning": "Experiencing nature, traveling, recreational sports, hiking, Nordic walking, trail running",
+      "Andere Sportarten wie Fußball, Radfahren, Golf oder Skialpin, Fotografie, mit Freunden treffen": "Other sports like football, cycling, golf or alpine skiing, photography, meeting friends",
+      "Bergtouren, Essengehen, Freunde treffen, Skitour gehen": "Mountain tours, dining out, meeting friends, ski touring",
+      "Lesen, Wandern, Volleyball spielen": "Reading, hiking, playing volleyball",
+      "Lesen, Reisen, Schwimmen": "Reading, traveling, swimming",
+      "Sportliche Aktivitäten, Fußball spielen, Radfahren sowie Zeit mit Freunden verbringen": "Athletic activities, playing football, cycling as well as spending time with friends",
+      "Radfahren, Berggehen, Tauchen und vieles mehr": "Cycling, mountain hiking, diving and much more",
+      "Ich fahre Rennrad und ich liebe es außerdem Motorrad zu fahren ": "I ride road bikes and I also love riding motorcycles",
+      "Die Familie ist in meinem Leben sehr wichtig, deshalb versuche ich, so viel Zeit wie möglich mit ihr zu verbringen. Wenn ich auf Reisen bin, versuche ich immer, Sehenswürdigkeiten zu besuchen, um interessante Dinge oder Orte zu entdecken.": "Family is very important in my life, so I try to spend as much time as possible with them. When I'm traveling, I always try to visit sights to discover interesting things or places.",
+      "In meiner Freizeit unternehme ich gerne was mit Freunden und backe und koche gerne mal.": "In my free time I like to do things with friends and like to bake and cook sometimes.",
+      "Klettern, Snowboardfahren, Zeit draußen mit Freunden verbringen": "Climbing, snowboarding, spending time outdoors with friends",
+      "DJ(auflegen), Skifahren, Lesen, Volleyball": "DJ (DJing), skiing, reading, volleyball",
+    },
   },
 };
 
@@ -1143,21 +1341,55 @@ export const getAthletes = (language = "de") => {
   const langTranslations = translations[lang];
 
   return athletes.map((athlete) => {
+    // Translate achievements array
+    const translatedAchievements = (athlete.achievements || []).map((achievement) => {
+      return langTranslations.achievements[achievement] || achievement;
+    });
+
+    // Translate interests array
+    const translatedInterests = (athlete.interests || []).map((interest) => {
+      return langTranslations.interests[interest] || interest;
+    });
+
+    // Translate hobby string
+    const translatedHobby = athlete.hobby
+      ? langTranslations.hobbies[athlete.hobby] || athlete.hobby
+      : "";
+
+    // Translate profession (handle complex profession strings)
+    let translatedProfession = athlete.profession || "";
+    if (athlete.profession) {
+      // Check for exact match first
+      if (langTranslations.professions[athlete.profession]) {
+        translatedProfession = langTranslations.professions[athlete.profession];
+      } else {
+        // Try to translate parts of complex profession strings
+        // For example: "Skispringerin, Graphic Design Student (Toronto Film School & Yorkville University)"
+        const professionParts = athlete.profession.split(", ");
+        if (professionParts.length > 1) {
+          const firstPart = professionParts[0];
+          const rest = professionParts.slice(1).join(", ");
+          if (langTranslations.professions[firstPart]) {
+            translatedProfession = `${langTranslations.professions[firstPart]}, ${rest}`;
+          } else {
+            translatedProfession = athlete.profession;
+          }
+        } else {
+          translatedProfession = athlete.profession;
+        }
+      }
+    }
+
     const translated = {
       ...athlete,
       sportDiscipline:
         athlete.sportDiscipline && langTranslations.sportDisciplines[athlete.sportDiscipline]
           ? langTranslations.sportDisciplines[athlete.sportDiscipline]
           : athlete.sportDiscipline,
-      profession:
-        athlete.profession && langTranslations.professions[athlete.profession]
-          ? langTranslations.professions[athlete.profession]
-          : athlete.profession,
-      // For achievements, interests, and hobby, we would need individual translations
-      // For now, we'll keep the German version if no translation is available
-      achievements: athlete.achievements || [],
-      interests: athlete.interests || [],
-      hobby: athlete.hobby || "",
+      profession: translatedProfession,
+      achievements: translatedAchievements,
+      interests: translatedInterests,
+      hobby: translatedHobby,
     };
 
     return translated;

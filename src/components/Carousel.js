@@ -1,9 +1,13 @@
 import React from "react";
-import kws from "../images/clients/kws.png";
-import geps from "../images/clients/geps.png";
-import protergia from "../images/clients/protergia.png";
+import referenzen1 from "../images/clients/Referenzen Unternehmen 1.jpeg";
+import referenzen2 from "../images/clients/Referenzen Unternehmen 2.jpeg";
+import referenzen3 from "../images/clients/Referenzen Unternehmen 3.jpeg";
+import referenzen4 from "../images/clients/Referenzen Unternehmen 4.jpeg";
+import referenzen5 from "../images/clients/Referenzen Unternehmen 5.jpeg";
+import referenzen6 from "../images/clients/Referenzen Unternehmen 6.jpeg";
+import referenzen from "../images/clients/Referenzen Unternehmen.jpeg";
 
-const images = [kws, geps, protergia];
+const images = [referenzen1, referenzen2, referenzen3, referenzen4, referenzen5, referenzen6, referenzen];
 
 const Carousel = () => {
   return (

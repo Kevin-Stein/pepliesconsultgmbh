@@ -61,14 +61,14 @@ const Services = memo(({ language }) => {
   return (
     <div id="services" className="bg-gray-100 pb-6 sm:pb-24 min-h-[400px] sm:min-h-[800px] flex items-center">
       <div className="container mx-auto px-2 sm:px-12">
-        <section data-aos="zoom-in-down">
+        <section data-aos="zoom-in-down" style={{ opacity: 1 }}>
           <SectionHeader
             title={language === "de" ? "Leistungen" : "Services"}
             subtitle={language === "de" ? "Unsere Leistungen im Überblick." : "Our Services at a Glance."}
             language={language}
           />
 
-          <div data-aos="fade-down" data-aos-delay="600">
+          <div data-aos="fade-down" data-aos-delay="600" style={{ opacity: 1 }}>
             <div className="grid sm:grid-cols-2 lg:grid-cols-2 gap-4 sm:gap-12 lg:gap-16">
               {services.map((service, index) => (
                 <ServiceCard key={index} {...service} language={language} />

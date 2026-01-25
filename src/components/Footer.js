@@ -1,10 +1,44 @@
 import React, { useContext } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate, useLocation } from "react-router-dom";
 import { HashLink } from "react-router-hash-link";
 import { AuthContext } from "../App";
 
 const Footer = ({ language }) => {
   const { isAuthenticated } = useContext(AuthContext);
+  const navigate = useNavigate();
+  const location = useLocation();
+
+  const handleAboutClick = (e) => {
+    e.preventDefault();
+    
+    // If not on home page, navigate to home first
+    if (location.pathname !== "/") {
+      navigate("/");
+      // Wait for navigation to complete, then scroll to about section
+      setTimeout(() => {
+        const element = document.getElementById("about");
+        if (element) {
+          const yCoordinate = element.getBoundingClientRect().top + window.pageYOffset;
+          const yOffset = -100;
+          window.scrollTo({
+            top: yCoordinate + yOffset,
+            behavior: "smooth",
+          });
+        }
+      }, 100);
+    } else {
+      // Already on home page, just scroll to about section
+      const element = document.getElementById("about");
+      if (element) {
+        const yCoordinate = element.getBoundingClientRect().top + window.pageYOffset;
+        const yOffset = -100;
+        window.scrollTo({
+          top: yCoordinate + yOffset,
+          behavior: "smooth",
+        });
+      }
+    }
+  };
 
   return (
     <footer className="mt-auto">
@@ -32,13 +66,13 @@ const Footer = ({ language }) => {
             </h6>
             <ul className="text-sm sm:text-md">
               <li className="mb-1 sm:mb-2">
-                <HashLink
-                  smooth
-                  to="#about"
+                <Link
+                  to="/"
+                  onClick={handleAboutClick}
                   className="text-blue-900 hover:text-gray-900 hover:tracking-wider transition duration-250 ease-in-out"
                 >
                   {language === "de" ? "Über uns" : "About"}
-                </HashLink>
+                </Link>
               </li>
               <li className="mb-1 sm:mb-2">
                 <HashLink

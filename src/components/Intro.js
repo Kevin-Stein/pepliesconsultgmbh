@@ -20,11 +20,12 @@ const Intro = ({ language }) => {
               </div>
             </div>
 
-            <div className="flex flex-col lg:flex-row py-4 sm:py-8 lg:text-left relative" data-aos="fade-up">
+            <div className="flex flex-col lg:flex-row py-4 sm:py-8 lg:text-left relative" data-aos="fade-up" style={{ opacity: 1 }}>
               <div
                 className="flex-col my-2 sm:my-4 text-center lg:text-left lg:my-0 lg:justify-end w-full lg:w-2/3 lg:pr-40 px-2 sm:px-5 relative z-10 mx-auto"
                 data-aos="zoom-in"
                 data-aos-delay="500"
+                style={{ opacity: 1 }}
               >
                 <div>
                   <p className="my-2 sm:my-3 text-sm sm:text-xl text-gray-600 font-semibold">

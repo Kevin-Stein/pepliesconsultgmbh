@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef, useContext } from "react";
 import { HashLink } from "react-router-hash-link";
-import { Link } from "react-router-dom";
+import { Link, useNavigate, useLocation } from "react-router-dom";
 import { AuthContext } from "../../App";
 
 const scrollWithOffset = (el) => {
@@ -17,6 +17,8 @@ const NavLinks = ({ language, toggleLanguage, setIsOpen, isMobile = false }) => 
   const [referenzenOpen, setReferenzenOpen] = useState(false);
   const [kampagnenOpen, setKampagnenOpen] = useState(false);
   const { isAuthenticated } = useContext(AuthContext);
+  const navigate = useNavigate();
+  const location = useLocation();
 
   const leistungenRef = useRef(null);
   const referenzenRef = useRef(null);
@@ -50,11 +52,25 @@ const NavLinks = ({ language, toggleLanguage, setIsOpen, isMobile = false }) => 
 
   const handleAboutClick = (e) => {
     e.preventDefault();
-    const element = document.getElementById("about");
-    if (element) {
-      scrollWithOffset(element);
-    }
     handleNavigationClick();
+    
+    // If not on home page, navigate to home first
+    if (location.pathname !== "/") {
+      navigate("/");
+      // Wait for navigation to complete, then scroll to about section
+      setTimeout(() => {
+        const element = document.getElementById("about");
+        if (element) {
+          scrollWithOffset(element);
+        }
+      }, 100);
+    } else {
+      // Already on home page, just scroll to about section
+      const element = document.getElementById("about");
+      if (element) {
+        scrollWithOffset(element);
+      }
+    }
   };
 
   const handleServicesClick = (e) => {
@@ -77,13 +93,13 @@ const NavLinks = ({ language, toggleLanguage, setIsOpen, isMobile = false }) => 
 
   return (
     <>
-      <HashLink
+      <Link
         className="px-2 text-m sm:text-base font-semibold text-gray-500 hover:text-blue-900"
-        smooth to="/#intro"
+        to="/"
         onClick={handleAboutClick}
       >
         {language === "de" ? "Über uns" : "About Us"}
-      </HashLink>
+      </Link>
 
       {isAuthenticated && (
         <Link

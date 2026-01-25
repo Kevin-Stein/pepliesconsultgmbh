@@ -11,7 +11,6 @@ import AthleteDetails from "./pages/AthleteDetails";
 import CompanyReferences from "./pages/CompanyReferences";
 
 import LegalNotice from "./pages/LegalNotice";
-import Portfolio from "./components/Portfolio";
 import AthleteServices from "./pages/AthleteServices";
 import CompanyServices from "./pages/CompanyServices";
 import Press from "./pages/Press";
@@ -61,17 +60,36 @@ function App() {
   }, []);
 
   useEffect(() => {
-    const aos_init = () => {
-      AOS.init({
-        once: true,
-        duration: 1000,
-        easing: "ease-out-cubic",
-      });
+    // Initialize AOS immediately
+    AOS.init({
+      once: true,
+      duration: 1000,
+      easing: "ease-out-cubic",
+      offset: 100,
+      delay: 0,
+      disable: false,
+    });
+
+    // Refresh AOS after a short delay to ensure DOM is ready
+    const refreshTimer = setTimeout(() => {
+      AOS.refresh();
+    }, 100);
+
+    // Also refresh AOS when window loads (for initial page load)
+    const handleLoad = () => {
+      AOS.refresh();
     };
 
-    window.addEventListener("load", () => {
-      aos_init();
-    });
+    if (document.readyState === "complete") {
+      AOS.refresh();
+    } else {
+      window.addEventListener("load", handleLoad);
+    }
+
+    return () => {
+      clearTimeout(refreshTimer);
+      window.removeEventListener("load", handleLoad);
+    };
   }, []);
 
   useDocTitle("peplies consult - Sports Marketing Consultants");
@@ -90,7 +108,6 @@ function App() {
                 <Route path="/athletes/:athleteName" element={<AthleteDetails language={language} />} />
                 <Route path="/references/companies" element={<CompanyReferences language={language} />} />
                 <Route path="/legal-notice" element={<LegalNotice language={language} />} />
-                <Route path="/portfolio" element={<Portfolio language={language} />} />
                 <Route path="/services/athletes" element={<AthleteServices language={language} />} />
                 <Route path="/services/companies" element={<CompanyServices language={language} />} />
                 <Route path="/press" element={<Press language={language} />} />

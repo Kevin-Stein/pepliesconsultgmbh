@@ -72,7 +72,7 @@ const Hero = () => {
               muted
               playsInline
               preload="auto"
-              className={`absolute inset-0 w-full h-full object-cover object-top transition-opacity duration-1000 ease-in-out brightness-60 ${
+              className={`absolute inset-0 w-full h-full object-cover object-[center_66%] transition-opacity duration-1000 ease-in-out brightness-60 ${
                 index === currentVideo ? "opacity-100" : "opacity-0"
               }`}
             />
@@ -86,7 +86,10 @@ const Hero = () => {
             <img
               src={logo}
               alt="peplies consult"
-              className="sm:h-48 h-24 w-auto mx-auto [filter:brightness(0)_saturate(100%)_invert(100%)]"
+              className="sm:h-48 h-24 w-auto mx-auto"
+              style={{
+                filter: "brightness(0) saturate(100%) invert(100%) drop-shadow(0 0 20px rgba(0,0,0,0.5)) drop-shadow(0 0 40px rgba(0,0,0,0.4)) drop-shadow(0 0 60px rgba(0,0,0,0.3))",
+              }}
             />
           </h1>
         </div>

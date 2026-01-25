@@ -13,8 +13,12 @@ const Hero = () => {
   ];
 
   useEffect(() => {
+    // Store references at the start of the effect for cleanup
+    const videoRefsSnapshot = videoRefs.current;
+    const currentVideoIndex = currentVideo;
+
     const playVideo = async (index) => {
-      const video = videoRefs.current[index];
+      const video = videoRefsSnapshot[index];
       if (!video) return;
 
       try {
@@ -29,26 +33,25 @@ const Hero = () => {
     };
 
     const handleVideoEnd = () => {
-      const nextIndex = (currentVideo + 1) % videos.length;
+      const nextIndex = (currentVideoIndex + 1) % videos.length;
       setCurrentVideo(nextIndex);
     };
 
     // Add ended event listener to current video
-    const currentVideoElement = videoRefs.current[currentVideo];
+    const currentVideoElement = videoRefsSnapshot[currentVideoIndex];
     if (currentVideoElement) {
       currentVideoElement.addEventListener("ended", handleVideoEnd);
-      playVideo(currentVideo);
+      playVideo(currentVideoIndex);
     }
 
     // Cleanup
     return () => {
-      // Store reference to current element for cleanup
-      const videoElement = videoRefs.current[currentVideo];
-      if (videoElement) {
-        videoElement.removeEventListener("ended", handleVideoEnd);
+      // Use the stored reference for cleanup
+      if (currentVideoElement) {
+        currentVideoElement.removeEventListener("ended", handleVideoEnd);
       }
-      // Stop all videos
-      videoRefs.current.forEach((video) => {
+      // Stop all videos using the snapshot
+      videoRefsSnapshot.forEach((video) => {
         if (video) {
           video.pause();
           video.currentTime = 0;

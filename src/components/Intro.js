@@ -28,14 +28,14 @@ const Intro = ({ language }) => {
                 style={{ opacity: 1 }}
               >
                 <div>
-                  <p className="my-2 sm:my-3 text-sm sm:text-xl text-gray-600 font-semibold">
+                  <p className="my-2 sm:my-3 text-sm sm:text-xl text-gray-900 font-semibold">
                     {language === "de"
                       ? 'Wir sind "Consultants of Choice" für nationale und internationale Athleten, Vereine, Verbände und Wirtschaftsunternehmen im Bereich des Sportmarketing und Sportsponsoring.'
                       : "We are the 'Consultants of Choice' for national and international athletes, clubs, associations, and businesses in the field of sports marketing and sports sponsorship."}
                   </p>
                 </div>
                 <div>
-                  <p className="my-2 sm:my-3 text-sm sm:text-xl text-gray-600 font-semibold">
+                  <p className="my-2 sm:my-3 text-sm sm:text-xl text-gray-900 font-semibold">
                     {language === "de"
                       ? "Als Schwesterunternehmen der peplies consult - Marketing Consultants und der peplies consult - Executive Consultants sowie als Kooperationspartner weltweit führender sportökonomischer, sportrechtlicher und sportmedizinischer Universitätsfakultäten sind wir Praxis und Wissenschaft zugleich verpflichtet."
                       : "As a sister company of peplies consult - Marketing Consultants and peplies consult - Executive Consultants, and as a cooperation partner of leading global sports economics, sports law, and sports medicine university faculties, we are committed to both practice and science."}
@@ -43,7 +43,7 @@ const Intro = ({ language }) => {
                 </div>
 
                 <div>
-                  <p className="my-2 sm:my-3 text-sm sm:text-xl text-gray-600 font-semibold">
+                  <p className="my-2 sm:my-3 text-sm sm:text-xl text-gray-900 font-semibold">
                     {language === "de"
                       ? "Wir lassen uns messen an der Zufriedenheit unserer Mandanten und unserem Beitrag für Wirtschaft, Sport und Gesellschaft."
                       : "We measure ourselves by the satisfaction of our clients and our contribution to the economy, sports, and society."}

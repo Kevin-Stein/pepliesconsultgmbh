@@ -13,7 +13,7 @@ const ServiceCard = memo(({ title, description, image, language }) => {
         <h2 className="font-semibold my-2 sm:my-8 text-lg sm:text-2xl md:text-3xl text-center text-blue-900">
           {title}
         </h2>
-        <p className="text-sm sm:text-xl text-gray-600 font-semibold">{description}</p>
+        <p className="text-sm sm:text-xl text-gray-900 font-semibold">{description}</p>
       </div>
     </div>
   );

@@ -40,12 +40,9 @@ const TvCommercials = ({ language }) => {
                 <div className="flex items-center justify-between mb-2">
                   <span className="text-sm text-gray-500">{commercial.date}</span>
                 </div>
-                <h2 className="text-xl font-bold text-gray-900 mb-2">
+                <h2 className="text-xl font-bold text-gray-900">
                   {commercial.title[language] || commercial.title.en}
                 </h2>
-                <p className="text-sm text-gray-600">
-                  {commercial.description[language] || commercial.description.en}
-                </p>
               </div>
             </div>
           ))}

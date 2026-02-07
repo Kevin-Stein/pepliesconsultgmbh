@@ -7,7 +7,7 @@ const Intro = ({ language }) => {
     <div id="about" className="bg-white pb-6 sm:pb-24 min-h-[100px] sm:min-h-[200px] flex items-center">
       <div className="container mx-auto px-2 sm:px-12">
         <div className="relative overflow-hidden">
-          <div className="absolute inset-0 flex items-start justify-center opacity-40">
+          <div className="absolute inset-0 flex items-start justify-center opacity-20">
             <img alt="card img" className="w-full h-auto" src={heroImg} />
           </div>
           <div className="relative z-10">

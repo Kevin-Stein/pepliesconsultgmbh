@@ -6,7 +6,7 @@ import img2 from "../images/business-team.svg";
 const ServiceCard = memo(({ title, description, image, language }) => {
   return (
     <div className="bg-white transition-all ease-in-out duration-400 overflow-hidden text-gray-700 rounded-lg shadow-2xl p-3 sm:p-8 group hover:shadow-3xl relative min-h-[150px] sm:min-h-[300px] flex items-center justify-center">
-      <div className="absolute inset-0 opacity-20">
+      <div className="absolute inset-0 opacity-10">
         <img alt="card img" className="w-full h-full object-cover" src={image} loading="lazy" />
       </div>
       <div className="relative z-10 m-2 sm:m-6 text-center text-sm sm:text-xl text-gray-600 font-semibold flex flex-col items-center justify-center">

@@ -49,9 +49,8 @@ const Footer = ({ language }) => {
           {/* 1st block */}
           <div className="col-span-12 lg:col-span-4">
             <div className="box-border border-b-4 border-blue-900 p-4 sm:p-8 bg-gray-200 text-gray-600 text-center rounded-lg xl:w-80 mx-auto">
-              <h3 className="font-bold text-2xl sm:text-4xl mb-2 sm:mb-4">peplies consult</h3>
+              <h3 className="font-bold text-2xl sm:text-4xl mb-1 sm:mb-4">peplies consult GmbH</h3>
               <div className="text-sm sm:text-md font-medium text-gray-600">
-                <h5>Stephan Peplies</h5>
                 <p>Höhenstraße 12</p>
                 <p>65321</p>
                 <p>Heidenrod</p>

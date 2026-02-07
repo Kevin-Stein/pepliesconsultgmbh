@@ -4,7 +4,7 @@ const tvCommercialsData = [
   {
     id: "tv-spot-1",
     title: {
-      de: "RTL Games - Martina Ertl",
+      de: "RTL Games Spot für RTL mit Martina Ertl",
       en: "Example TV Spot 1",
     },
     date: "2024-03-10",
@@ -14,7 +14,7 @@ const tvCommercialsData = [
   {
     id: "tv-spot-2",
     title: {
-      de: "Eunova TV Spot für GlaxoSmithKline mit Andrea Henkel",
+      de: "Eunova TV Spot für GlaxoSmithKline mit Andrea Henkel - Sommerversion",
       en: "Example TV Spot 2",
     },
     date: "2023-11-20",
@@ -25,7 +25,7 @@ const tvCommercialsData = [
   {
     id: "tv-spot-3",
     title: {
-      de: "Martina Glagow Spot",
+      de: "Floradix Kräuterblut TV Spot für salus Naturarzneimittel mit Martina Glagow",
       en: "Martina Glagow Spot",
     },
     date: "2024-01-01", // Placeholder date
@@ -35,7 +35,7 @@ const tvCommercialsData = [
   {
     id: "tv-spot-4",
     title: {
-      de: "Martina Ertl Sommerversion",
+      de: "Nutella TV Spot für Ferrero mit Martina Ertl	- Sommerversion",
       en: "Martina Ertl Summer Version",
     },
     date: "2024-01-02", // Placeholder date
@@ -45,7 +45,7 @@ const tvCommercialsData = [
   {
     id: "tv-spot-5",
     title: {
-      de: "Martina Ertl Winterversion",
+      de: "Nutella TV Spot für Ferrero mit Martina Ertl	- Winterversion",
       en: "Martina Ertl Winter Version",
     },
     date: "2024-01-03", // Placeholder date
@@ -55,7 +55,7 @@ const tvCommercialsData = [
   {
     id: "tv-spot-6",
     title: {
-      de: "Andrea Henkel Spot",
+      de: "Eunova TV Spot für GlaxoSmithKline mit Andrea Henkel - Winterversion",
       en: "Andrea Henkel Spot",
     },
     date: "2024-01-04", // Placeholder date
@@ -65,7 +65,7 @@ const tvCommercialsData = [
   {
     id: "tv-spot-7",
     title: {
-      de: "Marin Spot",
+      de: "Pattex TV Spot für Henkel AG & Cop. KGaA mit Marko Marin ",
       en: "Marin Spot",
     },
     date: "2024-01-05", // Placeholder date

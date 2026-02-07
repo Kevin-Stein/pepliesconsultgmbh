@@ -72,7 +72,7 @@ const Hero = () => {
               muted
               playsInline
               preload="auto"
-              className={`absolute inset-0 w-full h-full object-cover object-[center_72%] transition-opacity duration-1000 ease-in-out brightness-60 ${
+              className={`absolute inset-0 w-full h-full object-cover object-[center_40%] transition-opacity duration-1000 ease-in-out brightness-60 ${
                 index === currentVideo ? "opacity-100" : "opacity-0"
               }`}
             />

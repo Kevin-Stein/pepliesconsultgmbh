@@ -1,11 +1,12 @@
 import React, { useContext } from "react";
 import heroImg from "../images/athletes.svg";
-import { Link } from "react-router-dom";
 import { AuthContext } from "../App";
+import { useContactModal } from "./ContactModalContext";
 import { useI18n } from "../i18n/I18nContext";
 
 const Intro = () => {
   const { isAuthenticated } = useContext(AuthContext);
+  const { openContact } = useContactModal();
   const { t } = useI18n();
   return (
     <div id="about" className="bg-white pb-6 sm:pb-24 min-h-[100px] sm:min-h-[200px] flex items-center">
@@ -42,9 +43,10 @@ const Intro = () => {
                   <p className="my-2 sm:my-3 text-sm sm:text-xl text-gray-900 font-semibold">{t("intro.p3")}</p>
                 </div>
                 {isAuthenticated && (
-                  <Link
-                    to="/contact"
-                    className="text-white bg-blue-900 hover:bg-blue-800 inline-flex items-center justify-center w-full px-6 py-2 my-4 text-lg shadow-xl rounded-2xl sm:w-auto sm:mb-0 group"
+                  <button
+                    type="button"
+                    onClick={openContact}
+                    className="text-white bg-blue-900 hover:bg-blue-800 inline-flex items-center justify-center w-full px-6 py-2 my-4 text-lg shadow-xl rounded-2xl sm:w-auto sm:mb-0 group border-0 cursor-pointer"
                   >
                     {t("intro.contactCta")}
                     <svg
@@ -59,7 +61,7 @@ const Intro = () => {
                         clipRule="evenodd"
                       ></path>
                     </svg>
-                  </Link>
+                  </button>
                 )}
               </div>
             </div>

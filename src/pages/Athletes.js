@@ -20,11 +20,14 @@ const Athletes = () => {
   const sortedCurrentAthletes = [...currentAthletes].sort((a, b) => a.firstName.localeCompare(b.firstName));
 
   return (
-    <>
-      <div className="container mx-auto p-4 my-20 lg:my-40">
-        <h1 className="text-3xl font-bold text-center mb-8">{t("athletesPage.title")}</h1>
+    <div className="bg-white py-12 sm:py-24 mt-20 lg:mt-40">
+      <div className="container mx-auto px-4 sm:px-8">
+        <div className="text-center mb-12">
+          <h1 className="text-3xl sm:text-4xl font-bold text-blue-900 mb-4">{t("athletesPage.title")}</h1>
+          <div className="w-24 h-1 bg-blue-900 mx-auto mb-8"></div>
+        </div>
 
-        <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
           {sortedCurrentAthletes.map((athlete, index) => (
             <div
               key={index}
@@ -45,7 +48,7 @@ const Athletes = () => {
           ))}
         </div>
       </div>
-    </>
+    </div>
   );
 };
 

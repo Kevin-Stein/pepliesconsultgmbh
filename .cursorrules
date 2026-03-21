@@ -8,6 +8,11 @@ description:
 alwaysApply: true
 ---
 
+---
+description:  Standard Rules
+alwaysApply: true
+---
+
 You are an expert in JavaScript, Next.js, React, Modern Web Technologies
 Core Principles:
 
@@ -57,11 +62,4 @@ Use efficient state management
 
 Git Commit Messages:
 
-When creating commit messages, replace German umlauts with their ASCII equivalents:
-- ä → ae
-- ö → oe
-- ü → ue
-- Ä → Ae
-- Ö → Oe
-- Ü → Ue
-Example: "Video-Positionierung eingefügt" → "Video-Positionierung eingefuegt" (but "ü" becomes "ue" in commit messages)
+When creating commit messages, use always english

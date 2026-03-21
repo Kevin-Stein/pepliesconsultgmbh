@@ -21,7 +21,6 @@ const CompanyReferences = () => {
         <div className="text-center mb-12">
           <h1 className="text-3xl sm:text-4xl font-bold text-blue-900 mb-4">{t("companyReferences.title")}</h1>
           <div className="w-24 h-1 bg-blue-900 mx-auto mb-8"></div>
-          <p className="text-lg sm:text-xl text-gray-600 max-w-3xl mx-auto">{t("companyReferences.subtitle")}</p>
         </div>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 sm:gap-8">

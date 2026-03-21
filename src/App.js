@@ -2,10 +2,9 @@ import React, { useEffect, useState } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import "./index.css";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route, Navigate } from "react-router-dom";
 // All pages
 import Home from "./pages/Home";
-import Contact from "./pages/Contact";
 import Athletes from "./pages/Athletes";
 import AthleteDetails from "./pages/AthleteDetails";
 import CompanyReferences from "./pages/CompanyReferences";
@@ -27,6 +26,8 @@ import ProtectedRoute from "./components/ProtectedRoute";
 import { useDocTitle } from "./components/CustomHook";
 import ScrollToTop from "./components/ScrollToTop";
 import CookieBanner from "./components/CookieBanner";
+import { ContactModalProvider } from "./components/ContactModalContext";
+import { ContactModal } from "./components/ContactModal";
 
 // Create an authentication context
 export const AuthContext = React.createContext({
@@ -87,117 +88,113 @@ function App() {
 
   return (
     <AuthContext.Provider value={{ isAuthenticated, setIsAuthenticated }}>
-      <Router future={{ v7_relativeSplatPath: true }}>
-        <div className="flex flex-col min-h-screen">
-          <ScrollToTop>
-            <NavBar />
-            <main className="flex-grow">
-              <Routes>
-                <Route path="/" element={<Home />} />
-                <Route path="/legal-notice" element={<LegalNotice />} />
-                <Route
-                  path="/contact"
-                  element={
-                    <ProtectedRoute>
-                      <Contact />
-                    </ProtectedRoute>
-                  }
-                />
-                <Route
-                  path="/athletes"
-                  element={
-                    <ProtectedRoute>
-                      <Athletes />
-                    </ProtectedRoute>
-                  }
-                />
-                <Route
-                  path="/athletes/:athleteName"
-                  element={
-                    <ProtectedRoute>
-                      <AthleteDetails />
-                    </ProtectedRoute>
-                  }
-                />
-                <Route
-                  path="/references/companies"
-                  element={
-                    <ProtectedRoute>
-                      <CompanyReferences />
-                    </ProtectedRoute>
-                  }
-                />
-                <Route
-                  path="/services/athletes"
-                  element={
-                    <ProtectedRoute>
-                      <AthleteServices />
-                    </ProtectedRoute>
-                  }
-                />
-                <Route
-                  path="/services/companies"
-                  element={
-                    <ProtectedRoute>
-                      <CompanyServices />
-                    </ProtectedRoute>
-                  }
-                />
-                <Route
-                  path="/press"
-                  element={
-                    <ProtectedRoute>
-                      <Press />
-                    </ProtectedRoute>
-                  }
-                />
-                <Route
-                  path="/publications"
-                  element={
-                    <ProtectedRoute>
-                      <Publications />
-                    </ProtectedRoute>
-                  }
-                />
-                <Route
-                  path="/scientific-advisory-board"
-                  element={
-                    <ProtectedRoute>
-                      <ScientificAdvisoryBoard />
-                    </ProtectedRoute>
-                  }
-                />
-                <Route
-                  path="/campaigns/tv-spots"
-                  element={
-                    <ProtectedRoute>
-                      <TvCommercials />
-                    </ProtectedRoute>
-                  }
-                />
-                <Route
-                  path="/campaigns/pr-print-plakat"
-                  element={
-                    <ProtectedRoute>
-                      <PrintCampaign />
-                    </ProtectedRoute>
-                  }
-                />
-                <Route
-                  path="/hall-of-fame"
-                  element={
-                    <ProtectedRoute>
-                      <HallOfFame />
-                    </ProtectedRoute>
-                  }
-                />
-              </Routes>
-            </main>
-            <Footer />
-          </ScrollToTop>
-          <CookieBanner />
-        </div>
-      </Router>
+      <ContactModalProvider>
+        <Router future={{ v7_relativeSplatPath: true }}>
+          <div className="flex flex-col min-h-screen">
+            <ScrollToTop>
+              <NavBar />
+              <main className="flex-grow">
+                <Routes>
+                  <Route path="/" element={<Home />} />
+                  <Route path="/legal-notice" element={<LegalNotice />} />
+                  <Route path="/contact" element={<Navigate to="/" replace />} />
+                  <Route
+                    path="/athletes"
+                    element={
+                      <ProtectedRoute>
+                        <Athletes />
+                      </ProtectedRoute>
+                    }
+                  />
+                  <Route
+                    path="/athletes/:athleteName"
+                    element={
+                      <ProtectedRoute>
+                        <AthleteDetails />
+                      </ProtectedRoute>
+                    }
+                  />
+                  <Route
+                    path="/references/companies"
+                    element={
+                      <ProtectedRoute>
+                        <CompanyReferences />
+                      </ProtectedRoute>
+                    }
+                  />
+                  <Route
+                    path="/services/athletes"
+                    element={
+                      <ProtectedRoute>
+                        <AthleteServices />
+                      </ProtectedRoute>
+                    }
+                  />
+                  <Route
+                    path="/services/companies"
+                    element={
+                      <ProtectedRoute>
+                        <CompanyServices />
+                      </ProtectedRoute>
+                    }
+                  />
+                  <Route
+                    path="/press"
+                    element={
+                      <ProtectedRoute>
+                        <Press />
+                      </ProtectedRoute>
+                    }
+                  />
+                  <Route
+                    path="/publications"
+                    element={
+                      <ProtectedRoute>
+                        <Publications />
+                      </ProtectedRoute>
+                    }
+                  />
+                  <Route
+                    path="/scientific-advisory-board"
+                    element={
+                      <ProtectedRoute>
+                        <ScientificAdvisoryBoard />
+                      </ProtectedRoute>
+                    }
+                  />
+                  <Route
+                    path="/campaigns/tv-spots"
+                    element={
+                      <ProtectedRoute>
+                        <TvCommercials />
+                      </ProtectedRoute>
+                    }
+                  />
+                  <Route
+                    path="/campaigns/pr-print-plakat"
+                    element={
+                      <ProtectedRoute>
+                        <PrintCampaign />
+                      </ProtectedRoute>
+                    }
+                  />
+                  <Route
+                    path="/hall-of-fame"
+                    element={
+                      <ProtectedRoute>
+                        <HallOfFame />
+                      </ProtectedRoute>
+                    }
+                  />
+                </Routes>
+              </main>
+              <Footer />
+            </ScrollToTop>
+            <CookieBanner />
+            <ContactModal />
+          </div>
+        </Router>
+      </ContactModalProvider>
     </AuthContext.Provider>
   );
 }

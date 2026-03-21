@@ -1,11 +1,11 @@
 import React from "react";
-import referenzen1 from "../images/clients/Referenzen Unternehmen 1.jpeg";
-import referenzen2 from "../images/clients/Referenzen Unternehmen 2.jpeg";
-import referenzen3 from "../images/clients/Referenzen Unternehmen 3.jpeg";
-import referenzen4 from "../images/clients/Referenzen Unternehmen 4.jpeg";
-import referenzen5 from "../images/clients/Referenzen Unternehmen 5.jpeg";
-import referenzen6 from "../images/clients/Referenzen Unternehmen 6.jpeg";
-import referenzen from "../images/clients/Referenzen Unternehmen.jpeg";
+import referenzen1 from "../images/clients/Referenzen Unternehmen 1.png";
+import referenzen2 from "../images/clients/Referenzen Unternehmen 2.png";
+import referenzen3 from "../images/clients/Referenzen Unternehmen 3.png";
+import referenzen4 from "../images/clients/Referenzen Unternehmen 4.png";
+import referenzen5 from "../images/clients/Referenzen Unternehmen 5.png";
+import referenzen6 from "../images/clients/Referenzen Unternehmen 6.png";
+import referenzen from "../images/clients/Referenzen Unternehmen 7.png";
 
 const images = [referenzen1, referenzen2, referenzen3, referenzen4, referenzen5, referenzen6, referenzen];
 

@@ -1,13 +1,10 @@
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 
-const useDocTitle = title => {
-  const [doctitle, setDocTitle] = useState(title);
-
+/** Sets document.title; updates whenever `title` changes (e.g. language switch). */
+const useDocTitle = (title) => {
   useEffect(() => {
-    document.title = doctitle;
-  }, [doctitle]);
-
-  return [doctitle, setDocTitle];
+    document.title = title;
+  }, [title]);
 };
 
-export {useDocTitle};
+export { useDocTitle };

@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useRef } from "react";
 import logo from "../images/pepliesconsult_logo_black.svg";
+import { cloudinaryVideoUrlForHtml5 } from "../lib/cloudinaryVideoUrl.js";
 
 const Hero = () => {
   const [currentVideo, setCurrentVideo] = useState(0);
@@ -68,7 +69,7 @@ const Hero = () => {
             <video
               key={video}
               ref={(el) => (videoRefs.current[index] = el)}
-              src={video}
+              src={cloudinaryVideoUrlForHtml5(video)}
               muted
               playsInline
               preload="auto"

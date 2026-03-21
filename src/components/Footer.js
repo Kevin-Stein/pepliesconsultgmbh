@@ -1,55 +1,30 @@
 import React, { useContext } from "react";
-import { Link, useNavigate, useLocation } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { HashLink } from "react-router-hash-link";
 import { AuthContext } from "../App";
+import { useI18n } from "../i18n/I18nContext";
 
-const Footer = ({ language }) => {
+const scrollAboutIntoView = (el) => {
+  const yCoordinate = el.getBoundingClientRect().top + window.pageYOffset;
+  const yOffset = -100;
+  window.scrollTo({
+    top: yCoordinate + yOffset,
+    behavior: "smooth",
+  });
+};
+
+const Footer = () => {
   const { isAuthenticated } = useContext(AuthContext);
-  const navigate = useNavigate();
-  const location = useLocation();
-
-  const handleAboutClick = (e) => {
-    e.preventDefault();
-    
-    // If not on home page, navigate to home first
-    if (location.pathname !== "/") {
-      navigate("/");
-      // Wait for navigation to complete, then scroll to about section
-      setTimeout(() => {
-        const element = document.getElementById("about");
-        if (element) {
-          const yCoordinate = element.getBoundingClientRect().top + window.pageYOffset;
-          const yOffset = -100;
-          window.scrollTo({
-            top: yCoordinate + yOffset,
-            behavior: "smooth",
-          });
-        }
-      }, 100);
-    } else {
-      // Already on home page, just scroll to about section
-      const element = document.getElementById("about");
-      if (element) {
-        const yCoordinate = element.getBoundingClientRect().top + window.pageYOffset;
-        const yOffset = -100;
-        window.scrollTo({
-          top: yCoordinate + yOffset,
-          behavior: "smooth",
-        });
-      }
-    }
-  };
+  const { t } = useI18n();
 
   return (
     <footer className="mt-auto">
       <div className="footer relative max-w-full mx-auto px-2 sm:px-6 border-t border-b py-4 sm:py-8">
         <div className="absolute inset-0 bg-gray-100"></div>
-        {/* Top area: Blocks */}
         <div className="relative z-10 grid sm:grid-cols-12 gap-3 sm:gap-5 py-4 sm:py-8 md:py-12  lg:ml-11">
-          {/* 1st block */}
           <div className="col-span-12 lg:col-span-4">
             <div className="box-border border-b-4 border-blue-900 p-4 sm:p-8 bg-gray-200 text-gray-600 text-center rounded-lg xl:w-80 mx-auto">
-              <h3 className="font-bold text-2xl sm:text-4xl mb-1 sm:mb-4">peplies consult GmbH</h3>
+              <h3 className="font-bold text-2xl sm:text-4xl mb-2 sm:mb-4">peplies consult GmbH</h3>
               <div className="text-sm sm:text-md font-medium text-gray-600">
                 <p>Höhenstraße 12</p>
                 <p>65321</p>
@@ -58,82 +33,77 @@ const Footer = ({ language }) => {
             </div>
           </div>
 
-          {/* 2nd block */}
           <div className="col-span-6 md:col-span-6 lg:col-span-1 ml-4 sm:ml-7 mx-auto">
-            <h6 className="text-blue-900 text-lg sm:text-xl font-bold mb-2 sm:mb-4">
-              {language === "de" ? "LINKS" : "LINKS"}
-            </h6>
+            <h6 className="text-blue-900 text-lg sm:text-xl font-bold mb-2 sm:mb-4">{t("footer.linksHeading")}</h6>
             <ul className="text-sm sm:text-md">
               <li className="mb-1 sm:mb-2">
-                <Link
-                  to="/"
-                  onClick={handleAboutClick}
-                  className="text-blue-900 hover:text-gray-900 hover:tracking-wider transition duration-250 ease-in-out"
-                >
-                  {language === "de" ? "Über uns" : "About"}
-                </Link>
-              </li>
-              <li className="mb-1 sm:mb-2">
                 <HashLink
-                  smooth
-                  to="#services"
+                  to="/#about"
+                  scroll={scrollAboutIntoView}
                   className="text-blue-900 hover:text-gray-900 hover:tracking-wider transition duration-250 ease-in-out"
                 >
-                  {language === "de" ? "Leistungen" : "Services"}
+                  {t("footer.about")}
                 </HashLink>
               </li>
-              <li className="mb-1 sm:mb-2">
-                <HashLink
-                  to="#"
-                  className="text-blue-900 hover:text-gray-900 hover:tracking-wider transition duration-250 ease-in-out"
-                >
-                  {language === "de" ? "Kontakt" : "Contact"}
-                </HashLink>
-              </li>
+              {isAuthenticated && (
+                <>
+                  <li className="mb-1 sm:mb-2">
+                    <HashLink
+                      to="/#services"
+                      scroll={scrollAboutIntoView}
+                      className="text-blue-900 hover:text-gray-900 hover:tracking-wider transition duration-250 ease-in-out"
+                    >
+                      {t("footer.services")}
+                    </HashLink>
+                  </li>
+                  <li className="mb-1 sm:mb-2">
+                    <Link
+                      to="/contact"
+                      className="text-blue-900 hover:text-gray-900 hover:tracking-wider transition duration-250 ease-in-out"
+                    >
+                      {t("footer.contact")}
+                    </Link>
+                  </li>
+                </>
+              )}
               <li className="mb-1 sm:mb-2">
                 <Link
                   to="/legal-notice"
                   className="text-blue-900 hover:text-gray-900 hover:tracking-wider transition duration-250 ease-in-out"
                 >
-                  {language === "de" ? "Impressum" : "Legal Notice"}
+                  {t("footer.legal")}
                 </Link>
               </li>
             </ul>
           </div>
 
-          {/* 3rd block */}
-          <div className="col-span-6 md:col-span-6 lg:col-span-4 mx-auto">
-            <h6 className="text-blue-900 text-lg sm:text-xl font-bold mb-2 sm:mb-4">
-              {language === "de" ? "LEISTUNGEN" : "SERVICES"}
-            </h6>
-            <ul className="text-sm sm:text-md">
-              {isAuthenticated && (
+          {isAuthenticated && (
+            <div className="col-span-6 md:col-span-6 lg:col-span-4 mx-auto">
+              <h6 className="text-blue-900 text-lg sm:text-xl font-bold mb-2 sm:mb-4">{t("footer.servicesBlockHeading")}</h6>
+              <ul className="text-sm sm:text-md">
                 <li className="mb-1 sm:mb-2">
                   <Link
                     to="/services/athletes"
                     className="text-blue-900 hover:text-gray-900 hover:underline transition duration-250 ease-in-out"
                   >
-                    {language === "de" ? "Leistungen für Athleten" : "Services for Athletes"}
+                    {t("footer.servicesAthletes")}
                   </Link>
                 </li>
-              )}
-              <li className="mb-1 sm:mb-2">
-                <Link
-                  to="/services/companies"
-                  className="text-blue-900 hover:text-gray-900 hover:underline transition duration-250 ease-in-out"
-                >
-                  {language === "de" ? "Leistungen für Unternehmen" : "Services for Companies"}
-                </Link>
-              </li>
-            </ul>
-          </div>
-
-          {/* 4th block */}
-          <div className="col-span-12 text-center mx-auto lg:col-span-3 font-bold uppercase text-blue-900">
-            <div className="text-lg sm:text-xl mb-1">{language === "de" ? "Social Media" : "Social Media"}</div>
-            <div className="text-sm sm:text-md font-medium mb-4 sm:mb-6">
-              {language === "de" ? "Folge uns" : "Follow us"}
+                <li className="mb-1 sm:mb-2">
+                  <Link
+                    to="/services/companies"
+                    className="text-blue-900 hover:text-gray-900 hover:underline transition duration-250 ease-in-out"
+                  >
+                    {t("footer.servicesCompanies")}
+                  </Link>
+                </li>
+              </ul>
             </div>
+          )}
+
+          <div className="col-span-12 text-center mx-auto lg:col-span-3 font-bold uppercase text-blue-900">
+            <div className="text-lg sm:text-xl mb-1">{t("footer.social")}</div>
+            <div className="text-sm sm:text-md font-medium mb-4 sm:mb-6">{t("footer.followUs")}</div>
             <div className="mx-auto text-center mt-2">
               <ul className="flex justify-center mb-2 sm:mb-4">
                 <li>
@@ -178,7 +148,7 @@ const Footer = ({ language }) => {
               <HashLink to="#" className="hover:text-gray-900">
                 peplies consult - Sports Marketing Consultants
               </HashLink>
-              . {language === "de" ? "Alle Rechte vorbehalten." : "All rights reserved."}
+              . {t("footer.rights")}
             </div>
           </div>
         </div>

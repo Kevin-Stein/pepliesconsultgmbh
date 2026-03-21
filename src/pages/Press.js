@@ -1,37 +1,36 @@
 import React from "react";
 import { useDocTitle } from "../components/CustomHook";
 import pressArticles from "../lib/pressArticles.js";
+import { useI18n } from "../i18n/I18nContext";
 
-const Press = ({ language }) => {
-  useDocTitle("peplies consult - Press");
+const titleTranslations = {
+  "Berliner Tagesspiegel - Pyeong Chang 2018": "Berliner Tagesspiegel - Pyeong Chang 2018",
+  "Socrates Fachmagazin Sponsoring": "Socrates Magazine Sponsoring",
+  "Oberpfalzmedien Veröffentlichung": "Oberpfalzmedien Publication",
+  "Fridericianerbote 2023": "Fridericianerbote 2023",
+  "KON 37 2008 47 Highlights": "KON 37 2008 47 Highlights",
+  "SKM C258 2009": "SKM C258 2009",
+  "SKM C258 2009 (2)": "SKM C258 2009 (2)",
+  "SKM C258 2009 (3)": "SKM C258 2009 (3)",
+  "SKM C258 2009 (4)": "SKM C258 2009 (4)",
+  "WESST 2022": "WESST 2022",
+  "F2202102.031": "F2202102.031",
+};
+
+const Press = () => {
+  const { locale, t } = useI18n();
+  useDocTitle(t("press.docTitle"));
 
   const getTranslatedTitle = (title) => {
-    if (language === "en") {
-      const translations = {
-        "Berliner Tagesspiegel - Pyeong Chang 2018": "Berliner Tagesspiegel - Pyeong Chang 2018",
-        "Socrates Fachmagazin Sponsoring": "Socrates Magazine Sponsoring",
-        "Oberpfalzmedien Veröffentlichung": "Oberpfalzmedien Publication",
-        "Fridericianerbote 2023": "Fridericianerbote 2023",
-        "KON 37 2008 47 Highlights": "KON 37 2008 47 Highlights",
-        "SKM C258 2009": "SKM C258 2009",
-        "SKM C258 2009 (2)": "SKM C258 2009 (2)",
-        "SKM C258 2009 (3)": "SKM C258 2009 (3)",
-        "SKM C258 2009 (4)": "SKM C258 2009 (4)",
-        "WESST 2022": "WESST 2022",
-        "F2202102.031": "F2202102.031",
-      };
-      return translations[title] || title;
-    }
-    return title;
+    if (locale === "de") return title;
+    return titleTranslations[title] || title;
   };
 
   return (
     <div className="bg-white py-12 sm:py-24 mt-40">
       <div className="container mx-auto px-4 sm:px-8">
         <div className="text-center mb-12">
-          <h1 className="text-3xl sm:text-4xl font-bold text-blue-900 mb-4">
-            {language === "de" ? "Presse" : "Press"}
-          </h1>
+          <h1 className="text-3xl sm:text-4xl font-bold text-blue-900 mb-4">{t("press.title")}</h1>
           <div className="w-24 h-1 bg-blue-900 mx-auto"></div>
         </div>
 
@@ -74,9 +73,7 @@ const Press = ({ language }) => {
                           d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"
                         />
                       </svg>
-                      <p className="text-sm font-semibold">
-                        {language === "de" ? "Zum Öffnen klicken" : "Click to open"}
-                      </p>
+                      <p className="text-sm font-semibold">{t("press.openHint")}</p>
                     </div>
                   </a>
                 </div>

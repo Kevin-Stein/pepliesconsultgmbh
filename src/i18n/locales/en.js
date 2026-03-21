@@ -1,0 +1,158 @@
+/** @typedef {Record<string, string | Record<string, unknown>>} LocaleTree */
+/** @type {LocaleTree} */
+const en = {
+  nav: {
+    about: "About Us",
+    hallOfFame: "Hall of Fame",
+    services: "Services",
+    servicesAthletes: "Services for Athletes",
+    servicesCompanies: "Services for Companies",
+    references: "References",
+    refAthletes: "Athlete References",
+    refCompanies: "Company References",
+    press: "Press",
+    campaigns: "Campaigns",
+    campaignsPrint: "PR | Print | Poster",
+    campaignsTv: "TV Commercials",
+    publications: "Publications",
+    scientificAdvisoryBoard: "Scientific Advisory Board",
+  },
+  auth: {
+    login: "Login",
+    logout: "Logout",
+    password: "Password",
+    passwordPlaceholder: "Enter password",
+    wrongPassword: "Incorrect password",
+    showPassword: "Show password",
+    hidePassword: "Hide password",
+  },
+  footer: {
+    linksHeading: "LINKS",
+    about: "About",
+    services: "Services",
+    contact: "Contact",
+    legal: "Legal Notice",
+    servicesBlockHeading: "SERVICES",
+    servicesAthletes: "Services for Athletes",
+    servicesCompanies: "Services for Companies",
+    social: "Social Media",
+    followUs: "Follow us",
+    rights: "All rights reserved.",
+  },
+  intro: {
+    title: "About Us",
+    p1: "We are the 'Consultants of Choice' for national and international athletes, clubs, associations, and businesses in the field of sports marketing and sports sponsorship.",
+    p2: "As a sister company of peplies consult - Marketing Consultants and peplies consult - Executive Consultants, and as a cooperation partner of leading global sports economics, sports law, and sports medicine university faculties, we are committed to both practice and science.",
+    p3: "We measure ourselves by the satisfaction of our clients and our contribution to the economy, sports, and society.",
+    contactCta: "Contact us",
+  },
+  servicesSection: {
+    title: "Services",
+    subtitle: "Our Services at a Glance.",
+    athletesTitle: "Services for Athletes",
+    athletesBody:
+      'For our athletes, we provide - also with the involvement of associated partners and networks - all measures of holistic care at the highest qualitative level ("18-point program"). Far-reaching international references exist especially in all areas of winter sports (Alpine skiing, biathlon, ski jumping, Nordic combined, bobsleigh, luge) as well as within the sports of tennis, golf, equestrian and athletics.',
+    companiesTitle: "Services for Companies",
+    companiesBody:
+      "For companies already engaged in sports sponsorship, we offer measures for analyzing, controlling, and optimizing their sponsorship concepts and corresponding projects, as well as project-supporting measures; for companies planning to enter the field of sports sponsorship, we offer market research and concept development. Our services include: sports sponsorship concepts, market research & controlling, project-supporting measures, and scouting and acquisition of athletes.",
+  },
+  clients: {
+    title: "Company References",
+  },
+  contact: {
+    docTitle: "peplies consult - Send us a message",
+    officeAddress: "Office Address",
+    callUs: "Call Us",
+    sendEmail: "Send an E-mail",
+    country: "Germany",
+  },
+  legal: {
+    docTitle: "peplies consult - Legal Notice",
+    title: "Legal Notice",
+    tmgaHeading: "Information pursuant to § 5 TMG",
+    country: "Germany",
+    contact: "Contact",
+    vatHeading: "VAT ID",
+    vatIntro: "VAT identification number pursuant to §27 a of the German VAT Act:",
+    managingDirector: "Managing Director",
+    registerHeading: "Commercial Register",
+    registerBody: "Entry in the Commercial Register.",
+    registerCourtLabel: "Register Court:",
+    registerNumberLabel: "Registry number:",
+    responsibleHeading: "Responsible for content in accordance with Section 18 of the German Media Services Treaty (MStV):",
+  },
+  athletesPage: {
+    docTitle: "peplies consult - Athletes",
+    title: "Current Athletes",
+  },
+  athleteDetail: {
+    docTitle: "peplies consult - Sports Marketing Consultants",
+    notFound: "Athlete not found",
+    birthday: "Birthday:",
+    discipline: "Sport Discipline:",
+    club: "Club:",
+    interests: "Interests:",
+    profession: "Profession:",
+    hobby: "Hobby:",
+    achievements: "Achievements:",
+  },
+  companyReferences: {
+    docTitle: "peplies consult - Company References",
+    title: "Company References",
+    subtitle: "Companies we work with.",
+    reference: "Reference",
+  },
+  hallOfFame: {
+    docTitle: "peplies consult - Hall of Fame",
+    title: "Hall of Fame",
+  },
+  press: {
+    docTitle: "peplies consult - Press",
+    title: "Press",
+    openHint: "Click to open",
+  },
+  publications: {
+    docTitle: "peplies consult - Publications",
+    title: "Publications",
+  },
+  scientificAdvisoryBoard: {
+    docTitle: "peplies consult - Scientific Advisory Board",
+    title: "Scientific Advisory Board",
+  },
+  printCampaign: {
+    docTitle: "peplies consult - PR, Print, Poster",
+    title: "PR | Print | Posters",
+  },
+  tv: {
+    docTitle: "peplies consult - TV Commercials",
+    title: "TV Commercials",
+    videoNotSupported: "Your browser does not support the video tag.",
+  },
+  athleteServices: {
+    docTitle: "peplies consult - Services for Athletes",
+    title: "Services for Athletes",
+    intro:
+      'For our athletes, we provide all measures of holistic care at the highest quality level ("18-point program") - also in cooperation with associated partners and networks. Extensive international references exist primarily in all areas of winter sports (Alpine skiing, biathlon, ski jumping, Nordic combined, bobsleigh, luge) as well as in tennis, golf, equestrian sports, and athletics.',
+  },
+  companyServices: {
+    docTitle: "peplies consult - Services for Companies",
+    title: "Services for Companies",
+  },
+  cookie: {
+    message: "This website uses cookies to enhance your experience. Please choose your preference.",
+    acceptAll: "Accept All",
+    acceptNecessary: "Accept Necessary",
+    decline: "Decline",
+  },
+  language: {
+    label: "Language",
+    names: {
+      de: "Deutsch",
+      en: "English",
+      fr: "Français",
+      es: "Español",
+    },
+  },
+};
+
+export default en;

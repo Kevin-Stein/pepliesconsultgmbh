@@ -1,49 +1,27 @@
-import React, { useContext, useEffect } from "react";
+import React from "react";
 import { useNavigate } from "react-router-dom";
 import { useDocTitle } from "../components/CustomHook";
 import { getAthletes } from "../lib/athletes";
 import placeholderPortrait from "../images/athletes/portrait_placeholder.jpg";
-import { AuthContext } from "../App";
+import { useI18n } from "../i18n/I18nContext";
 
-const HallOfFame = ({ language = "de" }) => {
-  useDocTitle("peplies consult - Hall of Fame");
+const HallOfFame = () => {
+  const { locale, t } = useI18n();
+  useDocTitle(t("hallOfFame.docTitle"));
   const navigate = useNavigate();
-  const { isAuthenticated } = useContext(AuthContext);
-
-  useEffect(() => {
-    // Redirect to home if not authenticated
-    if (!isAuthenticated) {
-      navigate("/");
-    }
-  }, [isAuthenticated, navigate]);
-
-  // Don't render content if not authenticated
-  if (!isAuthenticated) {
-    return (
-      <div className="container mx-auto p-4 my-20 lg:my-40 text-center">
-        <p className="text-xl text-gray-700">
-          {language === "de" ? "Bitte melden Sie sich an, um diese Seite zu sehen." : "Please log in to view this page."}
-        </p>
-      </div>
-    );
-  }
 
   const handleCardClick = (athlete) => {
     navigate(`/athletes/${athlete.firstName}-${athlete.lastName}`);
   };
 
-  // Get athletes in the specified language
-  const athletes = getAthletes(language);
-  // Get only former athletes
+  const athletes = getAthletes(locale);
   const formerAthletes = athletes.filter((athlete) => athlete.isFormer);
-
-  // Sort athletes by first name
   const sortedFormerAthletes = [...formerAthletes].sort((a, b) => a.firstName.localeCompare(b.firstName));
 
   return (
     <>
       <div className="container mx-auto p-4 my-20 lg:my-40">
-        <h1 className="text-3xl font-bold text-center mb-8">{language === "de" ? "Hall of Fame" : "Hall of Fame"}</h1>
+        <h1 className="text-3xl font-bold text-center mb-8">{t("hallOfFame.title")}</h1>
 
         <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {sortedFormerAthletes.map((athlete, index) => (
@@ -55,7 +33,7 @@ const HallOfFame = ({ language = "de" }) => {
               <img
                 src={athlete.portraitImageURL || placeholderPortrait}
                 alt={`${athlete.firstName} ${athlete.lastName}`}
-                className="object-fit w-full"
+                className="aspect-[3/4] w-full object-cover"
               />
               <div className="p-4 mt-3">
                 <h2 className="text-xl font-bold">

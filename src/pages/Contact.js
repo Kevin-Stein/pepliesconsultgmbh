@@ -1,7 +1,9 @@
 import { useDocTitle } from "../components/CustomHook";
+import { useI18n } from "../i18n/I18nContext";
 
-const Contact = ({ language }) => {
-  useDocTitle("peplies consult - Send us a message");
+const Contact = () => {
+  const { t } = useI18n();
+  useDocTitle(t("contact.docTitle"));
   return (
     <div id="contact" className="h-[50vh] flex items-center justify-center bg-white mt-20">
       <div className="w-full max-w-2xl px-4 sm:px-8 py-6 sm:py-12 mx-6 bg-blue-900 rounded-2xl">
@@ -10,12 +12,10 @@ const Contact = ({ language }) => {
             <div className="flex items-center justify-center mb-2 sm:mb-4">
               <i className="fas fa-map-marker-alt text-xl sm:text-2xl mr-3 sm:mr-4" />
               <div className="text-center">
-                <h2 className="text-lg sm:text-2xl font-bold mb-1 sm:mb-2">
-                  {language === "de" ? "Büro Adresse" : "Office Address"}
-                </h2>
+                <h2 className="text-lg sm:text-2xl font-bold mb-1 sm:mb-2">{t("contact.officeAddress")}</h2>
                 <p className="text-sm sm:text-base text-gray-300">Höhenstraße 12</p>
                 <p className="text-sm sm:text-base text-gray-300">65321 Heidenrod</p>
-                <p className="text-sm sm:text-base text-gray-300">Germany</p>
+                <p className="text-sm sm:text-base text-gray-300">{t("contact.country")}</p>
               </div>
             </div>
           </div>
@@ -24,9 +24,7 @@ const Contact = ({ language }) => {
             <div className="flex items-center justify-center mb-2 sm:mb-4">
               <i className="fas fa-phone-alt text-xl sm:text-2xl mr-3 sm:mr-4" />
               <div className="text-center">
-                <h2 className="text-lg sm:text-2xl font-bold mb-1 sm:mb-2">
-                  {language === "de" ? "Rufen Sie uns an" : "Call Us"}
-                </h2>
+                <h2 className="text-lg sm:text-2xl font-bold mb-1 sm:mb-2">{t("contact.callUs")}</h2>
                 <p className="text-sm sm:text-base text-gray-300">Tel: +49 (0) </p>
               </div>
             </div>
@@ -34,9 +32,7 @@ const Contact = ({ language }) => {
             <div className="flex items-center justify-center mt-2 sm:mt-4">
               <i className="fas fa-envelope text-xl sm:text-2xl mr-3 sm:mr-4" />
               <div className="text-center">
-                <h2 className="text-lg sm:text-2xl font-bold mb-1 sm:mb-2">
-                  {language === "de" ? "Senden Sie eine E-Mail" : "Send an E-mail"}
-                </h2>
+                <h2 className="text-lg sm:text-2xl font-bold mb-1 sm:mb-2">{t("contact.sendEmail")}</h2>
                 <p className="text-sm sm:text-base text-gray-300">peplies@pepliesconsult.de</p>
               </div>
             </div>

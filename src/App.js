@@ -22,6 +22,7 @@ import Footer from "./components/Footer";
 import HallOfFame from "./pages/HallOfFame";
 
 import NavBar from "./components/Navbar/NavBar";
+import ProtectedRoute from "./components/ProtectedRoute";
 
 import { useDocTitle } from "./components/CustomHook";
 import ScrollToTop from "./components/ScrollToTop";
@@ -34,19 +35,12 @@ export const AuthContext = React.createContext({
 });
 
 function App() {
-  const [language, setLanguage] = useState("de"); // 'de' for German, 'en' for English
   const [isAuthenticated, setIsAuthenticated] = useState(false);
 
-  const toggleLanguage = () => {
-    setLanguage((prevLanguage) => (prevLanguage === "de" ? "en" : "de"));
-  };
-
   useEffect(() => {
-    // Check authentication status when the app loads
     const authStatus = localStorage.getItem("isAuthenticated") === "true";
     setIsAuthenticated(authStatus);
 
-    // Set up event listener for storage changes (for multi-tab support)
     const handleStorageChange = (e) => {
       if (e.key === "isAuthenticated") {
         setIsAuthenticated(e.newValue === "true");
@@ -60,7 +54,6 @@ function App() {
   }, []);
 
   useEffect(() => {
-    // Initialize AOS immediately
     AOS.init({
       once: true,
       duration: 1000,
@@ -70,12 +63,10 @@ function App() {
       disable: false,
     });
 
-    // Refresh AOS after a short delay to ensure DOM is ready
     const refreshTimer = setTimeout(() => {
       AOS.refresh();
     }, 100);
 
-    // Also refresh AOS when window loads (for initial page load)
     const handleLoad = () => {
       AOS.refresh();
     };
@@ -99,28 +90,112 @@ function App() {
       <Router future={{ v7_relativeSplatPath: true }}>
         <div className="flex flex-col min-h-screen">
           <ScrollToTop>
-            <NavBar language={language} toggleLanguage={toggleLanguage} />
+            <NavBar />
             <main className="flex-grow">
               <Routes>
-                <Route path="/" element={<Home language={language} />} />
-                <Route path="/contact" element={<Contact language={language} />} />
-                <Route path="/athletes" element={<Athletes language={language} />} />
-                <Route path="/athletes/:athleteName" element={<AthleteDetails language={language} />} />
-                <Route path="/references/companies" element={<CompanyReferences language={language} />} />
-                <Route path="/legal-notice" element={<LegalNotice language={language} />} />
-                <Route path="/services/athletes" element={<AthleteServices language={language} />} />
-                <Route path="/services/companies" element={<CompanyServices language={language} />} />
-                <Route path="/press" element={<Press language={language} />} />
-                <Route path="/publications" element={<Publications language={language} />} />
-                <Route path="/scientific-advisory-board" element={<ScientificAdvisoryBoard language={language} />} />
-                <Route path="/campaigns/tv-spots" element={<TvCommercials language={language} />} />
-                <Route path="/campaigns/pr-print-plakat" element={<PrintCampaign language={language} />} />
-                <Route path="/hall-of-fame" element={<HallOfFame language={language} />} />
+                <Route path="/" element={<Home />} />
+                <Route path="/legal-notice" element={<LegalNotice />} />
+                <Route
+                  path="/contact"
+                  element={
+                    <ProtectedRoute>
+                      <Contact />
+                    </ProtectedRoute>
+                  }
+                />
+                <Route
+                  path="/athletes"
+                  element={
+                    <ProtectedRoute>
+                      <Athletes />
+                    </ProtectedRoute>
+                  }
+                />
+                <Route
+                  path="/athletes/:athleteName"
+                  element={
+                    <ProtectedRoute>
+                      <AthleteDetails />
+                    </ProtectedRoute>
+                  }
+                />
+                <Route
+                  path="/references/companies"
+                  element={
+                    <ProtectedRoute>
+                      <CompanyReferences />
+                    </ProtectedRoute>
+                  }
+                />
+                <Route
+                  path="/services/athletes"
+                  element={
+                    <ProtectedRoute>
+                      <AthleteServices />
+                    </ProtectedRoute>
+                  }
+                />
+                <Route
+                  path="/services/companies"
+                  element={
+                    <ProtectedRoute>
+                      <CompanyServices />
+                    </ProtectedRoute>
+                  }
+                />
+                <Route
+                  path="/press"
+                  element={
+                    <ProtectedRoute>
+                      <Press />
+                    </ProtectedRoute>
+                  }
+                />
+                <Route
+                  path="/publications"
+                  element={
+                    <ProtectedRoute>
+                      <Publications />
+                    </ProtectedRoute>
+                  }
+                />
+                <Route
+                  path="/scientific-advisory-board"
+                  element={
+                    <ProtectedRoute>
+                      <ScientificAdvisoryBoard />
+                    </ProtectedRoute>
+                  }
+                />
+                <Route
+                  path="/campaigns/tv-spots"
+                  element={
+                    <ProtectedRoute>
+                      <TvCommercials />
+                    </ProtectedRoute>
+                  }
+                />
+                <Route
+                  path="/campaigns/pr-print-plakat"
+                  element={
+                    <ProtectedRoute>
+                      <PrintCampaign />
+                    </ProtectedRoute>
+                  }
+                />
+                <Route
+                  path="/hall-of-fame"
+                  element={
+                    <ProtectedRoute>
+                      <HallOfFame />
+                    </ProtectedRoute>
+                  }
+                />
               </Routes>
             </main>
-            <Footer language={language} />
+            <Footer />
           </ScrollToTop>
-          <CookieBanner language={language} />
+          <CookieBanner />
         </div>
       </Router>
     </AuthContext.Provider>

@@ -4,13 +4,13 @@ import Hero from "../components/Hero";
 import Intro from "../components/Intro";
 import Services from "../components/Services";
 
-const Home = ({ language }) => {
+const Home = () => {
   return (
     <>
       <Hero />
-      <Intro language={language} />
-      <Services language={language} />
-      <Clients language={language} />
+      <Intro />
+      <Services />
+      <Clients />
     </>
   );
 };

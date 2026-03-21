@@ -1,3 +1,13 @@
+---
+description: 
+alwaysApply: true
+---
+
+---
+description: 
+alwaysApply: true
+---
+
 You are an expert in JavaScript, Next.js, React, Modern Web Technologies
 Core Principles:
 
@@ -54,4 +64,4 @@ When creating commit messages, replace German umlauts with their ASCII equivalen
 - Ä → Ae
 - Ö → Oe
 - Ü → Ue
-Example: "Video-Positionierung angepasst" → "Video-Positionierung angepasst" (but "ä" becomes "ae" in commit messages)
+Example: "Video-Positionierung eingefügt" → "Video-Positionierung eingefuegt" (but "ü" becomes "ue" in commit messages)

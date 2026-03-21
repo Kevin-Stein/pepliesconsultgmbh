@@ -2,6 +2,7 @@ import React, { useState, useEffect, useRef, useContext } from "react";
 import { HashLink } from "react-router-hash-link";
 import { Link, useNavigate, useLocation } from "react-router-dom";
 import { AuthContext } from "../../App";
+import { useI18n } from "../../i18n/I18nContext";
 
 const scrollWithOffset = (el) => {
   const yCoordinate = el.getBoundingClientRect().top + window.pageYOffset;
@@ -12,11 +13,12 @@ const scrollWithOffset = (el) => {
   });
 };
 
-const NavLinks = ({ language, toggleLanguage, setIsOpen, isMobile = false }) => {
+const NavLinks = ({ setIsOpen, isMobile = false }) => {
   const [leistungenOpen, setLeistungenOpen] = useState(false);
   const [referenzenOpen, setReferenzenOpen] = useState(false);
   const [kampagnenOpen, setKampagnenOpen] = useState(false);
   const { isAuthenticated } = useContext(AuthContext);
+  const { t } = useI18n();
   const navigate = useNavigate();
   const location = useLocation();
 
@@ -53,11 +55,9 @@ const NavLinks = ({ language, toggleLanguage, setIsOpen, isMobile = false }) => 
   const handleAboutClick = (e) => {
     e.preventDefault();
     handleNavigationClick();
-    
-    // If not on home page, navigate to home first
+
     if (location.pathname !== "/") {
       navigate("/");
-      // Wait for navigation to complete, then scroll to about section
       setTimeout(() => {
         const element = document.getElementById("about");
         if (element) {
@@ -65,7 +65,6 @@ const NavLinks = ({ language, toggleLanguage, setIsOpen, isMobile = false }) => 
         }
       }, 100);
     } else {
-      // Already on home page, just scroll to about section
       const element = document.getElementById("about");
       if (element) {
         scrollWithOffset(element);
@@ -98,184 +97,173 @@ const NavLinks = ({ language, toggleLanguage, setIsOpen, isMobile = false }) => 
         to="/"
         onClick={handleAboutClick}
       >
-        {language === "de" ? "Über uns" : "About Us"}
+        {t("nav.about")}
       </Link>
 
       {isAuthenticated && (
-        <Link
-          className="px-2 text-m sm:text-base font-semibold text-gray-500 hover:text-blue-900"
-          to="/hall-of-fame"
-          onClick={handleNavigationClick}
-        >
-          Hall of Fame
-        </Link>
+        <>
+          <Link
+            className="px-2 text-m sm:text-base font-semibold text-gray-500 hover:text-blue-900"
+            to="/hall-of-fame"
+            onClick={handleNavigationClick}
+          >
+            {t("nav.hallOfFame")}
+          </Link>
+
+          <div className={`${isMobile ? "w-full" : "relative inline-block"}`} ref={leistungenRef}>
+            <div
+              className="flex flex-col"
+              onMouseEnter={!isMobile ? () => setLeistungenOpen(true) : undefined}
+              onMouseLeave={!isMobile ? () => setLeistungenOpen(false) : undefined}
+            >
+              <HashLink
+                className="px-2 text-m sm:text-base font-semibold text-gray-500 hover:text-blue-900 inline-flex items-center"
+                to="/#services"
+                onClick={handleServicesClick}
+              >
+                <span>{t("nav.services")}</span>
+                <svg className="ml-1 w-2 h-2 sm:w-3 sm:h-3 fill-current" viewBox="0 0 12 12">
+                  <path d="M5.9 9.7L.5 4.2l1.4-1.4L6 7l4.1-4.2L11.5 4z" />
+                </svg>
+              </HashLink>
+              {(isMobile || leistungenOpen) && (
+                <div
+                  className={`${
+                    isMobile
+                      ? "ml-2 mt-0.5 space-y-0.5"
+                      : "absolute top-full left-0 w-64 bg-white rounded-md shadow-lg py-1 z-50"
+                  }`}
+                >
+                  <Link
+                    to="/services/athletes"
+                    className="block px-2 py-0.5 text-xs sm:text-sm font-medium text-gray-500 hover:text-blue-900 whitespace-nowrap"
+                    onClick={handleNavigationClick}
+                  >
+                    {t("nav.servicesAthletes")}
+                  </Link>
+                  <Link
+                    to="/services/companies"
+                    className="block px-2 py-0.5 text-xs sm:text-sm font-medium text-gray-500 hover:text-blue-900 whitespace-nowrap"
+                    onClick={handleNavigationClick}
+                  >
+                    {t("nav.servicesCompanies")}
+                  </Link>
+                </div>
+              )}
+            </div>
+          </div>
+
+          <div className={`${isMobile ? "w-full" : "relative inline-block"}`} ref={referenzenRef}>
+            <div
+              className="flex flex-col"
+              onMouseEnter={!isMobile ? () => setReferenzenOpen(true) : undefined}
+              onMouseLeave={!isMobile ? () => setReferenzenOpen(false) : undefined}
+            >
+              <HashLink
+                className="px-2 text-m sm:text-base font-semibold text-gray-500 hover:text-blue-900 inline-flex items-center"
+                to="/#clients"
+                onClick={handleReferencesClick}
+              >
+                <span>{t("nav.references")}</span>
+                <svg className="ml-1 w-2 h-2 sm:w-3 sm:h-3 fill-current" viewBox="0 0 12 12">
+                  <path d="M5.9 9.7L.5 4.2l1.4-1.4L6 7l4.1-4.2L11.5 4z" />
+                </svg>
+              </HashLink>
+              {(isMobile || referenzenOpen) && (
+                <div
+                  className={`${
+                    isMobile
+                      ? "ml-2 mt-0.5 space-y-0.5"
+                      : "absolute top-full left-0 w-64 bg-white rounded-md shadow-lg py-1 z-50"
+                  }`}
+                >
+                  <Link
+                    to="/athletes"
+                    className="block px-2 py-0.5 text-xs sm:text-sm font-medium text-gray-500 hover:text-blue-900 whitespace-nowrap"
+                    onClick={handleNavigationClick}
+                  >
+                    {t("nav.refAthletes")}
+                  </Link>
+                  <Link
+                    to="/references/companies"
+                    className="block px-2 py-0.5 text-xs sm:text-sm font-medium text-gray-500 hover:text-blue-900 whitespace-nowrap"
+                    onClick={handleNavigationClick}
+                  >
+                    {t("nav.refCompanies")}
+                  </Link>
+                </div>
+              )}
+            </div>
+          </div>
+
+          <Link
+            to="/press"
+            className="px-2 text-m sm:text-base font-semibold text-gray-500 hover:text-blue-900"
+            onClick={handleNavigationClick}
+          >
+            {t("nav.press")}
+          </Link>
+
+          <div className={`${isMobile ? "w-full" : "relative inline-block"}`} ref={kampagnenRef}>
+            <div
+              className="flex flex-col"
+              onMouseEnter={!isMobile ? () => setKampagnenOpen(true) : undefined}
+              onMouseLeave={!isMobile ? () => setKampagnenOpen(false) : undefined}
+            >
+              <button
+                type="button"
+                className="px-2 text-m sm:text-base font-semibold text-gray-500 hover:text-blue-900 inline-flex items-center text-left"
+                onClick={() => !isMobile && setKampagnenOpen(!kampagnenOpen)}
+              >
+                <span>{t("nav.campaigns")}</span>
+                <svg className="ml-1 w-2 h-2 sm:w-3 sm:h-3 fill-current" viewBox="0 0 12 12">
+                  <path d="M5.9 9.7L.5 4.2l1.4-1.4L6 7l4.1-4.2L11.5 4z" />
+                </svg>
+              </button>
+              {(isMobile || kampagnenOpen) && (
+                <div
+                  className={`${
+                    isMobile
+                      ? "ml-2 mt-0.5 space-y-0.5"
+                      : "absolute top-full left-0 w-64 bg-white rounded-md shadow-lg py-1 z-50"
+                  }`}
+                >
+                  <Link
+                    to="/campaigns/pr-print-plakat"
+                    className="block px-2 py-0.5 text-xs sm:text-sm font-medium text-gray-500 hover:text-blue-900 whitespace-nowrap"
+                    onClick={handleNavigationClick}
+                  >
+                    {t("nav.campaignsPrint")}
+                  </Link>
+                  <Link
+                    to="/campaigns/tv-spots"
+                    className="block px-2 py-0.5 text-xs sm:text-sm font-medium text-gray-500 hover:text-blue-900 whitespace-nowrap"
+                    onClick={handleNavigationClick}
+                  >
+                    {t("nav.campaignsTv")}
+                  </Link>
+                </div>
+              )}
+            </div>
+          </div>
+
+          <Link
+            to="/publications"
+            className="px-2 text-m sm:text-base font-semibold text-gray-500 hover:text-blue-900"
+            onClick={handleNavigationClick}
+          >
+            {t("nav.publications")}
+          </Link>
+
+          <Link
+            to="/scientific-advisory-board"
+            className="px-2 text-m sm:text-base font-semibold text-gray-500 hover:text-blue-900"
+            onClick={handleNavigationClick}
+          >
+            {t("nav.scientificAdvisoryBoard")}
+          </Link>
+        </>
       )}
-
-      {/* Leistungen Dropdown */}
-      <div className={`${isMobile ? "w-full" : "relative inline-block"}`} ref={leistungenRef}>
-        <div
-          className="flex flex-col"
-          onMouseEnter={!isMobile ? () => setLeistungenOpen(true) : undefined}
-          onMouseLeave={!isMobile ? () => setLeistungenOpen(false) : undefined}
-        >
-          <HashLink
-            className="px-2 text-m sm:text-base font-semibold text-gray-500 hover:text-blue-900 inline-flex items-center"
-            to="/#services"
-            onClick={handleServicesClick}
-          >
-            <span>{language === "de" ? "Leistungen" : "Services"}</span>
-            {/* Arrow Icon */}
-            <svg className="ml-1 w-2 h-2 sm:w-3 sm:h-3 fill-current" viewBox="0 0 12 12">
-              <path d="M5.9 9.7L.5 4.2l1.4-1.4L6 7l4.1-4.2L11.5 4z" />
-            </svg>
-          </HashLink>
-          {(isMobile || leistungenOpen) && (
-            <div
-              className={`${
-                isMobile
-                  ? "ml-2 mt-0.5 space-y-0.5"
-                  : "absolute top-full left-0 w-64 bg-white rounded-md shadow-lg py-1 z-50"
-              }`}
-            >
-              {isAuthenticated && (
-                <Link
-                  to="/services/athletes"
-                  className="block px-2 py-0.5 text-xs sm:text-sm font-medium text-gray-500 hover:text-blue-900 whitespace-nowrap"
-                  onClick={handleNavigationClick}
-                >
-                  {language === "de" ? "Leistungen für Athleten" : "Services for Athletes"}
-                </Link>
-              )}
-              <Link
-                to="/services/companies"
-                className="block px-2 py-0.5 text-xs sm:text-sm font-medium text-gray-500 hover:text-blue-900 whitespace-nowrap"
-                onClick={handleNavigationClick}
-              >
-                {language === "de" ? "Leistungen für Unternehmen" : "Services for Companies"}
-              </Link>
-            </div>
-          )}
-        </div>
-      </div>
-
-      {/* Referenzen Dropdown */}
-      <div className={`${isMobile ? "w-full" : "relative inline-block"}`} ref={referenzenRef}>
-        <div
-          className="flex flex-col"
-          onMouseEnter={!isMobile ? () => setReferenzenOpen(true) : undefined}
-          onMouseLeave={!isMobile ? () => setReferenzenOpen(false) : undefined}
-        >
-          <HashLink
-            className="px-2 text-m sm:text-base font-semibold text-gray-500 hover:text-blue-900 inline-flex items-center"
-            to="/#clients"
-            onClick={handleReferencesClick}
-          >
-            <span>{language === "de" ? "Referenzen" : "References"}</span>
-            {/* Arrow Icon */}
-            <svg className="ml-1 w-2 h-2 sm:w-3 sm:h-3 fill-current" viewBox="0 0 12 12">
-              <path d="M5.9 9.7L.5 4.2l1.4-1.4L6 7l4.1-4.2L11.5 4z" />
-            </svg>
-          </HashLink>
-          {(isMobile || referenzenOpen) && (
-            <div
-              className={`${
-                isMobile
-                  ? "ml-2 mt-0.5 space-y-0.5"
-                  : "absolute top-full left-0 w-64 bg-white rounded-md shadow-lg py-1 z-50"
-              }`}
-            >
-              {isAuthenticated && (
-                <Link
-                  to="/athletes"
-                  className="block px-2 py-0.5 text-xs sm:text-sm font-medium text-gray-500 hover:text-blue-900 whitespace-nowrap"
-                  onClick={handleNavigationClick}
-                >
-                  {language === "de" ? "Referenzen Athleten" : "Athlete References"}
-                </Link>
-              )}
-              <Link
-                to="/references/companies"
-                className="block px-2 py-0.5 text-xs sm:text-sm font-medium text-gray-500 hover:text-blue-900 whitespace-nowrap"
-                onClick={handleNavigationClick}
-              >
-                {language === "de" ? "Referenzen Unternehmen" : "Company References"}
-              </Link>
-            </div>
-          )}
-        </div>
-      </div>
-
-      {/* Presse Link */}
-      <Link
-        to="/press"
-        className="px-2 text-m sm:text-base font-semibold text-gray-500 hover:text-blue-900"
-        onClick={handleNavigationClick}
-      >
-        {language === "de" ? "Presse" : "Press"}
-      </Link>
-
-      {/* Kampagnen Dropdown */}
-      <div className={`${isMobile ? "w-full" : "relative inline-block"}`} ref={kampagnenRef}>
-        <div
-          className="flex flex-col"
-          onMouseEnter={!isMobile ? () => setKampagnenOpen(true) : undefined}
-          onMouseLeave={!isMobile ? () => setKampagnenOpen(false) : undefined}
-        >
-          <button
-            type="button"
-            className="px-2 text-m sm:text-base font-semibold text-gray-500 hover:text-blue-900 inline-flex items-center text-left"
-            onClick={() => !isMobile && setKampagnenOpen(!kampagnenOpen)}
-          >
-            <span>{language === "de" ? "Kampagnen" : "Campaigns"}</span>
-            {/* Arrow Icon */}
-            <svg className="ml-1 w-2 h-2 sm:w-3 sm:h-3 fill-current" viewBox="0 0 12 12">
-              <path d="M5.9 9.7L.5 4.2l1.4-1.4L6 7l4.1-4.2L11.5 4z" />
-            </svg>
-          </button>
-          {(isMobile || kampagnenOpen) && (
-            <div
-              className={`${
-                isMobile
-                  ? "ml-2 mt-0.5 space-y-0.5"
-                  : "absolute top-full left-0 w-64 bg-white rounded-md shadow-lg py-1 z-50"
-              }`}
-            >
-              <Link
-                to="/campaigns/pr-print-plakat"
-                className="block px-2 py-0.5 text-xs sm:text-sm font-medium text-gray-500 hover:text-blue-900 whitespace-nowrap"
-                onClick={handleNavigationClick}
-              >
-                {language === "de" ? "PR | Print | Plakat" : "PR | Print | Poster"}
-              </Link>
-              <Link
-                to="/campaigns/tv-spots"
-                className="block px-2 py-0.5 text-xs sm:text-sm font-medium text-gray-500 hover:text-blue-900 whitespace-nowrap"
-                onClick={handleNavigationClick}
-              >
-                {language === "de" ? "TV Werbespots" : "TV Commercials"}
-              </Link>
-            </div>
-          )}
-        </div>
-      </div>
-
-      {/* Publikationen Link */}
-      <Link
-        to="/publications"
-        className="px-2 text-m sm:text-base font-semibold text-gray-500 hover:text-blue-900"
-        onClick={handleNavigationClick}
-      >
-        {language === "de" ? "Publikationen" : "Publications"}
-      </Link>
-
-      {/* Wissenschaftlicher Beirat Link */}
-      <Link
-        to="/scientific-advisory-board"
-        className="px-2 text-m sm:text-base font-semibold text-gray-500 hover:text-blue-900"
-        onClick={handleNavigationClick}
-      >
-        {language === "de" ? "Wissenschaftlicher Beirat" : "Scientific Advisory Board"}
-      </Link>
     </>
   );
 };

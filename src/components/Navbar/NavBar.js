@@ -3,11 +3,11 @@ import NavLinks from "./NavLinks";
 import { HashLink } from "react-router-hash-link";
 import { useNavigate } from "react-router-dom";
 import logo from "../../images/pepliesconsult_logo_black.svg";
-import germanyFlag from "../../images/flags/germany.png";
-import ukFlag from "../../images/flags/united-kingdom.png";
 import { AuthContext } from "../../App";
+import LanguageSwitcher from "./LanguageSwitcher";
+import { useI18n } from "../../i18n/I18nContext";
 
-const NavBar = ({ language, toggleLanguage }) => {
+const NavBar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [showLoginModal, setShowLoginModal] = useState(false);
   const [password, setPassword] = useState("");
@@ -15,6 +15,7 @@ const NavBar = ({ language, toggleLanguage }) => {
   const [showPassword, setShowPassword] = useState(false);
   const { isAuthenticated, setIsAuthenticated } = useContext(AuthContext);
   const navigate = useNavigate();
+  const { t } = useI18n();
 
   const handleClick = () => {
     setIsOpen(!isOpen);
@@ -29,19 +30,16 @@ const NavBar = ({ language, toggleLanguage }) => {
 
   const handleLogin = (e) => {
     e.preventDefault();
-    // Password check using environment variable
-    // Note: In a production app, this should be handled by a secure backend API
     const correctPassword = process.env.REACT_APP_LOGIN_PASSWORD || "";
-    
+
     if (correctPassword && password === correctPassword) {
-      // Store authentication in localStorage or context
       localStorage.setItem("isAuthenticated", "true");
       setIsAuthenticated(true);
       setShowLoginModal(false);
       setPassword("");
       setError("");
     } else {
-      setError(language === "de" ? "Falsches Passwort" : "Incorrect password");
+      setError(t("auth.wrongPassword"));
     }
   };
 
@@ -49,12 +47,6 @@ const NavBar = ({ language, toggleLanguage }) => {
     localStorage.removeItem("isAuthenticated");
     setIsAuthenticated(false);
     navigate("/");
-  };
-
-  const handleLanguageToggle = (e) => {
-    e.preventDefault();
-    e.stopPropagation();
-    toggleLanguage();
   };
 
   return (
@@ -89,34 +81,23 @@ const NavBar = ({ language, toggleLanguage }) => {
             </button>
           </div>
           <div className="hidden lg:flex items-center space-x-6 p-5">
-            <NavLinks language={language} toggleLanguage={toggleLanguage} setIsOpen={setIsOpen} />
+            <NavLinks setIsOpen={setIsOpen} />
             {isAuthenticated ? (
               <button
                 className="px-4 font-semibold text-gray-500 hover:text-blue-900 tracking-wider"
                 onClick={handleLogout}
               >
-                {language === "de" ? "Abmelden" : "Logout"}
+                {t("auth.logout")}
               </button>
             ) : (
               <button
                 className="px-4 font-semibold text-gray-500 hover:text-blue-900 tracking-wider"
                 onClick={toggleLoginModal}
               >
-                {language === "de" ? "Anmelden" : "Login"}
+                {t("auth.login")}
               </button>
             )}
-            <button
-              className="w-8 h-6 hover:opacity-80 transition-opacity"
-              onClick={handleLanguageToggle}
-              type="button"
-              aria-label={language === "de" ? "Switch to English" : "Switch to German"}
-            >
-              <img
-                src={language === "de" ? ukFlag : germanyFlag}
-                alt={language === "de" ? "Switch to English" : "Switch to German"}
-                className="w-full h-full object-contain"
-              />
-            </button>
+            <LanguageSwitcher />
           </div>
           <div
             className={`fixed transition-all duration-300 ease-in-out flex right-0 w-[80%] h-auto rounded-md p-10 bg-white lg:hidden shadow-xl top-14 z-50 transform ${
@@ -125,35 +106,24 @@ const NavBar = ({ language, toggleLanguage }) => {
           >
             <div className="flex flex-col space-y-2 w-full">
               <div className="flex flex-col items-start space-y-2">
-                <NavLinks language={language} toggleLanguage={toggleLanguage} setIsOpen={setIsOpen} isMobile={true} />
-                <div className="flex items-center space-x-2 w-full">
+                <NavLinks setIsOpen={setIsOpen} isMobile={true} />
+                <div className="flex flex-wrap items-center gap-3 w-full">
                   {isAuthenticated ? (
                     <button
                       className="px-2 text-xs font-medium text-gray-500 active:text-blue-900"
                       onClick={handleLogout}
                     >
-                      {language === "de" ? "Abmelden" : "Logout"}
+                      {t("auth.logout")}
                     </button>
                   ) : (
                     <button
                       className="px-2 text-xs font-medium text-gray-500 active:text-blue-900"
                       onClick={toggleLoginModal}
                     >
-                      {language === "de" ? "Anmelden" : "Login"}
+                      {t("auth.login")}
                     </button>
                   )}
-                  <button
-                    className="w-5 h-3.5 active:opacity-80 transition-opacity"
-                    onClick={handleLanguageToggle}
-                    type="button"
-                    aria-label={language === "de" ? "Switch to English" : "Switch to German"}
-                  >
-                    <img
-                      src={language === "de" ? ukFlag : germanyFlag}
-                      alt={language === "de" ? "Switch to English" : "Switch to German"}
-                      className="w-full h-full object-contain"
-                    />
-                  </button>
+                  <LanguageSwitcher id="site-language-mobile" />
                 </div>
               </div>
             </div>
@@ -161,12 +131,11 @@ const NavBar = ({ language, toggleLanguage }) => {
         </div>
       </div>
 
-      {/* Login Modal */}
       {showLoginModal && (
         <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50">
           <div className="bg-white rounded-lg p-8 max-w-md w-full">
             <div className="flex justify-between items-center mb-6">
-              <h2 className="text-2xl font-bold text-blue-900">{language === "de" ? "Anmelden" : "Login"}</h2>
+              <h2 className="text-2xl font-bold text-blue-900">{t("auth.login")}</h2>
               <button onClick={toggleLoginModal} className="text-gray-500 hover:text-gray-700">
                 <svg className="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12"></path>
@@ -176,7 +145,7 @@ const NavBar = ({ language, toggleLanguage }) => {
             <form onSubmit={handleLogin}>
               <div className="mb-4">
                 <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="password">
-                  {language === "de" ? "Passwort" : "Password"}
+                  {t("auth.password")}
                 </label>
                 <div className="relative">
                   <input
@@ -185,14 +154,14 @@ const NavBar = ({ language, toggleLanguage }) => {
                     value={password}
                     onChange={(e) => setPassword(e.target.value)}
                     className="shadow appearance-none border rounded w-full py-2 px-3 pr-10 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-                    placeholder={language === "de" ? "Passwort eingeben" : "Enter password"}
+                    placeholder={t("auth.passwordPlaceholder")}
                     required
                   />
                   <button
                     type="button"
                     onClick={() => setShowPassword(!showPassword)}
                     className="absolute inset-y-0 right-0 flex items-center pr-3 text-gray-500 hover:text-gray-700 focus:outline-none"
-                    aria-label={showPassword ? (language === "de" ? "Passwort verbergen" : "Hide password") : (language === "de" ? "Passwort anzeigen" : "Show password")}
+                    aria-label={showPassword ? t("auth.hidePassword") : t("auth.showPassword")}
                   >
                     {showPassword ? (
                       <svg className="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
@@ -213,7 +182,7 @@ const NavBar = ({ language, toggleLanguage }) => {
                   type="submit"
                   className="bg-blue-900 hover:bg-blue-800 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
                 >
-                  {language === "de" ? "Anmelden" : "Login"}
+                  {t("auth.login")}
                 </button>
               </div>
             </form>

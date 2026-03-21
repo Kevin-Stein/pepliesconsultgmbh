@@ -43,9 +43,17 @@ const HallOfFameFlipCard = ({ athlete, t }) => {
   const prefersHover = usePrefersHover();
   const [touchFlipped, setTouchFlipped] = useState(false);
 
+  const flipTransform = [
+    "relative w-full transition-transform duration-700 ease-[cubic-bezier(0.4,0.2,0.2,1)] [transform-style:preserve-3d]",
+    prefersHover ? "group-hover:[transform:rotateY(180deg)] group-focus-within:[transform:rotateY(180deg)]" : "",
+    !prefersHover && touchFlipped ? "[transform:rotateY(180deg)]" : "",
+  ]
+    .filter(Boolean)
+    .join(" ");
+
   return (
     <div
-      className="group w-full max-w-md mx-auto [perspective:1400px] outline-none focus-visible:ring-2 focus-visible:ring-blue-900 focus-visible:ring-offset-2 rounded-xl"
+      className="group w-full [perspective:1400px] outline-none focus-visible:ring-2 focus-visible:ring-blue-900 focus-visible:ring-offset-2 rounded-lg"
       tabIndex={0}
       aria-label={`${athlete.firstName} ${athlete.lastName}. ${t("hallOfFame.flipHint")}`}
       onClick={() => {
@@ -54,38 +62,28 @@ const HallOfFameFlipCard = ({ athlete, t }) => {
       {...(!prefersHover ? { role: "button", "aria-pressed": touchFlipped } : {})}
     >
       <div
-        className={`relative w-full h-[min(72vw,22rem)] sm:h-[26rem] cursor-pointer rounded-xl shadow-md transition-shadow duration-300 ease-out group-hover:shadow-xl ${
+        className={`card bg-white shadow-md rounded-lg overflow-hidden cursor-pointer transition-shadow duration-300 ease-out group-hover:shadow-lg ${
           prefersHover ? "" : "touch-manipulation"
         }`}
       >
-        <div
-          className={[
-            "absolute inset-0 transition-transform duration-700 ease-[cubic-bezier(0.4,0.2,0.2,1)] [transform-style:preserve-3d]",
-            prefersHover ? "group-hover:[transform:rotateY(180deg)] group-focus-within:[transform:rotateY(180deg)]" : "",
-            !prefersHover && touchFlipped ? "[transform:rotateY(180deg)]" : "",
-          ]
-            .filter(Boolean)
-            .join(" ")}
-        >
-          {/* Front */}
-          <div className="absolute inset-0 [backface-visibility:hidden] [-webkit-backface-visibility:hidden] rounded-xl overflow-hidden bg-white border border-gray-100 flex flex-col">
-            <div className="relative flex-1 min-h-0 bg-gray-100">
-              <img
-                src={athlete.portraitImageURL || placeholderPortrait}
-                alt={`${athlete.firstName} ${athlete.lastName}`}
-                className="absolute inset-0 w-full h-full object-cover"
-              />
-            </div>
-            <div className="shrink-0 px-3 py-3 sm:py-4 bg-white border-t border-gray-100">
-              <h2 className="text-base sm:text-xl font-bold text-center text-gray-900">
+        <div className={flipTransform}>
+          {/* Front: same layout as Athletes.js (flow height defines flip area) */}
+          <div className="relative w-full [backface-visibility:hidden] [-webkit-backface-visibility:hidden] bg-white">
+            <img
+              src={athlete.portraitImageURL || placeholderPortrait}
+              alt={`${athlete.firstName} ${athlete.lastName}`}
+              className="aspect-[3/4] w-full object-cover"
+            />
+            <div className="p-4 mt-3">
+              <h2 className="text-xl font-bold">
                 {athlete.firstName} {athlete.lastName}
               </h2>
-              <p className="text-[11px] sm:text-xs text-center text-gray-500 mt-1">{t("hallOfFame.flipHint")}</p>
+              <p className="text-[11px] sm:text-xs text-gray-500 mt-1 text-center">{t("hallOfFame.flipHint")}</p>
             </div>
           </div>
 
           {/* Back */}
-          <div className="absolute inset-0 [backface-visibility:hidden] [-webkit-backface-visibility:hidden] [transform:rotateY(180deg)] rounded-xl bg-white border border-gray-200 shadow-lg p-3 sm:p-4 flex flex-col overflow-hidden">
+          <div className="absolute inset-0 [backface-visibility:hidden] [-webkit-backface-visibility:hidden] [transform:rotateY(180deg)] bg-white flex flex-col overflow-hidden p-3 sm:p-4">
             <div className="mb-2 shrink-0 text-center border-b border-gray-100 pb-2">
               <p className="text-sm sm:text-base font-bold text-blue-900">
                 {athlete.firstName} {athlete.lastName}

@@ -185,7 +185,7 @@ const en = {
     docTitle: "peplies consult - PR, Print, Poster",
     title: "PR | Print | Posters",
     empty: "Campaign material will be published here soon.",
-    galleryIntro: "A curated selection of our PR, print, and poster campaigns in a modern gallery.",
+    galleryIntro: "A curated selection of our PR, print, and poster campaigns.",
     imageSectionTitle: "Image Campaigns",
     pdfSectionTitle: "PDF Campaigns",
     items: "items",

@@ -185,7 +185,7 @@ const fr = {
     docTitle: "peplies consult - RP, Print, Affiche",
     title: "RP | Print | Affiches",
     empty: "Le materiel de campagne sera bientot publie ici.",
-    galleryIntro: "Une selection de nos campagnes RP, print et affichage dans une galerie moderne.",
+    galleryIntro: "Une selection de nos campagnes RP, print et affichage.",
     imageSectionTitle: "Campagnes image",
     pdfSectionTitle: "Campagnes PDF",
     items: "elements",

@@ -185,7 +185,7 @@ const de = {
     docTitle: "peplies consult - PR,Print,Plakat",
     title: "PR | Print | Plakate",
     empty: "Kampagnenmaterial wird in Kurze hier veroffentlicht.",
-    galleryIntro: "Eine Auswahl unserer PR-, Print- und Plakatkampagnen als moderne Galerie.",
+    galleryIntro: "Eine Auswahl unserer PR-, Print- und Plakatkampagnen.",
     imageSectionTitle: "Bildmotive",
     pdfSectionTitle: "PDF-Kampagnen",
     items: "Elemente",

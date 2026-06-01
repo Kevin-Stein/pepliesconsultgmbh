@@ -185,7 +185,7 @@ const es = {
     docTitle: "peplies consult - RP, Impreso, Cartel",
     title: "RP | Impreso | Carteles",
     empty: "El material de campana se publicara pronto aqui.",
-    galleryIntro: "Una seleccion de nuestras campanas de PR, impresos y carteles en una galeria moderna.",
+    galleryIntro: "Una seleccion de nuestras campanas de PR, impresos y carteles.",
     imageSectionTitle: "Campanas de imagen",
     pdfSectionTitle: "Campanas PDF",
     items: "elementos",

@@ -1,4 +1,4 @@
-import React, { useEffect, useMemo, useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useDocTitle } from "../components/CustomHook";
 import { useI18n } from "../i18n/I18nContext";
 
@@ -30,7 +30,6 @@ const PrintCampaign = () => {
   const { t } = useI18n();
   useDocTitle(t("printCampaign.docTitle"));
   const [selectedMedia, setSelectedMedia] = useState(null);
-  const pdfItems = useMemo(() => mediaItems.filter((item) => item.isPdf), []);
 
   useEffect(() => {
     if (!selectedMedia) return undefined;
@@ -53,19 +52,19 @@ const PrintCampaign = () => {
 
         <p className="max-w-3xl mx-auto text-center text-gray-600 font-medium mb-10">{t("printCampaign.galleryIntro")}</p>
 
-        <div className="grid grid-cols-2 md:grid-cols-3 xl:grid-cols-5 gap-4 sm:gap-5">
+        <div className="columns-1 sm:columns-2 lg:columns-3 xl:columns-5 gap-4 sm:gap-5">
           {mediaItems.map((item) => (
             <button
               key={item.id}
               type="button"
-              className="group w-full overflow-hidden rounded-xl bg-slate-100 shadow-md transition-transform hover:-translate-y-1 hover:shadow-xl"
+              className="group mb-4 sm:mb-5 w-full break-inside-avoid overflow-hidden rounded-xl bg-slate-100 shadow-md transition-transform hover:-translate-y-1 hover:shadow-xl"
               onClick={() => setSelectedMedia(item)}
               aria-label={`${item.isPdf ? t("printCampaign.openPdf") : t("printCampaign.openImage")} ${item.title}`}
             >
-              <div className="relative bg-slate-50 aspect-[4/5]">
+              <div className="relative bg-slate-50 flex items-center justify-center p-2">
                 {item.isPdf ? (
                   <>
-                    <div className="h-full overflow-hidden">
+                    <div className="h-72 max-h-72 w-full overflow-hidden">
                       <iframe
                         src={`${item.src}#page=1&toolbar=0&navpanes=0&scrollbar=0&statusbar=0&messages=0&view=FitH`}
                         title={item.title}
@@ -80,7 +79,7 @@ const PrintCampaign = () => {
                     src={item.src}
                     alt={item.title}
                     loading="lazy"
-                    className="w-full h-full object-contain transition-transform duration-300 group-hover:scale-105"
+                    className="w-full h-auto max-h-72 object-contain transition-transform duration-300 group-hover:scale-105"
                   />
                 )}
               </div>

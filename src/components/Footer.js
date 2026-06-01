@@ -26,11 +26,11 @@ const Footer = () => {
         <div className="relative z-10 grid sm:grid-cols-12 gap-3 sm:gap-5 py-4 sm:py-8 md:py-12  lg:ml-11">
           <div className="col-span-12 lg:col-span-4">
             <div className="box-border border-b-4 border-blue-900 p-4 sm:p-8 bg-gray-200 text-gray-600 text-center rounded-lg xl:w-80 mx-auto">
-              <h3 className="font-bold text-2xl sm:text-4xl mb-2 sm:mb-4">peplies consult GmbH</h3>
+              <h3 className="font-bold text-2xl sm:text-4xl mb-2 sm:mb-4">{t("footer.companyName")}</h3>
               <div className="text-sm sm:text-md font-medium text-gray-600">
-                <p>Höhenstraße 12</p>
-                <p>65321</p>
-                <p>Heidenrod</p>
+                <p>{t("footer.companyStreet")}</p>
+                <p>{t("footer.companyPostalCode")}</p>
+                <p>{t("footer.companyCity")}</p>
               </div>
             </div>
           </div>
@@ -77,6 +77,14 @@ const Footer = () => {
                   {t("footer.legal")}
                 </Link>
               </li>
+              <li className="mb-1 sm:mb-2">
+                <Link
+                  to="/privacy"
+                  className="text-blue-900 hover:text-gray-900 hover:tracking-wider transition duration-250 ease-in-out"
+                >
+                  {t("footer.privacy")}
+                </Link>
+              </li>
             </ul>
           </div>
 
@@ -110,7 +118,7 @@ const Footer = () => {
             <div className="text-xs sm:text-sm text-gray-700 font-semibold py-1">
               Copyright &copy; {new Date().getFullYear()}{" "}
               <HashLink to="#" className="hover:text-gray-900">
-                peplies consult - Sports Marketing Consultants
+                {t("footer.copyrightBrand")}
               </HashLink>
               . {t("footer.rights")}
             </div>

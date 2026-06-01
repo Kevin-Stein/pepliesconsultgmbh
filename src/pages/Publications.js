@@ -13,6 +13,7 @@ const Publications = () => {
           <h1 className="text-3xl sm:text-4xl font-bold text-blue-900 mb-4">{t("publications.title")}</h1>
           <div className="w-24 h-1 bg-blue-900 mx-auto"></div>
         </div>
+        <p className="max-w-2xl mx-auto text-center text-gray-700 font-medium">{t("publications.empty")}</p>
       </div>
     </div>
   );

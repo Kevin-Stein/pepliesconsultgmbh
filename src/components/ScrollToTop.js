@@ -14,11 +14,8 @@ const ScrollToTop = ({ children }) => {
   }, []);
 
   useEffect(() => {
-    // Only scroll to top if the pathname is not /athletes
-    if (location.pathname !== "/athletes") {
-      scrollToTop();
-    }
-    
+    scrollToTop();
+
     // Refresh AOS animations when route changes
     // Use setTimeout to ensure DOM is fully updated
     const timer = setTimeout(() => {

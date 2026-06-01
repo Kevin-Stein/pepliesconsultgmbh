@@ -74,18 +74,38 @@ const NavLinks = ({ setIsOpen, isMobile = false }) => {
 
   const handleServicesClick = (e) => {
     e.preventDefault();
-    const element = document.getElementById("services");
-    if (element) {
-      scrollWithOffset(element);
+    if (location.pathname !== "/") {
+      navigate("/");
+      setTimeout(() => {
+        const element = document.getElementById("services");
+        if (element) {
+          scrollWithOffset(element);
+        }
+      }, 100);
+    } else {
+      const element = document.getElementById("services");
+      if (element) {
+        scrollWithOffset(element);
+      }
     }
     handleNavigationClick();
   };
 
   const handleReferencesClick = (e) => {
     e.preventDefault();
-    const element = document.getElementById("clients");
-    if (element) {
-      scrollWithOffset(element);
+    if (location.pathname !== "/") {
+      navigate("/");
+      setTimeout(() => {
+        const element = document.getElementById("clients");
+        if (element) {
+          scrollWithOffset(element);
+        }
+      }, 100);
+    } else {
+      const element = document.getElementById("clients");
+      if (element) {
+        scrollWithOffset(element);
+      }
     }
     handleNavigationClick();
   };

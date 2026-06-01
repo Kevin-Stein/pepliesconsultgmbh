@@ -60,6 +60,12 @@ const HallOfFameFlipCard = ({ athlete, t }) => {
       onClick={() => {
         if (!prefersHover) setTouchFlipped((f) => !f);
       }}
+      onKeyDown={(e) => {
+        if (!prefersHover && (e.key === "Enter" || e.key === " ")) {
+          e.preventDefault();
+          setTouchFlipped((f) => !f);
+        }
+      }}
       {...(!prefersHover ? { role: "button", "aria-pressed": touchFlipped } : {})}
     >
       <div

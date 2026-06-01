@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useMemo, useState } from "react";
 import { useDocTitle } from "../components/CustomHook";
 import pressArticles from "../lib/pressArticles.js";
 import { useI18n } from "../i18n/I18nContext";
@@ -7,6 +7,46 @@ import { getPressTitle } from "../i18n/content/pressTitleTranslations";
 const Press = () => {
   const { locale, t } = useI18n();
   useDocTitle(t("press.docTitle"));
+  const [availability, setAvailability] = useState({});
+
+  const normalizedArticles = useMemo(
+    () =>
+      pressArticles.map((article) => ({
+        ...article,
+        id: `${article.file}-${article.title}`,
+      })),
+    []
+  );
+
+  useEffect(() => {
+    let isMounted = true;
+    const controller = new AbortController();
+
+    const checkAvailability = async () => {
+      const results = await Promise.all(
+        normalizedArticles.map(async (article) => {
+          try {
+            const response = await fetch(article.file, {
+              method: "HEAD",
+              signal: controller.signal,
+            });
+            return [article.id, response.ok];
+          } catch {
+            return [article.id, false];
+          }
+        })
+      );
+      if (isMounted) {
+        setAvailability(Object.fromEntries(results));
+      }
+    };
+
+    checkAvailability();
+    return () => {
+      isMounted = false;
+      controller.abort();
+    };
+  }, [normalizedArticles]);
 
   return (
     <div className="bg-white py-12 sm:py-24 mt-40">
@@ -17,51 +57,50 @@ const Press = () => {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {pressArticles.map((article, index) => (
+          {normalizedArticles.map((article) => {
+            const isAvailable = availability[article.id] ?? true;
+            return (
             <div
-              key={index}
+              key={article.id}
               className="block bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300 hover:-translate-y-1"
             >
               <div className="p-4">
                 <div className="flex items-center justify-between mb-2">
                   <span className="text-sm text-gray-500">{article.date}</span>
-                  <span className="text-sm text-blue-900 font-semibold">{article.category}</span>
+                  <span className="text-sm text-blue-900 font-semibold">
+                    {t(`press.categories.${article.category.toLowerCase()}`)}
+                  </span>
                 </div>
                 <h2 className="text-xl font-bold text-gray-900 mb-4">{getPressTitle(locale, article.title)}</h2>
                 <div className="w-full h-64 bg-gray-50 rounded-lg overflow-hidden relative group">
-                  <embed
-                    src={`${article.file}#toolbar=0&navpanes=0&scrollbar=0&statusbar=0&messages=0&view=FitH`}
-                    type="application/pdf"
-                    className="w-full h-full"
-                  />
-                  <a
-                    href={article.file}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="absolute inset-0 flex items-center justify-center bg-black bg-opacity-0 group-hover:bg-opacity-50 transition-all duration-300 cursor-pointer"
-                  >
-                    <div className="text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                      <svg className="w-12 h-12 mx-auto mb-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  {isAvailable ? (
+                    <a
+                      href={article.file}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="absolute inset-0 flex flex-col items-center justify-center bg-blue-900 text-white px-6 text-center"
+                      aria-label={`${t("press.openHint")}: ${getPressTitle(locale, article.title)}`}
+                    >
+                      <svg className="w-12 h-12 mb-3" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden>
                         <path
                           strokeLinecap="round"
                           strokeLinejoin="round"
                           strokeWidth="2"
-                          d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"
-                        />
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          strokeWidth="2"
-                          d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"
+                          d="M12 16.5V4.5m0 12l4.5-4.5M12 16.5L7.5 12M4.5 18.75h15"
                         />
                       </svg>
                       <p className="text-sm font-semibold">{t("press.openHint")}</p>
+                    </a>
+                  ) : (
+                    <div className="absolute inset-0 flex items-center justify-center bg-slate-200 text-slate-700 px-6 text-center text-sm font-semibold">
+                      {t("press.unavailable")}
                     </div>
-                  </a>
+                  )}
                 </div>
               </div>
             </div>
-          ))}
+            );
+          })}
         </div>
       </div>
     </div>

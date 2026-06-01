@@ -2,6 +2,7 @@ import React from "react";
 import { useParams } from "react-router-dom";
 
 import { getAthletes } from "../lib/athletes";
+import { athleteMatchesSlug } from "../lib/athleteSlug";
 import { useDocTitle } from "../components/CustomHook";
 import placeholderPortrait from "../images/athletes/portrait_placeholder.jpg";
 import placeholderAction from "../images/athletes/portrait_placeholder.jpg";
@@ -12,7 +13,9 @@ const AthleteDetails = () => {
   useDocTitle(t("athleteDetail.docTitle"));
   const { athleteName } = useParams();
   const athletes = getAthletes(locale);
-  const athlete = athletes.find((a) => `${a.firstName}-${a.lastName}` === athleteName);
+  const athlete = athletes.find(
+    (a) => athleteMatchesSlug(a, athleteName) || `${a.firstName}-${a.lastName}` === athleteName
+  );
 
   if (!athlete) {
     return <div>{t("athleteDetail.notFound")}</div>;

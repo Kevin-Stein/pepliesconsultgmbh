@@ -1,30 +1,27 @@
 import React, { useState, useCallback } from "react";
 import { useI18n } from "../i18n/I18nContext";
-
-const COOKIE_CONSENT_KEY = "cookieConsentLevel";
+import { CONSENT_LEVELS, readConsentLevel, writeConsentLevel } from "../lib/cookieConsent";
 
 const CookieBanner = () => {
   const { t } = useI18n();
-  const [isVisible, setIsVisible] = useState(() => {
-    const consent = localStorage.getItem(COOKIE_CONSENT_KEY);
-    return !consent;
-  });
+  const [isVisible, setIsVisible] = useState(() => !readConsentLevel());
 
   const handleConsent = useCallback((level) => {
-    localStorage.setItem(COOKIE_CONSENT_KEY, level);
-    setIsVisible(false);
+    if (writeConsentLevel(level)) {
+      setIsVisible(false);
+    }
   }, []);
 
   const handleAcceptAll = useCallback(() => {
-    handleConsent("all");
+    handleConsent(CONSENT_LEVELS.all);
   }, [handleConsent]);
 
   const handleAcceptNecessary = useCallback(() => {
-    handleConsent("necessary");
+    handleConsent(CONSENT_LEVELS.necessary);
   }, [handleConsent]);
 
   const handleDecline = useCallback(() => {
-    handleConsent("declined");
+    handleConsent(CONSENT_LEVELS.declined);
   }, [handleConsent]);
 
   if (!isVisible) {
@@ -33,7 +30,12 @@ const CookieBanner = () => {
 
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-60 backdrop-blur-sm">
-      <div className="bg-gray-800 text-white p-6 rounded-lg shadow-xl max-w-md w-full mx-4 flex flex-col items-center">
+      <div
+        className="bg-gray-800 text-white p-6 rounded-lg shadow-xl max-w-md w-full mx-4 flex flex-col items-center"
+        role="dialog"
+        aria-modal="true"
+        aria-label={t("cookie.message")}
+      >
         <p className="text-base text-center mb-4">{t("cookie.message")}</p>
         <div className="flex flex-col sm:flex-row space-y-2 sm:space-y-0 sm:space-x-4 w-full sm:w-auto">
           <button

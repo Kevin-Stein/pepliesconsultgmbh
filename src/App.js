@@ -10,6 +10,7 @@ import AthleteDetails from "./pages/AthleteDetails";
 import CompanyReferences from "./pages/CompanyReferences";
 
 import LegalNotice from "./pages/LegalNotice";
+import Privacy from "./pages/Privacy";
 import AthleteServices from "./pages/AthleteServices";
 import CompanyServices from "./pages/CompanyServices";
 import Press from "./pages/Press";
@@ -17,6 +18,7 @@ import Publications from "./pages/Publications";
 import ScientificAdvisoryBoard from "./pages/ScientificAdvisoryBoard";
 import TvCommercials from "./pages/TvCommercials";
 import PrintCampaign from "./pages/PrintCampaign";
+import NotFound from "./pages/NotFound";
 import Footer from "./components/Footer";
 import HallOfFame from "./pages/HallOfFame";
 
@@ -28,6 +30,8 @@ import ScrollToTop from "./components/ScrollToTop";
 import CookieBanner from "./components/CookieBanner";
 import { ContactModalProvider } from "./components/ContactModalContext";
 import { ContactModal } from "./components/ContactModal";
+import { useI18n } from "./i18n/I18nContext";
+import { allowsExternalMedia, readConsentLevel } from "./lib/cookieConsent";
 
 // Create an authentication context
 export const AuthContext = React.createContext({
@@ -36,6 +40,8 @@ export const AuthContext = React.createContext({
 });
 
 function App() {
+  const { t } = useI18n();
+  const [consentLevel, setConsentLevel] = useState(() => readConsentLevel());
   const [isAuthenticated, setIsAuthenticated] = useState(() => {
     try {
       return localStorage.getItem("isAuthenticated") === "true";
@@ -58,13 +64,30 @@ function App() {
   }, []);
 
   useEffect(() => {
+    const handleStorageChange = (e) => {
+      if (e.key === "cookieConsentLevel") {
+        setConsentLevel(readConsentLevel());
+      }
+    };
+    const handleConsentChange = () => {
+      setConsentLevel(readConsentLevel());
+    };
+    window.addEventListener("storage", handleStorageChange);
+    window.addEventListener("cookie-consent-updated", handleConsentChange);
+    return () => {
+      window.removeEventListener("storage", handleStorageChange);
+      window.removeEventListener("cookie-consent-updated", handleConsentChange);
+    };
+  }, []);
+
+  useEffect(() => {
     AOS.init({
       once: true,
       duration: 1000,
       easing: "ease-out-cubic",
       offset: 100,
       delay: 0,
-      disable: false,
+      disable: () => window.matchMedia("(prefers-reduced-motion: reduce)").matches,
     });
 
     const refreshTimer = setTimeout(() => {
@@ -87,7 +110,7 @@ function App() {
     };
   }, []);
 
-  useDocTitle("peplies consult - Sports Marketing Consultants");
+  useDocTitle(t("app.defaultDocTitle"));
 
   return (
     <AuthContext.Provider value={{ isAuthenticated, setIsAuthenticated }}>
@@ -98,8 +121,9 @@ function App() {
               <NavBar />
               <main className="flex-grow">
                 <Routes>
-                  <Route path="/" element={<Home />} />
+                  <Route path="/" element={<Home allowExternalMedia={allowsExternalMedia(consentLevel)} />} />
                   <Route path="/legal-notice" element={<LegalNotice />} />
+                  <Route path="/privacy" element={<Privacy />} />
                   <Route path="/contact" element={<Navigate to="/" replace />} />
                   <Route
                     path="/athletes"
@@ -189,6 +213,7 @@ function App() {
                       </ProtectedRoute>
                     }
                   />
+                  <Route path="*" element={<NotFound />} />
                 </Routes>
               </main>
               <Footer />

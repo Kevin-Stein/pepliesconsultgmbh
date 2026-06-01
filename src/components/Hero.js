@@ -1,10 +1,13 @@
 import React, { useState, useEffect, useRef } from "react";
 import logo from "../images/pepliesconsult_logo_black.svg";
 import { cloudinaryVideoUrlForHtml5 } from "../lib/cloudinaryVideoUrl.js";
+import { useI18n } from "../i18n/I18nContext";
 
-const Hero = () => {
+const Hero = ({ allowExternalMedia = false }) => {
   const [currentVideo, setCurrentVideo] = useState(0);
+  const [prefersReducedMotion, setPrefersReducedMotion] = useState(false);
   const videoRefs = useRef([]);
+  const { t } = useI18n();
 
   const videos = [
     "https://res.cloudinary.com/dbpoconup/video/upload/v1743604395/tennis_txbxgw.mov",
@@ -14,11 +17,20 @@ const Hero = () => {
   ];
 
   useEffect(() => {
+    const mediaQuery = window.matchMedia("(prefers-reduced-motion: reduce)");
+    const updatePreference = () => setPrefersReducedMotion(mediaQuery.matches);
+    updatePreference();
+    mediaQuery.addEventListener("change", updatePreference);
+    return () => mediaQuery.removeEventListener("change", updatePreference);
+  }, []);
+
+  useEffect(() => {
     // Store references at the start of the effect for cleanup
     const videoRefsSnapshot = videoRefs.current;
     const currentVideoIndex = currentVideo;
 
     const playVideo = async (index) => {
+      if (!allowExternalMedia || prefersReducedMotion) return;
       const video = videoRefsSnapshot[index];
       if (!video) return;
 
@@ -59,25 +71,28 @@ const Hero = () => {
         }
       });
     };
-  }, [currentVideo, videos.length]);
+  }, [allowExternalMedia, currentVideo, prefersReducedMotion, videos.length]);
 
   return (
     <>
       <div className="hero relative h-[400px] lg:h-[800px] flex flex-col items-center justify-between" id="hero">
         <div className="absolute inset-0 w-full h-full overflow-hidden">
-          {videos.map((video, index) => (
-            <video
-              key={video}
-              ref={(el) => (videoRefs.current[index] = el)}
-              src={cloudinaryVideoUrlForHtml5(video)}
-              muted
-              playsInline
-              preload="auto"
-              className={`absolute inset-0 w-full h-full object-cover object-[center_40%] transition-opacity duration-1000 ease-in-out brightness-60 ${
-                index === currentVideo ? "opacity-100" : "opacity-0"
-              }`}
-            />
-          ))}
+          {allowExternalMedia &&
+            !prefersReducedMotion &&
+            videos.map((video, index) => (
+              <video
+                key={video}
+                ref={(el) => (videoRefs.current[index] = el)}
+                src={cloudinaryVideoUrlForHtml5(video)}
+                muted
+                playsInline
+                preload="auto"
+                className={`absolute inset-0 w-full h-full object-cover object-[center_40%] transition-opacity duration-1000 ease-in-out brightness-60 ${
+                  index === currentVideo ? "opacity-100" : "opacity-0"
+                }`}
+              />
+            ))}
+          {(!allowExternalMedia || prefersReducedMotion) && <div className="absolute inset-0 bg-slate-800" aria-hidden />}
           <div className="absolute inset-0 bg-black bg-opacity-10"></div>
           <div className="absolute inset-0 bg-gradient-to-t from-black to-transparent opacity-70"></div>
         </div>
@@ -86,7 +101,7 @@ const Hero = () => {
           <h1 className="mb-5 text-2xl md:text-5xl font-bold text-white leading-relaxed">
             <img
               src={logo}
-              alt="peplies consult"
+              alt={t("contact.logoAlt")}
               className="sm:h-48 h-24 w-auto mx-auto"
               style={{
                 filter: "brightness(0) saturate(100%) invert(100%) drop-shadow(0 0 20px rgba(0,0,0,0.5)) drop-shadow(0 0 40px rgba(0,0,0,0.4)) drop-shadow(0 0 60px rgba(0,0,0,0.3))",

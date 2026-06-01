@@ -1,4 +1,4 @@
-import React, { useState, useContext } from "react";
+import React, { useState, useContext, useEffect, useRef, useCallback } from "react";
 import NavLinks from "./NavLinks";
 import { HashLink } from "react-router-hash-link";
 import { useNavigate } from "react-router-dom";
@@ -13,6 +13,7 @@ const NavBar = () => {
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
   const [showPassword, setShowPassword] = useState(false);
+  const passwordInputRef = useRef(null);
   const { isAuthenticated, setIsAuthenticated } = useContext(AuthContext);
   const navigate = useNavigate();
   const { t } = useI18n();
@@ -21,18 +22,22 @@ const NavBar = () => {
     setIsOpen(!isOpen);
   };
 
-  const toggleLoginModal = () => {
-    setShowLoginModal(!showLoginModal);
+  const toggleLoginModal = useCallback(() => {
+    setShowLoginModal((prev) => !prev);
     setError("");
     setPassword("");
     setShowPassword(false);
-  };
+  }, []);
 
   const handleLogin = (e) => {
     e.preventDefault();
     const correctPassword = process.env.REACT_APP_LOGIN_PASSWORD || "";
+    if (!correctPassword) {
+      setError(t("auth.unavailable"));
+      return;
+    }
 
-    if (correctPassword && password === correctPassword) {
+    if (password === correctPassword) {
       localStorage.setItem("isAuthenticated", "true");
       setIsAuthenticated(true);
       setShowLoginModal(false);
@@ -49,6 +54,20 @@ const NavBar = () => {
     navigate("/");
   };
 
+  useEffect(() => {
+    if (!showLoginModal) return undefined;
+    passwordInputRef.current?.focus();
+    const handleEscape = (event) => {
+      if (event.key === "Escape") {
+        toggleLoginModal();
+      }
+    };
+    document.addEventListener("keydown", handleEscape);
+    return () => {
+      document.removeEventListener("keydown", handleEscape);
+    };
+  }, [showLoginModal, toggleLoginModal]);
+
   return (
     <nav className="fixed top-0 w-full z-30 bg-white shadow-lg">
       <div className="flex flex-row justify-between items-center px-2 py-4 mx-4">
@@ -56,14 +75,14 @@ const NavBar = () => {
           <HashLink smooth to="/#hero">
             <img
               src={logo}
-              alt="peplies consult"
+              alt={t("contact.logoAlt")}
               className="z-10 sm:h-16 h-12 w-auto [filter:brightness(0)_saturate(100%)_invert(13%)_sepia(97%)_saturate(1000%)_hue-rotate(214deg)_brightness(97%)_contrast(97%)]"
             />
           </HashLink>
         </div>
         <div className="group flex flex-col items-center">
           <div className="flex items-center">
-            <button className="rounded-lg lg:hidden text-blue-900" onClick={handleClick}>
+            <button className="rounded-lg lg:hidden text-blue-900" onClick={handleClick} aria-label={t("nav.toggleMenu")}>
               <svg className="h-6 w-6 fill-current" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
                 {isOpen ? (
                   <path
@@ -132,11 +151,19 @@ const NavBar = () => {
       </div>
 
       {showLoginModal && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50">
-          <div className="bg-white rounded-lg p-8 max-w-md w-full">
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50" onClick={toggleLoginModal}>
+          <div
+            className="bg-white rounded-lg p-8 max-w-md w-full"
+            role="dialog"
+            aria-modal="true"
+            aria-labelledby="login-modal-title"
+            onClick={(e) => e.stopPropagation()}
+          >
             <div className="flex justify-between items-center mb-6">
-              <h2 className="text-2xl font-bold text-blue-900">{t("auth.login")}</h2>
-              <button onClick={toggleLoginModal} className="text-gray-500 hover:text-gray-700">
+              <h2 id="login-modal-title" className="text-2xl font-bold text-blue-900">
+                {t("auth.login")}
+              </h2>
+              <button onClick={toggleLoginModal} className="text-gray-500 hover:text-gray-700" aria-label={t("contact.close")}>
                 <svg className="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12"></path>
                 </svg>
@@ -149,6 +176,7 @@ const NavBar = () => {
                 </label>
                 <div className="relative">
                   <input
+                    ref={passwordInputRef}
                     id="password"
                     type={showPassword ? "text" : "password"}
                     value={password}

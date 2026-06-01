@@ -14,6 +14,34 @@ const PHONE_DISPLAY = ["0049-178-8271600", "0049-152-53823353"];
 const PHONE_TEL = ["+491788271600", "+4915253823353"];
 const EMAILS = ["peplies@pepliesconsult.de", "kuerzer@pepliesconsult.de"];
 
+const PhoneIcon = () => (
+  <svg className="h-7 w-7" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" aria-hidden>
+    <path
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      d="M2.25 4.5a2.25 2.25 0 012.25-2.25h2.257c.966 0 1.799.689 1.98 1.638l.63 3.308a2.25 2.25 0 01-.633 2.03L7.53 10.425a15.75 15.75 0 006.045 6.045l1.204-1.204a2.25 2.25 0 012.03-.634l3.308.63a2.25 2.25 0 011.638 1.981V19.5a2.25 2.25 0 01-2.25 2.25h-.75C8.872 21.75 2.25 15.128 2.25 6.75V4.5z"
+    />
+  </svg>
+)
+
+const AddressIcon = () => (
+  <svg className="h-7 w-7" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" aria-hidden>
+    <path strokeLinecap="round" strokeLinejoin="round" d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z" />
+    <path
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z"
+    />
+  </svg>
+)
+
+const MailIcon = () => (
+  <svg className="h-7 w-7" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" aria-hidden>
+    <path strokeLinecap="round" strokeLinejoin="round" d="M21.75 6.75v10.5A2.25 2.25 0 0119.5 19.5h-15a2.25 2.25 0 01-2.25-2.25V6.75" />
+    <path strokeLinecap="round" strokeLinejoin="round" d="M3 7.5l8.265 5.51a1.35 1.35 0 001.47 0L21 7.5" />
+  </svg>
+)
+
 export function ContactModal() {
   const { open, closeContact } = useContactModal();
   const { t } = useI18n();
@@ -76,7 +104,7 @@ export function ContactModal() {
             <section>
               <div className={rowClass}>
                 <span className={iconClass} aria-hidden>
-                  <i className="fas fa-phone-alt" />
+                  <PhoneIcon />
                 </span>
                 <div className="min-w-0 flex-1">
                   <h3 className="mb-3 text-base font-semibold text-slate-900 sm:text-lg">{t("contact.callUs")}</h3>
@@ -98,15 +126,16 @@ export function ContactModal() {
             <section>
               <div className={rowClass}>
                 <span className={iconClass} aria-hidden>
-                  <i className="fas fa-envelope-open-text" />
+                  <AddressIcon />
                 </span>
                 <div className="min-w-0 flex-1">
                   <h3 className="mb-3 text-base font-semibold text-slate-900 sm:text-lg">{t("contact.writeUs")}</h3>
                   <div className="space-y-1 text-slate-600 sm:text-lg">
-                    <p className="font-medium text-slate-800">peplies consult GmbH</p>
-                    <p>Höhenstraße 12</p>
+                    <p className="font-medium text-slate-800">{t("contact.companyName")}</p>
+                    <p>{t("contact.street")}</p>
+                    <p>{t("contact.postalCode")}</p>
                     <p>
-                      65321 {t("contact.country")}
+                      {t("contact.city")} {t("contact.country")}
                     </p>
                   </div>
                 </div>
@@ -118,7 +147,7 @@ export function ContactModal() {
             <section>
               <div className={rowClass}>
                 <span className={iconClass} aria-hidden>
-                  <i className="fas fa-at" />
+                  <MailIcon />
                 </span>
                 <div className="min-w-0 flex-1">
                   <h3 className="mb-3 text-base font-semibold text-slate-900 sm:text-lg">{t("contact.mailUs")}</h3>

@@ -2,6 +2,7 @@
 
 ## Problem
 Das Login-Passwort wird in Vercel nicht erkannt, weil die Umgebungsvariable `REACT_APP_LOGIN_PASSWORD` nicht konfiguriert ist.
+Wichtig: Diese Variable wird im Frontend-Bundle verwendet und bietet keine echte Zugriffssicherheit.
 
 ## Lösung
 
@@ -16,7 +17,7 @@ Das Login-Passwort wird in Vercel nicht erkannt, weil die Umgebungsvariable `REA
 
 ### Schritt 3: Variable konfigurieren
 - **Name:** `REACT_APP_LOGIN_PASSWORD`
-- **Value:** `pepliesgmbh` (oder dein gewünschtes Passwort)
+- **Value:** Ein eigenes Passwort setzen (kein Standardwert)
 - **Environments:** Aktiviere alle (Production, Preview, Development)
 
 ### Schritt 4: Speichern und neu deployen
@@ -33,6 +34,6 @@ Das Login-Passwort wird in Vercel nicht erkannt, weil die Umgebungsvariable `REA
 ## Alternative: Über Vercel CLI
 ```bash
 vercel env add REACT_APP_LOGIN_PASSWORD
-# Dann den Wert eingeben: pepliesgmbh
+# Dann einen eigenen Wert eingeben
 # Environments auswählen: Production, Preview, Development
 ```

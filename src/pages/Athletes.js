@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 
 import { useDocTitle } from "../components/CustomHook";
 import { getAthletes } from "../lib/athletes";
+import { getAthleteSlug } from "../lib/athleteSlug";
 import placeholderPortrait from "../images/athletes/portrait_placeholder.jpg";
 import { useI18n } from "../i18n/I18nContext";
 
@@ -12,7 +13,7 @@ const Athletes = () => {
   const navigate = useNavigate();
 
   const handleCardClick = (athlete) => {
-    navigate(`/athletes/${athlete.firstName}-${athlete.lastName}`);
+    navigate(`/athletes/${getAthleteSlug(athlete)}`);
   };
 
   const athletes = getAthletes(locale);
@@ -28,11 +29,13 @@ const Athletes = () => {
         </div>
 
         <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
-          {sortedCurrentAthletes.map((athlete, index) => (
-            <div
-              key={index}
+          {sortedCurrentAthletes.map((athlete) => (
+            <button
+              type="button"
+              key={`${athlete.firstName}-${athlete.lastName}`}
               className="card bg-white shadow-md rounded-lg overflow-hidden cursor-pointer transition-transform duration-300 ease-in-out transform hover:scale-105"
               onClick={() => handleCardClick(athlete)}
+              aria-label={`${athlete.firstName} ${athlete.lastName}`}
             >
               <img
                 src={athlete.portraitImageURL || placeholderPortrait}
@@ -44,7 +47,7 @@ const Athletes = () => {
                   {athlete.firstName} {athlete.lastName}
                 </h2>
               </div>
-            </div>
+            </button>
           ))}
         </div>
       </div>

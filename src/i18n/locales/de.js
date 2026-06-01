@@ -1,6 +1,9 @@
 /** @typedef {Record<string, string | Record<string, unknown>>} LocaleTree */
 /** @type {LocaleTree} */
 const de = {
+  app: {
+    defaultDocTitle: "peplies consult - Sports Marketing Consultants",
+  },
   nav: {
     about: "Über uns",
     hallOfFame: "Hall of Fame",
@@ -16,6 +19,7 @@ const de = {
     campaignsTv: "TV Werbespots",
     publications: "Publikationen",
     scientificAdvisoryBoard: "Wissenschaftlicher Beirat",
+    toggleMenu: "Navigationsmenu umschalten",
   },
   auth: {
     login: "Anmelden",
@@ -25,6 +29,8 @@ const de = {
     wrongPassword: "Falsches Passwort",
     showPassword: "Passwort anzeigen",
     hidePassword: "Passwort verbergen",
+    notice: "Dieses Login steuert nur die Sichtbarkeit der Navigation im Frontend und ist keine sichere Authentifizierung.",
+    unavailable: "Anmeldung ist nicht verfugbar, weil kein Passwort konfiguriert ist.",
   },
   footer: {
     linksHeading: "LINKS",
@@ -32,10 +38,16 @@ const de = {
     services: "Leistungen",
     contact: "Kontakt",
     legal: "Impressum",
+    privacy: "Datenschutz",
     servicesBlockHeading: "LEISTUNGEN",
     servicesAthletes: "Leistungen für Athleten",
     servicesCompanies: "Leistungen für Unternehmen",
     rights: "Alle Rechte vorbehalten.",
+    companyName: "peplies consult GmbH",
+    companyStreet: "Höhenstraße 12",
+    companyPostalCode: "65321",
+    companyCity: "Heidenrod",
+    copyrightBrand: "peplies consult - Sports Marketing Consultants",
   },
   intro: {
     title: "Über uns",
@@ -66,6 +78,10 @@ const de = {
     writeUs: "Schreiben Sie uns an:",
     mailUs: "Mailen Sie uns an:",
     country: "Deutschland",
+    companyName: "peplies consult GmbH",
+    street: "Höhenstraße 12",
+    postalCode: "65321",
+    city: "Heidenrod",
   },
   privacy: {
     docTitle: "peplies consult - Datenschutz",
@@ -130,10 +146,17 @@ const de = {
     docTitle: "peplies consult - Press",
     title: "Presse",
     openHint: "Zum Öffnen klicken",
+    unavailable: "Dieses Dokument ist derzeit nicht verfugbar.",
+    categories: {
+      olympics: "Olympia",
+      magazine: "Magazin",
+      news: "News",
+    },
   },
   publications: {
     docTitle: "peplies consult - Publications",
     title: "Publikationen",
+    empty: "Inhalte zu Publikationen werden derzeit vorbereitet.",
   },
   scientificAdvisoryBoard: {
     docTitle: "peplies consult - Scientific Advisory Board",
@@ -160,6 +183,7 @@ const de = {
   printCampaign: {
     docTitle: "peplies consult - PR,Print,Plakat",
     title: "PR | Print | Plakate",
+    empty: "Kampagnenmaterial wird in Kurze hier veroffentlicht.",
   },
   tv: {
     docTitle: "peplies consult - TV Werbespots",
@@ -191,6 +215,11 @@ const de = {
       fr: "Français",
       es: "Español",
     },
+  },
+  notFound: {
+    docTitle: "peplies consult - Seite nicht gefunden",
+    message: "Die angeforderte Seite wurde nicht gefunden.",
+    home: "Zur Startseite",
   },
 };
 

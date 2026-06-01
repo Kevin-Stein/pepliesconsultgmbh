@@ -1,6 +1,9 @@
 /** @typedef {Record<string, string | Record<string, unknown>>} LocaleTree */
 /** @type {LocaleTree} */
 const en = {
+  app: {
+    defaultDocTitle: "peplies consult - Sports Marketing Consultants",
+  },
   nav: {
     about: "About Us",
     hallOfFame: "Hall of Fame",
@@ -16,6 +19,7 @@ const en = {
     campaignsTv: "TV Commercials",
     publications: "Publications",
     scientificAdvisoryBoard: "Scientific Advisory Board",
+    toggleMenu: "Toggle navigation menu",
   },
   auth: {
     login: "Login",
@@ -25,6 +29,8 @@ const en = {
     wrongPassword: "Incorrect password",
     showPassword: "Show password",
     hidePassword: "Hide password",
+    notice: "This client-side login only protects navigation visibility and is not a secure authentication system.",
+    unavailable: "Login is unavailable because no password is configured.",
   },
   footer: {
     linksHeading: "LINKS",
@@ -32,10 +38,16 @@ const en = {
     services: "Services",
     contact: "Contact",
     legal: "Legal Notice",
+    privacy: "Privacy Policy",
     servicesBlockHeading: "SERVICES",
     servicesAthletes: "Services for Athletes",
     servicesCompanies: "Services for Companies",
     rights: "All rights reserved.",
+    companyName: "peplies consult GmbH",
+    companyStreet: "Höhenstraße 12",
+    companyPostalCode: "65321",
+    companyCity: "Heidenrod",
+    copyrightBrand: "peplies consult - Sports Marketing Consultants",
   },
   intro: {
     title: "About Us",
@@ -66,6 +78,10 @@ const en = {
     writeUs: "Write to us:",
     mailUs: "Email us:",
     country: "Germany",
+    companyName: "peplies consult GmbH",
+    street: "Höhenstraße 12",
+    postalCode: "65321",
+    city: "Heidenrod",
   },
   privacy: {
     docTitle: "peplies consult - Privacy Policy",
@@ -130,10 +146,17 @@ const en = {
     docTitle: "peplies consult - Press",
     title: "Press",
     openHint: "Click to open",
+    unavailable: "This document is currently unavailable.",
+    categories: {
+      olympics: "Olympics",
+      magazine: "Magazine",
+      news: "News",
+    },
   },
   publications: {
     docTitle: "peplies consult - Publications",
     title: "Publications",
+    empty: "Publication content is currently being prepared.",
   },
   scientificAdvisoryBoard: {
     docTitle: "peplies consult - Scientific Advisory Board",
@@ -160,6 +183,7 @@ const en = {
   printCampaign: {
     docTitle: "peplies consult - PR, Print, Poster",
     title: "PR | Print | Posters",
+    empty: "Campaign material will be published here soon.",
   },
   tv: {
     docTitle: "peplies consult - TV Commercials",
@@ -190,6 +214,11 @@ const en = {
       fr: "Français",
       es: "Español",
     },
+  },
+  notFound: {
+    docTitle: "peplies consult - Page not found",
+    message: "The requested page could not be found.",
+    home: "Back to home",
   },
 };
 

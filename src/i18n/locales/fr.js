@@ -1,6 +1,9 @@
 /** @typedef {Record<string, string | Record<string, unknown>>} LocaleTree */
 /** @type {LocaleTree} */
 const fr = {
+  app: {
+    defaultDocTitle: "peplies consult - Sports Marketing Consultants",
+  },
   nav: {
     about: "À propos",
     hallOfFame: "Hall of Fame",
@@ -16,6 +19,7 @@ const fr = {
     campaignsTv: "Spots TV",
     publications: "Publications",
     scientificAdvisoryBoard: "Conseil scientifique",
+    toggleMenu: "Basculer le menu de navigation",
   },
   auth: {
     login: "Connexion",
@@ -25,6 +29,8 @@ const fr = {
     wrongPassword: "Mot de passe incorrect",
     showPassword: "Afficher le mot de passe",
     hidePassword: "Masquer le mot de passe",
+    notice: "Cette connexion cote client ne protege que la visibilite de navigation et ne constitue pas une authentification securisee.",
+    unavailable: "La connexion est indisponible car aucun mot de passe n'est configure.",
   },
   footer: {
     linksHeading: "LIENS",
@@ -32,10 +38,16 @@ const fr = {
     services: "Prestations",
     contact: "Contact",
     legal: "Mentions légales",
+    privacy: "Politique de confidentialite",
     servicesBlockHeading: "PRESTATIONS",
     servicesAthletes: "Prestations pour les athlètes",
     servicesCompanies: "Prestations pour les entreprises",
     rights: "Tous droits réservés.",
+    companyName: "peplies consult GmbH",
+    companyStreet: "Höhenstraße 12",
+    companyPostalCode: "65321",
+    companyCity: "Heidenrod",
+    copyrightBrand: "peplies consult - Sports Marketing Consultants",
   },
   intro: {
     title: "À propos",
@@ -66,6 +78,10 @@ const fr = {
     writeUs: "Écrivez-nous :",
     mailUs: "Envoyez-nous un e-mail :",
     country: "Allemagne",
+    companyName: "peplies consult GmbH",
+    street: "Höhenstraße 12",
+    postalCode: "65321",
+    city: "Heidenrod",
   },
   privacy: {
     docTitle: "peplies consult - Politique de confidentialité",
@@ -130,10 +146,17 @@ const fr = {
     docTitle: "peplies consult - Presse",
     title: "Presse",
     openHint: "Cliquer pour ouvrir",
+    unavailable: "Ce document n'est actuellement pas disponible.",
+    categories: {
+      olympics: "Jeux olympiques",
+      magazine: "Magazine",
+      news: "Actualités",
+    },
   },
   publications: {
     docTitle: "peplies consult - Publications",
     title: "Publications",
+    empty: "Le contenu des publications est en cours de preparation.",
   },
   scientificAdvisoryBoard: {
     docTitle: "peplies consult - Conseil scientifique",
@@ -160,6 +183,7 @@ const fr = {
   printCampaign: {
     docTitle: "peplies consult - RP, Print, Affiche",
     title: "RP | Print | Affiches",
+    empty: "Le materiel de campagne sera bientot publie ici.",
   },
   tv: {
     docTitle: "peplies consult - Spots TV",
@@ -190,6 +214,11 @@ const fr = {
       fr: "Français",
       es: "Español",
     },
+  },
+  notFound: {
+    docTitle: "peplies consult - Page introuvable",
+    message: "La page demandee est introuvable.",
+    home: "Retour a l'accueil",
   },
 };
 

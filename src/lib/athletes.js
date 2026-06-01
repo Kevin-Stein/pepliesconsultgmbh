@@ -449,7 +449,7 @@ const athletes = [
   {
     firstName: "Sophia",
     lastName: "Zitzmann",
-    achievements: ["Vier FIS-Rennen aufs Podium 2023/24", "Nordische Kombination Herren 9 Mandate"],
+    achievements: ["Vier FIS-Rennen aufs Podium 2023/24"],
     sportDiscipline: "Ski Alpin",
     birthday: "20.02.2003",
     club: "SC Gaißach",
@@ -529,7 +529,11 @@ const athletes = [
   {
     firstName: "Charlotte",
     lastName: "Gallbronner",
-    achievements: [],
+    achievements: [
+      "Junioren-Europameisterin im Single-Mixed 2025",
+      "Junioren-Vizeweltmeisterin in der Staffel 2025",
+      "Sieg im Einzelrennens beim IBU Junior Cups 2024/2025 in Ridnaun",
+    ],
     sportDiscipline: "Biathlon",
     birthday: "25.09.2003",
     club: "",
@@ -643,7 +647,7 @@ const athletes = [
       "Wandern",
       "Unterstützung des Projekts 'Eric-Frenzel -Trails'",
     ],
-    profession: " Bundestrainer Nordische Kombination",
+    profession: "Bundestrainer Nordische Kombination",
     hobby: "Naturerleben, Reisen, Ausgleichssportarten, Wandern, Nordic Walking, Trailrunning",
     portraitImageURL:
       "https://res.cloudinary.com/dbpoconup/image/upload/v1759138804/Frenzel_Eric_portrait_01_c6bey8.jpg",
@@ -688,7 +692,13 @@ const athletes = [
   {
     firstName: "Nico",
     lastName: "Hülkenberg",
-    achievements: [],
+    achievements: [
+      "GP2-Meister 2009",
+      "Formel-1-Debüt 2010 bei Williams",
+      "Pole Position beim Brasilien-GP 2010",
+      "Dritter Platz in der Formel 1 in Silverstone 2023 (erstes F1-Podium)",
+      "24h-Le-Mans-Sieger 2015 mit Porsche",
+    ],
     sportDiscipline: "Formel 1",
     birthday: "",
     club: "",
@@ -702,7 +712,14 @@ const athletes = [
   {
     firstName: "Bernd",
     lastName: "Schneider",
-    achievements: [],
+    achievements: [
+      "Vize-Weltmeister (WM 2002)",
+      "Vize-Europameister (EM 2008)",
+      "Confederations-Cup-Dritter (2005)",
+      "Zweifacher DFB-Pokalsieger mit Bayer 04 Leverkusen",
+      "Deutscher Vizemeister 2000 und 2002",
+      "Über 80 Länderspiele für Deutschland",
+    ],
     sportDiscipline: "DTM",
     birthday: "",
     club: "",
@@ -716,7 +733,11 @@ const athletes = [
   {
     firstName: "Stefanie",
     lastName: "Böhler",
-    achievements: [],
+    achievements: [
+      "Olympische Silbermedaille 2014",
+      "Zweifache WM-Silbermedaillengewinnerin (Staffel)",
+      "Über 15 Jahre Teil der deutschen Langlauf-Nationalmannschaft",
+    ],
     sportDiscipline: "Langlauf",
     birthday: "",
     club: "",
@@ -730,7 +751,13 @@ const athletes = [
   {
     firstName: "Andrea",
     lastName: "Henkel",
-    achievements: [],
+    achievements: [
+      "Vier olympische Medaillen (2 Gold)",
+      "16 WM-Medaillen (8 Gold)",
+      "Gesamtweltcupsiegerin 2006/07",
+      "46 Weltcupsiege",
+      "Erste Biathletin mit WM-Gold in allen Einzeldisziplinen",
+    ],
     sportDiscipline: "Biathlon",
     birthday: "",
     club: "",
@@ -744,7 +771,13 @@ const athletes = [
   {
     firstName: "Anja",
     lastName: "Pärson",
-    achievements: [],
+    achievements: [
+      "Sechs olympische Medaillen (1 Gold, 1 Silber, 4 Bronze)",
+      "13 WM-Medaillen (7 Gold)",
+      "Gesamtweltcupsiegerin 2003/04 und 2004/05",
+      "42 Weltcupsiege",
+      "Eine der wenigen Fahrerinnen mit Siegen in allen alpinen Disziplinen",
+    ],
     sportDiscipline: "Ski Alpin",
     birthday: "",
     club: "",
@@ -758,7 +791,13 @@ const athletes = [
   {
     firstName: "Björn",
     lastName: "Kircheisen",
-    achievements: [],
+    achievements: [
+      "Zweifache olympische Silbermedaillengewinner",
+      "WM-Gold 2007",
+      "Vier WM-Silbermedaillen",
+      "Zweifache WM-Bronzemedaillengewinner",
+      "Mehrfacher Team-Erfolg im Weltcup mit Deutschland",
+    ],
     sportDiscipline: "Nordische Kombination",
     birthday: "",
     club: "",
@@ -772,7 +811,12 @@ const athletes = [
   {
     firstName: "Julia",
     lastName: "Görges",
-    achievements: [],
+    achievements: [
+      "Grand-Slam-Titel im Doppel (Wimbledon 2017)",
+      "Halbfinale Wimbledon im Einzel (2018)",
+      "WTA Finals Halbfinale (2017)",
+      "Top 9 der Weltrangliste (2018)",
+    ],
     sportDiscipline: "Tennis",
     birthday: "",
     club: "",
@@ -786,7 +830,12 @@ const athletes = [
   {
     firstName: "Kirsten",
     lastName: "Flipkens",
-    achievements: [],
+    achievements: [
+      "Grand-Slam-Halbfinale im Einzel (Wimbledon 2013)",
+      "Grand-Slam-Titel im Mixed-Doppel (US Open 2022)",
+      "WTA-Einzeltitel (Quebec 2012)",
+      "Platz 13 Weltrangliste (2013)",
+    ],
     sportDiscipline: "Tennis",
     birthday: "",
     club: "",
@@ -800,7 +849,14 @@ const athletes = [
   {
     firstName: "Lars",
     lastName: "Bender",
-    achievements: [],
+    achievements: [
+      "Olympische Silbermedaille 2016 in Rio mit der deutschen Nationalmannschaft",
+      "Deutscher Pokalsieger 2014/15 mit Bayer 04 Leverkusen",
+      "Vize-Weltmeister bei der U17-EM 2007",
+      "Mehr als 250 Bundesligaspiele",
+      "Über 20 Länderspiele für Deutschland",
+      "Langjähriger Kapitän bei Bayer Leverkusen",
+    ],
     sportDiscipline: "Fußball",
     birthday: "",
     club: "",
@@ -814,7 +870,13 @@ const athletes = [
   {
     firstName: "Lucie",
     lastName: "Safarova",
-    achievements: [],
+    achievements: [
+      "Grand-Slam-Titel im Doppel (French Open 2015)",
+      "Grand-Slam-Titel im Doppel (Australian Open 2015)",
+      "Grand-Slam-Finale im Einzel (French Open 2015)",
+      "Fünffache Grand-Slam-Titelträgerin im Doppel",
+      "Platz 5 Weltrangliste (2015)",
+    ],
     sportDiscipline: "Tennis",
     birthday: "",
     club: "",
@@ -828,7 +890,13 @@ const athletes = [
   {
     firstName: "Magdalena",
     lastName: "Neuner",
-    achievements: [],
+    achievements: [
+      "Zweifache olympische Goldmedaillengewinnerin (2006 und 2010)",
+      "Zwölffache Weltmeisterin",
+      "34 Weltcupsiege",
+      "Dreifache Gesamtweltcupsiegerin (2007/08, 2008/09, 2009/10)",
+      "Olympische Silber- und Bronzemedaille",
+    ],
     sportDiscipline: "Biathlon",
     birthday: "",
     club: "",
@@ -842,7 +910,12 @@ const athletes = [
   {
     firstName: "Mandy",
     lastName: "Minella",
-    achievements: [],
+    achievements: [
+      "Zweifache WTA-Doppeltitelgewinnerin",
+      "Platz 66 Weltrangliste (2012)",
+      "Langjährige Nummer 1 von Luxemburg im Damentennis",
+      "Mehrfache Teilnahme an Grand-Slam-Turnieren im Einzel und Doppel",
+    ],
     sportDiscipline: "Tennis",
     birthday: "",
     club: "",
@@ -856,7 +929,12 @@ const athletes = [
   {
     firstName: "Martina",
     lastName: "Glagow",
-    achievements: [],
+    achievements: [
+      "Zweifache olympische Silbermedaillengewinnerin (2006)",
+      "Dreifache Weltmeisterin (insgesamt 9 WM-Medaillen)",
+      "Gesamtweltcup-Siegerin im Verfolgungsweltcup (2005/06)",
+      "10 Weltcupsiege im Biathlon",
+    ],
     sportDiscipline: "Biathlon",
     birthday: "",
     club: "",
@@ -870,7 +948,13 @@ const athletes = [
   {
     firstName: "Martina",
     lastName: "Seidl",
-    achievements: [],
+    achievements: [
+      "Martina Seidl (Zellner)",
+      "Zweifache olympische Silbermedaillengewinnerin",
+      "Weltmeisterin in der Staffel",
+      "Mehrere WM- und Weltcup-Podestplätze",
+      "Teil der erfolgreichen deutschen Biathlon-Staffel in den 1990er Jahren",
+    ],
     sportDiscipline: "Biathlon",
     birthday: "",
     club: "",
@@ -884,7 +968,11 @@ const athletes = [
   {
     firstName: "Red Bull",
     lastName: "Toro Rosso",
-    achievements: [],
+    achievements: [
+      "Formel-1-Team 2006 bis 2019",
+      "Sieg beim Italien-GP 2008",
+      "Schwesterteam von Red Bull Racing mit Fokus auf Junioren- und Talente-Entwicklung",
+    ],
     sportDiscipline: "Formel 1",
     birthday: "",
     club: "",
@@ -898,7 +986,13 @@ const athletes = [
   {
     firstName: "Sven",
     lastName: "Bender",
-    achievements: [],
+    achievements: [
+      "Olympische Silbermedaille 2016 in Rio mit der deutschen Nationalmannschaft",
+      "Deutscher Meister 2011/12 mit Borussia Dortmund",
+      "Zweifacher Deutscher Meister 2011 und 2012",
+      "DFB-Pokalsieger 2016/17 mit Borussia Dortmund",
+      "Über 300 Bundesliga-Spiele",
+    ],
     sportDiscipline: "Fußball",
     birthday: "",
     club: "",
@@ -912,7 +1006,13 @@ const athletes = [
   {
     firstName: "Sven-Göran",
     lastName: "Eriksson",
-    achievements: [],
+    achievements: [
+      "Trainer der englischen Nationalmannschaft von 2001 bis 2006",
+      "Zweimal Viertelfinale bei Weltmeisterschaften mit England (2002 und 2006)",
+      "Trainer von Top-Klubs wie SS Lazio und Manchester City",
+      "Serie-A-Meister 1999/2000 mit Lazio Rom",
+      "Gewinner des Europapokals der Pokalsieger 1998/99 mit Lazio",
+    ],
     sportDiscipline: "Fußball",
     birthday: "",
     club: "",
@@ -926,7 +1026,11 @@ const athletes = [
   {
     firstName: "Tennis Academy",
     lastName: "Stefan Edberg",
-    achievements: [],
+    achievements: [
+      "Fokus auf Nachwuchsförderung im Tennis für Kinder und Jugendliche",
+      "Verbindung von Techniktraining, Athletik und mentaler Entwicklung",
+      "Zusammenarbeit mit lokalen Tennisvereinen und nationalen Verbänden",
+    ],
     sportDiscipline: "Tennis",
     birthday: "",
     club: "",
@@ -1028,6 +1132,10 @@ const translations = {
       " Student für Recht und Wirtschaft": " Student of Law and Economics",
       "Rennfahrer": "Racing Driver",
       "Langläuferin": "Cross-Country Skier",
+      "Zoll Ski Team": "Customs Ski Team",
+      "Sportsoldat Sportfördergruppe der Bundeswehr Sonthofen":
+        "Professional Soldier, Bundeswehr Sports Promotion Group Sonthofen",
+      "Bundespolizist (Obermeister)": "Federal Police Officer (Senior Sergeant)",
     },
     achievements: {
       "Bronzemedaillengewinnerin Mixed-Mannschaft Olympia Peking": "Bronze medal winner Mixed Team Olympics Beijing",
@@ -1137,6 +1245,108 @@ const translations = {
       "Skispringen Damen  12 Mandate": "Ski Jumping women 12 mandates",
       "Top-21-Platzierung Nordische Ski-Weltmeisterschaften 2025": "Top-21 placement Nordic Ski World Championships 2025",
       "Gesamtweltcup 2024/2025 Platz 28": "2024/2025 Overall World Cup 28th place",
+      "GP2-Meister 2009": "GP2 Champion 2009",
+      "Formel-1-Debüt 2010 bei Williams": "Formula 1 debut in 2010 with Williams",
+      "Pole Position beim Brasilien-GP 2010": "Pole position at the 2010 Brazilian Grand Prix",
+      "Dritter Platz in der Formel 1 in Silverstone 2023 (erstes F1-Podium)":
+        "Third place in Formula 1 at Silverstone 2023 (first F1 podium)",
+      "24h-Le-Mans-Sieger 2015 mit Porsche": "24 Hours of Le Mans winner in 2015 with Porsche",
+      "Vize-Weltmeister (WM 2002)": "World Championship runner-up (2002)",
+      "Vize-Europameister (EM 2008)": "European Championship runner-up (2008)",
+      "Confederations-Cup-Dritter (2005)": "Third place at the Confederations Cup (2005)",
+      "Zweifacher DFB-Pokalsieger mit Bayer 04 Leverkusen": "Two-time DFB Cup winner with Bayer 04 Leverkusen",
+      "Deutscher Vizemeister 2000 und 2002": "German Bundesliga runner-up in 2000 and 2002",
+      "Über 80 Länderspiele für Deutschland": "Over 80 international caps for Germany",
+      "Olympische Silbermedaille 2014": "Olympic silver medal in 2014",
+      "Zweifache WM-Silbermedaillengewinnerin (Staffel)": "Two-time World Championship silver medalist (relay)",
+      "Über 15 Jahre Teil der deutschen Langlauf-Nationalmannschaft":
+        "Part of the German cross-country skiing national team for over 15 years",
+      "Vier olympische Medaillen (2 Gold)": "Four Olympic medals (2 gold)",
+      "16 WM-Medaillen (8 Gold)": "16 World Championship medals (8 gold)",
+      "Gesamtweltcupsiegerin 2006/07": "Overall World Cup winner 2006/07",
+      "46 Weltcupsiege": "46 World Cup victories",
+      "Erste Biathletin mit WM-Gold in allen Einzeldisziplinen":
+        "First biathlete to win World Championship gold in all individual disciplines",
+      "Sechs olympische Medaillen (1 Gold, 1 Silber, 4 Bronze)":
+        "Six Olympic medals (1 gold, 1 silver, 4 bronze)",
+      "13 WM-Medaillen (7 Gold)": "13 World Championship medals (7 gold)",
+      "Gesamtweltcupsiegerin 2003/04 und 2004/05": "Overall World Cup winner 2003/04 and 2004/05",
+      "42 Weltcupsiege": "42 World Cup victories",
+      "Eine der wenigen Fahrerinnen mit Siegen in allen alpinen Disziplinen":
+        "One of the few skiers with wins in all alpine disciplines",
+      "Zweifache olympische Silbermedaillengewinner": "Two-time Olympic silver medal winner",
+      "WM-Gold 2007": "World Championship gold in 2007",
+      "Vier WM-Silbermedaillen": "Four World Championship silver medals",
+      "Zweifache WM-Bronzemedaillengewinner": "Two-time World Championship bronze medal winner",
+      "Mehrfacher Team-Erfolg im Weltcup mit Deutschland":
+        "Multiple World Cup team successes with Germany",
+      "Grand-Slam-Titel im Doppel (Wimbledon 2017)": "Grand Slam doubles title (Wimbledon 2017)",
+      "Halbfinale Wimbledon im Einzel (2018)": "Wimbledon singles semifinal (2018)",
+      "WTA Finals Halbfinale (2017)": "WTA Finals semifinal (2017)",
+      "Top 9 der Weltrangliste (2018)": "Top 9 in the world ranking (2018)",
+      "Grand-Slam-Halbfinale im Einzel (Wimbledon 2013)": "Grand Slam singles semifinal (Wimbledon 2013)",
+      "Grand-Slam-Titel im Mixed-Doppel (US Open 2022)": "Grand Slam mixed doubles title (US Open 2022)",
+      "WTA-Einzeltitel (Quebec 2012)": "WTA singles title (Quebec 2012)",
+      "Platz 13 Weltrangliste (2013)": "World ranking No. 13 (2013)",
+      "Olympische Silbermedaille 2016 in Rio mit der deutschen Nationalmannschaft":
+        "Olympic silver medal in Rio 2016 with the German national team",
+      "Deutscher Pokalsieger 2014/15 mit Bayer 04 Leverkusen": "German Cup winner 2014/15 with Bayer 04 Leverkusen",
+      "Vize-Weltmeister bei der U17-EM 2007": "Runner-up at the U17 European Championship in 2007",
+      "Mehr als 250 Bundesligaspiele": "More than 250 Bundesliga matches",
+      "Über 20 Länderspiele für Deutschland": "Over 20 international caps for Germany",
+      "Langjähriger Kapitän bei Bayer Leverkusen": "Long-time captain at Bayer Leverkusen",
+      "Grand-Slam-Titel im Doppel (French Open 2015)": "Grand Slam doubles title (French Open 2015)",
+      "Grand-Slam-Titel im Doppel (Australian Open 2015)": "Grand Slam doubles title (Australian Open 2015)",
+      "Grand-Slam-Finale im Einzel (French Open 2015)": "Grand Slam singles final (French Open 2015)",
+      "Fünffache Grand-Slam-Titelträgerin im Doppel": "Five-time Grand Slam doubles champion",
+      "Platz 5 Weltrangliste (2015)": "World ranking No. 5 (2015)",
+      "Zweifache olympische Goldmedaillengewinnerin (2006 und 2010)":
+        "Two-time Olympic gold medal winner (2006 and 2010)",
+      "Zwölffache Weltmeisterin": "Twelve-time world champion",
+      "34 Weltcupsiege": "34 World Cup victories",
+      "Dreifache Gesamtweltcupsiegerin (2007/08, 2008/09, 2009/10)":
+        "Three-time overall World Cup winner (2007/08, 2008/09, 2009/10)",
+      "Olympische Silber- und Bronzemedaille": "Olympic silver and bronze medals",
+      "Zweifache WTA-Doppeltitelgewinnerin": "Two-time WTA doubles title winner",
+      "Platz 66 Weltrangliste (2012)": "World ranking No. 66 (2012)",
+      "Langjährige Nummer 1 von Luxemburg im Damentennis":
+        "Long-time Luxembourg No. 1 in women's tennis",
+      "Mehrfache Teilnahme an Grand-Slam-Turnieren im Einzel und Doppel":
+        "Multiple appearances in Grand Slam tournaments in singles and doubles",
+      "Zweifache olympische Silbermedaillengewinnerin (2006)": "Two-time Olympic silver medal winner (2006)",
+      "Dreifache Weltmeisterin (insgesamt 9 WM-Medaillen)": "Three-time world champion (9 World Championship medals in total)",
+      "Gesamtweltcup-Siegerin im Verfolgungsweltcup (2005/06)":
+        "Overall winner of the pursuit World Cup (2005/06)",
+      "10 Weltcupsiege im Biathlon": "10 World Cup wins in biathlon",
+      "Martina Seidl (Zellner)": "Martina Seidl (Zellner)",
+      "Zweifache olympische Silbermedaillengewinnerin": "Two-time Olympic silver medal winner",
+      "Weltmeisterin in der Staffel": "World champion in relay",
+      "Mehrere WM- und Weltcup-Podestplätze": "Multiple World Championship and World Cup podium finishes",
+      "Teil der erfolgreichen deutschen Biathlon-Staffel in den 1990er Jahren":
+        "Part of the successful German biathlon relay team in the 1990s",
+      "Formel-1-Team 2006 bis 2019": "Formula 1 team from 2006 to 2019",
+      "Sieg beim Italien-GP 2008": "Victory at the 2008 Italian Grand Prix",
+      "Schwesterteam von Red Bull Racing mit Fokus auf Junioren- und Talente-Entwicklung":
+        "Sister team of Red Bull Racing focused on junior and talent development",
+      "Deutscher Meister 2011/12 mit Borussia Dortmund": "German champion 2011/12 with Borussia Dortmund",
+      "Zweifacher Deutscher Meister 2011 und 2012": "Two-time German champion in 2011 and 2012",
+      "DFB-Pokalsieger 2016/17 mit Borussia Dortmund": "DFB Cup winner 2016/17 with Borussia Dortmund",
+      "Über 300 Bundesliga-Spiele": "Over 300 Bundesliga matches",
+      "Trainer der englischen Nationalmannschaft von 2001 bis 2006":
+        "Head coach of the England national team from 2001 to 2006",
+      "Zweimal Viertelfinale bei Weltmeisterschaften mit England (2002 und 2006)":
+        "Two World Cup quarterfinals with England (2002 and 2006)",
+      "Trainer von Top-Klubs wie SS Lazio und Manchester City":
+        "Coach of top clubs such as SS Lazio and Manchester City",
+      "Serie-A-Meister 1999/2000 mit Lazio Rom": "Serie A champion 1999/2000 with Lazio",
+      "Gewinner des Europapokals der Pokalsieger 1998/99 mit Lazio":
+        "Winner of the UEFA Cup Winners' Cup 1998/99 with Lazio",
+      "Fokus auf Nachwuchsförderung im Tennis für Kinder und Jugendliche":
+        "Focus on youth development in tennis for children and teenagers",
+      "Verbindung von Techniktraining, Athletik und mentaler Entwicklung":
+        "Combination of technical training, athletic development, and mental development",
+      "Zusammenarbeit mit lokalen Tennisvereinen und nationalen Verbänden":
+        "Collaboration with local tennis clubs and national associations",
     },
     interests: {
       "Kunst": "Art",
@@ -1146,6 +1356,7 @@ const translations = {
       "Rennrad fahren": "Road cycling",
       "verschiedene Sportarten (Bsp. Tour de france, Leichtathletik...)": "Various sports (e.g. Tour de France, athletics...)",
       "Mode": "Fashion",
+      "Geschichte": "History",
       "Handarbeit": "Handicrafts",
       "Lesen": "Reading",
       "sehr vielseitig von Politik bis hin zu fantasy Büchern kann man mich für vieles begeistern": "Very versatile, from politics to fantasy books, I can be enthusiastic about many things",
@@ -1182,6 +1393,7 @@ const translations = {
       "Alles, was mit Sport zu tun hat": "Everything related to sports",
       "Klavier spielen": "Playing piano",
       "kochen": "Cooking",
+      "Kochen": "Cooking",
       "guten Kaffee trinken": "Drinking good coffee",
       "kreativ sein": "Being creative",
       "Golf": "Golf",
@@ -1219,6 +1431,8 @@ const translations = {
       "Sportliche Aktivitäten, Fußball spielen, Radfahren sowie Zeit mit Freunden verbringen": "Athletic activities, playing football, cycling as well as spending time with friends",
       "Radfahren, Berggehen, Tauchen und vieles mehr": "Cycling, mountain hiking, diving and much more",
       "Ich fahre Rennrad und ich liebe es außerdem Motorrad zu fahren ": "I ride road bikes and I also love riding motorcycles",
+      "Lesen, Zeit mit Familie, Klettern, Paddeltennis, Escaperooms":
+        "Reading, spending time with family, climbing, paddle tennis, escape rooms",
       "Die Familie ist in meinem Leben sehr wichtig, deshalb versuche ich, so viel Zeit wie möglich mit ihr zu verbringen. Wenn ich auf Reisen bin, versuche ich immer, Sehenswürdigkeiten zu besuchen, um interessante Dinge oder Orte zu entdecken.": "Family is very important in my life, so I try to spend as much time as possible with them. When I'm traveling, I always try to visit sights to discover interesting things or places.",
       "In meiner Freizeit unternehme ich gerne was mit Freunden und backe und koche gerne mal.": "In my free time I like to do things with friends and like to bake and cook sometimes.",
       "Klettern, Snowboardfahren, Zeit draußen mit Freunden verbringen": "Climbing, snowboarding, spending time outdoors with friends",
@@ -1318,6 +1532,18 @@ const translations = {
     hobbies: {},
   },
 };
+
+// Ensure non-DE athlete text categories are fully populated.
+// FR/ES keep their own entries, and automatically inherit EN as fallback base.
+const ATHLETE_TEXT_CATEGORIES = ["achievements", "interests", "hobbies"];
+["fr", "es"].forEach((localeKey) => {
+  ATHLETE_TEXT_CATEGORIES.forEach((categoryKey) => {
+    translations[localeKey][categoryKey] = {
+      ...(translations.en[categoryKey] || {}),
+      ...(translations[localeKey][categoryKey] || {}),
+    };
+  });
+});
 
 const SUPPORTED_ATHLETE_LANGS = ["de", "en", "fr", "es"];
 

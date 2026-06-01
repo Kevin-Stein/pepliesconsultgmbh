@@ -112,6 +112,7 @@ const de = {
     profession: "Beruf:",
     hobby: "Hobby:",
     achievements: "Erfolge:",
+    photoCredit: "Foto: ",
   },
   companyReferences: {
     docTitle: "peplies consult - Unternehmen Sportrechtevermarktung/Sportsponsoring",

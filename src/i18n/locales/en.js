@@ -112,6 +112,7 @@ const en = {
     profession: "Profession:",
     hobby: "Hobby:",
     achievements: "Achievements:",
+    photoCredit: "Photo: ",
   },
   companyReferences: {
     docTitle: "peplies consult - Companies — Sports Rights Marketing / Sports Sponsorship",

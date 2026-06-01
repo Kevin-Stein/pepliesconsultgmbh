@@ -11,12 +11,13 @@ const athleteLocalImages = athleteImagesContext
   .keys()
   .map((key) => {
     const fileName = key.split("/").pop() || "";
+    const normalizedPath = normalizeToken(key);
     const normalizedName = normalizeToken(fileName);
-    const kind = normalizedName.includes("portrait")
-      ? "portrait"
-      : normalizedName.includes("action")
+    const kind = normalizedName.includes("action")
         ? "action"
-        : "";
+        : normalizedName.includes("portrait") || normalizedPath.includes("halloffame")
+          ? "portrait"
+          : "";
     return {
       kind,
       normalizedName,
@@ -41,6 +42,34 @@ const getLocalAthleteImage = (firstName, lastName, kind) => {
   );
   if (directMatch) return directMatch.src;
   return "";
+};
+
+const photoCreditsByAthlete = {
+  "Sina Arnet": {
+    portrait: "lieslpics",
+    action: "keystone_sda_ats",
+  },
+  "Anna Twardozs": {
+    portrait: "skijumpingpl",
+  },
+  "Alma Siegismund": {
+    action: "Kevin Voigt",
+  },
+  "Anne Häckel": {
+    portrait: "VSC Klingenthal e.V/Florian Müller",
+    action: "Jan Simon Schäfer",
+  },
+  "Josephine Pagnier": {
+    portrait: "lucile.morat",
+    action: "loganswney",
+  },
+  "Alina Nußbicker": {
+    action: "shotsbyniklas / k_voigt_fotografie",
+  },
+  "Charlotte Gallbronner": {
+    portrait: "k_voigt_fotografie",
+    action: "k_voigt_fotografie",
+  },
 };
 
 const athletes = [
@@ -1286,6 +1315,11 @@ export const getAthletes = (language = "de") => {
   return athletes.map((athlete) => {
     const localPortrait = getLocalAthleteImage(athlete.firstName, athlete.lastName, "portrait");
     const localAction = getLocalAthleteImage(athlete.firstName, athlete.lastName, "action");
+    const fullName = `${athlete.firstName} ${athlete.lastName}`;
+    const photoCredits = {
+      ...(athlete.photoCredits || {}),
+      ...(photoCreditsByAthlete[fullName] || {}),
+    };
 
     const translatedAchievements = (athlete.achievements || []).map((achievement) => pick("achievements", achievement));
 
@@ -1321,6 +1355,7 @@ export const getAthletes = (language = "de") => {
       ...athlete,
       portraitImageURL: localPortrait || athlete.portraitImageURL,
       actionImageURL: localAction || athlete.actionImageURL,
+      photoCredits,
       sportDiscipline: disc || athlete.sportDiscipline,
       profession: translatedProfession,
       achievements: translatedAchievements,

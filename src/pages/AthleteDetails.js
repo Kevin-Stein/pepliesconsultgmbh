@@ -29,6 +29,11 @@ const AthleteDetails = () => {
               className="w-full h-100 object-cover"
               style={{ height: "400px" }}
             />
+            {athlete.photoCredits?.portrait && (
+              <p className="text-xs text-gray-500 mt-2 px-1">
+                {t("athleteDetail.photoCredit")} {athlete.photoCredits.portrait}
+              </p>
+            )}
           </div>
           <div className="p-4 md:w-1/2 flex flex-col justify-center text-right gap-3 relative z-10">
             <h2 className="text-xl font-bold text-blue-900">
@@ -65,12 +70,19 @@ const AthleteDetails = () => {
               ))}
             </ul>
           </div>
-          <img
-            src={athlete.actionImageURL || placeholderAction}
-            alt={`${athlete.firstName} ${athlete.lastName} action`}
-            className="w-full lg:w-1/2 h-100 object-cover"
-            style={{ height: "400px" }}
-          />
+          <div className="w-full lg:w-1/2">
+            <img
+              src={athlete.actionImageURL || placeholderAction}
+              alt={`${athlete.firstName} ${athlete.lastName} action`}
+              className="w-full h-100 object-cover"
+              style={{ height: "400px" }}
+            />
+            {athlete.photoCredits?.action && (
+              <p className="text-xs text-gray-500 mt-2 px-1 text-right">
+                {t("athleteDetail.photoCredit")} {athlete.photoCredits.action}
+              </p>
+            )}
+          </div>
         </div>
       </div>
     </>

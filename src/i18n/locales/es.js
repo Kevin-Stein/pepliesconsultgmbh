@@ -112,6 +112,7 @@ const es = {
     profession: "Profesión:",
     hobby: "Afición:",
     achievements: "Logros:",
+    photoCredit: "Foto: ",
   },
   companyReferences: {
     docTitle: "peplies consult - Empresas — derechos deportivos / patrocinio deportivo",

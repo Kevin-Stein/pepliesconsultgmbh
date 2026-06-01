@@ -42,6 +42,7 @@ function usePrefersHover() {
 const HallOfFameFlipCard = ({ athlete, t }) => {
   const prefersHover = usePrefersHover();
   const [touchFlipped, setTouchFlipped] = useState(false);
+  const isStefanEdbergCard = athlete.firstName === "Tennis Academy" && athlete.lastName === "Stefan Edberg";
 
   const flipTransform = [
     "relative w-full transition-transform duration-700 ease-[cubic-bezier(0.4,0.2,0.2,1)] [transform-style:preserve-3d]",
@@ -73,6 +74,7 @@ const HallOfFameFlipCard = ({ athlete, t }) => {
               src={athlete.portraitImageURL || placeholderPortrait}
               alt={`${athlete.firstName} ${athlete.lastName}`}
               className="aspect-[3/4] w-full object-cover"
+              style={isStefanEdbergCard ? { objectPosition: "25% center" } : undefined}
             />
             <div className="p-4 mt-3">
               <h2 className="text-xl font-bold">

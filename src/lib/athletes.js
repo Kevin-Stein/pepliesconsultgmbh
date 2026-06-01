@@ -21,6 +21,7 @@ const athleteLocalImages = athleteImagesContext
     return {
       kind,
       normalizedName,
+      normalizedPath,
       src: athleteImagesContext(key),
     };
   })
@@ -34,13 +35,36 @@ const matchesAthleteName = (fileNameNorm, firstNameNorm, lastNameNorm) => {
   return fileNameNorm.includes(firstShort) && fileNameNorm.includes(lastShort);
 };
 
+const preferredImageNeedlesByAthlete = {
+  annatwardozs: {
+    portrait: ["portrait02", "portrait2"],
+  },
+};
+
 const getLocalAthleteImage = (firstName, lastName, kind) => {
   const firstNameNorm = normalizeToken(firstName);
   const lastNameNorm = normalizeToken(lastName);
-  const directMatch = athleteLocalImages.find(
+  const fullNameNorm = `${firstNameNorm}${lastNameNorm}`;
+  const preferredNeedles = preferredImageNeedlesByAthlete[fullNameNorm]?.[kind] || [];
+  const matches = athleteLocalImages.filter(
     (img) => img.kind === kind && matchesAthleteName(img.normalizedName, firstNameNorm, lastNameNorm)
   );
-  if (directMatch) return directMatch.src;
+  if (matches.length === 0) return "";
+
+  const score = (img) => {
+    let s = 0;
+    if (img.normalizedName.includes(firstNameNorm) && img.normalizedName.includes(lastNameNorm)) s += 20;
+    if (preferredNeedles.some((needle) => img.normalizedName.includes(needle))) s += 100;
+    // Prefer explicit role tags (portrait/action) over generic hall-of-fame file names.
+    if (kind === "portrait" && img.normalizedName.includes("portrait")) s += 5;
+    if (kind === "action" && img.normalizedName.includes("action")) s += 5;
+    // Slightly prefer filenames with more detail (e.g. portrait02 over portrait).
+    s += Math.min(img.normalizedName.length, 30) * 0.01;
+    return s;
+  };
+
+  matches.sort((a, b) => score(b) - score(a));
+  if (matches[0]) return matches[0].src;
   return "";
 };
 

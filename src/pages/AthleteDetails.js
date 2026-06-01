@@ -61,7 +61,7 @@ const AthleteDetails = () => {
         </div>
         <div className="card bg-white shadow-xl overflow-hidden flex flex-col justify-between md:flex-row rounded-b-xl">
           <div className="p-4 w-full md:w-1/2 flex flex-col">
-            <p className="text-gray-700 text-xl" style={{ textShadow: "0 1px 3px rgba(0,0,0,0.3), 0 1px 2px rgba(0,0,0,0.2)" }}>
+            <p className="text-gray-700 text-xl">
               <strong className="text-blue-900">{t("athleteDetail.achievements")}</strong>
             </p>
             <ul className="list-disc list-inside text-gray-700">

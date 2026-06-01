@@ -138,6 +138,24 @@ const fr = {
   scientificAdvisoryBoard: {
     docTitle: "peplies consult - Conseil scientifique",
     title: "Conseil scientifique",
+    sections: {
+      sportsEconomics: {
+        title: "Économie du sport",
+        members: [
+          "Prof. Dr. Herbert Woratschek Université de Bayreuth",
+          "Prof. Dr. Michael Wehrheim (décédé) Université de Marburg, European Business School (EBS) Oestrich-Winkel",
+          "Prof. Dr. Guido Schafmeister Université Macromedia des médias et de la communication, Munich",
+        ],
+      },
+      sportsMedicine: {
+        title: "Médecine du sport/Sciences du sport/Théorie de l'entraînement/Médecine complémentaire",
+        members: [
+          "Prof. Dr. Dieter Lazik Université de Potsdam, Université du Luxembourg",
+          "Prof. Dr. Hartmut Schröder Université Viadrina, Francfort-sur-l'Oder",
+          "Dr. Inge Gerding Bad Wildungen",
+        ],
+      },
+    },
   },
   printCampaign: {
     docTitle: "peplies consult - RP, Print, Affiche",

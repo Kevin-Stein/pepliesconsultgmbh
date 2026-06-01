@@ -39,6 +39,18 @@ const preferredImageNeedlesByAthlete = {
   annatwardozs: {
     portrait: ["portrait02", "portrait2"],
   },
+  janinahettichwalz: {
+    portrait: ["halloffame", "janinahettichwalz"],
+  },
+  florianliegl: {
+    portrait: ["halloffame", "florianliegl"],
+  },
+  susanneriesch: {
+    portrait: ["halloffame", "susanneriesch"],
+  },
+  martinazellner: {
+    portrait: ["halloffame", "martinazellner"],
+  },
 };
 
 const getLocalAthleteImage = (firstName, lastName, kind) => {
@@ -655,6 +667,20 @@ const athletes = [
     isFormer: true,
   },
   {
+    firstName: "Florian",
+    lastName: "Liegl",
+    achievements: [],
+    sportDiscipline: "",
+    birthday: "",
+    club: "",
+    interests: ["Sport"],
+    profession: "Sportler",
+    hobby: "",
+    portraitImageURL: "",
+    actionImageURL: "",
+    isFormer: true,
+  },
+  {
     firstName: "Janina",
     lastName: "Hettich-Walz",
     achievements: ["Vizeweltmeisterin Staffel 2021", "Zweifache Europameisterin 2022", "Vizeweltmeisterin Einzel 2024"],
@@ -664,8 +690,7 @@ const athletes = [
     interests: ["Sport"],
     profession: "Biathletin",
     hobby: "",
-    portraitImageURL:
-      "https://res.cloudinary.com/dbpoconup/image/upload/v1759153463/Hettich-Walz_Janina_portrait_sc1d3s.jpg",
+    portraitImageURL: "",
     actionImageURL:
       "https://res.cloudinary.com/dbpoconup/image/upload/v1759153464/Hettich-Walz_Janina_action_xfi3tj.jpg",
     isFormer: true,
@@ -947,9 +972,9 @@ const athletes = [
   },
   {
     firstName: "Martina",
-    lastName: "Seidl",
+    lastName: "Zellner",
     achievements: [
-      "Martina Seidl (Zellner)",
+      "Auch bekannt als Martina Seidl",
       "Zweifache olympische Silbermedaillengewinnerin",
       "Weltmeisterin in der Staffel",
       "Mehrere WM- und Weltcup-Podestplätze",
@@ -960,6 +985,24 @@ const athletes = [
     club: "",
     interests: ["Sport"],
     profession: "Biathletin",
+    hobby: "",
+    portraitImageURL: "",
+    actionImageURL: "",
+    isFormer: true,
+  },
+  {
+    firstName: "Susanne",
+    lastName: "Riesch",
+    achievements: [
+      "Weltcupsiegerin im Teamwettbewerb",
+      "Mehrfache Top-10-Platzierungen im alpinen Ski-Weltcup",
+      "Langjährige Athletin im internationalen Weltcup-Zirkus",
+    ],
+    sportDiscipline: "Ski Alpin",
+    birthday: "",
+    club: "",
+    interests: ["Sport"],
+    profession: "Skirennläuferin",
     hobby: "",
     portraitImageURL: "",
     actionImageURL: "",

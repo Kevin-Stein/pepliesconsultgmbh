@@ -83,7 +83,7 @@ const HallOfFameFlipCard = ({ athlete, t }) => {
               style={isStefanEdbergCard ? { objectPosition: "25% center" } : undefined}
             />
             <div className="p-4 mt-3">
-              <h2 className="text-xl font-bold">
+              <h2 className="text-xl font-bold text-center">
                 {athlete.firstName} {athlete.lastName}
               </h2>
               <p className="text-[11px] sm:text-xs text-gray-500 mt-1 text-center">{t("hallOfFame.flipHint")}</p>

@@ -2,29 +2,11 @@ import React from "react";
 import { useDocTitle } from "../components/CustomHook";
 import pressArticles from "../lib/pressArticles.js";
 import { useI18n } from "../i18n/I18nContext";
-
-const titleTranslations = {
-  "Berliner Tagesspiegel - Pyeong Chang 2018": "Berliner Tagesspiegel - Pyeong Chang 2018",
-  "Socrates Fachmagazin Sponsoring": "Socrates Magazine Sponsoring",
-  "Oberpfalzmedien Veröffentlichung": "Oberpfalzmedien Publication",
-  "Fridericianerbote 2023": "Fridericianerbote 2023",
-  "KON 37 2008 47 Highlights": "KON 37 2008 47 Highlights",
-  "SKM C258 2009": "SKM C258 2009",
-  "SKM C258 2009 (2)": "SKM C258 2009 (2)",
-  "SKM C258 2009 (3)": "SKM C258 2009 (3)",
-  "SKM C258 2009 (4)": "SKM C258 2009 (4)",
-  "WESST 2022": "WESST 2022",
-  "F2202102.031": "F2202102.031",
-};
+import { getPressTitle } from "../i18n/content/pressTitleTranslations";
 
 const Press = () => {
   const { locale, t } = useI18n();
   useDocTitle(t("press.docTitle"));
-
-  const getTranslatedTitle = (title) => {
-    if (locale === "de") return title;
-    return titleTranslations[title] || title;
-  };
 
   return (
     <div className="bg-white py-12 sm:py-24 mt-40">
@@ -45,7 +27,7 @@ const Press = () => {
                   <span className="text-sm text-gray-500">{article.date}</span>
                   <span className="text-sm text-blue-900 font-semibold">{article.category}</span>
                 </div>
-                <h2 className="text-xl font-bold text-gray-900 mb-4">{getTranslatedTitle(article.title)}</h2>
+                <h2 className="text-xl font-bold text-gray-900 mb-4">{getPressTitle(locale, article.title)}</h2>
                 <div className="w-full h-64 bg-gray-50 rounded-lg overflow-hidden relative group">
                   <embed
                     src={`${article.file}#toolbar=0&navpanes=0&scrollbar=0&statusbar=0&messages=0&view=FitH`}

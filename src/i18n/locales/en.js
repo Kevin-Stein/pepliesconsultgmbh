@@ -67,6 +67,21 @@ const en = {
     mailUs: "Email us:",
     country: "Germany",
   },
+  privacy: {
+    docTitle: "peplies consult - Privacy Policy",
+    title: "Privacy Policy",
+    section1Heading: "1. Privacy at a glance",
+    section1Subheading: "General information",
+    section1Body:
+      "The following notes provide a simple overview of what happens to your personal data when you visit this website. Personal data is any data with which you can be personally identified.",
+    section2Heading: "2. Data collection on our website",
+    section2Subheading: "Who is responsible for data collection on this website?",
+    section2Body:
+      "The data processing on this website is carried out by the website operator. You can find their contact details in the legal notice of this website.",
+    section3Heading: "3. Your rights",
+    section3Body:
+      "You have the right to receive information about the origin, recipient and purpose of your stored personal data at any time free of charge. You also have the right to request the correction or blocking of this data. If you have given your consent to data processing, you can revoke this consent at any time. You also have the right to request the restriction of the processing of your personal data.",
+  },
   legal: {
     docTitle: "peplies consult - Legal Notice",
     title: "Legal Notice",

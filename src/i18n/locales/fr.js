@@ -67,6 +67,21 @@ const fr = {
     mailUs: "Envoyez-nous un e-mail :",
     country: "Allemagne",
   },
+  privacy: {
+    docTitle: "peplies consult - Politique de confidentialité",
+    title: "Politique de confidentialité",
+    section1Heading: "1. La protection des données en bref",
+    section1Subheading: "Informations générales",
+    section1Body:
+      "Les informations suivantes donnent un aperçu simple de ce qu'il advient de vos données personnelles lorsque vous visitez ce site web. Les données personnelles sont toutes les données permettant de vous identifier personnellement.",
+    section2Heading: "2. Collecte des données sur notre site web",
+    section2Subheading: "Qui est responsable de la collecte des données sur ce site web ?",
+    section2Body:
+      "Le traitement des données sur ce site web est effectué par l'exploitant du site. Vous pouvez trouver ses coordonnées dans les mentions légales de ce site web.",
+    section3Heading: "3. Vos droits",
+    section3Body:
+      "Vous avez à tout moment le droit d'obtenir gratuitement des informations sur l'origine, le destinataire et la finalité de vos données personnelles enregistrées. Vous avez également le droit d'exiger la correction ou le blocage de ces données. Si vous avez donné votre consentement au traitement des données, vous pouvez révoquer ce consentement à tout moment. Vous avez en outre le droit d'exiger la limitation du traitement de vos données personnelles.",
+  },
   legal: {
     docTitle: "peplies consult - Mentions légales",
     title: "Mentions légales",

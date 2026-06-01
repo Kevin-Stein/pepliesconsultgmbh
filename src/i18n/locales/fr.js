@@ -184,6 +184,13 @@ const fr = {
     docTitle: "peplies consult - RP, Print, Affiche",
     title: "RP | Print | Affiches",
     empty: "Le materiel de campagne sera bientot publie ici.",
+    galleryIntro: "Une selection de nos campagnes RP, print et affichage dans une galerie moderne.",
+    imageSectionTitle: "Campagnes image",
+    pdfSectionTitle: "Campagnes PDF",
+    items: "elements",
+    openImage: "Ouvrir l'image :",
+    openPdf: "Ouvrir le PDF :",
+    openPdfCta: "Ouvrir le PDF dans un nouvel onglet",
   },
   tv: {
     docTitle: "peplies consult - Spots TV",

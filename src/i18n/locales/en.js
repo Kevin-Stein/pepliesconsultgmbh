@@ -184,6 +184,13 @@ const en = {
     docTitle: "peplies consult - PR, Print, Poster",
     title: "PR | Print | Posters",
     empty: "Campaign material will be published here soon.",
+    galleryIntro: "A curated selection of our PR, print, and poster campaigns in a modern gallery.",
+    imageSectionTitle: "Image Campaigns",
+    pdfSectionTitle: "PDF Campaigns",
+    items: "items",
+    openImage: "Open image:",
+    openPdf: "Open PDF:",
+    openPdfCta: "Open PDF in a new tab",
   },
   tv: {
     docTitle: "peplies consult - TV Commercials",

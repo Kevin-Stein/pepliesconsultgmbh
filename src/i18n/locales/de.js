@@ -184,6 +184,13 @@ const de = {
     docTitle: "peplies consult - PR,Print,Plakat",
     title: "PR | Print | Plakate",
     empty: "Kampagnenmaterial wird in Kurze hier veroffentlicht.",
+    galleryIntro: "Eine Auswahl unserer PR-, Print- und Plakatkampagnen als moderne Galerie.",
+    imageSectionTitle: "Bildmotive",
+    pdfSectionTitle: "PDF-Kampagnen",
+    items: "Elemente",
+    openImage: "Bild offnen:",
+    openPdf: "PDF offnen:",
+    openPdfCta: "Als PDF in neuem Tab ansehen",
   },
   tv: {
     docTitle: "peplies consult - TV Werbespots",

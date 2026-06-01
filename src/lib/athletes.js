@@ -1304,12 +1304,14 @@ export const getAthletes = (language = "de") => {
 
   const pick = (category, key) => {
     if (!key) return key;
-    return (
-      langTranslations[category]?.[key] ??
-      translations.en[category]?.[key] ??
-      translations.de[category]?.[key] ??
-      key
-    );
+    // German is our source dataset language for most free-text fields.
+    // Do not fall back to English when locale is "de".
+    if (lang === "de") {
+      return langTranslations[category]?.[key] ?? key;
+    }
+
+    // For non-DE locales: prefer locale-specific mapping, then English, then raw source text.
+    return langTranslations[category]?.[key] ?? translations.en[category]?.[key] ?? key;
   };
 
   return athletes.map((athlete) => {

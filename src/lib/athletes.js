@@ -974,7 +974,6 @@ const athletes = [
     firstName: "Martina",
     lastName: "Zellner",
     achievements: [
-      "Auch bekannt als Martina Seidl",
       "Zweifache olympische Silbermedaillengewinnerin",
       "Weltmeisterin in der Staffel",
       "Mehrere WM- und Weltcup-Podestplätze",
@@ -993,11 +992,7 @@ const athletes = [
   {
     firstName: "Susanne",
     lastName: "Riesch",
-    achievements: [
-      "Weltcupsiegerin im Teamwettbewerb",
-      "Mehrfache Top-10-Platzierungen im alpinen Ski-Weltcup",
-      "Langjährige Athletin im internationalen Weltcup-Zirkus",
-    ],
+    achievements: [],
     sportDiscipline: "Ski Alpin",
     birthday: "",
     club: "",

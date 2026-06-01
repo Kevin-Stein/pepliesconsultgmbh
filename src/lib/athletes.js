@@ -1,3 +1,48 @@
+const normalizeToken = (value = "") =>
+  value
+    .normalize("NFD")
+    .replace(/[\u0300-\u036f]/g, "")
+    .toLowerCase()
+    .replace(/[^a-z0-9]/g, "");
+
+const athleteImagesContext = require.context("../images/athletes/athlets images", true, /\.(png|jpe?g|webp|gif)$/i);
+
+const athleteLocalImages = athleteImagesContext
+  .keys()
+  .map((key) => {
+    const fileName = key.split("/").pop() || "";
+    const normalizedName = normalizeToken(fileName);
+    const kind = normalizedName.includes("portrait")
+      ? "portrait"
+      : normalizedName.includes("action")
+        ? "action"
+        : "";
+    return {
+      kind,
+      normalizedName,
+      src: athleteImagesContext(key),
+    };
+  })
+  .filter((img) => img.kind);
+
+const matchesAthleteName = (fileNameNorm, firstNameNorm, lastNameNorm) => {
+  if (!fileNameNorm || !firstNameNorm || !lastNameNorm) return false;
+  if (fileNameNorm.includes(firstNameNorm) && fileNameNorm.includes(lastNameNorm)) return true;
+  const firstShort = firstNameNorm.slice(0, Math.max(3, Math.min(5, firstNameNorm.length)));
+  const lastShort = lastNameNorm.slice(0, Math.max(3, Math.min(5, lastNameNorm.length)));
+  return fileNameNorm.includes(firstShort) && fileNameNorm.includes(lastShort);
+};
+
+const getLocalAthleteImage = (firstName, lastName, kind) => {
+  const firstNameNorm = normalizeToken(firstName);
+  const lastNameNorm = normalizeToken(lastName);
+  const directMatch = athleteLocalImages.find(
+    (img) => img.kind === kind && matchesAthleteName(img.normalizedName, firstNameNorm, lastNameNorm)
+  );
+  if (directMatch) return directMatch.src;
+  return "";
+};
+
 const athletes = [
   // Current Athletes
   {
@@ -1239,6 +1284,9 @@ export const getAthletes = (language = "de") => {
   };
 
   return athletes.map((athlete) => {
+    const localPortrait = getLocalAthleteImage(athlete.firstName, athlete.lastName, "portrait");
+    const localAction = getLocalAthleteImage(athlete.firstName, athlete.lastName, "action");
+
     const translatedAchievements = (athlete.achievements || []).map((achievement) => pick("achievements", achievement));
 
     const translatedInterests = (athlete.interests || []).map((interest) => pick("interests", interest));
@@ -1271,6 +1319,8 @@ export const getAthletes = (language = "de") => {
 
     return {
       ...athlete,
+      portraitImageURL: localPortrait || athlete.portraitImageURL,
+      actionImageURL: localAction || athlete.actionImageURL,
       sportDiscipline: disc || athlete.sportDiscipline,
       profession: translatedProfession,
       achievements: translatedAchievements,

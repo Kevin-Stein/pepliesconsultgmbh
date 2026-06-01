@@ -138,6 +138,7 @@ const fr = {
   hallOfFame: {
     docTitle: "peplies consult - Hall of Fame",
     title: "Hall of Fame",
+    subtitle: '("Legendes du sport" ou projets pour lesquels peplies consult GmbH assumait la responsabilite de commercialisation)',
     achievementsHeading: "Faits marquants",
     noAchievements: "Aucun palmarès renseigné.",
     flipHint: "Survoler ou appuyer pour retourner",

@@ -138,6 +138,7 @@ const es = {
   hallOfFame: {
     docTitle: "peplies consult - Salón de la fama",
     title: "Salón de la fama",
+    subtitle: '("Leyendas del deporte" o proyectos para los que peplies consult GmbH tuvo responsabilidad de comercializacion)',
     achievementsHeading: "Logros destacados",
     noAchievements: "Sin logros registrados.",
     flipHint: "Pasa el cursor o toca para girar",

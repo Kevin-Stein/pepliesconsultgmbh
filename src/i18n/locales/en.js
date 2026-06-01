@@ -138,6 +138,7 @@ const en = {
   hallOfFame: {
     docTitle: "peplies consult - Hall of Fame",
     title: "Hall of Fame",
+    subtitle: '("Sports legends" or projects for which peplies consult GmbH had marketing responsibility)',
     achievementsHeading: "Career highlights",
     noAchievements: "No achievements on file.",
     flipHint: "Hover or tap to flip",

@@ -31,19 +31,6 @@ const splitMemberText = (member = "") => {
   };
 };
 
-const DeceasedCrossIcon = () => (
-  <svg
-    className="inline-block h-4 w-4 text-gray-500 ml-2 align-middle"
-    viewBox="0 0 24 24"
-    fill="none"
-    stroke="currentColor"
-    strokeWidth="2"
-    aria-hidden
-  >
-    <path strokeLinecap="round" strokeLinejoin="round" d="M12 4v16M8 9h8" />
-  </svg>
-);
-
 const ScientificAdvisoryBoard = () => {
   const { t } = useI18n();
   useDocTitle(t("scientificAdvisoryBoard.docTitle"));
@@ -64,12 +51,9 @@ const ScientificAdvisoryBoard = () => {
             <ul className="space-y-3 text-base sm:text-lg text-gray-700 leading-relaxed">
               {(Array.isArray(economicsMembers) ? economicsMembers : []).map((member) => {
                 const { name, details } = splitMemberText(member);
-                const showDeceasedIcon = name.includes("Michael Wehrheim");
                 return (
                   <li key={member}>
-                    <strong>{name}</strong>
-                    {showDeceasedIcon && <DeceasedCrossIcon />}
-                    {showDeceasedIcon && <span className="sr-only"> (verstorben)</span>}
+                    <strong>{name},</strong>
                     {details ? ` ${details}` : ""}
                   </li>
                 );
@@ -84,7 +68,7 @@ const ScientificAdvisoryBoard = () => {
                 const { name, details } = splitMemberText(member);
                 return (
                   <li key={member}>
-                    <strong>{name}</strong>
+                    <strong>{name},</strong>
                     {details ? ` ${details}` : ""}
                   </li>
                 );

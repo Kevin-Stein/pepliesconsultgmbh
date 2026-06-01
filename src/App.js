@@ -36,12 +36,15 @@ export const AuthContext = React.createContext({
 });
 
 function App() {
-  const [isAuthenticated, setIsAuthenticated] = useState(false);
+  const [isAuthenticated, setIsAuthenticated] = useState(() => {
+    try {
+      return localStorage.getItem("isAuthenticated") === "true";
+    } catch {
+      return false;
+    }
+  });
 
   useEffect(() => {
-    const authStatus = localStorage.getItem("isAuthenticated") === "true";
-    setIsAuthenticated(authStatus);
-
     const handleStorageChange = (e) => {
       if (e.key === "isAuthenticated") {
         setIsAuthenticated(e.newValue === "true");

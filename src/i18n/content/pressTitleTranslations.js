@@ -23,7 +23,7 @@ const pressTitleTranslationsByLocale = {
       'Financial Times - Feature on Stephan Peplies and Andrea Henkel: "Armed ideal daughter-in-law"',
     'Die Welt - Reportage uber Sportmanager Ralf Grengel und Stephan Peplies: "Marktplatz der Manager"':
       'Die Welt - Feature on sports manager Ralf Grengel and Stephan Peplies: "Marketplace of managers"',
-    "Campus Magazin, Universitat Bayreuth - Dozenten-Team MBA Sportmanagement":
+    "Campus Magazin, Universität Bayreuth - Dozenten-Team MBA Sportmanagement":
       "Campus Magazine, University of Bayreuth - MBA Sports Management teaching team",
     'Wochenendspiegel/Freie Presse - Interview mit Stephan Peplies: "RTL-Dschungelkrone oder Olympiasieg?"':
       'Wochenendspiegel/Freie Presse - Interview with Stephan Peplies: "RTL jungle crown or Olympic victory?"',
@@ -49,7 +49,7 @@ const pressTitleTranslationsByLocale = {
       'Financial Times - Reportage sur Stephan Peplies et Andrea Henkel: "La belle-fille ideale armee"',
     'Die Welt - Reportage uber Sportmanager Ralf Grengel und Stephan Peplies: "Marktplatz der Manager"':
       'Die Welt - Reportage sur le manager sportif Ralf Grengel et Stephan Peplies: "Marche des managers"',
-    "Campus Magazin, Universitat Bayreuth - Dozenten-Team MBA Sportmanagement":
+    "Campus Magazin, Universität Bayreuth - Dozenten-Team MBA Sportmanagement":
       "Campus Magazine, Universite de Bayreuth - Equipe enseignante du MBA management du sport",
     'Wochenendspiegel/Freie Presse - Interview mit Stephan Peplies: "RTL-Dschungelkrone oder Olympiasieg?"':
       'Wochenendspiegel/Freie Presse - Interview avec Stephan Peplies: "Couronne RTL jungle ou victoire olympique ?"',
@@ -75,7 +75,7 @@ const pressTitleTranslationsByLocale = {
       'Financial Times - Reportaje sobre Stephan Peplies y Andrea Henkel: "La nuera ideal armada"',
     'Die Welt - Reportage uber Sportmanager Ralf Grengel und Stephan Peplies: "Marktplatz der Manager"':
       'Die Welt - Reportaje sobre el manager deportivo Ralf Grengel y Stephan Peplies: "Mercado de managers"',
-    "Campus Magazin, Universitat Bayreuth - Dozenten-Team MBA Sportmanagement":
+    "Campus Magazin, Universität Bayreuth - Dozenten-Team MBA Sportmanagement":
       "Campus Magazine, Universidad de Bayreuth - Equipo docente del MBA en gestion deportiva",
     'Wochenendspiegel/Freie Presse - Interview mit Stephan Peplies: "RTL-Dschungelkrone oder Olympiasieg?"':
       'Wochenendspiegel/Freie Presse - Entrevista con Stephan Peplies: "Corona de la selva RTL o victoria olimpica?"',

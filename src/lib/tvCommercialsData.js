@@ -174,6 +174,32 @@ const tvCommercialsData = [
       "https://res.cloudinary.com/dbpoconup/video/upload/v1774095244/VKF-Spot_02_f%C3%BCr_Rupp_Hubrach_mit_Eric_Frenzel_kyt32b.mp4",
     thumbnailUrl: "",
   },
+  {
+    id: "tv-spot-15",
+    title: {
+      de: "Airbnb TV-Spot mit Karl Gieger",
+      en: "Airbnb TV spot with Karl Gieger",
+      fr: "Spot TV Airbnb avec Karl Gieger",
+      es: "Spot TV Airbnb con Karl Gieger",
+    },
+    date: "2025",
+    videoUrl:
+      "https://res.cloudinary.com/dbpoconup/video/upload/v1780415337/AIRBNB_KARL_GIEGER_FINAL_2_nrsoci.mp4",
+    thumbnailUrl: "",
+  },
+  {
+    id: "tv-spot-16",
+    title: {
+      de: "Rupp Hubrach Testimonial mit Eric Frenzel",
+      en: "Rupp Hubrach testimonial with Eric Frenzel",
+      fr: "Témoignage Rupp Hubrach avec Eric Frenzel",
+      es: "Testimonial Rupp Hubrach con Eric Frenzel",
+    },
+    date: "2026",
+    videoUrl:
+      "https://res.cloudinary.com/dbpoconup/video/upload/v1780415589/rh_frenzel_testimonial_007.prproj_zfmxxc.mp4",
+    thumbnailUrl: "",
+  },
 ];
 
 export default tvCommercialsData;

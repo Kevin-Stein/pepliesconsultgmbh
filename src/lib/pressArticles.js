@@ -56,7 +56,7 @@ const pressArticles = [
     category: "News",
   },
   {
-    title: "Campus Magazin, Universitat Bayreuth - Dozenten-Team MBA Sportmanagement",
+    title: "Campus Magazin, Universität Bayreuth - Dozenten-Team MBA Sportmanagement",
     date: "2007",
     file: "/press/SKM_C25820090912010.pdf",
     category: "News",

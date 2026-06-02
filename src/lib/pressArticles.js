@@ -31,6 +31,13 @@ const pressArticles = [
   },
   {
     title:
+      'Horizont Sport Business - Kolumne von Stephan Peplies: "Ohne Sockel kein Katalysatoreffekt"',
+    date: "2008",
+    file: "/press/Ohne Sockel kein Katalysatoreffekt.pdf",
+    category: "Magazine",
+  },
+  {
+    title:
       'Frankfurter Allgemeine Zeitung - Reportage über Stephan Peplies und Andrea Henkel: "Der überraschende Werbefeldzug der Unvermittelbaren"',
     date: "07.01.2003",
     file: "/press/SKM_C25820090912000.pdf",

@@ -12,7 +12,7 @@ const HERO_LOGO_STYLE = {
 
 const PHONE_DISPLAY = ["0049-178-8271600", "0049-152-53823353"];
 const PHONE_TEL = ["+491788271600", "+4915253823353"];
-const EMAILS = ["peplies@pepliesconsult.de", "kuerzer@pepliesconsult.de"];
+const EMAILS = ["peplies@pepliesconsult.de", "lucina.kuerzer@pepliesconsult.de"];
 
 const PhoneIcon = () => (
   <svg className="h-7 w-7" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" aria-hidden>

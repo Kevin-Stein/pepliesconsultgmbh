@@ -15,6 +15,8 @@ const pressTitleTranslationsByLocale = {
       'Fridericianerbote - Interview with Stephan Peplies: "Stephan Peplies - from advanced Latin to sports marketing"',
     'Werben & Verkaufen - Kolumne von Stephan Peplies: "TV Spot IKEA - Auf den Punkt gebracht"':
       'Werben & Verkaufen - Column by Stephan Peplies: "IKEA TV spot - right to the point"',
+    'Horizont Sport Business - Kolumne von Stephan Peplies: "Ohne Sockel kein Katalysatoreffekt"':
+      'Horizont Sport Business - Column by Stephan Peplies: "No pedestal, no catalyst effect"',
     'Frankfurter Allgemeine Zeitung - Reportage uber Stephan Peplies und Andrea Henkel: "Der uberraschende Werbefeldzug der Unvermittelbaren"':
       'Frankfurter Allgemeine Zeitung - Feature on Stephan Peplies and Andrea Henkel: "The surprising ad campaign of the supposedly unmarketable"',
     'Financial Times - Reportage uber Stephan Peplies und Andrea Henkel: "Bewaffnete Wunschschwiegertochter"':
@@ -39,6 +41,8 @@ const pressTitleTranslationsByLocale = {
       'Fridericianerbote - Interview avec Stephan Peplies: "Stephan Peplies - du latin au marketing sportif"',
     'Werben & Verkaufen - Kolumne von Stephan Peplies: "TV Spot IKEA - Auf den Punkt gebracht"':
       'Werben & Verkaufen - Chronique de Stephan Peplies: "Spot TV IKEA - droit au but"',
+    'Horizont Sport Business - Kolumne von Stephan Peplies: "Ohne Sockel kein Katalysatoreffekt"':
+      'Horizont Sport Business - Chronique de Stephan Peplies: "Sans socle, pas d effet catalyseur"',
     'Frankfurter Allgemeine Zeitung - Reportage uber Stephan Peplies und Andrea Henkel: "Der uberraschende Werbefeldzug der Unvermittelbaren"':
       'Frankfurter Allgemeine Zeitung - Reportage sur Stephan Peplies et Andrea Henkel: "La surprenante campagne publicitaire des soi-disant invendables"',
     'Financial Times - Reportage uber Stephan Peplies und Andrea Henkel: "Bewaffnete Wunschschwiegertochter"':
@@ -63,6 +67,8 @@ const pressTitleTranslationsByLocale = {
       'Fridericianerbote - Entrevista con Stephan Peplies: "Stephan Peplies - del latin al marketing deportivo"',
     'Werben & Verkaufen - Kolumne von Stephan Peplies: "TV Spot IKEA - Auf den Punkt gebracht"':
       'Werben & Verkaufen - Columna de Stephan Peplies: "Spot de TV IKEA - directo al grano"',
+    'Horizont Sport Business - Kolumne von Stephan Peplies: "Ohne Sockel kein Katalysatoreffekt"':
+      'Horizont Sport Business - Columna de Stephan Peplies: "Sin pedestal, sin efecto catalizador"',
     'Frankfurter Allgemeine Zeitung - Reportage uber Stephan Peplies und Andrea Henkel: "Der uberraschende Werbefeldzug der Unvermittelbaren"':
       'Frankfurter Allgemeine Zeitung - Reportaje sobre Stephan Peplies y Andrea Henkel: "La sorprendente campana publicitaria de los supuestamente invendibles"',
     'Financial Times - Reportage uber Stephan Peplies und Andrea Henkel: "Bewaffnete Wunschschwiegertochter"':

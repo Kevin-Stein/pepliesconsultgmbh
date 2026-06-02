@@ -134,6 +134,7 @@ const de = {
   companyReferences: {
     docTitle: "peplies consult - Unternehmen Sportrechtevermarktung/Sportsponsoring",
     title: "Unternehmen Sportrechtevermarktung/Sportsponsoring",
+    pageIntro: "Auswahl von Unternehmen, die mit der peplies consult GmbH zusammenarbeiten und zusammengearbeitet haben:",
     reference: "Referenz",
   },
   hallOfFame: {

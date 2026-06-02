@@ -134,6 +134,7 @@ const en = {
   companyReferences: {
     docTitle: "peplies consult - Companies — Sports Rights Marketing / Sports Sponsorship",
     title: "Companies — Sports Rights Marketing / Sports Sponsorship",
+    pageIntro: "A selection of companies that work with and have worked with peplies consult GmbH:",
     reference: "Reference",
   },
   hallOfFame: {

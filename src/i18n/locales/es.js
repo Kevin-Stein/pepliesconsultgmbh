@@ -134,6 +134,7 @@ const es = {
   companyReferences: {
     docTitle: "peplies consult - Empresas — derechos deportivos / patrocinio deportivo",
     title: "Empresas — comercialización de derechos deportivos / patrocinio deportivo",
+    pageIntro: "Seleccion de empresas que colaboran o han colaborado con peplies consult GmbH:",
     reference: "Referencia",
   },
   hallOfFame: {

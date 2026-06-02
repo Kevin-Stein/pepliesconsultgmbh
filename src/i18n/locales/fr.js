@@ -139,7 +139,8 @@ const fr = {
   hallOfFame: {
     docTitle: "peplies consult - Hall of Fame",
     title: "Hall of Fame",
-    subtitle: '("Legendes du sport" ou projets pour lesquels peplies consult GmbH assumait la responsabilite de commercialisation)',
+    subtitle:
+      '"Legendes du sport" ou projets pour lesquels peplies consult GmbH assumait ou assume la responsabilite de commercialisation:',
     achievementsHeading: "Faits marquants",
     noAchievements: "Aucun palmarès renseigné.",
     flipHint: "Survoler ou appuyer pour retourner",
@@ -147,6 +148,7 @@ const fr = {
   press: {
     docTitle: "peplies consult - Presse",
     title: "Presse",
+    pageIntro: "Selection de reportages sur peplies consult GmbH:",
     openHint: "Cliquer pour ouvrir",
     unavailable: "Ce document n'est actuellement pas disponible.",
     categories: {
@@ -186,7 +188,8 @@ const fr = {
     docTitle: "peplies consult - RP, Print, Affiche",
     title: "RP | Print | Affiches",
     empty: "Le materiel de campagne sera bientot publie ici.",
-    galleryIntro: "Une selection de nos campagnes RP, print et affichage.",
+    galleryIntro:
+      "Selection de campagnes de communication classiques planifiees et realisees par peplies consult GmbH:",
     imageSectionTitle: "Campagnes image",
     pdfSectionTitle: "Campagnes PDF",
     items: "elements",

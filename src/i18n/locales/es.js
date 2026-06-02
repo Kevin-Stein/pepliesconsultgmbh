@@ -139,7 +139,8 @@ const es = {
   hallOfFame: {
     docTitle: "peplies consult - Salón de la fama",
     title: "Salón de la fama",
-    subtitle: '("Leyendas del deporte" o proyectos para los que peplies consult GmbH tuvo responsabilidad de comercializacion)',
+    subtitle:
+      '"Leyendas del deporte" o proyectos para los que peplies consult GmbH tuvo o tiene responsabilidad de comercializacion:',
     achievementsHeading: "Logros destacados",
     noAchievements: "Sin logros registrados.",
     flipHint: "Pasa el cursor o toca para girar",
@@ -147,6 +148,7 @@ const es = {
   press: {
     docTitle: "peplies consult - Prensa",
     title: "Prensa",
+    pageIntro: "Seleccion de reportajes sobre peplies consult GmbH:",
     openHint: "Haga clic para abrir",
     unavailable: "Este documento no esta disponible actualmente.",
     categories: {
@@ -186,7 +188,8 @@ const es = {
     docTitle: "peplies consult - RP, Impreso, Cartel",
     title: "RP | Impreso | Carteles",
     empty: "El material de campana se publicara pronto aqui.",
-    galleryIntro: "Una seleccion de nuestras campanas de PR, impresos y carteles.",
+    galleryIntro:
+      "Seleccion de campanas de comunicacion clasicas planificadas y realizadas por peplies consult GmbH:",
     imageSectionTitle: "Campanas de imagen",
     pdfSectionTitle: "Campanas PDF",
     items: "elementos",

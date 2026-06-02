@@ -17,10 +17,10 @@ const tvCommercialsData = [
   {
     id: "tv-spot-2",
     title: {
-      de: "Eunova TV Spot für GlaxoSmithKline mit Andrea Henkel - Sommerversion",
-      en: "Eunova TV spot for GlaxoSmithKline with Andrea Henkel – summer version",
-      fr: "Spot TV Eunova pour GlaxoSmithKline avec Andrea Henkel – version été",
-      es: "Spot TV Eunova para GlaxoSmithKline con Andrea Henkel – versión verano",
+      de: "Eunova TV Spot für GlaxoSmithKline mit Andrea Henkel - Winterversion",
+      en: "Eunova TV spot for GlaxoSmithKline with Andrea Henkel – winter version",
+      fr: "Spot TV Eunova pour GlaxoSmithKline avec Andrea Henkel – version hiver",
+      es: "Spot TV Eunova para GlaxoSmithKline con Andrea Henkel – versión invierno",
     },
     date: "2003 - Winterversion 1",
     videoUrl: "https://res.cloudinary.com/dbpoconup/video/upload/v1743612296/Andrea_Henkel_Winter_15sek_cogrdk.mp4",
@@ -164,10 +164,10 @@ const tvCommercialsData = [
   {
     id: "tv-spot-14",
     title: {
-      de: "VKF-Spot 02 für Rupp Hubrach mit Eric Frenzel",
-      en: "VKF spot 02 for Rupp Hubrach with Eric Frenzel",
-      fr: "Spot VKF 02 pour Rupp Hubrach avec Eric Frenzel",
-      es: "Spot VKF 02 para Rupp Hubrach con Eric Frenzel",
+      de: "VKF-Spot 02 für rupp+hubrach mit Eric Frenzel",
+      en: "VKF spot 02 for rupp+hubrach with Eric Frenzel",
+      fr: "Spot VKF 02 pour rupp+hubrach avec Eric Frenzel",
+      es: "Spot VKF 02 para rupp+hubrach con Eric Frenzel",
     },
     date: "2026",
     videoUrl:
@@ -177,12 +177,12 @@ const tvCommercialsData = [
   {
     id: "tv-spot-15",
     title: {
-      de: "Airbnb TV-Spot mit Karl Gieger",
-      en: "Airbnb TV spot with Karl Gieger",
-      fr: "Spot TV Airbnb avec Karl Gieger",
-      es: "Spot TV Airbnb con Karl Gieger",
+      de: "Airbnb TV-Spot mit Karl Geiger",
+      en: "Airbnb TV spot with Karl Geiger",
+      fr: "Spot TV Airbnb avec Karl Geiger",
+      es: "Spot TV Airbnb con Karl Geiger",
     },
-    date: "2025",
+    date: "2026",
     videoUrl:
       "https://res.cloudinary.com/dbpoconup/video/upload/v1780415337/AIRBNB_KARL_GIEGER_FINAL_2_nrsoci.mp4",
     thumbnailUrl: "",
@@ -190,10 +190,10 @@ const tvCommercialsData = [
   {
     id: "tv-spot-16",
     title: {
-      de: "Rupp Hubrach Testimonial mit Eric Frenzel",
-      en: "Rupp Hubrach testimonial with Eric Frenzel",
-      fr: "Témoignage Rupp Hubrach avec Eric Frenzel",
-      es: "Testimonial Rupp Hubrach con Eric Frenzel",
+      de: "rupp+hubrach Testimonialwerbung mit Eric Frenzel",
+      en: "rupp+hubrach testimonial advertising with Eric Frenzel",
+      fr: "Publicité témoignage rupp+hubrach avec Eric Frenzel",
+      es: "Publicidad testimonial rupp+hubrach con Eric Frenzel",
     },
     date: "2026",
     videoUrl:

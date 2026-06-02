@@ -55,6 +55,8 @@ const Press = () => {
           <div className="w-24 h-1 bg-blue-900 mx-auto"></div>
         </div>
 
+        <p className="max-w-3xl mx-auto text-center text-gray-600 font-medium mb-10">{t("press.pageIntro")}</p>
+
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {normalizedArticles.map((article) => {
             const localPdfSrc = article.fileName ? pressPdfMap[article.fileName] : null;

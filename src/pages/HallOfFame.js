@@ -27,6 +27,11 @@ const AchievementsPanel = ({ athlete, t }) => {
   );
 };
 
+const getDisciplineOriginLine = (athlete) => {
+  const parts = [athlete.sportDiscipline, athlete.originCountryCode ? `(${athlete.originCountryCode})` : ""].filter(Boolean);
+  return parts.join(" ");
+};
+
 function usePrefersHover() {
   const [prefersHover, setPrefersHover] = useState(true);
   useEffect(() => {
@@ -96,6 +101,9 @@ const HallOfFameFlipCard = ({ athlete, t }) => {
               <p className="text-sm sm:text-base font-bold text-blue-900">
                 {athlete.firstName} {athlete.lastName}
               </p>
+              {getDisciplineOriginLine(athlete) && (
+                <p className="mt-1 text-xs sm:text-sm font-semibold text-gray-600">{getDisciplineOriginLine(athlete)}</p>
+              )}
             </div>
             <div className="min-h-0 flex-1 overflow-y-auto overscroll-contain pr-0.5">
               <AchievementsPanel athlete={athlete} t={t} />

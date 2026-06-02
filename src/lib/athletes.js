@@ -636,6 +636,7 @@ const athletes = [
     hobby: "",
     portraitImageURL: "",
     actionImageURL: "",
+    originCountryCode: "GER",
     isFormer: true,
   },
   {
@@ -664,13 +665,14 @@ const athletes = [
     portraitImageURL:
       "https://res.cloudinary.com/dbpoconup/image/upload/v1759138804/Frenzel_Eric_portrait_01_c6bey8.jpg",
     actionImageURL: "",
+    originCountryCode: "GER",
     isFormer: true,
   },
   {
     firstName: "Florian",
     lastName: "Liegl",
     achievements: [],
-    sportDiscipline: "",
+    sportDiscipline: "Skispringen",
     birthday: "",
     club: "",
     interests: ["Sport"],
@@ -678,6 +680,7 @@ const athletes = [
     hobby: "",
     portraitImageURL: "",
     actionImageURL: "",
+    originCountryCode: "AUT",
     isFormer: true,
   },
   {
@@ -693,6 +696,7 @@ const athletes = [
     portraitImageURL: "",
     actionImageURL:
       "https://res.cloudinary.com/dbpoconup/image/upload/v1759153464/Hettich-Walz_Janina_action_xfi3tj.jpg",
+    originCountryCode: "GER",
     isFormer: true,
   },
   {
@@ -712,6 +716,7 @@ const athletes = [
     hobby: "Unternehmungen aller Art mit Freunden und Familie",
     portraitImageURL: "",
     actionImageURL: "",
+    originCountryCode: "GER",
     isFormer: true,
   },
   {
@@ -732,6 +737,7 @@ const athletes = [
     hobby: "",
     portraitImageURL: "",
     actionImageURL: "",
+    originCountryCode: "GER",
     isFormer: true,
   },
   {
@@ -745,14 +751,15 @@ const athletes = [
       "Deutscher Vizemeister 2000 und 2002",
       "Über 80 Länderspiele für Deutschland",
     ],
-    sportDiscipline: "DTM",
+    sportDiscipline: "Fußball",
     birthday: "",
     club: "",
     interests: ["Sport"],
-    profession: "Rennfahrer",
+    profession: "Fußballer",
     hobby: "",
     portraitImageURL: "",
     actionImageURL: "",
+    originCountryCode: "GER",
     isFormer: true,
   },
   {
@@ -763,7 +770,7 @@ const athletes = [
       "Zweifache WM-Silbermedaillengewinnerin (Staffel)",
       "Über 15 Jahre Teil der deutschen Langlauf-Nationalmannschaft",
     ],
-    sportDiscipline: "Langlauf",
+    sportDiscipline: "Skilanglauf",
     birthday: "",
     club: "",
     interests: ["Sport"],
@@ -771,6 +778,7 @@ const athletes = [
     hobby: "",
     portraitImageURL: "",
     actionImageURL: "",
+    originCountryCode: "GER",
     isFormer: true,
   },
   {
@@ -791,6 +799,7 @@ const athletes = [
     hobby: "",
     portraitImageURL: "",
     actionImageURL: "",
+    originCountryCode: "GER",
     isFormer: true,
   },
   {
@@ -811,6 +820,7 @@ const athletes = [
     hobby: "",
     portraitImageURL: "",
     actionImageURL: "",
+    originCountryCode: "SWE",
     isFormer: true,
   },
   {
@@ -831,6 +841,7 @@ const athletes = [
     hobby: "",
     portraitImageURL: "",
     actionImageURL: "",
+    originCountryCode: "GER",
     isFormer: true,
   },
   {
@@ -850,6 +861,7 @@ const athletes = [
     hobby: "",
     portraitImageURL: "",
     actionImageURL: "",
+    originCountryCode: "GER",
     isFormer: true,
   },
   {
@@ -869,6 +881,7 @@ const athletes = [
     hobby: "",
     portraitImageURL: "",
     actionImageURL: "",
+    originCountryCode: "BEL",
     isFormer: true,
   },
   {
@@ -890,6 +903,7 @@ const athletes = [
     hobby: "",
     portraitImageURL: "",
     actionImageURL: "",
+    originCountryCode: "GER",
     isFormer: true,
   },
   {
@@ -910,6 +924,7 @@ const athletes = [
     hobby: "",
     portraitImageURL: "",
     actionImageURL: "",
+    originCountryCode: "CZE",
     isFormer: true,
   },
   {
@@ -930,6 +945,7 @@ const athletes = [
     hobby: "",
     portraitImageURL: "",
     actionImageURL: "",
+    originCountryCode: "GER",
     isFormer: true,
   },
   {
@@ -949,6 +965,7 @@ const athletes = [
     hobby: "",
     portraitImageURL: "",
     actionImageURL: "",
+    originCountryCode: "LUX",
     isFormer: true,
   },
   {
@@ -968,6 +985,7 @@ const athletes = [
     hobby: "",
     portraitImageURL: "",
     actionImageURL: "",
+    originCountryCode: "GER",
     isFormer: true,
   },
   {
@@ -987,6 +1005,7 @@ const athletes = [
     hobby: "",
     portraitImageURL: "",
     actionImageURL: "",
+    originCountryCode: "GER",
     isFormer: true,
   },
   {
@@ -1001,6 +1020,7 @@ const athletes = [
     hobby: "",
     portraitImageURL: "",
     actionImageURL: "",
+    originCountryCode: "GER",
     isFormer: true,
   },
   {
@@ -1019,6 +1039,7 @@ const athletes = [
     hobby: "",
     portraitImageURL: "",
     actionImageURL: "",
+    originCountryCode: "AUT",
     isFormer: true,
   },
   {
@@ -1039,6 +1060,7 @@ const athletes = [
     hobby: "",
     portraitImageURL: "",
     actionImageURL: "",
+    originCountryCode: "GER",
     isFormer: true,
   },
   {
@@ -1059,6 +1081,7 @@ const athletes = [
     hobby: "",
     portraitImageURL: "",
     actionImageURL: "",
+    originCountryCode: "SWE",
     isFormer: true,
   },
   {
@@ -1077,6 +1100,7 @@ const athletes = [
     hobby: "",
     portraitImageURL: "",
     actionImageURL: "",
+    originCountryCode: "SWE",
     isFormer: true,
   },
 ];
@@ -1096,6 +1120,7 @@ const translations = {
       "Formel 1": "Formel 1",
       "DTM": "DTM",
       "Langlauf": "Langlauf",
+      "Skilanglauf": "Skilanglauf",
     },
     professions: {
       "Skispringerin": "Skispringerin",
@@ -1142,6 +1167,7 @@ const translations = {
       "Formel 1": "Formula 1",
       "DTM": "DTM",
       "Langlauf": "Cross-Country Skiing",
+      "Skilanglauf": "Cross-Country Skiing",
     },
     professions: {
       "Skispringerin": "Ski Jumper",
@@ -1490,6 +1516,7 @@ const translations = {
       "Formel 1": "Formule 1",
       DTM: "DTM",
       Langlauf: "Ski de fond",
+      Skilanglauf: "Ski de fond",
     },
     professions: {
       Skispringerin: "Sauteuse à ski",
@@ -1536,6 +1563,7 @@ const translations = {
       "Formel 1": "Fórmula 1",
       DTM: "DTM",
       Langlauf: "Esquí de fondo",
+      Skilanglauf: "Esquí de fondo",
     },
     professions: {
       Skispringerin: "Saltadora de esquí",

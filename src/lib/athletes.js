@@ -647,6 +647,7 @@ const athletes = [
       "7facher Weltmeister 2011-2019",
       "18 WM-Medaillen 2011-2023",
       "5facher Gesamtweltcupsieger 2013-2017",
+      "Erfolgreichster deutscher Skisportler aller Zeiten",
     ],
     sportDiscipline: "Nordische Kombination",
     birthday: "21.11.1988",
@@ -671,7 +672,7 @@ const athletes = [
   {
     firstName: "Florian",
     lastName: "Liegl",
-    achievements: [],
+    achievements: ["Zweifacher Juniorenweltmeister", "Gesamtweltcupfünfter 2002/2003"],
     sportDiscipline: "Skispringen",
     birthday: "",
     club: "",
@@ -744,12 +745,12 @@ const athletes = [
     firstName: "Bernd",
     lastName: "Schneider",
     achievements: [
-      "Vize-Weltmeister (WM 2002)",
+      "Vizeweltmeister 2002",
+      "WM-Dritter 2006",
+      "81 Länderspiele für Deutschland",
       "Vize-Europameister (EM 2008)",
-      "Confederations-Cup-Dritter (2005)",
       "Zweifacher DFB-Pokalsieger mit Bayer 04 Leverkusen",
       "Deutscher Vizemeister 2000 und 2002",
-      "Über 80 Länderspiele für Deutschland",
     ],
     sportDiscipline: "Fußball",
     birthday: "",
@@ -768,7 +769,7 @@ const athletes = [
     achievements: [
       "Olympische Silbermedaille 2014",
       "Zweifache WM-Silbermedaillengewinnerin (Staffel)",
-      "Über 15 Jahre Teil der deutschen Langlauf-Nationalmannschaft",
+      "Über 15 Jahre Mitglied der deutschen Langlauf-Nationalmannschaft",
     ],
     sportDiscipline: "Skilanglauf",
     birthday: "",
@@ -827,10 +828,10 @@ const athletes = [
     firstName: "Björn",
     lastName: "Kircheisen",
     achievements: [
-      "Zweifache olympische Silbermedaillengewinner",
+      "Zweifacher olympischer Silbermedaillengewinner",
       "WM-Gold 2007",
       "Vier WM-Silbermedaillen",
-      "Zweifache WM-Bronzemedaillengewinner",
+      "Zweifacher WM-Bronzemedaillengewinner",
       "Mehrfacher Team-Erfolg im Weltcup mit Deutschland",
     ],
     sportDiscipline: "Nordische Kombination",
@@ -992,6 +993,7 @@ const athletes = [
     firstName: "Martina",
     lastName: "Zellner",
     achievements: [
+      "Sprintweltmeisterin 1999",
       "Zweifache olympische Silbermedaillengewinnerin",
       "Weltmeisterin in der Staffel",
       "Mehrere WM- und Weltcup-Podestplätze",
@@ -1011,7 +1013,7 @@ const athletes = [
   {
     firstName: "Susanne",
     lastName: "Riesch",
-    achievements: [],
+    achievements: ["2009/2010 Platz 7 Slalomweltcup"],
     sportDiscipline: "Ski Alpin",
     birthday: "",
     club: "",
@@ -1088,6 +1090,11 @@ const athletes = [
     firstName: "Tennis Academy",
     lastName: "Stefan Edberg",
     achievements: [
+      "Gewinner Wimbledon 1988,1990",
+      "Gewinner US Open 1991,1992",
+      "Gewinner Australian Open 1985,1987",
+      "41 Einzeltitel",
+      "Stefan Edberg Tennis Academy im Cascade Resort, Lagos, Algarve, Portugal",
       "Fokus auf Nachwuchsförderung im Tennis für Kinder und Jugendliche",
       "Verbindung von Techniktraining, Athletik und mentaler Entwicklung",
       "Zusammenarbeit mit lokalen Tennisvereinen und nationalen Verbänden",
@@ -1315,16 +1322,16 @@ const translations = {
       "Dritter Platz in der Formel 1 in Silverstone 2023 (erstes F1-Podium)":
         "Third place in Formula 1 at Silverstone 2023 (first F1 podium)",
       "24h-Le-Mans-Sieger 2015 mit Porsche": "24 Hours of Le Mans winner in 2015 with Porsche",
-      "Vize-Weltmeister (WM 2002)": "World Championship runner-up (2002)",
+      "Vizeweltmeister 2002": "World Championship runner-up in 2002",
+      "WM-Dritter 2006": "Third place at the 2006 World Cup",
+      "81 Länderspiele für Deutschland": "81 international caps for Germany",
       "Vize-Europameister (EM 2008)": "European Championship runner-up (2008)",
-      "Confederations-Cup-Dritter (2005)": "Third place at the Confederations Cup (2005)",
       "Zweifacher DFB-Pokalsieger mit Bayer 04 Leverkusen": "Two-time DFB Cup winner with Bayer 04 Leverkusen",
       "Deutscher Vizemeister 2000 und 2002": "German Bundesliga runner-up in 2000 and 2002",
-      "Über 80 Länderspiele für Deutschland": "Over 80 international caps for Germany",
       "Olympische Silbermedaille 2014": "Olympic silver medal in 2014",
       "Zweifache WM-Silbermedaillengewinnerin (Staffel)": "Two-time World Championship silver medalist (relay)",
-      "Über 15 Jahre Teil der deutschen Langlauf-Nationalmannschaft":
-        "Part of the German cross-country skiing national team for over 15 years",
+      "Über 15 Jahre Mitglied der deutschen Langlauf-Nationalmannschaft":
+        "Member of the German cross-country skiing national team for over 15 years",
       "Vier olympische Medaillen (2 Gold)": "Four Olympic medals (2 gold)",
       "16 WM-Medaillen (8 Gold)": "16 World Championship medals (8 gold)",
       "Gesamtweltcupsiegerin 2006/07": "Overall World Cup winner 2006/07",
@@ -1338,10 +1345,10 @@ const translations = {
       "42 Weltcupsiege": "42 World Cup victories",
       "Eine der wenigen Fahrerinnen mit Siegen in allen alpinen Disziplinen":
         "One of the few skiers with wins in all alpine disciplines",
-      "Zweifache olympische Silbermedaillengewinner": "Two-time Olympic silver medal winner",
+      "Zweifacher olympischer Silbermedaillengewinner": "Two-time Olympic silver medal winner",
       "WM-Gold 2007": "World Championship gold in 2007",
       "Vier WM-Silbermedaillen": "Four World Championship silver medals",
-      "Zweifache WM-Bronzemedaillengewinner": "Two-time World Championship bronze medal winner",
+      "Zweifacher WM-Bronzemedaillengewinner": "Two-time World Championship bronze medal winner",
       "Mehrfacher Team-Erfolg im Weltcup mit Deutschland":
         "Multiple World Cup team successes with Germany",
       "Grand-Slam-Titel im Doppel (Wimbledon 2017)": "Grand Slam doubles title (Wimbledon 2017)",
@@ -1382,12 +1389,13 @@ const translations = {
       "Gesamtweltcup-Siegerin im Verfolgungsweltcup (2005/06)":
         "Overall winner of the pursuit World Cup (2005/06)",
       "10 Weltcupsiege im Biathlon": "10 World Cup wins in biathlon",
-      "Martina Seidl (Zellner)": "Martina Seidl (Zellner)",
+      "Sprintweltmeisterin 1999": "Sprint World Champion 1999",
       "Zweifache olympische Silbermedaillengewinnerin": "Two-time Olympic silver medal winner",
       "Weltmeisterin in der Staffel": "World champion in relay",
       "Mehrere WM- und Weltcup-Podestplätze": "Multiple World Championship and World Cup podium finishes",
       "Teil der erfolgreichen deutschen Biathlon-Staffel in den 1990er Jahren":
         "Part of the successful German biathlon relay team in the 1990s",
+      "2009/2010 Platz 7 Slalomweltcup": "2009/2010 7th place in the Slalom World Cup",
       "Formel-1-Team 2006 bis 2019": "Formula 1 team from 2006 to 2019",
       "Sieg beim Italien-GP 2008": "Victory at the 2008 Italian Grand Prix",
       "Schwesterteam von Red Bull Racing mit Fokus auf Junioren- und Talente-Entwicklung":
@@ -1405,6 +1413,15 @@ const translations = {
       "Serie-A-Meister 1999/2000 mit Lazio Rom": "Serie A champion 1999/2000 with Lazio",
       "Gewinner des Europapokals der Pokalsieger 1998/99 mit Lazio":
         "Winner of the UEFA Cup Winners' Cup 1998/99 with Lazio",
+      "Erfolgreichster deutscher Skisportler aller Zeiten": "Most successful German ski athlete of all time",
+      "Zweifacher Juniorenweltmeister": "Two-time Junior World Champion",
+      "Gesamtweltcupfünfter 2002/2003": "Fifth place in the overall World Cup 2002/2003",
+      "Gewinner Wimbledon 1988,1990": "Wimbledon winner 1988, 1990",
+      "Gewinner US Open 1991,1992": "US Open winner 1991, 1992",
+      "Gewinner Australian Open 1985,1987": "Australian Open winner 1985, 1987",
+      "41 Einzeltitel": "41 singles titles",
+      "Stefan Edberg Tennis Academy im Cascade Resort, Lagos, Algarve, Portugal":
+        "Stefan Edberg Tennis Academy at Cascade Resort, Lagos, Algarve, Portugal",
       "Fokus auf Nachwuchsförderung im Tennis für Kinder und Jugendliche":
         "Focus on youth development in tennis for children and teenagers",
       "Verbindung von Techniktraining, Athletik und mentaler Entwicklung":

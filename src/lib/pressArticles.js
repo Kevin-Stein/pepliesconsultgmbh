@@ -73,6 +73,42 @@ const pressArticles = [
     file: "/press/P 10 F2202102.031.pdf",
     category: "News",
   },
+  {
+    title: 'SPORT BILD - Reportage Gschwendner Tee mit Interview Lars Dobbertin: "Bender Zwillinge Eistee Werbung"',
+    date: "",
+    file: "/press/HP_B_Tee_SPOBI-ReportageBender_azkze5.pdf",
+    category: "Magazine",
+  },
+  {
+    title: "Abendzeitung - Reportage TeeGschwendner mit den Bender-Zwillingen",
+    date: "",
+    file: "/press/HP_B_TeeGschwendner_Abendzeitung_Bender_razpkl.pdf",
+    category: "News",
+  },
+  {
+    title: "PR-Beispiel - Eric Frenzel-Uhr für C. H. Wolf mit Eric Frenzel",
+    date: "2020",
+    file: "/press/HP_B_PR_Beispiel_Frenzel_Uhr_C.H.Wolf_kgeaci.pdf",
+    category: "News",
+  },
+  {
+    title: "PR-Kolumnen - Bernd Schneider",
+    date: "",
+    file: "/press/HP_B_Bernd_Schneider_PR_Kolumnen_pvp1ri.pdf",
+    category: "Magazine",
+  },
+  {
+    title: 'Presse - Nach-Karriere-Projekt „Eric-Frenzel-Trails“ (Teil 1)',
+    date: "",
+    file: "/press/Nach_Karriere_Projekt_-_Eric_Frenzel_Trails_01_iwan5k.pdf",
+    category: "News",
+  },
+  {
+    title: 'Presse - Nach-Karriere-Projekt „Eric-Frenzel-Trails“ (Teil 2)',
+    date: "",
+    file: "/press/Nach_Karriere_Projekt_-_Eric_Frenzel_Trails_02_ohhjxa.pdf",
+    category: "News",
+  },
 ];
 
 export default pressArticles;

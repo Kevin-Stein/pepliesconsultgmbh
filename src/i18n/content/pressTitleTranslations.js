@@ -29,6 +29,17 @@ const pressTitleTranslationsByLocale = {
       'Wochenendspiegel/Freie Presse - Interview with Stephan Peplies: "RTL jungle crown or Olympic victory?"',
     'Frankfurter Allgemeine Zeitung - Interview mit Stephan Peplies: "Nummer eins ist Skispringen"':
       'Frankfurter Allgemeine Zeitung - Interview with Stephan Peplies: "Ski jumping is number one"',
+    'SPORT BILD - Reportage Gschwendner Tee mit Interview Lars Dobbertin: "Bender Zwillinge Eistee Werbung"':
+      'SPORT BILD - Feature on Gschwendner Tea with interview Lars Dobbertin: "Bender twins iced tea advertising"',
+    "Abendzeitung - Reportage TeeGschwendner mit den Bender-Zwillingen":
+      "Evening newspaper - Feature on TeeGschwendner with the Bender twins",
+    "PR-Beispiel - Eric Frenzel-Uhr für C. H. Wolf mit Eric Frenzel":
+      "PR example - Eric Frenzel watch for C. H. Wolf with Eric Frenzel",
+    "PR-Kolumnen - Bernd Schneider": "PR columns - Bernd Schneider",
+    'Presse - Nach-Karriere-Projekt „Eric-Frenzel-Trails“ (Teil 1)':
+      'Press - Post-career project "Eric Frenzel Trails" (part 1)',
+    'Presse - Nach-Karriere-Projekt „Eric-Frenzel-Trails“ (Teil 2)':
+      'Press - Post-career project "Eric Frenzel Trails" (part 2)',
   },
   fr: {
     'Berliner Tagesspiegel - Interview mit Stephan Peplies: "Olympiasieger scheitern oft bei der Vermarktung"':
@@ -55,6 +66,17 @@ const pressTitleTranslationsByLocale = {
       'Wochenendspiegel/Freie Presse - Interview avec Stephan Peplies: "Couronne RTL jungle ou victoire olympique ?"',
     'Frankfurter Allgemeine Zeitung - Interview mit Stephan Peplies: "Nummer eins ist Skispringen"':
       'Frankfurter Allgemeine Zeitung - Interview avec Stephan Peplies: "Le saut a ski est numero un"',
+    'SPORT BILD - Reportage Gschwendner Tee mit Interview Lars Dobbertin: "Bender Zwillinge Eistee Werbung"':
+      'SPORT BILD - Reportage Gschwendner Tee avec interview Lars Dobbertin: "Publicite the glacee des jumeaux Bender"',
+    "Abendzeitung - Reportage TeeGschwendner mit den Bender-Zwillingen":
+      "Journal du soir - Reportage TeeGschwendner avec les jumeaux Bender",
+    "PR-Beispiel - Eric Frenzel-Uhr für C. H. Wolf mit Eric Frenzel":
+      "Exemple RP - Montre Eric Frenzel pour C. H. Wolf avec Eric Frenzel",
+    "PR-Kolumnen - Bernd Schneider": "Chroniques RP - Bernd Schneider",
+    'Presse - Nach-Karriere-Projekt „Eric-Frenzel-Trails“ (Teil 1)':
+      'Presse - Projet apres-carriere « Eric-Frenzel-Trails » (partie 1)',
+    'Presse - Nach-Karriere-Projekt „Eric-Frenzel-Trails“ (Teil 2)':
+      'Presse - Projet apres-carriere « Eric-Frenzel-Trails » (partie 2)',
   },
   es: {
     'Berliner Tagesspiegel - Interview mit Stephan Peplies: "Olympiasieger scheitern oft bei der Vermarktung"':
@@ -81,6 +103,17 @@ const pressTitleTranslationsByLocale = {
       'Wochenendspiegel/Freie Presse - Entrevista con Stephan Peplies: "Corona de la selva RTL o victoria olimpica?"',
     'Frankfurter Allgemeine Zeitung - Interview mit Stephan Peplies: "Nummer eins ist Skispringen"':
       'Frankfurter Allgemeine Zeitung - Entrevista con Stephan Peplies: "El salto de esqui es el numero uno"',
+    'SPORT BILD - Reportage Gschwendner Tee mit Interview Lars Dobbertin: "Bender Zwillinge Eistee Werbung"':
+      'SPORT BILD - Reportaje Gschwendner Tea con entrevista Lars Dobbertin: "Publicidad de te helado de los gemelos Bender"',
+    "Abendzeitung - Reportage TeeGschwendner mit den Bender-Zwillingen":
+      "Periodico vespertino - Reportaje TeeGschwendner con los gemelos Bender",
+    "PR-Beispiel - Eric Frenzel-Uhr für C. H. Wolf mit Eric Frenzel":
+      "Ejemplo de RP - Reloj Eric Frenzel para C. H. Wolf con Eric Frenzel",
+    "PR-Kolumnen - Bernd Schneider": "Columnas de RP - Bernd Schneider",
+    'Presse - Nach-Karriere-Projekt „Eric-Frenzel-Trails“ (Teil 1)':
+      'Prensa - Proyecto post-carrera « Eric-Frenzel-Trails » (parte 1)',
+    'Presse - Nach-Karriere-Projekt „Eric-Frenzel-Trails“ (Teil 2)':
+      'Prensa - Proyecto post-carrera « Eric-Frenzel-Trails » (parte 2)',
   },
 }
 

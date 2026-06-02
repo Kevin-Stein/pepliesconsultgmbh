@@ -127,13 +127,17 @@ const athletes = [
   {
     firstName: "Amandine",
     lastName: "Mengin",
-    achievements: [],
+    achievements: [
+      "Vizeeuropameisterin 2025 Martell",
+      "Juniorenweltmeisterin Staffel 2025 Östersund",
+      "Zweifache Silbermedaillengewinnerin JWM 2025 Östersund",
+    ],
     sportDiscipline: "Biathlon",
-    birthday: "",
-    club: "",
-    interests: ["Sport"],
-    profession: "Biathletin",
-    hobby: "",
+    birthday: "3.10.2004",
+    club: "La Bressaude",
+    interests: ["Ausgleichssportarten"],
+    profession: "Schülerin/Studentin",
+    hobby: "Wandern, Mountain-Biking, Unternehmungen mit Freunden",
     portraitImageURL: "",
     actionImageURL: "",
     originCountryCode: "FRA",
@@ -1180,6 +1184,7 @@ const translations = {
       "Polizeimeisterin": "Polizeimeisterin",
       "Zollbeamter": "Zollbeamter",
       "Schülerin": "Schülerin",
+      "Schülerin/Studentin": "Schülerin/Studentin",
       "Berufssoldatin": "Berufssoldatin",
       "Bundestrainer Nordische Kombination": "Bundestrainer Nordische Kombination",
       "Bundeswehrangestellte": "Bundeswehrangestellte",
@@ -1227,6 +1232,7 @@ const translations = {
       "Polizeimeisterin": "Police Sergeant",
       "Zollbeamter": "Customs Officer",
       "Schülerin": "Student",
+      "Schülerin/Studentin": "Student",
       "Berufssoldatin": "Professional Soldier",
       "Bundestrainer Nordische Kombination": "National Coach Nordic Combined",
       "Bundeswehrangestellte": "Federal Armed Forces Employee",
@@ -1474,6 +1480,10 @@ const translations = {
         "Combination of technical training, athletic development, and mental development",
       "Zusammenarbeit mit lokalen Tennisvereinen und nationalen Verbänden":
         "Collaboration with local tennis clubs and national associations",
+      "Vizeeuropameisterin 2025 Martell": "European Vice Champion 2025 Martell",
+      "Juniorenweltmeisterin Staffel 2025 Östersund": "Junior World Champion relay 2025 Östersund",
+      "Zweifache Silbermedaillengewinnerin JWM 2025 Östersund":
+        "Two-time silver medal winner at Junior World Championships 2025 Östersund",
     },
     interests: {
       "Kunst": "Art",
@@ -1533,6 +1543,7 @@ const translations = {
       "Biathlon": "Biathlon",
       "Kaffee/Barista": "Coffee/Barista",
       "Handball": "Handball",
+      "Ausgleichssportarten": "Recreational sports",
     },
     hobbies: {
       "Ski fahren, Mountain Biking, Laufen, Surfen, Malen, Gitarre spielen, Imkerei": "Skiing, mountain biking, running, surfing, painting, playing guitar, beekeeping",
@@ -1579,6 +1590,8 @@ const translations = {
       "In meiner Freizeit unternehme ich gerne was mit Freunden und backe und koche gerne mal.": "In my free time I like to do things with friends and like to bake and cook sometimes.",
       "Klettern, Snowboardfahren, Zeit draußen mit Freunden verbringen": "Climbing, snowboarding, spending time outdoors with friends",
       "DJ(auflegen), Skifahren, Lesen, Volleyball": "DJ (DJing), skiing, reading, volleyball",
+      "Wandern, Mountain-Biking, Unternehmungen mit Freunden":
+        "Hiking, mountain biking, activities with friends",
     },
   },
   fr: {
@@ -1611,6 +1624,7 @@ const translations = {
       Polizeimeisterin: "Brigadière",
       Zollbeamter: "Douanier",
       Schülerin: "Étudiante",
+      "Schülerin/Studentin": "Étudiante",
       Berufssoldatin: "Militaire de carrière",
       "Bundestrainer Nordische Kombination": "Entraîneur national combiné nordique",
       Bundeswehrangestellte: "Employée des forces armées",
@@ -1658,6 +1672,7 @@ const translations = {
       Polizeimeisterin: "Oficial de policía",
       Zollbeamter: "Aduanero",
       Schülerin: "Estudiante",
+      "Schülerin/Studentin": "Estudiante",
       Berufssoldatin: "Militar profesional",
       "Bundestrainer Nordische Kombination": "Seleccionador nacional de combinado nórdico",
       Bundeswehrangestellte: "Empleada de las fuerzas armadas",

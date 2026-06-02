@@ -17,9 +17,9 @@ describe("cookie consent helpers", () => {
     expect(writeConsentLevel("unexpected")).toBe(false)
   })
 
-  it("allows external media only for all-consent", () => {
+  it("allows external media unless explicitly declined", () => {
     expect(allowsExternalMedia(CONSENT_LEVELS.all)).toBe(true)
-    expect(allowsExternalMedia(CONSENT_LEVELS.necessary)).toBe(false)
+    expect(allowsExternalMedia(CONSENT_LEVELS.necessary)).toBe(true)
     expect(allowsExternalMedia(CONSENT_LEVELS.declined)).toBe(false)
   })
 })

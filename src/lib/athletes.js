@@ -1087,8 +1087,8 @@ const athletes = [
     isFormer: true,
   },
   {
-    firstName: "Tennis Academy",
-    lastName: "Stefan Edberg",
+    firstName: "Stefan",
+    lastName: "Edberg",
     achievements: [
       "Gewinner Wimbledon 1988,1990",
       "Gewinner US Open 1991,1992",

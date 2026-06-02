@@ -4,13 +4,10 @@ import { getAthletes } from "../lib/athletes";
 import placeholderPortrait from "../images/athletes/portrait_placeholder.jpg";
 import { useI18n } from "../i18n/I18nContext";
 
-const getLastAchievements = (athlete, limit = 5) => {
-  const list = athlete.achievements || [];
-  return list.slice(-limit);
-};
+const getAchievements = (athlete) => athlete.achievements || [];
 
 const AchievementsPanel = ({ athlete, t }) => {
-  const items = getLastAchievements(athlete, 5);
+  const items = getAchievements(athlete);
   return (
     <>
       <h3 className="text-sm font-bold text-blue-900 mb-2 border-b border-blue-900/25 pb-2 shrink-0">{t("hallOfFame.achievementsHeading")}</h3>
@@ -47,7 +44,7 @@ function usePrefersHover() {
 const HallOfFameFlipCard = ({ athlete, t }) => {
   const prefersHover = usePrefersHover();
   const [touchFlipped, setTouchFlipped] = useState(false);
-  const isStefanEdbergCard = athlete.firstName === "Tennis Academy" && athlete.lastName === "Stefan Edberg";
+  const isStefanEdbergCard = athlete.firstName === "Stefan" && athlete.lastName === "Edberg";
 
   const flipTransform = [
     "relative w-full transition-transform duration-700 ease-[cubic-bezier(0.4,0.2,0.2,1)] [transform-style:preserve-3d]",

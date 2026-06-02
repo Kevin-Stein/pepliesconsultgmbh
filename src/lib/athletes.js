@@ -81,10 +81,6 @@ const getLocalAthleteImage = (firstName, lastName, kind) => {
 };
 
 const photoCreditsByAthlete = {
-  "Sina Arnet": {
-    portrait: "lieslpics",
-    action: "keystone_sda_ats",
-  },
   "Anna Twardozs": {
     portrait: "skijumpingpl",
   },
@@ -271,24 +267,6 @@ const athletes = [
     actionImageURL: "https://res.cloudinary.com/dbpoconup/image/upload/v1759152760/Pagnier_Josephine_action_pheek8.jpg",
   },
   {
-    firstName: "Julian",
-    lastName: "Schmid",
-    achievements: [
-      "Silbermedaillengewinner Olympische Spiele 2022 im Team",
-      "Zweifacher Junioren-Weltmeister 2019 in Lathi",
-      "Dreifacher Weltcupsieger 2022 und 2023",
-      "Gesamtweltcup 2024/25 Platz 4",
-    ],
-    sportDiscipline: "Nordische Kombination",
-    birthday: "01.09.1999",
-    club: "Skiclub 1906 Oberstdorf",
-    interests: ["Ernährung", "Körperoptimierung"],
-    profession: "Sportsoldat Sportfördergruppe der Bundeswehr Sonthofen",
-    hobby: "Tennis, Bergtouren, Rennrad fahren, Padel",
-    portraitImageURL: "https://res.cloudinary.com/dbpoconup/image/upload/v1759155538/Schmid_Julian_portrait_wkv5am.jpg",
-    actionImageURL: "https://res.cloudinary.com/dbpoconup/image/upload/v1759155537/Schmid_Julian_action_02_hqq5bm.jpg",
-  },
-  {
     firstName: "Lara",
     lastName: "Malsiner",
     achievements: [
@@ -459,43 +437,6 @@ const athletes = [
     actionImageURL: "https://res.cloudinary.com/dbpoconup/image/upload/v1759155307/Klo%C3%9F_Robin_action_k42zac.jpg",
   },
   {
-    firstName: "Sophia",
-    lastName: "Zitzmann",
-    achievements: ["Vier FIS-Rennen aufs Podium 2023/24"],
-    sportDiscipline: "Ski Alpin",
-    birthday: "20.02.2003",
-    club: "SC Gaißach",
-    interests: [
-      "Alles, was mit Sport zu tun hat",
-      "Reisen",
-      "Lesen",
-      "Klavier spielen",
-      "kochen",
-      "guten Kaffee trinken",
-    ],
-    profession: "Sportsoldatin",
-    hobby: "Radfahren, Berggehen, Tauchen und vieles mehr",
-    portraitImageURL:
-      "https://res.cloudinary.com/dbpoconup/image/upload/v1759139886/Zitzmann_Sophia_portrait_h3tsur.jpg",
-    actionImageURL: "https://res.cloudinary.com/dbpoconup/image/upload/v1759139885/Zitzmann_Sophia_action_i84w0z.jpg",
-  },
-  {
-    firstName: "Alex",
-    lastName: "Reiter",
-    achievements: [
-      "Bronzemedaille beim European Youth Olympic Festival im Team 2023",
-      "Junioren-Vizeweltmeister 2024 in Planica",
-    ],
-    sportDiscipline: "Skispringen",
-    birthday: "06.06.2006",
-    club: "Skiclub Oberstdorf",
-    interests: ["Sport"],
-    profession: "Skispringer",
-    hobby: "Ich fahre Rennrad und ich liebe es außerdem Motorrad zu fahren ",
-    portraitImageURL: "https://res.cloudinary.com/dbpoconup/image/upload/v1759143373/Reiter_Alex_portrait_hhjh1l.jpg",
-    actionImageURL: "https://res.cloudinary.com/dbpoconup/image/upload/v1759143372/Reiter_Alex_action_x9pgej.jpg",
-  },
-  {
     firstName: "Anna",
     lastName: "Twardozs",
     achievements: [
@@ -511,19 +452,6 @@ const athletes = [
       "Die Familie ist in meinem Leben sehr wichtig, deshalb versuche ich, so viel Zeit wie möglich mit ihr zu verbringen. Wenn ich auf Reisen bin, versuche ich immer, Sehenswürdigkeiten zu besuchen, um interessante Dinge oder Orte zu entdecken.",
     portraitImageURL: "https://res.cloudinary.com/dbpoconup/image/upload/v1759144024/Twardozs_Anna_portrait_mbbvyw.jpg",
     actionImageURL: "https://res.cloudinary.com/dbpoconup/image/upload/v1759144023/Twardozs_Anna_aaction_t66f2u.jpg",
-  },
-  {
-    firstName: "Sina",
-    lastName: "Arnet",
-    achievements: ["Zahlreiche Weltcupeinsätze"],
-    sportDiscipline: "",
-    birthday: "",
-    club: "",
-    interests: ["Sport"],
-    profession: "",
-    hobby: "",
-    portraitImageURL: "https://res.cloudinary.com/dbpoconup/image/upload/v1759152255/Arnet_Sina_portrait_rdlofe.jpg",
-    actionImageURL: "https://res.cloudinary.com/dbpoconup/image/upload/v1759152261/Arnet_Sina_action_lb2ydu.jpg",
   },
   {
     firstName: "Nicole",
@@ -567,19 +495,6 @@ const athletes = [
     interests: ["Golf", "Kitesurfen"],
     profession: " Student für Recht und Wirtschaft",
     hobby: "DJ(auflegen), Skifahren, Lesen, Volleyball",
-    portraitImageURL: "",
-    actionImageURL: "",
-  },
-  {
-    firstName: "Veronica",
-    lastName: "Jencova",
-    achievements: [],
-    sportDiscipline: "Skispringen",
-    birthday: "",
-    club: "",
-    interests: ["Sport"],
-    profession: "",
-    hobby: "",
     portraitImageURL: "",
     actionImageURL: "",
   },

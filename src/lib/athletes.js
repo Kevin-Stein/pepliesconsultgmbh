@@ -119,7 +119,7 @@ const athletes = [
     club: "Altius Nordic Ski Club (Calgary) ",
     interests: ["Kunst", "Design", "Fotografie"],
     profession: "Skispringerin, Graphic Design Student (Toronto Film School & Yorkville University)",
-    hobby: "Skie fahren, Mountain Biking, Laufen, surfen, malen, Guitarre spielen, Imkerei",
+    hobby: "Ski fahren, Mountain Biking, Laufen, Surfen, Malen, Gitarre spielen, Imkerei",
     portraitImageURL:
       "https://res.cloudinary.com/dbpoconup/image/upload/v1759139497/Strate_Abigail_portrait_r5jxwi.jpg",
     actionImageURL: "https://res.cloudinary.com/dbpoconup/image/upload/v1759139496/Strate_Abigail_action_oixjgm.jpg",
@@ -1465,7 +1465,7 @@ const translations = {
       "Handball": "Handball",
     },
     hobbies: {
-      "Skie fahren, Mountain Biking, Laufen, surfen, malen, Guitarre spielen, Imkerei": "Skiing, mountain biking, running, surfing, painting, playing guitar, beekeeping",
+      "Ski fahren, Mountain Biking, Laufen, Surfen, Malen, Gitarre spielen, Imkerei": "Skiing, mountain biking, running, surfing, painting, playing guitar, beekeeping",
       "Zeit mit Familie und Freunden verbringen": "Spending time with family and friends",
       "Zeit mit Familie und Freunde verbringen, Fernstudium in Sportökonomie, Biografien lesen, Konzerte besuchen,Backen ": "Spending time with family and friends, distance learning in sports economics, reading biographies, attending concerts, baking",
       "Reisen": "Traveling",

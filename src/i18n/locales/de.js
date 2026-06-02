@@ -117,6 +117,7 @@ const de = {
   athletesPage: {
     docTitle: "peplies consult - Athletes",
     title: "Aktuelle Athleten",
+    subtitle: "Athletinnen und Athleten, für die die peplies consult GmbH Vermarktungsverantwortung hat oder hatte.",
   },
   athleteDetail: {
     docTitle: "peplies consult - Sports Marketing Consultants",

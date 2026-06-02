@@ -25,6 +25,7 @@ const Athletes = () => {
       <div className="container mx-auto px-4 sm:px-8">
         <div className="text-center mb-12">
           <h1 className="text-3xl sm:text-4xl font-bold text-blue-900 mb-4">{t("athletesPage.title")}</h1>
+          <p className="max-w-4xl mx-auto text-sm sm:text-base font-medium text-gray-600 mb-6">{t("athletesPage.subtitle")}</p>
           <div className="w-24 h-1 bg-blue-900 mx-auto mb-8"></div>
         </div>
 

@@ -117,6 +117,7 @@ const en = {
   athletesPage: {
     docTitle: "peplies consult - Athletes",
     title: "Current Athletes",
+    subtitle: "Athletes for whom peplies consult GmbH has or had marketing responsibility.",
   },
   athleteDetail: {
     docTitle: "peplies consult - Sports Marketing Consultants",

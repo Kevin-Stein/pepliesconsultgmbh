@@ -161,6 +161,9 @@ const en = {
   publications: {
     docTitle: "peplies consult - Publications",
     title: "Publications",
+    pageIntro: "A selection of sports biographies and publications from peplies consult GmbH:",
+    openPdf: "Open PDF",
+    openImage: "Enlarge image",
     empty: "Publication content is currently being prepared.",
   },
   scientificAdvisoryBoard: {

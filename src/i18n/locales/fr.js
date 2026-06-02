@@ -161,6 +161,9 @@ const fr = {
   publications: {
     docTitle: "peplies consult - Publications",
     title: "Publications",
+    pageIntro: "Selection de biographies sportives et publications de peplies consult GmbH:",
+    openPdf: "Ouvrir le PDF",
+    openImage: "Agrandir l'image",
     empty: "Le contenu des publications est en cours de preparation.",
   },
   scientificAdvisoryBoard: {

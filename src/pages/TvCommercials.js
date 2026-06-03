@@ -1,35 +1,37 @@
 // src/pages/TvCommercials.js
-import React from "react";
-import { useDocTitle } from "../components/CustomHook";
-import tvCommercialsData from "../lib/tvCommercialsData.js";
-import { cloudinaryVideoUrlForHtml5 } from "../lib/cloudinaryVideoUrl.js";
-import { pickLocalized } from "../lib/pickLocalized.js";
-import { useI18n } from "../i18n/I18nContext";
+import React, { useEffect, useState } from "react"
+import { Link } from "react-router-dom"
+import { useDocTitle } from "../components/CustomHook"
+import tvCommercialsData from "../lib/tvCommercialsData.js"
+import { cloudinaryVideoUrlForHtml5 } from "../lib/cloudinaryVideoUrl.js"
+import { allowsExternalMedia, readConsentLevel } from "../lib/cookieConsent.js"
+import { pickLocalized } from "../lib/pickLocalized.js"
+import { useI18n } from "../i18n/I18nContext"
 
-const PREVIEW_SECONDS = 1;
+const PREVIEW_SECONDS = 1
 
 const handleVideoPreviewAtOneSecond = (event) => {
-  const video = event.currentTarget;
-  if (!video || Number.isNaN(video.duration)) return;
+  const video = event.currentTarget
+  if (!video || Number.isNaN(video.duration)) return
 
-  const previewTime = video.duration > PREVIEW_SECONDS ? PREVIEW_SECONDS : 0;
+  const previewTime = video.duration > PREVIEW_SECONDS ? PREVIEW_SECONDS : 0
   if (Math.abs(video.currentTime - previewTime) < 0.05) {
-    video.pause();
-    return;
+    video.pause()
+    return
   }
 
   const handleSeeked = () => {
-    video.pause();
-    video.removeEventListener("seeked", handleSeeked);
-  };
-
-  video.addEventListener("seeked", handleSeeked);
-  try {
-    video.currentTime = previewTime;
-  } catch {
-    video.removeEventListener("seeked", handleSeeked);
+    video.pause()
+    video.removeEventListener("seeked", handleSeeked)
   }
-};
+
+  video.addEventListener("seeked", handleSeeked)
+  try {
+    video.currentTime = previewTime
+  } catch {
+    video.removeEventListener("seeked", handleSeeked)
+  }
+}
 
 const TvCommercialVideo = ({ commercial, fallbackText }) => (
   <video
@@ -43,11 +45,29 @@ const TvCommercialVideo = ({ commercial, fallbackText }) => (
   >
     {fallbackText}
   </video>
-);
+)
+
+const MediaConsentPlaceholder = ({ message }) => (
+  <div className="flex h-full w-full flex-col items-center justify-center bg-slate-200 px-4 text-center">
+    <p className="text-sm text-gray-700 max-w-xs">{message}</p>
+  </div>
+)
 
 const TvCommercials = () => {
-  const { locale, t } = useI18n();
-  useDocTitle(t("tv.docTitle"));
+  const { locale, t } = useI18n()
+  useDocTitle(t("tv.docTitle"))
+  const [consentLevel, setConsentLevel] = useState(readConsentLevel)
+  const allowExternalMedia = allowsExternalMedia(consentLevel)
+
+  useEffect(() => {
+    const handleConsentChange = () => setConsentLevel(readConsentLevel())
+    window.addEventListener("cookie-consent-updated", handleConsentChange)
+    window.addEventListener("storage", handleConsentChange)
+    return () => {
+      window.removeEventListener("cookie-consent-updated", handleConsentChange)
+      window.removeEventListener("storage", handleConsentChange)
+    }
+  }, [])
 
   return (
     <div className="bg-white py-12 sm:py-24 mt-20 lg:mt-40">
@@ -65,7 +85,11 @@ const TvCommercials = () => {
               className="block bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300"
             >
               <div className="w-full aspect-video bg-gray-200">
-                <TvCommercialVideo commercial={commercial} fallbackText={t("tv.videoNotSupported")} />
+                {allowExternalMedia ? (
+                  <TvCommercialVideo commercial={commercial} fallbackText={t("tv.videoNotSupported")} />
+                ) : (
+                  <MediaConsentPlaceholder message={t("cookie.externalMediaBlocked")} />
+                )}
               </div>
 
               <div className="p-4">
@@ -79,9 +103,17 @@ const TvCommercials = () => {
             </div>
           ))}
         </div>
+
+        {!allowExternalMedia ? (
+          <p className="mt-8 text-center text-sm text-gray-600">
+            <Link to="/privacy" className="text-blue-900 underline hover:text-blue-700">
+              {t("footer.privacy")}
+            </Link>
+          </p>
+        ) : null}
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default TvCommercials;
+export default TvCommercials

@@ -4,6 +4,7 @@ import { HashLink } from "react-router-hash-link";
 import { AuthContext } from "../App";
 import { useContactModal } from "./ContactModalContext";
 import { useI18n } from "../i18n/I18nContext";
+import { clearConsentLevel } from "../lib/cookieConsent";
 
 const scrollAboutIntoView = (el) => {
   const yCoordinate = el.getBoundingClientRect().top + window.pageYOffset;
@@ -18,6 +19,10 @@ const Footer = () => {
   const { isAuthenticated } = useContext(AuthContext);
   const { openContact } = useContactModal();
   const { t } = useI18n();
+
+  const handleReopenCookieSettings = () => {
+    clearConsentLevel();
+  };
 
   return (
     <footer className="mt-auto">
@@ -84,6 +89,15 @@ const Footer = () => {
                 >
                   {t("footer.privacy")}
                 </Link>
+              </li>
+              <li className="mb-1 sm:mb-2">
+                <button
+                  type="button"
+                  onClick={handleReopenCookieSettings}
+                  className="text-blue-900 hover:text-gray-900 hover:tracking-wider transition duration-250 ease-in-out bg-transparent border-0 p-0 cursor-pointer font-inherit text-left w-full sm:w-auto"
+                >
+                  {t("cookie.reopenSettings")}
+                </button>
               </li>
             </ul>
           </div>

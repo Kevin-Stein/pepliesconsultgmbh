@@ -1,10 +1,20 @@
-import React, { useState, useCallback } from "react";
+import React, { useState, useCallback, useEffect } from "react";
 import { useI18n } from "../i18n/I18nContext";
 import { CONSENT_LEVELS, readConsentLevel, writeConsentLevel } from "../lib/cookieConsent";
 
 const CookieBanner = () => {
   const { t } = useI18n();
   const [isVisible, setIsVisible] = useState(() => !readConsentLevel());
+
+  useEffect(() => {
+    const syncVisibility = () => setIsVisible(!readConsentLevel());
+    window.addEventListener("cookie-consent-updated", syncVisibility);
+    window.addEventListener("storage", syncVisibility);
+    return () => {
+      window.removeEventListener("cookie-consent-updated", syncVisibility);
+      window.removeEventListener("storage", syncVisibility);
+    };
+  }, []);
 
   const handleConsent = useCallback((level) => {
     if (writeConsentLevel(level)) {

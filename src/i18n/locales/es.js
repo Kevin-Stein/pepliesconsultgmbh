@@ -86,17 +86,6 @@ const es = {
   privacy: {
     docTitle: "peplies consult - Política de privacidad",
     title: "Política de privacidad",
-    section1Heading: "1. Privacidad de un vistazo",
-    section1Subheading: "Información general",
-    section1Body:
-      "Las siguientes notas ofrecen una visión general sencilla de lo que ocurre con sus datos personales cuando visita este sitio web. Los datos personales son todos los datos con los que se le puede identificar personalmente.",
-    section2Heading: "2. Recopilación de datos en nuestro sitio web",
-    section2Subheading: "¿Quién es responsable de la recopilación de datos en este sitio web?",
-    section2Body:
-      "El tratamiento de datos en este sitio web lo realiza el operador del sitio web. Puede encontrar sus datos de contacto en el aviso legal de este sitio web.",
-    section3Heading: "3. Sus derechos",
-    section3Body:
-      "Tiene derecho a recibir en cualquier momento, de forma gratuita, información sobre el origen, el destinatario y la finalidad de sus datos personales almacenados. También tiene derecho a solicitar la corrección o el bloqueo de estos datos. Si ha dado su consentimiento para el tratamiento de datos, puede revocarlo en cualquier momento. Además, tiene derecho a solicitar la limitación del tratamiento de sus datos personales.",
   },
   legal: {
     docTitle: "peplies consult - Aviso legal",
@@ -220,10 +209,14 @@ const es = {
     title: "Servicios para empresas",
   },
   cookie: {
-    message: "Este sitio web utiliza cookies para mejorar su experiencia. Elija su preferencia.",
+    message:
+      "Guardamos ajustes en su navegador (almacenamiento local). Con « Aceptar todas », los videos se cargan desde Cloudinary (EE. UU.); su IP puede transmitirse. Vea la politica de privacidad.",
     acceptAll: "Aceptar todas",
     acceptNecessary: "Solo necesarias",
     decline: "Rechazar",
+    reopenSettings: "Cambiar ajustes de cookies",
+    externalMediaBlocked:
+      "Videos externos desactivados. Use « Cambiar ajustes de cookies » y « Aceptar todas », o lea la politica de privacidad.",
   },
   language: {
     label: "Idioma",

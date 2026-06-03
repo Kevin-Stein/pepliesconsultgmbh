@@ -28,4 +28,15 @@ export const writeConsentLevel = (level) => {
   }
 }
 
-export const allowsExternalMedia = (level) => level !== CONSENT_LEVELS.declined
+/** External CDN media (Cloudinary) only after explicit “accept all”. */
+export const allowsExternalMedia = (level) => level === CONSENT_LEVELS.all
+
+export const clearConsentLevel = () => {
+  try {
+    localStorage.removeItem(COOKIE_CONSENT_KEY)
+    window.dispatchEvent(new CustomEvent("cookie-consent-updated", { detail: null }))
+    return true
+  } catch {
+    return false
+  }
+}

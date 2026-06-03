@@ -86,17 +86,6 @@ const de = {
   privacy: {
     docTitle: "peplies consult - Datenschutz",
     title: "Datenschutzerklärung",
-    section1Heading: "1. Datenschutz auf einen Blick",
-    section1Subheading: "Allgemeine Hinweise",
-    section1Body:
-      "Die folgenden Hinweise geben einen einfachen Überblick darüber, was mit Ihren personenbezogenen Daten passiert, wenn Sie diese Website besuchen. Personenbezogene Daten sind alle Daten, mit denen Sie persönlich identifiziert werden können.",
-    section2Heading: "2. Datenerfassung auf unserer Website",
-    section2Subheading: "Wer ist verantwortlich für die Datenerfassung auf dieser Website?",
-    section2Body:
-      "Die Datenverarbeitung auf dieser Website erfolgt durch den Websitebetreiber. Dessen Kontaktdaten können Sie dem Impressum dieser Website entnehmen.",
-    section3Heading: "3. Ihre Rechte",
-    section3Body:
-      "Sie haben jederzeit das Recht, unentgeltlich Auskunft über Herkunft, Empfänger und Zweck Ihrer gespeicherten personenbezogenen Daten zu erhalten. Sie haben außerdem ein Recht, die Berichtigung oder Sperrung dieser Daten zu verlangen. Wenn Sie eine Einwilligung zur Datenverarbeitung erteilt haben, können Sie diese Einwilligung jederzeit widerrufen. Außerdem haben Sie das Recht, die Einschränkung der Verarbeitung Ihrer personenbezogenen Daten zu verlangen.",
   },
   legal: {
     docTitle: "peplies consult - Impressum",
@@ -221,10 +210,13 @@ const de = {
   },
   cookie: {
     message:
-      "Diese Website verwendet Cookies, um Ihre Erfahrung zu verbessern. Bitte wählen Sie Ihre Präferenz.",
-    acceptAll: "Alle Akzeptieren",
-    acceptNecessary: "Nur Notwendige",
+      "Wir speichern Einstellungen in Ihrem Browser (Local Storage). Nach „Alle akzeptieren“ werden Videos von Cloudinary (USA) geladen; dabei kann Ihre IP-Adresse übermittelt werden. Details in der Datenschutzerklärung.",
+    acceptAll: "Alle akzeptieren",
+    acceptNecessary: "Nur notwendige",
     decline: "Ablehnen",
+    reopenSettings: "Cookie-Einstellungen ändern",
+    externalMediaBlocked:
+      "Externe Videos sind deaktiviert. Bitte „Cookie-Einstellungen ändern“ wählen und „Alle akzeptieren“, oder die Datenschutzerklärung lesen.",
   },
   language: {
     label: "Sprache",

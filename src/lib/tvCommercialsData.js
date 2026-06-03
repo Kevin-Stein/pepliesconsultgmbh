@@ -200,6 +200,19 @@ const tvCommercialsData = [
       "https://res.cloudinary.com/dbpoconup/video/upload/v1780415589/rh_frenzel_testimonial_007.prproj_zfmxxc.mp4",
     thumbnailUrl: "",
   },
+  {
+    id: "tv-spot-17",
+    title: {
+      de: "OTV-Bericht – Eric-Frenzel-Trails mit Eric Frenzel",
+      en: "OTV report – Eric Frenzel Trails with Eric Frenzel",
+      fr: "Reportage OTV – Eric-Frenzel-Trails avec Eric Frenzel",
+      es: "Reportaje OTV – Eric-Frenzel-Trails con Eric Frenzel",
+    },
+    date: "2025",
+    videoUrl:
+      "https://res.cloudinary.com/dbpoconup/video/upload/v1780500863/OTV_Bericht_Eric_Frenzel_Trails_idezdl.mp4",
+    thumbnailUrl: "",
+  },
 ];
 
 export default tvCommercialsData;

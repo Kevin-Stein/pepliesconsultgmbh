@@ -25,12 +25,12 @@ const AthleteDetails = () => {
     <>
       <div className="container max-w-4xl mx-auto my-40">
         <div className="card bg-white overflow-visible flex flex-col md:flex-row relative">
-          <div className="w-full lg:w-1/2 relative">
+          <div className={`w-full lg:w-1/2 relative ${athlete.portraitDetailWrapperClass || ""}`}>
             <img
               src={athlete.portraitImageURL || placeholderPortrait}
               alt={`${athlete.firstName} ${athlete.lastName}`}
-              className="w-full h-100 object-cover"
-              style={{ height: "400px" }}
+              className={athlete.portraitDetailImageClass || "w-full h-100 object-cover"}
+              style={athlete.portraitDetailImageClass ? undefined : { height: "400px" }}
             />
             {athlete.photoCredits?.portrait && (
               <p className="text-xs text-gray-500 mt-2 px-1">

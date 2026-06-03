@@ -133,7 +133,7 @@ const athletes = [
       "Zweifache Silbermedaillengewinnerin JWM 2025 Östersund",
     ],
     sportDiscipline: "Biathlon",
-    birthday: "3.10.2004",
+    birthday: "03.10.2004",
     club: "La Bressaude",
     interests: ["Ausgleichssportarten"],
     profession: "Schülerin/Studentin",
@@ -143,17 +143,19 @@ const athletes = [
     originCountryCode: "FRA",
   },
   {
-    firstName: "Andrea",
+    firstName: "Emily",
     lastName: "Teubner",
-    achievements: [],
+    achievements: ["Silbermedaille Juniorenweltmeisterschaft 2026 Team in Lillehammer"],
     sportDiscipline: "Skispringen",
-    birthday: "",
-    club: "",
-    interests: ["Sport"],
-    profession: "Skispringerin",
-    hobby: "",
+    birthday: "03.11.2007",
+    club: "SFV Rothenburg",
+    interests: ["Wintersport allgemein"],
+    profession: "Schülerin",
+    hobby: "Kochen und Backen, Spaziergänge, Skifahren, Fahrrad fahren",
     portraitImageURL: "",
     actionImageURL: "",
+    portraitDetailWrapperClass: "overflow-hidden",
+    portraitDetailImageClass: "w-full h-[400px] object-cover object-[center_28%]",
     originCountryCode: "GER",
   },
   {
@@ -626,6 +628,8 @@ const athletes = [
     hobby: "Wandern, Mountainbiking, Ökologischer Landbau, Kochen",
     portraitImageURL: "",
     actionImageURL: "",
+    portraitDetailWrapperClass: "overflow-hidden",
+    portraitDetailImageClass: "w-full h-[400px] object-cover object-[center_28%]",
   },
   {
     firstName: "Karl",
@@ -1484,6 +1488,8 @@ const translations = {
       "Juniorenweltmeisterin Staffel 2025 Östersund": "Junior World Champion relay 2025 Östersund",
       "Zweifache Silbermedaillengewinnerin JWM 2025 Östersund":
         "Two-time silver medal winner at Junior World Championships 2025 Östersund",
+      "Silbermedaille Juniorenweltmeisterschaft 2026 Team in Lillehammer":
+        "Silver medal Junior World Championships 2026 team in Lillehammer",
     },
     interests: {
       "Kunst": "Art",
@@ -1506,6 +1512,7 @@ const translations = {
       "Imkerei": "Beekeeping",
       "Garten und Natur": "Garden and nature",
       "Wintersport": "Winter sports",
+      "Wintersport allgemein": "Winter sports in general",
       "Radsport": "Cycling",
       "Ernährung": "Nutrition",
       "Körperoptimierung": "Body optimization",
@@ -1592,6 +1599,8 @@ const translations = {
       "DJ(auflegen), Skifahren, Lesen, Volleyball": "DJ (DJing), skiing, reading, volleyball",
       "Wandern, Mountain-Biking, Unternehmungen mit Freunden":
         "Hiking, mountain biking, activities with friends",
+      "Kochen und Backen, Spaziergänge, Skifahren, Fahrrad fahren":
+        "Cooking and baking, walks, skiing, cycling",
     },
   },
   fr: {

@@ -48,14 +48,13 @@ const Press = () => {
   }, [selectedArticle]);
 
   return (
-    <div className="bg-white py-12 sm:py-24 mt-40">
+    <div className="bg-white py-12 sm:py-24 mt-20 lg:mt-40">
       <div className="container mx-auto px-4 sm:px-8">
         <div className="text-center mb-12">
           <h1 className="text-3xl sm:text-4xl font-bold text-blue-900 mb-4">{t("press.title")}</h1>
-          <div className="w-24 h-1 bg-blue-900 mx-auto"></div>
+          <p className="max-w-4xl mx-auto text-sm sm:text-base font-medium text-gray-600 mb-6">{t("press.pageIntro")}</p>
+          <div className="w-24 h-1 bg-blue-900 mx-auto mb-8"></div>
         </div>
-
-        <p className="max-w-3xl mx-auto text-center text-gray-600 font-medium mb-10">{t("press.pageIntro")}</p>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {normalizedArticles.map((article) => {

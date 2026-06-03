@@ -43,14 +43,15 @@ const PrintCampaign = () => {
   }, [selectedMedia]);
 
   return (
-    <div className="bg-white py-12 sm:py-24 mt-40">
+    <div className="bg-white py-12 sm:py-24 mt-20 lg:mt-40">
       <div className="w-full px-4 sm:px-8 lg:px-12">
         <div className="text-center mb-12">
           <h1 className="text-3xl sm:text-4xl font-bold text-blue-900 mb-4">{t("printCampaign.title")}</h1>
-          <div className="w-24 h-1 bg-blue-900 mx-auto"></div>
+          <p className="max-w-4xl mx-auto text-sm sm:text-base font-medium text-gray-600 mb-6">
+            {t("printCampaign.galleryIntro")}
+          </p>
+          <div className="w-24 h-1 bg-blue-900 mx-auto mb-8"></div>
         </div>
-
-        <p className="max-w-3xl mx-auto text-center text-gray-600 font-medium mb-10">{t("printCampaign.galleryIntro")}</p>
 
         <div className="columns-1 sm:columns-2 lg:columns-3 xl:columns-5 gap-4 sm:gap-5">
           {mediaItems.map((item) => (

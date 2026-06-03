@@ -6,6 +6,7 @@ const normalizeToken = (value = "") =>
     .replace(/[^a-z0-9]/g, "");
 
 const athleteImagesContext = require.context("../images/athletes/athlets images", true, /\.(png|jpe?g|webp|gif)$/i);
+const athleteImagePlaceholder = require("../images/athletes/portrait_placeholder.jpg");
 
 const athleteLocalImages = athleteImagesContext
   .keys()
@@ -35,6 +36,25 @@ const matchesAthleteName = (fileNameNorm, firstNameNorm, lastNameNorm) => {
   return fileNameNorm.includes(firstShort) && fileNameNorm.includes(lastShort);
 };
 
+const lastNameVariantsByAthlete = {
+  felixhoffmann: ["hoffmann", "hoffman"],
+  hectorkapustik: ["kapustik"],
+  kirakapustikova: ["kapustikova"],
+  laramalsiner: ["malsiner", "malisner"],
+  jessicamalsiner: ["malsiner", "malisner"],
+  janinahettichwalz: ["hettichwalz"],
+  liabohme: ["bohme", "boehme"],
+  luisagorlich: ["gorlich", "goerlich"],
+  charlottegallbronner: ["gallbronner"],
+};
+
+const getLastNameVariants = (firstName, lastName) => {
+  const fullNameNorm = `${normalizeToken(firstName)}${normalizeToken(lastName)}`;
+  const base = normalizeToken(lastName);
+  const extra = lastNameVariantsByAthlete[fullNameNorm] || [];
+  return [...new Set([base, ...extra])];
+};
+
 const preferredImageNeedlesByAthlete = {
   annatwardosz: {
     portrait: ["portrait02", "portrait2"],
@@ -55,17 +75,29 @@ const preferredImageNeedlesByAthlete = {
 
 const getLocalAthleteImage = (firstName, lastName, kind) => {
   const firstNameNorm = normalizeToken(firstName);
-  const lastNameNorm = normalizeToken(lastName);
-  const fullNameNorm = `${firstNameNorm}${lastNameNorm}`;
+  const lastNameVariants = getLastNameVariants(firstName, lastName);
+  const fullNameNorm = `${firstNameNorm}${normalizeToken(lastName)}`;
   const preferredNeedles = preferredImageNeedlesByAthlete[fullNameNorm]?.[kind] || [];
   const matches = athleteLocalImages.filter(
-    (img) => img.kind === kind && matchesAthleteName(img.normalizedName, firstNameNorm, lastNameNorm)
+    (img) =>
+      img.kind === kind &&
+      lastNameVariants.some((lastNameNorm) => matchesAthleteName(img.normalizedName, firstNameNorm, lastNameNorm))
   );
-  if (matches.length === 0) return "";
+  if (matches.length === 0) return { src: "", normalizedName: "" };
 
   const score = (img) => {
     let s = 0;
-    if (img.normalizedName.includes(firstNameNorm) && img.normalizedName.includes(lastNameNorm)) s += 20;
+    if (lastNameVariants.some((ln) => img.normalizedName.includes(firstNameNorm) && img.normalizedName.includes(ln))) {
+      s += 20;
+    }
+    const firstNameIndex = img.normalizedName.indexOf(firstNameNorm);
+    const lastNameIndex = lastNameVariants.reduce((best, ln) => {
+      const idx = img.normalizedName.indexOf(ln);
+      return idx === -1 ? best : Math.min(best, idx);
+    }, Number.POSITIVE_INFINITY);
+    if (firstNameIndex >= 0 && lastNameIndex < Number.POSITIVE_INFINITY && firstNameIndex < lastNameIndex) {
+      s += 15;
+    }
     if (preferredNeedles.some((needle) => img.normalizedName.includes(needle))) s += 100;
     // Prefer explicit role tags (portrait/action) over generic hall-of-fame file names.
     if (kind === "portrait" && img.normalizedName.includes("portrait")) s += 5;
@@ -76,8 +108,8 @@ const getLocalAthleteImage = (firstName, lastName, kind) => {
   };
 
   matches.sort((a, b) => score(b) - score(a));
-  if (matches[0]) return matches[0].src;
-  return "";
+  if (matches[0]) return { src: matches[0].src, normalizedName: matches[0].normalizedName };
+  return { src: "", normalizedName: "" };
 };
 
 const photoCreditsByAthlete = {
@@ -113,6 +145,7 @@ const athletes = [
       "Bronzemedaillengewinnerin Mixed-Mannschaft Olympia Peking",
       "2023/24 Gesamtweltcup Platz 11",
       "Gesamtweltcup 2025 Platz 15",
+      "Gesamtweltcupfünfte 2026",
     ],
     sportDiscipline: "Skispringen",
     birthday: "22.02.2001",
@@ -120,9 +153,8 @@ const athletes = [
     interests: ["Kunst", "Design", "Fotografie"],
     profession: "Skispringerin, Graphic Design Student (Toronto Film School & Yorkville University)",
     hobby: "Ski fahren, Mountain Biking, Laufen, Surfen, Malen, Gitarre spielen, Imkerei",
-    portraitImageURL:
-      "https://res.cloudinary.com/dbpoconup/image/upload/v1759139497/Strate_Abigail_portrait_r5jxwi.jpg",
-    actionImageURL: "https://res.cloudinary.com/dbpoconup/image/upload/v1759139496/Strate_Abigail_action_oixjgm.jpg",
+    portraitImageURL: "",
+    actionImageURL: "",
   },
   {
     firstName: "Amandine",
@@ -174,7 +206,7 @@ const athletes = [
   },
   {
     firstName: "Hector",
-    lastName: "Kapustikov",
+    lastName: "Kapustik",
     achievements: [],
     sportDiscipline: "Skispringen",
     birthday: "",
@@ -198,6 +230,7 @@ const athletes = [
     hobby: "",
     portraitImageURL: "",
     actionImageURL: "",
+    borrowedActionImageFrom: { firstName: "Josephine", lastName: "Pagnier" },
     originCountryCode: "SVK",
   },
   {
@@ -210,8 +243,8 @@ const athletes = [
     interests: ["In Zukunft noch hoffentlich viele Sportliche Erfolge feiern zu dürfen"],
     profession: "Sportsoldat",
     hobby: "Zeit mit Familie und Freunden verbringen",
-    portraitImageURL: "https://res.cloudinary.com/dbpoconup/image/upload/v1759136403/Tittel_Adrian_portrait_zp3ukf.jpg",
-    actionImageURL: "https://res.cloudinary.com/dbpoconup/image/upload/v1759136411/Tittel_Adrian_action_epx0qc.jpg",
+    portraitImageURL: "",
+    actionImageURL: "",
   },
   {
     firstName: "Alina",
@@ -227,10 +260,8 @@ const athletes = [
     profession: "Biathletin",
     hobby:
       "Zeit mit Familie und Freunde verbringen, Fernstudium in Sportökonomie, Biografien lesen, Konzerte besuchen,Backen ",
-    portraitImageURL:
-      "https://res.cloudinary.com/dbpoconup/image/upload/v1759152877/Nu%C3%9Fbicker_Alina_portrait_jtxpp5.jpg",
-    actionImageURL:
-      "https://res.cloudinary.com/dbpoconup/image/upload/v1759152877/Nu%C3%9Fbicker_Alina_action_v5o3ww.jpg",
+    portraitImageURL: "",
+    actionImageURL: "",
   },
   {
     firstName: "Anna-Fay",
@@ -238,6 +269,8 @@ const athletes = [
     achievements: [
       "Nachwuchs-Weltmeisterschaft Kanada im Team Platz 3",
       "Nachwuchs-Weltmeisterschaft Kanada im Einzel Platz 12",
+      "Juniorenweltmeisterschaften 2026 Einzel 5. Platz",
+      "Juniorenweltmeisterschaften 2026 Team Silber",
     ],
     sportDiscipline: "Skispringen",
     birthday: "14.04.2006",
@@ -246,8 +279,7 @@ const athletes = [
     profession: "Zoll Ski Team",
     hobby: "Skifahren, Radfahren, Gitarre spielen ",
     portraitImageURL: "",
-    actionImageURL:
-      "https://res.cloudinary.com/dbpoconup/image/upload/v1759135193/Scharfenberg_Anna-Fay_action_sumjjo.jpg",
+    actionImageURL: "",
   },
   {
     firstName: "Cindy",
@@ -290,8 +322,8 @@ const athletes = [
     interests: ["Geschichte", "Musik"],
     profession: "Skispringerin",
     hobby: "Lesen, Zeit mit Familie, Klettern, Paddeltennis, Escaperooms",
-    portraitImageURL: "https://res.cloudinary.com/dbpoconup/image/upload/v1759153546/Torazza_Emely_portrait_ou2lhd.jpg",
-    actionImageURL: "https://res.cloudinary.com/dbpoconup/image/upload/v1759154609/Torazza_Emely_action_ty8tju.jpg",
+    portraitImageURL: "",
+    actionImageURL: "",
   },
   {
     firstName: "Felix",
@@ -300,6 +332,7 @@ const athletes = [
       "Silber Juniorenweltmeisterschaft 2017 im Team",
       "Deutscher Juniorenmeister 2016 in Oberhof",
       "Vierfacher Continental-Cup-Sieger 2017,2023,2024",
+      "Gesamtweltcup-Neunter 2025/2026",
     ],
     sportDiscipline: "Skispringen",
     birthday: "14.07.1997",
@@ -307,8 +340,8 @@ const athletes = [
     interests: ["Sport", "Natur", "Technik"],
     profession: "Polizeivollzugsbeamter",
     hobby: "Zeit mit der Familie, Kochen, Wandern, Basteln",
-    portraitImageURL: "https://res.cloudinary.com/dbpoconup/image/upload/v1759142886/Hoffman_Felix_portrait_x35xsy.jpg",
-    actionImageURL: "https://res.cloudinary.com/dbpoconup/image/upload/v1759142884/Hoffman_Felix_action_01_bnf3un.jpg",
+    portraitImageURL: "",
+    actionImageURL: "",
   },
   {
     firstName: "Jenny",
@@ -320,9 +353,8 @@ const athletes = [
     interests: ["Wintersport", "Radsport"],
     profession: "Sportsoldatin",
     hobby: "Zeit mit der Familie und Freunden verbringen, Rennrad fahren",
-    portraitImageURL:
-      "https://res.cloudinary.com/dbpoconup/image/upload/v1740658923/Nowak_Jenny_portrait_02_lu8l0f.jpg",
-    actionImageURL: "https://res.cloudinary.com/dbpoconup/image/upload/v1740658922/Nowak_Jenny_action_rulcir.jpg",
+    portraitImageURL: "",
+    actionImageURL: "",
   },
   {
     firstName: "Josephine",
@@ -333,14 +365,13 @@ const athletes = [
       "Gesamtweltcup 2025 Platz 23",
     ],
     sportDiscipline: "Skispringen",
-    birthday: "",
-    club: "",
-    interests: ["Sport"],
+    birthday: "04.06.2002",
+    club: "Risoux-Club Chaux-Neuve",
+    interests: ["Sport und Natur"],
     profession: "Skispringerin",
-    hobby: "",
-    portraitImageURL:
-      "https://res.cloudinary.com/dbpoconup/image/upload/v1759152760/Pagnier_Josephine_portrait_jq14bi.jpg",
-    actionImageURL: "https://res.cloudinary.com/dbpoconup/image/upload/v1759152760/Pagnier_Josephine_action_pheek8.jpg",
+    hobby: "Wandern, Gleitschirmfliegen, in der Natur sein und mit ihr leben",
+    portraitImageURL: "",
+    actionImageURL: "",
   },
   {
     firstName: "Lara",
@@ -356,9 +387,8 @@ const athletes = [
     interests: ["Sport allgemein"],
     profession: "Guardia di finanza",
     hobby: "Skifahren, Skibergsteigen, Wandern, Backen/Kochen",
-    portraitImageURL:
-      "https://res.cloudinary.com/dbpoconup/image/upload/v1740660815/Malisner_lara_portrait_angepasst_inreco.jpg",
-    actionImageURL: "https://res.cloudinary.com/dbpoconup/image/upload/v1740658934/Malisner_Lara_action_wj7vcc.jpg",
+    portraitImageURL: "",
+    actionImageURL: "",
   },
   {
     firstName: "Jessica",
@@ -370,10 +400,8 @@ const athletes = [
     interests: ["Sport"],
     profession: "Skispringerin",
     hobby: "Ich bin gerne draußen in der Natur. Sport Allgemein.",
-    portraitImageURL:
-      "https://res.cloudinary.com/dbpoconup/image/upload/v1740658921/Malisner_Jessica_portrait_01_pxxvqn.jpg",
-    actionImageURL:
-      "https://res.cloudinary.com/dbpoconup/image/upload/v1745832158/Malsiner_Jessica_action_01_Kopie_qiegrp.jpg",
+    portraitImageURL: "",
+    actionImageURL: "",
   },
   {
     firstName: "Lia",
@@ -385,8 +413,9 @@ const athletes = [
     interests: ["Sport"],
     profession: "Schülerin",
     hobby: "Schwimmen, Volleyball",
-    portraitImageURL: "https://res.cloudinary.com/dbpoconup/image/upload/v1740658921/Boehme_Lia_portrait_d5ncp0.jpg",
-    actionImageURL: "https://res.cloudinary.com/dbpoconup/image/upload/v1740658922/Boehme_Lia_action_jy2x0c.jpg",
+    portraitImageURL: "",
+    actionImageURL: "",
+    borrowedActionImageFrom: { firstName: "Lara", lastName: "Malsiner" },
   },
   {
     firstName: "Luisa",
@@ -398,9 +427,9 @@ const athletes = [
     interests: ["Psychologie", "mein Hund"],
     profession: "Skispringerin",
     hobby: "Kaffee trinken mit Freunden und Familie, Squash, an die frische Luft gehen",
-    portraitImageURL:
-      "https://res.cloudinary.com/dbpoconup/image/upload/v1740658921/Goerlich_Luisa_portrait_gmhyyb.jpg",
-    actionImageURL: "https://res.cloudinary.com/dbpoconup/image/upload/v1740658921/Goerlich_Luisa_action_f4nyew.jpg",
+    portraitImageURL: "",
+    actionImageURL: "",
+    borrowedActionImageFrom: { firstName: "Josephine", lastName: "Pagnier" },
   },
   {
     firstName: "Maria",
@@ -432,8 +461,7 @@ const athletes = [
     interests: ["Fußball", "Organisieren/plann", "Landwirtschaft"],
     profession: "Bundespolizist (Obermeister)",
     hobby: "Skitour/fahren, SUP, Gravelbiken, Berge, Go Kart, Kochen, Barista",
-    portraitImageURL:
-      "https://res.cloudinary.com/dbpoconup/image/upload/v1759135551/Hamann_Martin_portrait_01_iqgk9j.jpg",
+    portraitImageURL: "",
     actionImageURL: "",
   },
   {
@@ -450,8 +478,9 @@ const athletes = [
     interests: ["Sport", "kreativ sein"],
     profession: "Sportsoldatin",
     hobby: "Klettern, Snowboardfahren, Zeit draußen mit Freunden verbringen",
-    portraitImageURL: "https://res.cloudinary.com/dbpoconup/image/upload/v1759153742/Roh_Ronja_portrait_y7vuwe.jpg",
-    actionImageURL: "https://res.cloudinary.com/dbpoconup/image/upload/v1759153741/Roh_Ronja_action_lc8ywu.jpg",
+    portraitImageURL: "",
+    actionImageURL: "",
+    borrowedActionImageFrom: { firstName: "Julina", lastName: "Kreibich" },
   },
 
   {
@@ -490,9 +519,8 @@ const athletes = [
     interests: ["Pflanzen", "Reisen"],
     profession: "Bundespolizistin",
     hobby: "Lesen, Wandern, Volleyball spielen",
-    portraitImageURL:
-      "https://res.cloudinary.com/dbpoconup/image/upload/v1759136058/H%C3%A4ckel_Anne_portrait_xggagm.jpg",
-    actionImageURL: "https://res.cloudinary.com/dbpoconup/image/upload/v1759136050/H%C3%A4ckel_Anne_action_jcdrvh.jpg",
+    portraitImageURL: "",
+    actionImageURL: "",
   },
   {
     firstName: "Robin",
@@ -508,9 +536,8 @@ const athletes = [
     interests: ["Fashion", "Fußball", "Sport allgemein"],
     profession: "Sportsoldat",
     hobby: "Sportliche Aktivitäten, Fußball spielen, Radfahren sowie Zeit mit Freunden verbringen",
-    portraitImageURL:
-      "https://res.cloudinary.com/dbpoconup/image/upload/v1759155307/Klo%C3%9F_Robin_portrait_aplceo.jpg",
-    actionImageURL: "https://res.cloudinary.com/dbpoconup/image/upload/v1759155307/Klo%C3%9F_Robin_action_k42zac.jpg",
+    portraitImageURL: "",
+    actionImageURL: "",
   },
   {
     firstName: "Anna",
@@ -518,6 +545,7 @@ const athletes = [
     achievements: [
       "Fünffache Polnische Meisterin 2016, 2018, 2023, 2024, 2025",
       "Sieg im Intercontinental Cup in Notodden 2024",
+      "Olympiazehnte Einzelspringen Milano/Cortina 2026",
     ],
     sportDiscipline: "Skispringen",
     birthday: "12.04.2001",
@@ -526,8 +554,8 @@ const athletes = [
     profession: "Skispringerin",
     hobby:
       "Die Familie ist in meinem Leben sehr wichtig, deshalb versuche ich, so viel Zeit wie möglich mit ihr zu verbringen. Wenn ich auf Reisen bin, versuche ich immer, Sehenswürdigkeiten zu besuchen, um interessante Dinge oder Orte zu entdecken.",
-    portraitImageURL: "https://res.cloudinary.com/dbpoconup/image/upload/v1759144024/Twardozs_Anna_portrait_mbbvyw.jpg",
-    actionImageURL: "https://res.cloudinary.com/dbpoconup/image/upload/v1759144023/Twardozs_Anna_aaction_t66f2u.jpg",
+    portraitImageURL: "",
+    actionImageURL: "",
   },
   {
     firstName: "Nicole",
@@ -539,8 +567,8 @@ const athletes = [
     interests: ["Sport"],
     profession: "Studentin",
     hobby: "Wandern, Fischen, Jagen",
-    portraitImageURL: "https://res.cloudinary.com/dbpoconup/image/upload/v1759153113/Maurer_Nicole_portrait_miykis.jpg",
-    actionImageURL: "https://res.cloudinary.com/dbpoconup/image/upload/v1759153113/Maurer_Nicole_action_dvpnzc.jpg",
+    portraitImageURL: "",
+    actionImageURL: "",
   },
   {
     firstName: "Charlotte",
@@ -556,10 +584,8 @@ const athletes = [
     interests: ["Biathlon", "kochen", "backen", "Kaffee/Barista", "Handball"],
     profession: "Bundeswehrangestellte",
     hobby: "In meiner Freizeit unternehme ich gerne was mit Freunden und backe und koche gerne mal.",
-    portraitImageURL:
-      "https://res.cloudinary.com/dbpoconup/image/upload/v1759153317/Gallbronner_Charlotte_portrait_aejc9n.jpg",
-    actionImageURL:
-      "https://res.cloudinary.com/dbpoconup/image/upload/v1759153317/Gallbronner_Charlotte_action_e0zllq.jpg",
+    portraitImageURL: "",
+    actionImageURL: "",
   },
   {
     firstName: "Louis",
@@ -581,6 +607,8 @@ const athletes = [
       "Junioren-Weltmeisterin im Team 2025",
       "FIS -Alpencup 2024/2025 Platz 3 im Einzel",
       "Mehrere Top-10-Platzierungen im Intercontinental Cup 2024/2025",
+      "Juniorenweltmeisterschaften 2026 Einzel 14. Platz",
+      "Juniorenweltmeisterschaften 2026 Team Silber",
     ],
     sportDiscipline: "Skispringen",
     birthday: "21.01.2008",
@@ -707,8 +735,7 @@ const athletes = [
     ],
     profession: "Bundestrainer Nordische Kombination",
     hobby: "Naturerleben, Reisen, Ausgleichssportarten, Wandern, Nordic Walking, Trailrunning",
-    portraitImageURL:
-      "https://res.cloudinary.com/dbpoconup/image/upload/v1759138804/Frenzel_Eric_portrait_01_c6bey8.jpg",
+    portraitImageURL: "",
     actionImageURL: "",
     originCountryCode: "GER",
     isFormer: true,
@@ -739,8 +766,7 @@ const athletes = [
     profession: "Biathletin",
     hobby: "",
     portraitImageURL: "",
-    actionImageURL:
-      "https://res.cloudinary.com/dbpoconup/image/upload/v1759153464/Hettich-Walz_Janina_action_xfi3tj.jpg",
+    actionImageURL: "",
     originCountryCode: "GER",
     isFormer: true,
   },
@@ -1265,6 +1291,12 @@ const translations = {
       "Bronzemedaillengewinnerin Mixed-Mannschaft Olympia Peking": "Bronze medal winner Mixed Team Olympics Beijing",
       "2023/24 Gesamtweltcup Platz 11": "2023/24 Overall World Cup 11th place",
       "Gesamtweltcup 2025 Platz 15": "2025 Overall World Cup 15th place",
+      "Gesamtweltcupfünfte 2026": "5th place in the overall World Cup 2026",
+      "Olympiazehnte Einzelspringen Milano/Cortina 2026": "10th place Olympic individual ski jumping Milano/Cortina 2026",
+      "Juniorenweltmeisterschaften 2026 Einzel 5. Platz": "Junior World Championships 2026 individual 5th place",
+      "Juniorenweltmeisterschaften 2026 Team Silber": "Junior World Championships 2026 team silver",
+      "Gesamtweltcup-Neunter 2025/2026": "9th place in the overall World Cup 2025/2026",
+      "Juniorenweltmeisterschaften 2026 Einzel 14. Platz": "Junior World Championships 2026 individual 14th place",
       "Junioren-Weltmeister 2023": "Junior World Champion 2023",
       "Bronzemedaillengewinner Junioren-WM 2025 Planica": "Bronze medal winner Junior World Championships 2025 Planica",
       "Goldmedaillengewinnerin Junioren-WM Biathlon-Staffel in Estland 2024": "Gold medal winner Junior World Championships Biathlon Relay in Estonia 2024",
@@ -1551,6 +1583,7 @@ const translations = {
       "Kaffee/Barista": "Coffee/Barista",
       "Handball": "Handball",
       "Ausgleichssportarten": "Recreational sports",
+      "Sport und Natur": "Sports and nature",
     },
     hobbies: {
       "Ski fahren, Mountain Biking, Laufen, Surfen, Malen, Gitarre spielen, Imkerei": "Skiing, mountain biking, running, surfing, painting, playing guitar, beekeeping",
@@ -1601,6 +1634,8 @@ const translations = {
         "Hiking, mountain biking, activities with friends",
       "Kochen und Backen, Spaziergänge, Skifahren, Fahrrad fahren":
         "Cooking and baking, walks, skiing, cycling",
+      "Wandern, Gleitschirmfliegen, in der Natur sein und mit ihr leben":
+        "Hiking, paragliding, being in nature and living with it",
     },
   },
   fr: {
@@ -1732,9 +1767,11 @@ export const getAthletes = (language = "de") => {
     return langTranslations[category]?.[key] ?? translations.en[category]?.[key] ?? key;
   };
 
-  return athletes.map((athlete) => {
+  const mappedAthletes = athletes.map((athlete) => {
     const localPortrait = getLocalAthleteImage(athlete.firstName, athlete.lastName, "portrait");
     const localAction = getLocalAthleteImage(athlete.firstName, athlete.lastName, "action");
+    const portraitImageURL = localPortrait.src || athleteImagePlaceholder;
+    const actionImageURL = localAction.src || athleteImagePlaceholder;
     const fullName = `${athlete.firstName} ${athlete.lastName}`;
     const photoCredits = {
       ...(athlete.photoCredits || {}),
@@ -1771,16 +1808,37 @@ export const getAthletes = (language = "de") => {
 
     const disc = athlete.sportDiscipline ? pick("sportDisciplines", athlete.sportDiscipline) : athlete.sportDiscipline;
 
+    const { borrowedActionImageFrom, ...athleteWithoutBorrow } = athlete;
+
     return {
-      ...athlete,
-      portraitImageURL: localPortrait || athlete.portraitImageURL,
-      actionImageURL: localAction || athlete.actionImageURL,
+      ...athleteWithoutBorrow,
+      portraitImageURL,
+      actionImageURL,
+      borrowedActionImageFrom,
       photoCredits,
       sportDiscipline: disc || athlete.sportDiscipline,
       profession: translatedProfession,
       achievements: translatedAchievements,
       interests: translatedInterests,
       hobby: translatedHobby,
+    };
+  });
+
+  return mappedAthletes.map((athlete) => {
+    const borrow = athlete.borrowedActionImageFrom;
+    if (!borrow) {
+      const { borrowedActionImageFrom: _unused, ...rest } = athlete;
+      return rest;
+    }
+
+    const sourceAthlete = mappedAthletes.find(
+      (candidate) => candidate.firstName === borrow.firstName && candidate.lastName === borrow.lastName
+    );
+    const { borrowedActionImageFrom: _unused, ...rest } = athlete;
+
+    return {
+      ...rest,
+      actionImageURL: sourceAthlete?.actionImageURL || athleteImagePlaceholder,
     };
   });
 };

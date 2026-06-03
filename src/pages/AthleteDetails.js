@@ -5,7 +5,6 @@ import { getAthletes } from "../lib/athletes";
 import { athleteMatchesSlug } from "../lib/athleteSlug";
 import { useDocTitle } from "../components/CustomHook";
 import placeholderPortrait from "../images/athletes/portrait_placeholder.jpg";
-import placeholderAction from "../images/athletes/portrait_placeholder.jpg";
 import { useI18n } from "../i18n/I18nContext";
 
 const AthleteDetails = () => {
@@ -73,12 +72,11 @@ const AthleteDetails = () => {
               ))}
             </ul>
           </div>
-          <div className="w-full lg:w-1/2">
+          <div className={`w-full lg:w-1/2 overflow-hidden bg-neutral-100 ${athlete.actionDetailWrapperClass || ""}`}>
             <img
-              src={athlete.actionImageURL || placeholderAction}
+              src={athlete.actionImageURL || placeholderPortrait}
               alt={`${athlete.firstName} ${athlete.lastName} action`}
-              className="w-full h-100 object-cover"
-              style={{ height: "400px" }}
+              className={athlete.actionDetailImageClass || "w-full h-[400px] object-cover object-center"}
             />
             {athlete.photoCredits?.action && (
               <p className="text-xs text-gray-500 mt-2 px-1 text-right">

@@ -117,7 +117,7 @@ const de = {
   athletesPage: {
     docTitle: "peplies consult - Athletes",
     title: "Aktuelle Athleten",
-    subtitle: "Athletinnen und Athleten, für die die peplies consult GmbH Vermarktungsverantwortung hat oder hatte.",
+    subtitle: "Athletinnen und Athleten, für die die peplies consult GmbH Vermarktungsverantwortung hat oder hatte:",
   },
   athleteDetail: {
     docTitle: "peplies consult - Sports Marketing Consultants",
@@ -204,6 +204,8 @@ const de = {
   tv: {
     docTitle: "peplies consult - TV Werbespots",
     title: "TV Werbespots",
+    subtitle:
+      "Auswahl von TV-Kampagnen, die die peplies consult GmbH geplant und umgesetzt hat:",
     videoNotSupported: "Ihr Browser unterstützt das Video-Tag nicht.",
   },
   athleteServices: {

@@ -117,7 +117,7 @@ const es = {
   athletesPage: {
     docTitle: "peplies consult - Deportistas",
     title: "Deportistas actuales",
-    subtitle: "Deportistas para quienes peplies consult GmbH tiene o tuvo la responsabilidad de comercialización.",
+    subtitle: "Deportistas para quienes peplies consult GmbH tiene o tuvo la responsabilidad de comercialización:",
   },
   athleteDetail: {
     docTitle: "peplies consult - Sports Marketing Consultants",
@@ -204,6 +204,8 @@ const es = {
   tv: {
     docTitle: "peplies consult - Anuncios de TV",
     title: "Anuncios de TV",
+    subtitle:
+      "Selección de campañas de TV planificadas y realizadas por peplies consult GmbH:",
     videoNotSupported: "Su navegador no admite la etiqueta de vídeo.",
   },
   athleteServices: {

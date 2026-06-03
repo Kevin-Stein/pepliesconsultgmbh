@@ -20,12 +20,11 @@ const CompanyReferences = () => {
       <div className="container mx-auto px-4 sm:px-8">
         <div className="text-center mb-12">
           <h1 className="text-3xl sm:text-4xl font-bold text-blue-900 mb-4">{t("companyReferences.title")}</h1>
-          <div className="w-24 h-1 bg-blue-900 mx-auto"></div>
+          <p className="max-w-4xl mx-auto text-sm sm:text-base font-medium text-gray-600 mb-6">
+            {t("companyReferences.pageIntro")}
+          </p>
+          <div className="w-24 h-1 bg-blue-900 mx-auto mb-8"></div>
         </div>
-
-        <p className="max-w-6xl mx-auto text-center text-gray-600 font-medium mb-10 text-sm sm:text-base lg:whitespace-nowrap">
-          {t("companyReferences.pageIntro")}
-        </p>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 sm:gap-8">
           {images.map((image, index) => (

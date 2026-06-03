@@ -12,17 +12,12 @@ const publicationSrcByFileName = publicationMediaContext.keys().reduce((acc, key
   return acc
 }, {})
 
-const splitTitleByDash = (title = "") => {
-  for (const separator of [" - ", " – "]) {
-    const idx = title.indexOf(separator)
-    if (idx === -1) continue
-    return {
-      lead: title.slice(0, idx),
-      rest: title.slice(idx + separator.length),
-    }
-  }
-  return { lead: title, rest: "" }
-}
+const PublicationTitle = ({ title, subtitle }) => (
+  <div className="mb-4">
+    {subtitle ? <p className="text-base font-medium text-gray-800 mb-1">{subtitle}</p> : null}
+    <h2 className="text-xl font-bold text-gray-900 leading-snug">{title}</h2>
+  </div>
+)
 
 const Publications = () => {
   const { locale, t } = useI18n()
@@ -41,6 +36,8 @@ const Publications = () => {
             src,
             extension,
             title: pickLocalized(item.title, locale),
+            subtitle: item.subtitle ? pickLocalized(item.subtitle, locale) : "",
+            isbn: item.isbn || "",
             isPdf: extension === "pdf",
           }
         })
@@ -72,29 +69,19 @@ const Publications = () => {
           <p className="max-w-2xl mx-auto text-center text-gray-700 font-medium">{t("publications.empty")}</p>
         ) : (
           <div className="mx-auto grid max-w-5xl grid-cols-1 gap-8 md:grid-cols-2">
-            {mediaItems.map((item) => {
-              const { lead, rest } = splitTitleByDash(item.title)
-              return (
+            {mediaItems.map((item) => (
                 <div
                   key={item.id}
                   className="block bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300 hover:-translate-y-1"
                 >
                   <div className="p-4">
-                    <h2 className="text-xl text-gray-900 mb-4 leading-snug">
-                      <span className="font-bold">{lead}</span>
-                      {rest ? (
-                        <>
-                          {" – "}
-                          <span className="font-normal">{rest}</span>
-                        </>
-                      ) : null}
-                    </h2>
+                    <PublicationTitle title={item.title} subtitle={item.subtitle} />
                     <div className="w-full h-64 bg-gray-50 rounded-lg overflow-hidden relative group">
                       <button
                         type="button"
                         onClick={() => setSelectedMedia(item)}
                         className="absolute inset-0 w-full h-full text-left"
-                        aria-label={`${t("press.openHint")}: ${item.title}`}
+                        aria-label={`${t("press.openHint")}: ${item.subtitle ? `${item.subtitle} – ${item.title}` : item.title}`}
                       >
                         {item.isPdf ? (
                           <iframe
@@ -114,10 +101,14 @@ const Publications = () => {
                         <div className="absolute inset-0 bg-black/0 group-hover:bg-black/25 transition-colors duration-200" />
                       </button>
                     </div>
+                    {item.isbn ? (
+                      <p className="mt-3 text-sm text-gray-600">
+                        <span className="font-semibold text-gray-700">{t("publications.isbn")}</span> {item.isbn}
+                      </p>
+                    ) : null}
                   </div>
                 </div>
-              )
-            })}
+              ))}
           </div>
         )}
       </div>
@@ -129,22 +120,17 @@ const Publications = () => {
         >
           <div className="max-w-6xl w-full" onClick={(e) => e.stopPropagation()}>
             <div className="mb-3 flex items-center justify-between gap-4">
-              <p className="text-sm sm:text-base text-white truncate">
-                {(() => {
-                  const { lead, rest } = splitTitleByDash(selectedMedia.title)
-                  return (
-                    <>
-                      <span className="font-semibold">{lead}</span>
-                      {rest ? (
-                        <>
-                          {" – "}
-                          <span className="font-normal">{rest}</span>
-                        </>
-                      ) : null}
-                    </>
-                  )
-                })()}
-              </p>
+              <div className="min-w-0 text-sm sm:text-base text-white">
+                {selectedMedia.subtitle ? (
+                  <p className="truncate text-white/90">{selectedMedia.subtitle}</p>
+                ) : null}
+                <p className="truncate font-semibold">{selectedMedia.title}</p>
+                {selectedMedia.isbn ? (
+                  <p className="text-xs sm:text-sm text-white/80 mt-1">
+                    {t("publications.isbn")} {selectedMedia.isbn}
+                  </p>
+                ) : null}
+              </div>
               <div className="flex items-center gap-2">
                 <a
                   href={selectedMedia.src}

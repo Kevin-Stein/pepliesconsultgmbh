@@ -161,7 +161,8 @@ const es = {
   publications: {
     docTitle: "peplies consult - Publicaciones",
     title: "Publicaciones",
-    pageIntro: "Seleccion de biografias deportivas y publicaciones de peplies consult GmbH:",
+    pageIntro: "Publicaciones en las que peplies consult GmbH ha colaborado:",
+    isbn: "ISBN",
     openPdf: "Abrir PDF",
     openImage: "Ampliar imagen",
     empty: "El contenido de publicaciones se esta preparando.",

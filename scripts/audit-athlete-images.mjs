@@ -16,7 +16,7 @@ const normalizeToken = (value = "") =>
 
 const lastNameVariantsByAthlete = {
   felixhoffmann: ["hoffmann", "hoffman"],
-  hectorkapustik: ["kapustik"],
+  hektorkapustik: ["kapustik"],
   kirakapustikova: ["kapustikova"],
   laramalsiner: ["malsiner", "malisner"],
   jessicamalsiner: ["malsiner", "malisner"],

@@ -68,7 +68,7 @@ const Publications = () => {
         {mediaItems.length === 0 ? (
           <p className="max-w-2xl mx-auto text-center text-gray-700 font-medium">{t("publications.empty")}</p>
         ) : (
-          <div className="mx-auto grid max-w-5xl grid-cols-1 gap-8 md:grid-cols-2">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {mediaItems.map((item) => (
                 <div
                   key={item.id}

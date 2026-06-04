@@ -18,6 +18,23 @@ const publicationsData = [
     isbn: "978-3-9824733-0-7",
   },
   {
+    id: "pub-frenzel-skispitzen-interview",
+    fileName: "Eric Frenzel_Stephan Peplies_ Skispitzen_Interview.pdf",
+    title: {
+      de: '"Skispitzen – die schönsten Kolumnen des Olympiasiegers" (Interview)',
+      en: '"Skispitzen – the finest columns of the Olympic champion" (interview)',
+      fr: "« Skispitzen – les plus belles chroniques du champion olympique » (interview)",
+      es: "« Skispitzen – las mejores columnas del campeón olímpico » (entrevista)",
+    },
+    subtitle: {
+      de: "Eric Frenzel/Stephan Peplies",
+      en: "Eric Frenzel/Stephan Peplies",
+      fr: "Eric Frenzel/Stephan Peplies",
+      es: "Eric Frenzel/Stephan Peplies",
+    },
+    isbn: "978-3-9824733-0-7",
+  },
+  {
     id: "pub-sieger-maschen",
     fileName: "Sieger Maschen_auszug.pdf",
     title: {

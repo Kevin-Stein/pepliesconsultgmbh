@@ -5,6 +5,7 @@ import { useNavigate } from "react-router-dom";
 import logo from "../../images/pepliesconsult_logo_black.svg";
 import { AuthContext } from "../../App";
 import LanguageSwitcher from "./LanguageSwitcher";
+import { useContactModal } from "../ContactModalContext";
 import { useI18n } from "../../i18n/I18nContext";
 
 const NavBar = () => {
@@ -16,7 +17,13 @@ const NavBar = () => {
   const passwordInputRef = useRef(null);
   const { isAuthenticated, setIsAuthenticated } = useContext(AuthContext);
   const navigate = useNavigate();
+  const { openContact } = useContactModal();
   const { t } = useI18n();
+
+  const handleOpenContact = () => {
+    setIsOpen(false);
+    openContact();
+  };
 
   const handleClick = () => {
     setIsOpen(!isOpen);
@@ -101,6 +108,13 @@ const NavBar = () => {
           </div>
           <div className="hidden lg:flex items-center space-x-6 p-5">
             <NavLinks setIsOpen={setIsOpen} />
+            <button
+              type="button"
+              onClick={handleOpenContact}
+              className="px-4 font-semibold text-gray-500 hover:text-blue-900 tracking-wider"
+            >
+              {t("footer.contact")}
+            </button>
             {isAuthenticated ? (
               <button
                 className="px-4 font-semibold text-gray-500 hover:text-blue-900 tracking-wider"
@@ -127,6 +141,13 @@ const NavBar = () => {
               <div className="flex flex-col items-start space-y-2">
                 <NavLinks setIsOpen={setIsOpen} isMobile={true} />
                 <div className="flex flex-wrap items-center gap-3 w-full">
+                  <button
+                    type="button"
+                    onClick={handleOpenContact}
+                    className="px-2 text-xs font-medium text-gray-500 active:text-blue-900"
+                  >
+                    {t("footer.contact")}
+                  </button>
                   {isAuthenticated ? (
                     <button
                       className="px-2 text-xs font-medium text-gray-500 active:text-blue-900"

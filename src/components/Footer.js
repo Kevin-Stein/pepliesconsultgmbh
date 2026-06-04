@@ -52,28 +52,26 @@ const Footer = () => {
                   {t("footer.about")}
                 </HashLink>
               </li>
-              {isAuthenticated && (
-                <>
-                  <li className="mb-1 sm:mb-2">
-                    <HashLink
-                      to="/#services"
-                      scroll={scrollAboutIntoView}
-                      className="text-blue-900 hover:text-gray-900 hover:tracking-wider transition duration-250 ease-in-out"
-                    >
-                      {t("footer.services")}
-                    </HashLink>
-                  </li>
-                  <li className="mb-1 sm:mb-2">
-                    <button
-                      type="button"
-                      onClick={openContact}
-                      className="text-blue-900 hover:text-gray-900 hover:tracking-wider transition duration-250 ease-in-out bg-transparent border-0 p-0 cursor-pointer font-inherit text-left w-full sm:w-auto"
-                    >
-                      {t("footer.contact")}
-                    </button>
-                  </li>
-                </>
-              )}
+              <li className="mb-1 sm:mb-2">
+                <button
+                  type="button"
+                  onClick={openContact}
+                  className="text-blue-900 hover:text-gray-900 hover:tracking-wider transition duration-250 ease-in-out bg-transparent border-0 p-0 cursor-pointer font-inherit text-left w-full sm:w-auto"
+                >
+                  {t("footer.contact")}
+                </button>
+              </li>
+              {isAuthenticated ? (
+                <li className="mb-1 sm:mb-2">
+                  <HashLink
+                    to="/#services"
+                    scroll={scrollAboutIntoView}
+                    className="text-blue-900 hover:text-gray-900 hover:tracking-wider transition duration-250 ease-in-out"
+                  >
+                    {t("footer.services")}
+                  </HashLink>
+                </li>
+              ) : null}
               <li className="mb-1 sm:mb-2">
                 <Link
                   to="/legal-notice"

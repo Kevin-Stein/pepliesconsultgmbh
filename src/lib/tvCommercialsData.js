@@ -1,5 +1,6 @@
 // src/lib/tvCommercialsData.js
-// videoUrl: store normal Cloudinary video URLs; TvCommercials wraps them with f_mp4 for HTML5 playback.
+// videoUrl: Cloudinary URL or self-hosted path, e.g. "/videos/tv/RTL_Martina_Ertl.mp4"
+// Local videos: place file in public/videos/tv/ — see public/videos/README.md
 // title: { de, en, fr, es } — add keys when introducing a new UI language.
 const tvCommercialsData = [
   {

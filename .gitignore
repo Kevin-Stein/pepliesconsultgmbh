@@ -21,5 +21,12 @@
 
 npm-debug.log*
 yarn-debug.log*
-yarn-error.log* 
+yarn-error.log*
+
+# Self-hosted videos (large files — upload via FTP with build/)
+/public/videos/**/*.mp4
+/public/videos/**/*.mov
+/public/videos/**/*.mpeg
+/public/videos/**/*.wmv
+/public/videos/**/*.webm
  

@@ -1,0 +1,20 @@
+Options -MultiViews
+RewriteEngine On
+RewriteBase /
+
+# SPA fallback: route unknown paths to index.html (React Router)
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^ index.html [QSA,L]
+
+<IfModule mod_headers.c>
+  <FilesMatch "\.(mp4|webm|mov|mpeg|wmv|jpg|jpeg|png|webp|gif|pdf)$">
+    Header set Cache-Control "public, max-age=2592000"
+  </FilesMatch>
+</IfModule>
+
+<IfModule mod_mime.c>
+  AddType video/mp4 .mp4
+  AddType video/webm .webm
+  AddType video/quicktime .mov
+</IfModule>

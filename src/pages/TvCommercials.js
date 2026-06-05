@@ -3,7 +3,7 @@ import React, { useEffect, useState } from "react"
 import { Link } from "react-router-dom"
 import { useDocTitle } from "../components/CustomHook"
 import tvCommercialsData from "../lib/tvCommercialsData.js"
-import { cloudinaryVideoUrlForHtml5 } from "../lib/cloudinaryVideoUrl.js"
+import { requiresExternalMediaConsent, videoUrlForHtml5 } from "../lib/videoUrl.js"
 import { allowsExternalMedia, readConsentLevel } from "../lib/cookieConsent.js"
 import { pickLocalized } from "../lib/pickLocalized.js"
 import { useI18n } from "../i18n/I18nContext"
@@ -35,7 +35,7 @@ const handleVideoPreviewAtOneSecond = (event) => {
 
 const TvCommercialVideo = ({ commercial, fallbackText }) => (
   <video
-    src={`${cloudinaryVideoUrlForHtml5(commercial.videoUrl)}#t=${PREVIEW_SECONDS}`}
+    src={`${videoUrlForHtml5(commercial.videoUrl)}#t=${PREVIEW_SECONDS}`}
     poster={commercial.thumbnailUrl || undefined}
     controls
     preload="metadata"
@@ -58,6 +58,15 @@ const TvCommercials = () => {
   useDocTitle(t("tv.docTitle"))
   const [consentLevel, setConsentLevel] = useState(readConsentLevel)
   const allowExternalMedia = allowsExternalMedia(consentLevel)
+
+  const canPlayCommercial = (commercial) => {
+    if (!requiresExternalMediaConsent(commercial.videoUrl)) return true
+    return allowExternalMedia
+  }
+
+  const anyCommercialNeedsConsent = tvCommercialsData.some((commercial) =>
+    requiresExternalMediaConsent(commercial.videoUrl)
+  )
 
   useEffect(() => {
     const handleConsentChange = () => setConsentLevel(readConsentLevel())
@@ -85,7 +94,7 @@ const TvCommercials = () => {
               className="block bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300"
             >
               <div className="w-full aspect-video bg-gray-200">
-                {allowExternalMedia ? (
+                {canPlayCommercial(commercial) ? (
                   <TvCommercialVideo commercial={commercial} fallbackText={t("tv.videoNotSupported")} />
                 ) : (
                   <MediaConsentPlaceholder message={t("cookie.externalMediaBlocked")} />
@@ -104,7 +113,7 @@ const TvCommercials = () => {
           ))}
         </div>
 
-        {!allowExternalMedia ? (
+        {anyCommercialNeedsConsent && !allowExternalMedia ? (
           <p className="mt-8 text-center text-sm text-gray-600">
             <Link to="/privacy" className="text-blue-900 underline hover:text-blue-700">
               {t("footer.privacy")}

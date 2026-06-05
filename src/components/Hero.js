@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useRef } from "react";
 import logo from "../images/pepliesconsult_logo_black.svg";
-import { cloudinaryVideoUrlForHtml5 } from "../lib/cloudinaryVideoUrl.js";
+import heroVideos from "../lib/heroVideos.js";
+import { requiresExternalMediaConsent, videoUrlForHtml5 } from "../lib/videoUrl.js";
 import { useI18n } from "../i18n/I18nContext";
 
 const Hero = ({ allowExternalMedia = false }) => {
@@ -9,12 +10,10 @@ const Hero = ({ allowExternalMedia = false }) => {
   const videoRefs = useRef([]);
   const { t } = useI18n();
 
-  const videos = [
-    "https://res.cloudinary.com/dbpoconup/video/upload/v1743604395/tennis_txbxgw.mov",
-    "https://res.cloudinary.com/dbpoconup/video/upload/v1743604394/reiten_a1mytn.mov",
-    "https://res.cloudinary.com/dbpoconup/video/upload/v1743604393/tischtennis_pjg5s4.mov",
-    "https://res.cloudinary.com/dbpoconup/video/upload/v1743604391/ski_alpin_r9hwpr.mov",
-  ];
+  const videos = heroVideos;
+  const heroNeedsExternalConsent = videos.some(requiresExternalMediaConsent);
+  const canPlayHeroVideos =
+    !prefersReducedMotion && (!heroNeedsExternalConsent || allowExternalMedia);
 
   useEffect(() => {
     const mediaQuery = window.matchMedia("(prefers-reduced-motion: reduce)");
@@ -30,7 +29,7 @@ const Hero = ({ allowExternalMedia = false }) => {
     const currentVideoIndex = currentVideo;
 
     const playVideo = async (index) => {
-      if (!allowExternalMedia || prefersReducedMotion) return;
+      if (!canPlayHeroVideos) return;
       const video = videoRefsSnapshot[index];
       if (!video) return;
 
@@ -71,19 +70,18 @@ const Hero = ({ allowExternalMedia = false }) => {
         }
       });
     };
-  }, [allowExternalMedia, currentVideo, prefersReducedMotion, videos.length]);
+  }, [canPlayHeroVideos, currentVideo, prefersReducedMotion, videos.length]);
 
   return (
     <>
       <div className="hero relative h-[400px] lg:h-[800px] flex flex-col items-center justify-between" id="hero">
         <div className="absolute inset-0 w-full h-full overflow-hidden">
-          {allowExternalMedia &&
-            !prefersReducedMotion &&
+          {canPlayHeroVideos &&
             videos.map((video, index) => (
               <video
                 key={video}
                 ref={(el) => (videoRefs.current[index] = el)}
-                src={cloudinaryVideoUrlForHtml5(video)}
+                src={videoUrlForHtml5(video)}
                 muted
                 playsInline
                 preload="auto"
@@ -92,7 +90,7 @@ const Hero = ({ allowExternalMedia = false }) => {
                 }`}
               />
             ))}
-          {(!allowExternalMedia || prefersReducedMotion) && <div className="absolute inset-0 bg-slate-800" aria-hidden />}
+          {!canPlayHeroVideos && <div className="absolute inset-0 bg-slate-800" aria-hidden />}
           <div className="absolute inset-0 bg-black bg-opacity-10"></div>
           <div className="absolute inset-0 bg-gradient-to-t from-black to-transparent opacity-70"></div>
         </div>
